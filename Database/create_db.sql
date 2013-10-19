@@ -61,7 +61,7 @@ CREATE TABLE stats (
    FOREIGN KEY(username) REFERENCES players(username)
 ) engine = InnoDB;
 
-CREATE TABLE achiecements (
+CREATE TABLE achievements (
    username varchar(50) NOT NULL,
    perfectGame int default 0,
    closeCall int default 0,
