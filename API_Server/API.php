@@ -5,9 +5,11 @@ function create_deck($username, $deckname)
   $con = mysql_connect("localhost", "quizard", "quest") or die ("Could not connect: " . mysql_error());
   mysql_select_db("quizardQuest", $con) or die ("Could not connect: " . mysql_error());
   
-  mysql_query("INSERT INTO decks (username, name) VALUES (x, y);");
-  $deckID = mysql_query("SELECT decks.deckID FROM cards WHERE username = x;");
-INSERT INTO deckCards (deckID, cardID) VALUES (a, b);
+  mysql_query("INSERT INTO decks (username, name) VALUES ($username, $deckname);");
+  $deckID = mysql_query("SELECT decks.deckID FROM cards WHERE (username = $username AND name = $deckname);");
+  
+  mysql_close($con);
+  return $deckID
 }
 
 function create_user($username, $password, $email, $isAdmin)
