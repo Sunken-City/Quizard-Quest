@@ -1,0 +1,30 @@
+//Creating a new player that is NOT an admin with username X, pw Y and email Z.
+INSERT INTO players (username, password, email) VALUES (x, y, z);
+INSERT INTO options (username) VALUES (x);
+INSERT INTO achiecements (username) VALUES (x);
+INSERT INTO stats (username) VALUES (x);
+
+//Creating a new player that IS an admin
+INSERT INTO players VALUE (x, y, z, 1);
+INSERT INTO options (username) VALUES (x);
+INSERT INTO achiecements (username) VALUES (x);
+INSERT INTO stats (username) VALUES (x);
+
+//Creating a card WITH a subcategory
+INSERT INTO cards (username, question, answer, category, subCategory, difficulty)
+            VALUES (x, a, b, c, d, e);
+            
+//Creating a card WITHOUT a subcategory
+INSERT INTO cards (username, question, answer, category, difficulty)
+            VALUES (x, a, b, c, d);
+            
+//Creating a deck
+//We will want to do a loop inside of the PHP to insert all of the cards into the DB. This will get 
+// the newly created deck's ID. Store that inside a PHP value, and substitute 'a' with that.
+
+INSERT INTO decks (username, name) VALUES (x, y);
+SELECT MAX(deckID) AS deckID FROM decks;
+SELECT * FROM cards WHERE username = x;
+INSERT INTO deckCards (deckID, cardID) VALUES (a, b);
+
+
