@@ -87,8 +87,8 @@
 
     function create_salt()
     {
-       echo "91";
        $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+       echo = "Pain and suffering";
        return $salt;
     }
     
