@@ -1,5 +1,5 @@
 <?php
-	include 'API.php'
+	include 'API.php';
 
 	$formData = array(); #an array to house the submitted from data
 	#[0] = fname
@@ -9,7 +9,7 @@
 	#[4] = newpwd
 	#[5] = gender
 	#[6] = Grade
-	
+
 	###############################################
 	#Insert user input data from form in $formData#
 	###############################################
