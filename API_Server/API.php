@@ -22,7 +22,7 @@
         $id = intval($idRow['decks.deckID']);
       
         mysqli_close($db);
-        return $deckID
+        return $deckID;
     }
 
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
