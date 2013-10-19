@@ -11,6 +11,10 @@ CREATE TABLE players (
    password varchar(256) NOT NULL,
    salt varchar(256) NOT NULL,
    email varchar(50) NOT NULL,
+   fName varchar(50) NOT NULL,
+   lName varchar(50) NOT NULL,
+   grade varchar(50),
+   gender varchar(1),
    permissions int default 0
 ) engine = InnoDB;
 
@@ -19,6 +23,7 @@ CREATE TABLE decks (
    username varchar(50) NOT NULL,
    name varchar(50) NOT NULL,
    PRIMARY KEY(deckID),
+   UNIQUE KEY(username, name),
    FOREIGN KEY(username) REFERENCES players(username)
 ) engine = InnoDB;
 
@@ -73,3 +78,5 @@ CREATE TABLE achievements (
    langQuizzard int default 0,
    FOREIGN KEY(username) REFERENCES players(username)
 ) engine = InnoDB;
+
+CREATE TABLE 

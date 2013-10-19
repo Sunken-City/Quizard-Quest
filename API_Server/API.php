@@ -37,7 +37,7 @@
         $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
         $password = create_hash_with_salt($password, $salt);
       
-        mysqli_query($db,"INSERT INTO players (username, password, salt, email, firstname, lastname, gender, grade, permissions) 
+        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
         VALUES ($username, $password, $salt, $email, $firstname, $lastname, $gender, $grade, $isAdmin);");
         mysqli_query($db,"INSERT INTO options (username) VALUES ($username);");
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ($username);");
