@@ -18,11 +18,15 @@
 		$formData[$key] = htmlentities($val,ENT_QUOTES,'UTF-8');
 
 	}
+
+	echo "liine 22";
 	######################################################
 	# User just submitted data to create a new account#
 	######################################################
 	if (isset($formData['fname']) && isset($formData['lname']) && isset($formData['Email']) 
 		&& isset($formData['username']) && isset($formData['newpwd'])) {
+
+		echo "inside 29";
 
 		// send validated data to next layer for submission to database
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
