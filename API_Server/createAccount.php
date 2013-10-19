@@ -18,7 +18,7 @@
 		$formData[$key] = htmlentities($val,ENT_QUOTES,'UTF-8');
 
 	}
-	
+
 	######################################################
 	# User just submitted data to create a new account#
 	######################################################
@@ -29,6 +29,7 @@
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
 			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
+			echo "liiiiiiiine 32";
 
 		} else if (isset($formData['gender']) && !isset($formData['Grade'])) {
 
