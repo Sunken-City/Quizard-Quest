@@ -1,11 +1,11 @@
 //Creating a new player that is NOT an admin with username X, pw Y and email Z.
-INSERT INTO players (username, password, email) VALUES (x, y, z);
+INSERT INTO players (username, password, salt, email) VALUES (x, y1, y2, z);
 INSERT INTO options (username) VALUES (x);
 INSERT INTO achiecements (username) VALUES (x);
 INSERT INTO stats (username) VALUES (x);
 
 //Creating a new player that IS an admin
-INSERT INTO players VALUE (x, y, z, 1);
+INSERT INTO players VALUE (x, y1, y2, z, 1);
 INSERT INTO options (username) VALUES (x);
 INSERT INTO achiecements (username) VALUES (x);
 INSERT INTO stats (username) VALUES (x);
