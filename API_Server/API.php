@@ -34,7 +34,7 @@
             exit();
         }
       
-        $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+        $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
       
         mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
@@ -84,6 +84,11 @@
             ));
     }
 
+    function create_salt()
+    {
+       $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+       return $salt;
+    }
     //A function that creates a hash using an input salt. This method is so we can store it in the database beforehand.
     function create_hash_with_salt($password, $salt) {
         // format: algorithm:iterations:salt:hash
