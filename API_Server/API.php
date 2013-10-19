@@ -25,7 +25,7 @@
         return $deckID
     }
 
-    function create_user($username, $password, $email, $isAdmin) {
+    function create_user($username, $password, $email, $firstname, $lastname, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
       
@@ -37,7 +37,8 @@
         $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
         $password = create_hash_with_salt($password, $salt);
       
-        mysqli_query($db,"INSERT INTO players (username, password, salt, email, permissions) VALUES ($username, $password, $salt, $email, $isAdmin);");
+        mysqli_query($db,"INSERT INTO players (username, password, salt, email, firstname, lastname, gender, grade, permissions) 
+        VALUES ($username, $password, $salt, $email, $firstname, $lastname, $gender, $grade, $isAdmin);");
         mysqli_query($db,"INSERT INTO options (username) VALUES ($username);");
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ($username);");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ($username);");
