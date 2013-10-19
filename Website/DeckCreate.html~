@@ -14,12 +14,24 @@ Author : Gustavo Castillo
 	<body>
 		<h1>Create-a-Deck!</h1>
 		<form id="deckBuilder" action="" method="post" >
+
+			<select name="Categories" id="categories" required>
+									<option value="Science">Science</option>
+									<option value="Math">Math</option>
+									<option value="Geography">Geography</option>
+			</select>
+
 			<table id="UserCards">
+  				
 				<td> 
-					<p>Question: What is the Symbol for Oxygen? </p>
+					<p> Question: What is the Symbol for Oxygen? </p>
                 	  		<p>Answer: O </p>
 				</td>
 
+				<td> 
+					<p> Question: What year was the war of 1812? </p>
+                	  		<p>Answer: 1812 </p>
+				</td>
 			</table>
 		</form>
 
