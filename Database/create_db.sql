@@ -8,7 +8,7 @@ USE quizardQuest;
 
 CREATE TABLE players (
    username varchar(50) PRIMARY KEY,
-   password varchar(256) NOT NULL,
+   password varchar NOT NULL,
    email varchar(50) NOT NULL,
    permissions int default 0
 ) engine = InnoDB;
