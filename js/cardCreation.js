@@ -12,5 +12,6 @@ $("#submitQuestion"){
 
 	$.post("php/newQuestion.php",formData,function(){
 		alert("Question Added");
-	})
+	});
+
 });
