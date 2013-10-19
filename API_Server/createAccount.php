@@ -25,10 +25,12 @@
 	if (isset($formData['fname']) && isset($formData['lname']) && isset($formData['Email']) 
 		&& isset($formData['username']) && isset($formData['newpwd'])) {
 
+		echo "line 28 ";
+
 		// send validated data to next layer for submission to database
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
-			echo "line 31";
+			echo "line 31 ";
 
 			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
 
