@@ -25,12 +25,12 @@
 	if (isset($formData['fname']) && isset($formData['lname']) && isset($formData['Email']) 
 		&& isset($formData['username']) && isset($formData['newpwd'])) {
 
-		echo "line 28 ";
+		//echo "line 28 ";
 
 		// send validated data to next layer for submission to database
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
-			echo "line 31 ";
+			//echo "line 31 ";
 
 			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
 
@@ -60,6 +60,6 @@
 	// } else {
 	// 	die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
 	// }
-	echo "somewhere else";
+	//echo "somewhere else";
 	return true;
 ?>
