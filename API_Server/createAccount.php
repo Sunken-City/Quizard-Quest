@@ -27,16 +27,16 @@
 		// send validated data to next layer for submission to database
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
-			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4]);
+			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
 
 		} else if (isset($formData['gender']) && !isset($formData['Grade'])) {
 
-			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4],$formData['gender']);
+			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$formData['gender']);
 
 		} else if (!isset($formData['gender']) && isset($formData['Grade'])) {
 
 			$gender = NULL;
-			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4],$gender,$formData['Grade']);
+			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$gender,$formData['Grade']);
 		}
 
 	} else {
