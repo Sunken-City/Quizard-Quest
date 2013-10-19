@@ -1,17 +1,29 @@
 <?php
 
 function create_deck($username, $deckname)
-
-function create_user($username, $password, $email)
 {
   $con = mysql_connect("localhost", "quizard", "quest") or die ("Could not connect: " . mysql_error());
   mysql_select_db("quizardQuest", $con) or die ("Could not connect: " . mysql_error());
   
-  mysql_query("INSERT INTO players (username, password, salt, email) VALUES (x, y1, y2, $email);");
+  mysql_query("INSERT INTO decks (username, name) VALUES (x, y);");
+  $deckID = mysql_query("SELECT decks.deckID FROM cards WHERE username = x;");
+INSERT INTO deckCards (deckID, cardID) VALUES (a, b);
+}
 
-INSERT INTO options (username) VALUES (x);
-INSERT INTO achiecements (username) VALUES (x);
-INSERT INTO stats (username) VALUES (x);
+function create_user($username, $password, $email, $isAdmin)
+{
+  $con = mysql_connect("localhost", "quizard", "quest") or die ("Could not connect: " . mysql_error());
+  mysql_select_db("quizardQuest", $con) or die ("Could not connect: " . mysql_error());
+  
+  $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+  $password = create_hash_with_salt($password, $salt);
+  
+  mysql_query("INSERT INTO players (username, password, salt, email, permissions) VALUES ($username, $password, $salt, $email, $isAdmin);");
+  mysql_query("INSERT INTO options (username) VALUES ($username);");
+  mysql_query("INSERT INTO achievements (username) VALUES ($username);");
+  mysql_query("INSERT INTO stats (username) VALUES ($username);");
+  
+  mysql_close($con);
 }
 
 
@@ -42,6 +54,21 @@ function create_hash($password)
 {
     // format: algorithm:iterations:salt:hash
     $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+    return PBKDF2_HASH_ALGORITHM . ":" . PBKDF2_ITERATIONS . ":" .  $salt . ":" .
+        base64_encode(pbkdf2(
+            PBKDF2_HASH_ALGORITHM,
+            $password,
+            $salt,
+            PBKDF2_ITERATIONS,
+            PBKDF2_HASH_BYTE_SIZE,
+            true
+        ));
+}
+
+//A function that creates a hash using an input salt. This method is so we can store it in the database beforehand.
+function create_hash_with_salt($password, $salt)
+{
+    // format: algorithm:iterations:salt:hash
     return PBKDF2_HASH_ALGORITHM . ":" . PBKDF2_ITERATIONS . ":" .  $salt . ":" .
         base64_encode(pbkdf2(
             PBKDF2_HASH_ALGORITHM,
