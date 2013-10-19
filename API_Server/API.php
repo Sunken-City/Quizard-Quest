@@ -33,7 +33,7 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        echo "inside 36"
+        echo "inside 36";
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
       
