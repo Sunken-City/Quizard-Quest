@@ -36,7 +36,7 @@
 		} else if (!isset($formData['gender']) && isset($formData['Grade'])) {
 
 			$gender = NULL;
-			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4],$gender,$formData['Grade']));
+			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4],$gender,$formData['Grade']);
 		}
 
 	} else {
@@ -45,13 +45,13 @@
 	#######################################################
 	#If form data was successfully authenticated/submitted#
 	#######################################################
-	if ($submission) {
-		# Redirect to
-		session_start();
-		$_SESSION['uname'] = $formData['Email'];	
-		include 'redirect.php';
+	// if ($submission) {
+	// 	# Redirect to
+	// 	session_start();
+	// 	$_SESSION['uname'] = $formData['Email'];	
+	// 	include 'redirect.php';
 
-	} else {
-		die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
-	}
+	// } else {
+	// 	die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
+	// }
 ?>
