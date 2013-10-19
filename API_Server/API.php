@@ -28,22 +28,17 @@
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-        echo "inside31 ";
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        echo "inside36 ";
         $salt = create_salt();
-        echo "inside38 ";
         $password = create_hash_with_salt($password, $salt);
-        echo "inside39 ";
         mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
         VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');");
         mysqli_query($db,"INSERT INTO options (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
-        echo " 45";
         mysqli_close($db);
     }
 
@@ -122,7 +117,7 @@
         }
            
         $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
-        return slow_equals(
+        $authenticate = slow_equals(
             $pbkdf2,
             pbkdf2(
                 $params[HASH_ALGORITHM_INDEX],
@@ -132,6 +127,9 @@
                 strlen($pbkdf2),
                 true
             )
+        $postData = array('success' => $authenticated);
+	echo json_encode($postData);
+
         );
 
         mysqli_close($db);
