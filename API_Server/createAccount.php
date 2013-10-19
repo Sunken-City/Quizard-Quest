@@ -9,7 +9,7 @@
 	#[4] = newpwd
 	#[5] = gender
 	#[6] = Grade
-
+	echo "echo";
 	###############################################
 	#Insert user input data from form in $formData#
 	###############################################
