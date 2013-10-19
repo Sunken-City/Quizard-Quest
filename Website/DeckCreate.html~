@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!-- 
+Home Page for Quizard Quest
+Create a Deck page 
+Author : Gustavo Castillo
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Create-a-Deck</title>
+		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<h1>Create-a-Deck!</h1>
+		<form id="deckBuilder" action="" method="post" >
+			<table id="UserCards">
+				<td> 
+					<p>Question: What is the Symbol for Oxygen? </p>
+                	  		<p>Answer: O </p>
+				</td>
+
+			</table>
+		</form>
+
+	</body>
+</html>
