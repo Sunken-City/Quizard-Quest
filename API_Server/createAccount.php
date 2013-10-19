@@ -31,6 +31,8 @@
 		// send validated data to next layer for submission to database
 		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
+			echo "34";
+
 			create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
 
 		} else if (isset($formData['gender']) && !isset($formData['Grade'])) {
