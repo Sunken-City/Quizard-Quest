@@ -22,10 +22,10 @@
 	# User just submitted data to create a new account#
 	######################################################
 	if (isset($formData['fname']) && isset($formData['lname']) && isset($formData['Email']) 
-		&& isset($formData['username']) && isset($formData['newpwd']))  {
+		&& isset($formData['username']) && isset($formData['newpwd'])) {
 
 		// send validated data to next layer for submission to database
-		if (!(isset($formData['gender']) && isset($formData['Grade'])) {
+		if (!(isset($formData['gender']) && isset($formData['Grade']))) {
 
 			create_user($formData[0],$formData[1],$formData[2],$formData[3],$formData[4]);
 
