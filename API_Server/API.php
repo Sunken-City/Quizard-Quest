@@ -28,21 +28,21 @@
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-      
+        echo "line31";
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-      
+        echo "inside 36"
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
       
         mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
-        VALUES ($username, $password, $salt, $email, $firstname, $lastname, $gender, $grade, $isAdmin);");
-        mysqli_query($db,"INSERT INTO options (username) VALUES ($username);");
-        mysqli_query($db,"INSERT INTO achievements (username) VALUES ($username);");
-        mysqli_query($db,"INSERT INTO stats (username) VALUES ($username);");
-
+        VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');");
+        mysqli_query($db,"INSERT INTO options (username) VALUES ('$username');");
+        mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
+        mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
+        echo " 45";
         mysqli_close($db);
     }
 
