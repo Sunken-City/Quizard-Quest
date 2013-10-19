@@ -1,7 +1,18 @@
 <?php
 
+function create_deck($username, $deckname)
 
+function create_user($username, $password, $email)
+{
+  $con = mysql_connect("localhost", "quizard", "quest") or die ("Could not connect: " . mysql_error());
+  mysql_select_db("quizardQuest", $con) or die ("Could not connect: " . mysql_error());
+  
+  mysql_query("INSERT INTO players (username, password, salt, email) VALUES (x, y1, y2, $email);");
 
+INSERT INTO options (username) VALUES (x);
+INSERT INTO achiecements (username) VALUES (x);
+INSERT INTO stats (username) VALUES (x);
+}
 
 
 
@@ -42,8 +53,11 @@ function create_hash($password)
         ));
 }
 
-function validate_password($password, $correct_hash)
+function validate_password($username, $password)
 {
+    $con = mysql_connect("localhost", "quizard", "quest") or die ("Could not connect: " . mysql_error());
+    mysql_select_db("quizardQuest", $con) or die ("Could not connect: " . mysql_error());
+    $correct_hash = mysql_query("SELECT players.password FROM players WHERE (players.username = $username);");
     $params = explode(":", $correct_hash);
     if(count($params) < HASH_SECTIONS)
        return false;
