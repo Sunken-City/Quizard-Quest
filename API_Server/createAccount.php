@@ -42,6 +42,8 @@
 	} else {
 		die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
 	}
+
+	echo "echo";
 	#######################################################
 	#If form data was successfully authenticated/submitted#
 	#######################################################
