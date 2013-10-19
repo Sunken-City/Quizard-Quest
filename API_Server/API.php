@@ -25,7 +25,7 @@
         return $deckID
     }
 
-    function create_user($username, $password, $email, $firstname, $lastname, $gender = NULL, $grade = NULL, $isAdmin = 0) {
+    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
       
