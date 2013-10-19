@@ -35,6 +35,7 @@
         }
         echo "inside36 ";
         $salt = create_salt();
+        echo "inside38 ";
         $password = create_hash_with_salt($password, $salt);
         echo "inside39 ";
         mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
