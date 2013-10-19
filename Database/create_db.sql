@@ -78,5 +78,3 @@ CREATE TABLE achievements (
    langQuizzard int default 0,
    FOREIGN KEY(username) REFERENCES players(username)
 ) engine = InnoDB;
-
-CREATE TABLE 
