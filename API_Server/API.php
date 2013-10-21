@@ -24,6 +24,28 @@
         mysqli_close($db);
         return $id;
     }
+    
+    function add_card_to_deck($username, $deckID, $question, $answer, $category, $subCategory, $difficulty)
+    {
+      $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+
+        if (mysqli_connect_errno()) 
+        {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        
+        $cardID = create_card($question, $answer, $category, $subCategory, $difficulty);
+        
+        mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');");
+        
+        if (!mysqli_query($db,$insertAllQuery)) 
+        {
+            echo "There was an error processing your request. Please return to the previous page. Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
+        
+    }
 
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
