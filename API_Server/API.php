@@ -156,7 +156,7 @@
             // $_SESSION['username'] = $username;
         }
 
-        session_destroy();
+        //session_destroy();
 
         mysqli_close($db);
 
