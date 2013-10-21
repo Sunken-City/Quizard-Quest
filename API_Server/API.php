@@ -139,7 +139,7 @@
         if ($authenticated) {
 
             $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
-            $authenticate = slow_equals(
+            $authenticated = slow_equals(
                 $pbkdf2,
                 pbkdf2(
                     $params[HASH_ALGORITHM_INDEX],
