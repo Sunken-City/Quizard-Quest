@@ -52,7 +52,7 @@
         #Being new session and redirect#
         ################################
 
-        //session_destroy();
+        session_destroy();
 
         // session_start();
         // $_SESSION ['username'] = $formData['username'];
