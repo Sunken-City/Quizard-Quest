@@ -60,9 +60,7 @@
 	// session_start();
 	// $_SESSION ['username'] = $formData['username'];
 
-    if (isset $_SESSION['username']) {
-        unset($_SESSION['username']);
-    }
+    session_destroy();
     session_start();
     $_SESSION['username'] = $username;
 

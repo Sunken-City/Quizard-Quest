@@ -147,12 +147,10 @@
         //mysqli_close($db);
 
         if ($authenticated) {
-            if (isset ($_SESSION['username'])) {
-                unset($_SESSION['username']);
-            }
+            session_destroy();
             session_start();
             $_SESSION['username'] = $username;
-            //session_destroy();
+            
         }
 
         return $authenticated;
