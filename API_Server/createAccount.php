@@ -58,7 +58,7 @@
 	session_start();
 	$_SESSION ['username'] = $formData['username'];
 
-	header("Location: http://54.200.82.84/Quizard-Quest/Website/mainMenu.html");
+	header("Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html");
 
 	return true;
 ?>

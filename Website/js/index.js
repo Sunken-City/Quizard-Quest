@@ -2,7 +2,7 @@
 //Scripts to run in concert with index.html
 
 $(document).ready(function() {
-
+	alert("Page Loaded");
 	/*\
 	|*|				:: >> Authenticate User After Login << ::
 	|*|
