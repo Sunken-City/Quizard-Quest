@@ -1,5 +1,5 @@
-#Receives form data for creating a new user account
-#Author: Nathan Moore
+/*Receives form data for creating a new user account
+  Author: Nathan Moore*/
 
 <?php
         include 'API.php';
