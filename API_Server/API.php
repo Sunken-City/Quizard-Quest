@@ -40,7 +40,7 @@
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
 
-        $querys = "SELECT * FROM players WHERE(username = '$username');"
+        $querys = "SELECT * FROM players WHERE(username = '$username');";
         $query = mysqli_query($db,$querys);
         if (mysqli_num_rows($query) == 0) {
             die "Error";
