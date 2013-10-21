@@ -131,7 +131,7 @@
         if ($authenticated) {
 
             $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
-            $authenticated = slow_equals(
+            $authenticate = slow_equals(
                 $pbkdf2,
                 pbkdf2(
                     $params[HASH_ALGORITHM_INDEX],
@@ -147,7 +147,7 @@
         if ($authenticated) {
             // session_start();
             // $_SESSION['username'] = $username;
-            session_destroy();
+            //session_destroy();
         }
 
         mysqli_close($db);
