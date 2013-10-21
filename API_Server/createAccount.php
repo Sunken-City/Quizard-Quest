@@ -45,6 +45,8 @@
 
                         $gender = NULL;
                         create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$gender,$formData['Grade']);
+                } else if (isset($formData['gender']) && isset($formData['Grade'])){
+                	create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$formData['gender'],$formData['Grade']);
                 }
 
         } else {
