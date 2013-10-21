@@ -39,6 +39,17 @@
         mysqli_query($db,"INSERT INTO options (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
+
+        $query = "SELECT * FROM players WHERE (username = '$username');";
+        $result = mysqli_query($db,$query);
+
+        if (!(mysqli_num_rows($result) == 0)) {
+            die('The username you entered is already associated with a user.
+                 Please return to the previous page and log in with your 
+                 password or use a different username.');
+        }
+
+
         mysqli_close($db);
         return true;
     }
@@ -153,8 +164,8 @@
         }  
 
         if ($authenticated) {
-            // session_start();
-            // $_SESSION['username'] = $username;
+            session_start();
+            $_SESSION['username'] = $username;
             //session_destroy();
         }
 
