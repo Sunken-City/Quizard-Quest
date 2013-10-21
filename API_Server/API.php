@@ -131,7 +131,7 @@
         if ($authenticated) {
 
             $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
-            $authenticate = slow_equals(
+            $authenticated = slow_equals(
                 $pbkdf2,
                 pbkdf2(
                     $params[HASH_ALGORITHM_INDEX],
@@ -145,8 +145,11 @@
         }  
 
         if ($authenticated) {
-            // session_start();
-            // $_SESSION['username'] = $username;
+            if (isset $_SESSION['username']) {
+                unset($_SESSION['username']);
+            }
+            session_start();
+            $_SESSION['username'] = $username;
             //session_destroy();
         }
 

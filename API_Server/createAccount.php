@@ -60,6 +60,12 @@
 	// session_start();
 	// $_SESSION ['username'] = $formData['username'];
 
+    if (isset $_SESSION['username']) {
+        unset($_SESSION['username']);
+    }
+    session_start();
+    $_SESSION['username'] = $username;
+
 	/* Nathan's EC2: Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html */
 
 	header("Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html");
