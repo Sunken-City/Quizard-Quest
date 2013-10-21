@@ -158,7 +158,8 @@
         $correct_hash = mysqli_query($db,"SELECT password FROM players WHERE (username = '$username');");
 
         if (mysqli_num_rows($correct_hash) == 0) {
-            $authenticated = false;
+            //$authenticated = false;
+            return false;
         }
 
         $row_chash = mysqli_fetch_assoc($correct_hash);
@@ -168,7 +169,7 @@
         $params = explode(":", $hash_string);
         if(count($params) < HASH_SECTIONS) {
             mysqli_close($db);
-            $authenticated =  false;
+            return false;
         }
         
         if ($authenticated) {
