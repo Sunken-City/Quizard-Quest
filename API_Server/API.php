@@ -118,7 +118,11 @@
             $authenticated = false;
         }
 
-        $params = explode(":", $correct_hash);
+        $row_chash = mysqli_fetch_assoc($correct_hash);
+
+        $hash_string = $row_chash['password'];
+
+        $params = explode(":", $hash);
         if(count($params) < HASH_SECTIONS) {
             mysqli_close($db);
             $authenticated =  false;
@@ -141,8 +145,9 @@
         }  
 
         if ($authenticated) {
-            session_start();
-            $_SESSION['username'] = $username;
+            // session_start();
+            // $_SESSION['username'] = $username;
+            session_destroy();
         }
 
         mysqli_close($db);
