@@ -144,7 +144,7 @@
             );
         }  
 
-        mysqli_close($db);
+        //mysqli_close($db);
 
         if ($authenticated) {
             if (isset ($_SESSION['username'])) {
