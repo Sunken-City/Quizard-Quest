@@ -3,11 +3,10 @@
 <head>
 	<title> Create-A-Card</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type = "text/javascript" src="js/cupcakeordering.js"></script>
+	<script type = "text/javascript" src="js/cardCreation.js"></script>
 </head>
 <body>
 	<div id ="submitCard">
-		<form id="submitCardForm">
 			Category:<select id="categorySelect">
 				<option value="1">Math</option>
 				<option value="2">Science</option>
@@ -18,8 +17,14 @@
 			Subcategory: <input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." required>
 			Question:<input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." required>
 			Correct Answer:<input type ="text" id="newAnswer" maxlength="64" title="Please Enter An Answer." required>
-			<input type ="submit" id="submitQuestion" value ="Submit New Card">
-		</form>
+			Question Difficulty:<select id="newDifficulty">
+				<option value="1"> Easy </option>
+				<option value="2"> Normal </option>
+				<option value="3"> Hard </option>
+				<option value="4"> Impossible </option>
+			</select>
+			<input type ="button" id="submitQuestion" value ="Submit New Card">
 	</div>
 
 </body>
+</html>
