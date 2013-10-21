@@ -43,7 +43,7 @@
         $querys = "SELECT * FROM players WHERE(username = '$username');";
         $query = mysqli_query($db,$querys);
         if (mysqli_num_rows($query) == 0) {
-            die "Error";
+            die("Error");
         }
 
         mysqli_close($db);
