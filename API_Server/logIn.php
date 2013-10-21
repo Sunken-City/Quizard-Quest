@@ -1,6 +1,3 @@
-#Receives form data for Authenticating a current user
-#Author: Nathan Moore
-
 <?php
 
 	include "API.php";
