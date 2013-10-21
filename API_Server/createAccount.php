@@ -55,15 +55,6 @@
 	#Being new session and redirect#
 	################################
 
-	//session_destroy();
-
-	// session_start();
-	// $_SESSION ['username'] = $formData['username'];
-
-    session_destroy();
-    session_start();
-    $_SESSION['username'] = $username;
-
 	/* Nathan's EC2: Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html */
 
 	header("Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html");

@@ -144,14 +144,7 @@
             );
         }  
 
-        //mysqli_close($db);
-
-        if ($authenticated) {
-            session_destroy();
-            session_start();
-            $_SESSION['username'] = $username;
-            
-        }
+        mysqli_close($db);
 
         return $authenticated;
 
