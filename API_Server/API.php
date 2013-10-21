@@ -22,7 +22,7 @@
         $id = intval($idRow['decks.deckID']);
       
         mysqli_close($db);
-        return $deckID;
+        return $id;
     }
 
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
@@ -54,7 +54,7 @@
         mysqli_close($db);
     }
     
-   
+    
 
     // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
     /*
