@@ -145,7 +145,7 @@
         }  
 
         if ($authenticated) {
-            if (isset $_SESSION['username']) {
+            if (isset ($_SESSION['username'])) {
                 unset($_SESSION['username']);
             }
             session_start();
