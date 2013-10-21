@@ -55,8 +55,10 @@
 	#Being new session and redirect#
 	################################
 
-	session_start();
-	$_SESSION ['username'] = $formData['username'];
+	session_destroy();
+
+	// session_start();
+	// $_SESSION ['username'] = $formData['username'];
 
 	header("Location: http://54.200.66.93//Quizard-Quest/Website/mainMenu.html");
 
