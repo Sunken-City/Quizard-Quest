@@ -7,7 +7,8 @@ CREATE DATABASE quizardQuest;
 USE quizardQuest;
 
 CREATE TABLE players (
-   username varchar(50) PRIMARY KEY,
+   userID int NOT NULL AUTO_INCREMENT,
+   username varchar(50),
    password varchar(256) NOT NULL,
    salt varchar(256) NOT NULL,
    email varchar(50) NOT NULL,
@@ -15,21 +16,24 @@ CREATE TABLE players (
    lName varchar(50) NOT NULL,
    grade varchar(50),
    gender varchar(1),
-   permissions int default 0
+   permissions int default 0,
+   PRIMARY KEY(userID),
+   UNIQUE KEY(username),
+   UNIQUE KEY(email)
 ) engine = InnoDB;
 
 CREATE TABLE decks (
    deckID int NOT NULL AUTO_INCREMENT,
-   username varchar(50) NOT NULL,
+   userID int NOT NULL,
    name varchar(50) NOT NULL,
    PRIMARY KEY(deckID),
-   UNIQUE KEY(username, name),
-   FOREIGN KEY(username) REFERENCES players(username)
+   UNIQUE KEY(userID, name),
+   FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
 CREATE TABLE cards (
    cardID int NOT NULL AUTO_INCREMENT,
-   username varchar(50) NOT NULL,
+   userID int NOT NULL,
    question varchar(512) NOT NULL,
    answer varchar(64) NOT NULL,
    category int NOT NULL,
@@ -37,7 +41,7 @@ CREATE TABLE cards (
    difficulty int NOT NULL,
    rating int default 0,
    PRIMARY KEY(cardID),
-   FOREIGN KEY(username) REFERENCES players(username)
+   FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
 CREATE TABLE deckCards (
@@ -51,12 +55,12 @@ CREATE TABLE options (
    avatar varchar(100),
    carBorder varchar(100),
    bgColor varchar(10),
-   username varchar(50) NOT NULL,
-   FOREIGN KEY(username) REFERENCES players(username)
+   userID int NOT NULL,
+   FOREIGN KEY(userID) REFERENCES players(userID
 ) engine = InnoDB;
 
 CREATE TABLE stats (
-   username varchar(50) NOT NULL,
+   userID int NOT NULL,
    mathExp int default 0,
    sciExp int default 0,
    ssExp int default 0,
@@ -64,11 +68,11 @@ CREATE TABLE stats (
    langExp int default 0,
    totExp int default 0,
    gold int default 100,
-   FOREIGN KEY(username) REFERENCES players(username)
+   FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
 CREATE TABLE achievements (
-   username varchar(50) NOT NULL,
+   userID int NOT NULL,
    perfectGame int default 0,
    closeCall int default 0,
    mathQuizzard int default 0,
@@ -76,5 +80,5 @@ CREATE TABLE achievements (
    ssQuizzard int default 0,
    engQuizzard int default 0,
    langQuizzard int default 0,
-   FOREIGN KEY(username) REFERENCES players(username)
+   FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
