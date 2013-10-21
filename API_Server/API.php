@@ -122,7 +122,7 @@
 
         $hash_string = $row_chash['password'];
 
-        $params = explode(":", $hash);
+        $params = explode(":", $hash_string);
         if(count($params) < HASH_SECTIONS) {
             mysqli_close($db);
             $authenticated =  false;
