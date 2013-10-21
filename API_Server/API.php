@@ -144,6 +144,12 @@
             );
         }  
 
+        if ($authenticated) {
+            // session_start();
+            // $_SESSION['username'] = $username;
+            //session_destroy();
+        }
+
         mysqli_close($db);
 
         return $authenticated;
