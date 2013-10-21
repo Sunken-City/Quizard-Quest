@@ -112,7 +112,7 @@
             exit();
         }
 
-        $correct_hash = mysqli_query($db,"SELECT players.password FROM players WHERE (players.username = $username);");
+        $correct_hash = mysqli_query($db,"SELECT password FROM players WHERE (username = '$username');");
 
         if (mysqli_num_rows($correct_hash) == 0) {
             $authenticated = false;
