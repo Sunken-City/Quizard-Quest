@@ -40,6 +40,7 @@
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
         mysqli_close($db);
+        return true;
     }
 
 
