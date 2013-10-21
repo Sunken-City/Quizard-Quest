@@ -144,6 +144,8 @@
             );
         }  
 
+        mysqli_close($db);
+
         if ($authenticated) {
             if (isset ($_SESSION['username'])) {
                 unset($_SESSION['username']);
@@ -152,8 +154,6 @@
             $_SESSION['username'] = $username;
             //session_destroy();
         }
-
-        mysqli_close($db);
 
         return $authenticated;
 
