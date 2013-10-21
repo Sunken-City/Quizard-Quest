@@ -9,8 +9,8 @@
             exit();
         }
       
-        mysqli_query($db,"INSERT INTO decks (username, name) VALUES ($username, $deckname);");
-        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (username = $username AND name = $deckname);");
+        mysqli_query($db,"INSERT INTO decks (username, name) VALUES ('$username', '$deckname');");
+        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (username = '$username' AND name = '$deckname');");
 
         if (!mysqli_query($db,$insertAllQuery)) {
             echo "There was an error processing your request. Please return to the previous page. Here's the error if you wanted to know:\n";
@@ -42,11 +42,19 @@
         mysqli_close($db);
         return true;
     }
-
-
-
-
-
+    
+    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty)
+    {
+       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        mysqli_query($db, "INSERT INTO cards(username, question, answer, category, subCategory, difficulty) VALUES ('$username', '$question', '$answer', '$category', '$subCategory', '$difficulty');");
+        mysqli_close($db);
+    }
+    
+   
 
     // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
     /*
