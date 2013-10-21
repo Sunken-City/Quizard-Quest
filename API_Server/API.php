@@ -54,7 +54,20 @@
         mysqli_close($db);
     }
     
+    function get_all_cards($username)
+    {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        
+        $cards = mysqli_query($db, "SELECT * FROM cards WHERE cards.username = '$username';");
+        $result = mysqli_fetch_assoc($cards);
+        echo json_encode($result);
+    }
     
+    function get_category_cards($username, $c 
 
     // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
     /*
