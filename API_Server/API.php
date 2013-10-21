@@ -135,8 +135,8 @@
                     (int)$params[HASH_ITERATION_INDEX],
                     strlen($pbkdf2),
                     true
-            )
-
+                )
+            );
         }  
 
         if ($authenticated) {
