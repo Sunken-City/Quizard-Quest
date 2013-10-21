@@ -102,6 +102,8 @@
 
     function validate_password($username, $password) {
 
+        $authenticated = true;
+
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
       
         if (mysqli_connect_errno()) {
@@ -110,29 +112,42 @@
         }
 
         $correct_hash = mysqli_query($db,"SELECT players.password FROM players WHERE (players.username = $username);");
+
+        if (mysqli_num_rows($correct_hash) == 0) {
+            $authenticated = false;
+        }
+
         $params = explode(":", $correct_hash);
         if(count($params) < HASH_SECTIONS) {
             mysqli_close($db);
-            return false;
+            $authenticated =  false;
         }
-           
-        $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
-        $authenticate = slow_equals(
-            $pbkdf2,
-            pbkdf2(
-                $params[HASH_ALGORITHM_INDEX],
-                $password,
-                $params[HASH_SALT_INDEX],
-                (int)$params[HASH_ITERATION_INDEX],
-                strlen($pbkdf2),
-                true
-            )
-        $postData = array('success' => $authenticated);
-	echo json_encode($postData);
+        
+        if ($authenticated) {
 
-        );
+            $pbkdf2 = base64_decode($params[HASH_PBKDF2_INDEX]);
+            $authenticate = slow_equals(
+                $pbkdf2,
+                pbkdf2(
+                    $params[HASH_ALGORITHM_INDEX],
+                    $password,
+                    $params[HASH_SALT_INDEX],
+                    (int)$params[HASH_ITERATION_INDEX],
+                    strlen($pbkdf2),
+                    true
+            )
+
+        }  
+
+        if ($authenticated) {
+            session_start();
+            $_SESSION['username'] = $username;
+        }
 
         mysqli_close($db);
+
+        return $authenticated;
+
     }
 
     // Compares two strings $a and $b in length-constant time.

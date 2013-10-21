@@ -1,3 +1,6 @@
+#Receives form data for creating a new user account
+#Author: Nathan Moore
+
 <?php
 	include 'API.php';
 
@@ -48,18 +51,14 @@
 		die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
 	}
 
-	#######################################################
-	#If form data was successfully authenticated/submitted#
-	#######################################################
-	// if ($submission) {
-	// 	# Redirect to
-	// 	session_start();
-	// 	$_SESSION['uname'] = $formData['Email'];	
-	// 	include 'redirect.php';
+	################################
+	#Being new session and redirect#
+	################################
 
-	// } else {
-	// 	die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
-	// }
-	//echo "somewhere else";
+	session_start();
+	$_SESSION ['username'] = $formData['username'];
+
+	header("Location: http://54.200.82.84/Quizard-Quest/Website/mainMenu.html");
+
 	return true;
 ?>
