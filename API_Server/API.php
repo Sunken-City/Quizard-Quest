@@ -70,9 +70,14 @@
         grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname',
         '$lastname', '$gender', '$grade', '$isAdmin');");
         
-        mysqli_query($db,"INSERT INTO options (username) VALUES ('$username');");
-        mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
-        mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
+        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
+        '$username';");
+        $result = mysqli_fetch_assoc($select);
+        $userID = $result['userID'];
+        
+        mysqli_query($db,"INSERT INTO options (userID) VALUES ('$userID');");
+        mysqli_query($db,"INSERT INTO achievements (userID) VALUES ('$userID');");
+        mysqli_query($db,"INSERT INTO stats (userID) VALUES ('$userID');");
 
         $query = "SELECT * FROM players WHERE (username = '$username');";
         $result = mysqli_query($db,$query);
