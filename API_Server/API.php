@@ -100,13 +100,13 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
-        '$username';");
+        $query = "SELECT userID FROM players WHERE (username = '$username');";
+        $select = mysqli_query($db, $query);
         $result = mysqli_fetch_assoc($select);
         $userID = $result['userID'];
-        mysqli_query($db, "INSERT INTO cards(userID, question, answer, category, subCategory,
-        difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory',
-        '$difficulty');");
+        $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) 
+            VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
+        mysqli_query($db, $query);
         mysqli_close($db);
         
     }
