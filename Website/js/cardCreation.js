@@ -12,7 +12,7 @@ $("#submitQuestion").click(function(e){
 	alert(category + subcategory + question + answer + difficulty);
 
 
-	var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
+	var formData = {'category':category,'subcategory':subcategory,'question':question, 'answer':answer, 'difficulty':difficulty};
 
 	$.post("../API_Server/cardCreation.php",formData,function(){
 		alert("Question Added");
