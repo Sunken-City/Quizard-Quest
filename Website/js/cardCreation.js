@@ -9,7 +9,7 @@ $("#submitQuestion").click(function(e){
 	var answer = document.getElementById('newAnswer').value;
 	var difficulty = document.getElementById('newDifficulty').value;
 
-	alert(category,subcategory,question,answer,difficulty);
+	alert(category + subcategory + question + answer + difficulty);
 
 
 	var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
