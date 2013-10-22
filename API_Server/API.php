@@ -8,12 +8,21 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-      
-        mysqli_query($db,"INSERT INTO decks (username, name) VALUES ('$username', '$deckname');");
-        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (username = '$username' AND name = '$deckname');");
+        
+        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
+        '$username';");
+        $result = mysqli_fetch_assoc($select);
+        $userID = $result['userID'];
+        
+        $insertQuery = mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID',
+        '$deckname');");
+        
+        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND
+        name = '$deckname');");
 
-        if (!mysqli_query($db,$insertAllQuery)) {
-            echo "There was an error processing your request. Please return to the previous page. Here's the error if you wanted to know:\n";
+        if (!mysqli_query($db,$insertQuery)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
         }
 
@@ -25,7 +34,7 @@
         return $id;
     }
     
-    function add_card_to_deck($username, $deckID, $question, $answer, $category, $subCategory, $difficulty)
+    function add_card_to_deck($username, $deckID, $cardID)
     {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
@@ -34,14 +43,14 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
+                
+        $insertQuery = mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID',
+        '$cardID');");
         
-        $cardID = create_card($question, $answer, $category, $subCategory, $difficulty);
-        
-        mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');");
-        
-        if (!mysqli_query($db,$insertAllQuery)) 
+        if (!mysqli_query($db,$insertQuery)) 
         {
-            echo "There was an error processing your request. Please return to the previous page. Here's the error if you wanted to know:\n";
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
         }
         
@@ -56,8 +65,11 @@
         }
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
-        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) 
-        VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');");
+        
+        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender,
+        grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname',
+        '$lastname', '$gender', '$grade', '$isAdmin');");
+        
         mysqli_query($db,"INSERT INTO options (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO achievements (username) VALUES ('$username');");
         mysqli_query($db,"INSERT INTO stats (username) VALUES ('$username');");
@@ -83,8 +95,15 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        mysqli_query($db, "INSERT INTO cards(username, question, answer, category, subCategory, difficulty) VALUES ('$username', '$question', '$answer', '$category', '$subCategory', '$difficulty');");
+        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
+        '$username';");
+        $result = mysqli_fetch_assoc($select);
+        $userID = $result['userID'];
+        mysqli_query($db, "INSERT INTO cards(userID, question, answer, category, subCategory,
+        difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory',
+        '$difficulty');");
         mysqli_close($db);
+        
     }
     
     function get_all_cards($username)
@@ -95,9 +114,11 @@
             exit();
         }
         
-        $cards = mysqli_query($db, "SELECT * FROM cards WHERE cards.username = '$username';");
+        $cards = mysqli_query($db, "SELECT * FROM cards INNER JOIN players ON cards.userID =
+        players.userID WHERE players.username = '$username';");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
+        mysqli_close($db);
     }
     
     function get_category_cards($username, $category)
@@ -108,9 +129,11 @@
             exit();
         }
         
-        $cards = mysqli_query($db, "SELECT * FROM cards WHERE cards.username = '$username' AND category = '$category');");
+        $cards = mysqli_query($db, "SELECT * FROM cards INNER JOIN players ON cards.userID =
+        players.userID WHERE cards.username = '$username' AND category = '$category');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
+        mysqli_close($db);
     }
 
     // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
