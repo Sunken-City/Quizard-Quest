@@ -2,7 +2,7 @@
 
 	include "API.php";
 
-	$username = $_POST['username'];
+	$username = $_SESSION['username'];
 	$category = $_POST['category'];
 	$subcategory = $_POST['subcategory'];
 	$question = $_POST['question'];
