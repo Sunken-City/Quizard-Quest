@@ -3,14 +3,13 @@ body {
 }
 
 #logInSection {
-	position: absolute;
-	display:inline;
 	left:1290px;
 	background-color:gray;
 }
 
 #logInDiv {
 	background-color: gray;
+	
 }
 
 #createAccountSection{
