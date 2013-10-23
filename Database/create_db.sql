@@ -56,7 +56,7 @@ CREATE TABLE options (
    carBorder varchar(100),
    bgColor varchar(10),
    userID int NOT NULL,
-   FOREIGN KEY(userID) REFERENCES players(userID
+   FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
 CREATE TABLE stats (
