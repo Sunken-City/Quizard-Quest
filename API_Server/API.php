@@ -57,7 +57,8 @@
         
     }
 
-    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
+    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0)
+    {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -94,7 +95,7 @@
         return true;
     }
     
-    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty)
+    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty) //ISSUES: Can make duplicate cards if the query is executed twice.
     {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -112,7 +113,7 @@
         
     }
     
-    function get_all_cards($username)
+    function get_all_cards($username) //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
     {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -127,7 +128,7 @@
         mysqli_close($db);
     }
     
-    function get_category_cards($username, $category)
+    function get_category_cards($username, $category) //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
     {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
