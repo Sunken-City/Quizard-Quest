@@ -51,6 +51,8 @@ CREATE TABLE deckCards (
    FOREIGN KEY(cardID) REFERENCES cards(cardID)
 ) engine = InnoDB;
 
+ALTER TABLE deckCards ADD CONSTRAINT noDupes UNIQUE(deckID, cardID);
+
 CREATE TABLE options (
    avatar varchar(100),
    carBorder varchar(100),
