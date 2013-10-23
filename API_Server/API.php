@@ -26,7 +26,7 @@
 
 
 
-        $idRow = mysqli_fetch_assoc($deckID);
+        $idRow = mysqli_fetch_assoc("$deckID");
 
         $id = intval($idRow['decks.deckID']);
       
