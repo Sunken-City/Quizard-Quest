@@ -14,17 +14,17 @@
         $result = mysqli_fetch_assoc($select);
         $userID = $result['userID'];
         
-        $insertQuery = mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID',
-        '$deckname');");
-        
-        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND
-        name = '$deckname');");
-
-        if (!$insertQuery) {
+        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');") 
+        {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
         }
+        
+        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND
+        name = '$deckname');");
+
+
 
         $idRow = mysqli_fetch_assoc($deckID);
 
