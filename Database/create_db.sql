@@ -51,8 +51,6 @@ CREATE TABLE deckCards (
    FOREIGN KEY(cardID) REFERENCES cards(cardID)
 ) engine = InnoDB;
 
-ALTER TABLE deckCards ADD CONSTRAINT noDupes UNIQUE(deckID, cardID);
-
 CREATE TABLE options (
    avatar varchar(100),
    carBorder varchar(100),
@@ -84,3 +82,7 @@ CREATE TABLE achievements (
    langQuizzard int default 0,
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
+
+#Adds a constraint that prevents duplicates being added.
+ALTER TABLE deckCards ADD CONSTRAINT noDupes UNIQUE(deckID, cardID);
+ALTER TABLE cards ADD CONSTRAINT noDupes UNIQUE(userID, question, answer, category);

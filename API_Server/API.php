@@ -35,7 +35,7 @@
         return $id;
     }
     
-    function add_card_to_deck($username, $deckID, $cardID) //ISSUES: You can input duplicate values. It protects from bad values, but not very gracefully.
+    function add_card_to_deck($username, $deckID, $cardID) //It protects from bad values, but not very gracefully.
     {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
@@ -92,7 +92,7 @@
         return true;
     }
     
-    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty) //ISSUES: Can make duplicate cards if the query is executed twice.
+    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty)
     {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {

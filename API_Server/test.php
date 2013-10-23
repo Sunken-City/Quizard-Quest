@@ -6,6 +6,6 @@
   //create_card('picoriley', 'sqrt(onions)', "shallots", 2, null, 1);
   //get_all_cards('picoriley');
   //get_category_cards('picoriley', 1);
-  add_card_to_deck('picoriley', 7, 9); 
+  //add_card_to_deck('picoriley', 7, 9); 
   //echo "<h1> Card Created </h1>";
 ?>
