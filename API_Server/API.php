@@ -12,7 +12,7 @@
         $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
         '$username';");
         $result = mysqli_fetch_assoc($select);
-        $userID = $result['userID'];
+        $userID = $result["userID"];
         
         if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');"))
         {
