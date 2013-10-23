@@ -1,6 +1,7 @@
 <?php
 
-    function create_deck($username, $deckname) {
+    function create_deck($username, $deckname) //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
+    {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
