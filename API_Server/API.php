@@ -35,7 +35,7 @@
         return $id;
     }
     
-    function add_card_to_deck($username, $deckID, $cardID)
+    function add_card_to_deck($username, $deckID, $cardID) //ISSUES: You can input duplicate values. It protects from bad values, but not very gracefully.
     {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
@@ -45,10 +45,7 @@
             exit();
         }
                 
-        $insertQuery = mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID',
-        '$cardID');");
-        
-        if (!mysqli_query($db,$insertQuery)) 
+        if (!mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');")) 
         {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
