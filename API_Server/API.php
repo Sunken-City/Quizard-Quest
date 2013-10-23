@@ -14,7 +14,7 @@
         $result = mysqli_fetch_assoc($select);
         $userID = $result['userID'];
         
-        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');") 
+        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');"))
         {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
