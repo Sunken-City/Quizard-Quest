@@ -134,12 +134,26 @@
         }
         
         $cards = mysqli_query($db, "SELECT * FROM cards INNER JOIN players ON cards.userID =
-        players.userID WHERE cards.username = '$username' AND category = '$category');");
+        players.userID WHERE (cards.username = '$username' AND category = '$category');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
 
+    function get_options($username)
+    {
+	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+
+        $cards = mysqli_query($db, "SELECT * FROM options INNER JOIN players ON options.userID =
+        players.userID WHERE (options.username = '$username');");
+        $result = mysqli_fetch_assoc($cards);
+        echo json_encode($result);
+        mysqli_close($db);
+    }
     // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
     /*
      * Password hashing with PBKDF2.
