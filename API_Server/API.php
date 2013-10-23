@@ -13,12 +13,15 @@
         '$username';");
         $result = mysqli_fetch_assoc($select);
         $userID = $result['userID'];
+        echo 'No probs';
         
         $insertQuery = mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID',
         '$deckname');");
+        echo 'No probs2'
         
         $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND
         name = '$deckname');");
+        echo 'None probs'
 
         if (!mysqli_query($db,$insertQuery)) {
             echo "There was an error processing your request. Please return to the previous page.
