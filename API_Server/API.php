@@ -82,14 +82,14 @@
         $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
         '$username';");
         $result = mysqli_fetch_assoc($select);
-        $userID = $result['userID'];
+        $userID = intval($result['userID'],10);
         
         mysqli_query($db,"INSERT INTO options (userID) VALUES ('$userID');");
         mysqli_query($db,"INSERT INTO achievements (userID) VALUES ('$userID');");
         mysqli_query($db,"INSERT INTO stats (userID) VALUES ('$userID');");
 
         session_start();
-        $_SESSION ['userID'] = $formData['userID'];
+        $_SESSION ['userID'] = $userID;
 
         mysqli_close($db);
         return true;
