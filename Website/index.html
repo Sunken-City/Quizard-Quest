@@ -16,29 +16,28 @@ Created by nathanDmoore Saturday October 19,2013
 		<header>
 			<nav id="navbar">
 				<button type="button" id="logOut" class="navButton">Log Out</button>
+
+				<section id="logInSection">
+					<div id="logInDiv">
+						<form id="logIn" action="#" method="POST" autocomplete="off">
+							<table>
+								<tr>
+									<td><label>Username: </label></td>
+									<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
+								</tr>
+								<tr>
+				        			<td><label>Password: </label></td>
+				        			<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
+				        		</tr>
+			        			<tr>
+			        				<td></td>
+			        				<td class="submitButton"><input type="submit" value="Log In" id="logInButton"/></td>
+			        			</tr>
+			        		</table>
+						</form>
+					</div>
+				</section>
 			</nav>
-
-			<section id="logInSection">
-				<div id="logInDiv">
-					<form id="logIn" action="#" method="POST" autocomplete="off">
-						<table>
-							<tr>
-								<td><label>Username: </label></td>
-								<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
-							</tr>
-							<tr>
-			        			<td><label>Password: </label></td>
-			        			<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
-			        		</tr>
-		        			<tr>
-		        				<td></td>
-		        				<td class="submitButton"><input type="submit" value="Log In" id="logInButton"/></td>
-		        			</tr>
-		        		</table>
-					</form>
-				</div>
-			</section>
-
 		</header>
 
 		<section id="createAccountSection">

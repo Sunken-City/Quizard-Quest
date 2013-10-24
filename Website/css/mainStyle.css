@@ -1,12 +1,15 @@
 body {
 	background-color:blue;
+	color: white;
 }
 
 #logInSection {
-	position: absolute;
-	display:inline;
-	left:1290px;
+	/*position: absolute;*/
+	/*display:inline;*/
+	/*left:1290px;*/
+	float: right;
 	background-color:gray;
+	width: 260px;
 }
 
 #logInDiv {
@@ -16,7 +19,12 @@ body {
 #createAccountSection{
 	margin-top: 180px;
 	float:right;
-	
+	margin-right: -260px;
+	width: 260px;
+}
+
+#createAccountSection h1{
+	text-align: center;
 }
 
 #createAccountDiv {
