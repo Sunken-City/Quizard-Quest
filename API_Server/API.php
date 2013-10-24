@@ -62,6 +62,16 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
+        /*make sure user isn't already in the database*/
+        $query = "SELECT * FROM players WHERE (username = '$username');";
+        $result = mysqli_query($db,$query);
+
+        if (!(mysqli_num_rows($result) == 0)) {
+            die('The username you entered is already associated with a user.
+                 Please return to the previous page and log in with your 
+                 password or use a different username.');
+        }
+
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
         
@@ -77,15 +87,6 @@
         mysqli_query($db,"INSERT INTO options (userID) VALUES ('$userID');");
         mysqli_query($db,"INSERT INTO achievements (userID) VALUES ('$userID');");
         mysqli_query($db,"INSERT INTO stats (userID) VALUES ('$userID');");
-
-        $query = "SELECT * FROM players WHERE (username = '$username');";
-        $result = mysqli_query($db,$query);
-
-        if (!(mysqli_num_rows($result) == 0)) {
-            die('The username you entered is already associated with a user.
-                 Please return to the previous page and log in with your 
-                 password or use a different username.');
-        }
 
         session_start();
         $_SESSION ['userID'] = $formData['userID'];
