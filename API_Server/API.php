@@ -87,6 +87,8 @@
                  password or use a different username.');
         }
 
+        session_start();
+        $_SESSION ['userID'] = $formData['userID'];
 
         mysqli_close($db);
         return true;
@@ -249,7 +251,7 @@
             exit();
         }
 
-        $correct_hash = mysqli_query($db,"SELECT password FROM players WHERE (username = '$username');");
+        $correct_hash = mysqli_query($db,"SELECT password,userID FROM players WHERE (username = '$username');");
 
         if (mysqli_num_rows($correct_hash) == 0) {
             //$authenticated = false;
@@ -259,6 +261,7 @@
         $row_chash = mysqli_fetch_assoc($correct_hash);
 
         $hash_string = $row_chash['password'];
+        $userID = $row_chash['userID'];
 
         $params = explode(":", $hash_string);
         if(count($params) < HASH_SECTIONS) {
@@ -283,7 +286,7 @@
         }  
 
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION ['userID'] = $formData['userID'];
 
         mysqli_close($db);
 
