@@ -48,6 +48,5 @@ int main(int argc,char *argv[])
   }
 
   system(str);
-  free(str);
   return 0;
 }
