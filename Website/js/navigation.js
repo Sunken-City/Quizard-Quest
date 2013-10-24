@@ -4,6 +4,10 @@ $(document).ready(function() {
 
 		$.ajax({
 			url: "../API_Server/logOut.php"
+			success: function () {
+				window.location.href = "index.html";
+				//http://54.200.66.93/Quizard-Quest/Website/
+			}
 		});
 
 	});

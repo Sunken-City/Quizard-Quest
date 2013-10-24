@@ -1,6 +1,5 @@
 <?php
-	// if (isset($_SESSION['userID'])) {
-	// 	session_destroy();
-	// }
-	header("Location: http://54.200.66.93/Quizard-Quest/Website/");
+	if (isset($_SESSION['userID'])) {
+		session_destroy();
+	}
 ?>
