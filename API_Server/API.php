@@ -29,7 +29,7 @@
 
         $idRow = mysqli_fetch_assoc($fetch);
 
-        $id = intval($idRow['decks.deckID']);
+        $id = intval($idRow['decks.deckID'],10);
       
         mysqli_close($db);
         return $id;
@@ -262,7 +262,7 @@
         $row_chash = mysqli_fetch_assoc($correct_hash);
 
         $hash_string = $row_chash['password'];
-        $userID = $row_chash['userID'];
+        $userID = intval($row_chash['userID'],10);
 
         $params = explode(":", $hash_string);
         if(count($params) < HASH_SECTIONS) {
@@ -287,7 +287,7 @@
         }  
 
         session_start();
-        $_SESSION ['userID'] = $formData['userID'];
+        $_SESSION ['userID'] = $userID;
 
         mysqli_close($db);
 
