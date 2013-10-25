@@ -27,11 +27,10 @@ $(document).ready(function(){
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
 		$.post("../API_Server/CardCreation.php",formData,function(){
-			alert("Question Added");
 		});
 
 		e.preventDefault();
-
+		alert("Question Added");
 		window.location.href = "cardCreation.html";
 	});
 
