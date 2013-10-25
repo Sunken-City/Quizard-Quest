@@ -6,6 +6,9 @@ DROP DATABASE IF EXISTS quizardQuest;
 CREATE DATABASE quizardQuest;
 USE quizardQuest;
 
+
+#Creates the table players. Primary key is the userID, which SQL automatically generates
+#The username and email are both independently unique so as to avoid duplicates of either 
 CREATE TABLE players (
    userID int NOT NULL AUTO_INCREMENT,
    username varchar(50),
@@ -22,6 +25,8 @@ CREATE TABLE players (
    UNIQUE KEY(email)
 ) engine = InnoDB;
 
+#Creates the decks table with another auto-incremented primary key, and a unique tuple of userID and
+#the name of the deck.
 CREATE TABLE decks (
    deckID int NOT NULL AUTO_INCREMENT,
    userID int NOT NULL,
@@ -31,6 +36,8 @@ CREATE TABLE decks (
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
+#Creates the cards table with yet another auto-incremented primary key of cardID. Every card MUST have
+# a category, but does not need a subCategory.
 CREATE TABLE cards (
    cardID int NOT NULL AUTO_INCREMENT,
    userID int NOT NULL,
@@ -44,6 +51,7 @@ CREATE TABLE cards (
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
+#Creates a reference table between decks and cards so as to relate the two in a coherent manner.
 CREATE TABLE deckCards (
    deckID int NOT NULL,
    cardID int NOT NULL,
@@ -51,6 +59,7 @@ CREATE TABLE deckCards (
    FOREIGN KEY(cardID) REFERENCES cards(cardID)
 ) engine = InnoDB;
 
+#A table that holds the options for each player, which can be editable.
 CREATE TABLE options (
    avatar varchar(100),
    carBorder varchar(100),
@@ -59,6 +68,8 @@ CREATE TABLE options (
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
+#Creates the table that holds the statistics for each player, which will be updated after the 
+#completion of a game mode.
 CREATE TABLE stats (
    userID int NOT NULL,
    mathExp int default 0,
@@ -71,6 +82,8 @@ CREATE TABLE stats (
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
+#Creates the table that will keep track of a users achievments, which will be edited by the PHP if
+#they achieve the achievements.
 CREATE TABLE achievements (
    userID int NOT NULL,
    perfectGame int default 0,
