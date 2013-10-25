@@ -290,7 +290,9 @@
                 )
             );
         }  
-
+        if (isset($_SESSION['userID'])) {
+            session_destroy();
+        }
         session_start();
         $_SESSION ['userID'] = $userID;
 
