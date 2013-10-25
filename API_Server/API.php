@@ -192,6 +192,8 @@
         mysqli_close($db);
     }
     
+    function set_options(
+    
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
     |*|                    #   on https://crackstation.net/hashing-security.htm
