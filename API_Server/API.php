@@ -5,9 +5,9 @@
     \*/
 
     session_start();
-
-    function create_deck($deckname) //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
-    {
+   
+    //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
+    function create_deck($deckname) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
@@ -18,8 +18,7 @@
         
         $userID = $_SESSION['userID'];
         
-        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');"))
-        {
+        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');")){
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
@@ -37,18 +36,16 @@
         return $id;
     }
     
-    function add_card_to_deck($deckID, $cardID) //It protects from bad values, but not very gracefully.
-    {
+    //It protects from bad values, but not very gracefully.
+    function add_card_to_deck($deckID, $cardID) {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
-        if (mysqli_connect_errno()) 
-        {
+        if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
                 
-        if (!mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');")) 
-        {
+        if (!mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');")) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
@@ -56,8 +53,7 @@
         
     }
 
-    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0)
-    {
+    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -94,8 +90,7 @@
         return true;
     }
     
-    function create_card($question, $answer, $category, $subCategory = null, $difficulty)
-    {
+    function create_card($question, $answer, $category, $subCategory = null, $difficulty) {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
@@ -110,23 +105,28 @@
         
     }
     
-    function get_all_cards() //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
-                             //POTENTIAL FIX: Go through a loop to get each row of the associative array, but store it where?
-    {
+    //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
+    //POTENTIAL FIX: Go through a loop to get each row of the associative array, but store it where?
+    function get_all_cards() {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
+        $table = array();
         $userID = $_SESSION['userID'];
+        
         $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID';");
-        $result = mysqli_fetch_assoc($cards);
-        echo json_encode($result);
+        $x = mysqli_num_rows($cards);
+        for ($i = 0; $i < $x; $i++) {
+            array_push($table, mysqli_fetch_assoc($cards));
+        }
+        echo json_encode($table);
         mysqli_close($db);
     }
     
-    function get_category_cards($category) //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
-    {
+    //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
+    function get_category_cards($category) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
@@ -139,9 +139,8 @@
         mysqli_close($db);
     }
 
-    function get_options()
-    {
-	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+    function get_options() {
+	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -153,9 +152,8 @@
         mysqli_close($db);
     }
     
-    function get_achievements()
-    {
-	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+    function get_achievements() {
+	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -167,9 +165,8 @@
         mysqli_close($db);
     }
     
-    function get_stats()
-    {
-	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+    function get_stats() {
+	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -181,10 +178,19 @@
         mysqli_close($db);
     }
     
-    function set_options()
-    {
-    
+    function set_options($avatar, $cardBoarder, $bgColor){
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+        mysqli_query($db, "UPDATE options SET avatar = '$avatar', carBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';");
+        
     }
+    
+    
+    
     
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
