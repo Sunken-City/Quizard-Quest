@@ -22,7 +22,6 @@ $(document).ready(function(){
 		var answer = document.getElementById('newAnswer').value;
 		var difficulty = document.getElementById('newDifficulty').value;
 
-		alert(category + subcategory + question + answer + difficulty);
 		//Hoping that this will work now. Let's Test This Out
 
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
