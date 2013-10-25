@@ -227,8 +227,7 @@
             ));
     }
 
-    function create_salt()
-    {
+    function create_salt() {
        $salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
        return $salt;
     }
@@ -305,8 +304,7 @@
     function slow_equals($a, $b)  {
 
         $diff = strlen($a) ^ strlen($b);
-        for($i = 0; $i < strlen($a) && $i < strlen($b); $i++)
-        {
+        for($i = 0; $i < strlen($a) && $i < strlen($b); $i++) {
             $diff |= ord($a[$i]) ^ ord($b[$i]);
         }
         return $diff === 0;
