@@ -48,6 +48,7 @@ CREATE TABLE cards (
    difficulty int NOT NULL,
    rating int default 0,
    PRIMARY KEY(cardID),
+   UNIQUE KEY(userID, question, answer, category),
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 
@@ -55,6 +56,7 @@ CREATE TABLE cards (
 CREATE TABLE deckCards (
    deckID int NOT NULL,
    cardID int NOT NULL,
+   PRIMARY KEY(deckID, cardID),
    FOREIGN KEY(deckID) REFERENCES decks(deckID),
    FOREIGN KEY(cardID) REFERENCES cards(cardID)
 ) engine = InnoDB;
@@ -95,7 +97,3 @@ CREATE TABLE achievements (
    langQuizzard int default 0,
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
-
-#Adds a constraint that prevents duplicates being added.
-ALTER TABLE deckCards ADD CONSTRAINT noDupes UNIQUE(deckID, cardID);
-ALTER TABLE cards ADD CONSTRAINT noDupes UNIQUE(userID, question, answer, category);
