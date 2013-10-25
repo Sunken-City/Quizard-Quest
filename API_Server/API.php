@@ -104,6 +104,7 @@
         $userID = $_SESSION['userID'];
         
         $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
+
         mysqli_query($db, $query);
         mysqli_close($db);
         
