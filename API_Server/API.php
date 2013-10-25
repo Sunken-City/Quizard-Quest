@@ -101,17 +101,17 @@
         return true;
     }
     
-    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty)
+    function create_card($userID, $question, $answer, $category, $subCategory = null, $difficulty)
     {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        $query = "SELECT userID FROM players WHERE (username = '$username');";
-        $select = mysqli_query($db, $query);
-        $result = mysqli_fetch_assoc($select);
-        $userID = $result['userID'];
+        // $query = "SELECT userID FROM players WHERE (username = '$username');";
+        // $select = mysqli_query($db, $query);
+        // $result = mysqli_fetch_assoc($select);
+        // $userID = $result['userID'];
         $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) 
             VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
         mysqli_query($db, $query);
