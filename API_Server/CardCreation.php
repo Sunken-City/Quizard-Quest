@@ -8,7 +8,7 @@
 	include "API.php";
 	session_start();
 
-	$username = $_SESSION['username'];
+	$username = $_SESSION['userID'];
 	$category = $_POST['category'];
 	$subcategory = $_POST['subcategory'];
 	$question = $_POST['question'];
