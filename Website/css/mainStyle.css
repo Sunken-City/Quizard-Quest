@@ -4,12 +4,24 @@
  */
 
 body {
-	background-color:blue;
-	color: white;
+	background-color:rgb(188,188,188);
+	color: rgb(255,153,0);
+}
+
+h1,p {
+	color: rgb(66,66,66);
 }
 
 label {
 	margin-right: 1em;
+}
+
+button {
+	color: rgb(50,153,187);
+}
+
+input,select,option {
+	color: rgb(255,153,0);
 }
 
 #logInSection {
@@ -17,12 +29,12 @@ label {
 	/*display:inline;*/
 	/*left:1290px;*/
 	float: right;
-	background-color:gray;
+	background-color:rgb(66,66,66);
 	width: 285px;
 }
 
 #logInDiv {
-	background-color: gray;
+	background-color: rgb(66,66,66);
 }
 
 #createAccountSection{
@@ -34,8 +46,17 @@ label {
 
 #createAccountSection h1{
 	text-align: center;
+	color: rgb(255,153,0);
 }
 
 #createAccountDiv {
-	background-color:red;
+	background-color:rgb(66,66,66);
+}
+
+#submitCard {
+	color: rgb(66,66,66);
+}
+
+#submitCard option,input,select{
+	color: rgb(66,66,66);
 }
