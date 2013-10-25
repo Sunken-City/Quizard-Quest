@@ -1,79 +1,91 @@
 <!DOCTYPE HTML>
 <!-- 
-Home Page for Quizard Quest
-Created by nathanDmoore Saturday October 19,2013
+Log In and Create Account Page for Quizard Quest
  -->
 <html>
+
 	<head>
+
 		<meta charset="UTF-8">
-		<title>Quizard Quest: Home</title>
+		<title>Quizard Quest</title>
 		<link rel="stylesheet" href="css/mainStyle.css"/>
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type = "text/javascript" src="js/index.js"></script>
 		<script type = "text/javascript" src="js/navigation.js"></script>
+
 	</head>
+
 	<body>
+
 		<header>
+
 			<nav id="navbar">
 				<button type="button" id="logOut" class="navButton">Log Out</button>
-
-				<section id="logInSection">
-					<div id="logInDiv">
-						<form id="logIn" action="#" method="POST" autocomplete="off">
-							<table>
-								<tr>
-									<td><label>Username: </label></td>
-									<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
-								</tr>
-								<tr>
-				        			<td><label>Password: </label></td>
-				        			<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
-				        		</tr>
-			        			<tr>
-			        				<td></td>
-			        				<td class="submitButton"><input type="submit" value="Log In" id="logInButton"/></td>
-			        			</tr>
-			        		</table>
-						</form>
-					</div>
-				</section>
 			</nav>
-		</header>
+			<!-- Section for the Log In form -->
+			<section id="logInSection">
 
+				<div id="logInDiv">
+
+					<form id="logIn" action="#" method="POST" autocomplete="off">
+						<table id="formData">
+							<tr>
+								<td><label id="uname">Username: </label></td>
+								<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
+							</tr>
+							<tr>
+			        			<td><label id="pwd">Password: </label></td>
+			        			<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
+			        		</tr>
+		        			<tr>
+		        				<td class="blankData"></td>
+		        				<td class="submitButton"><input type="submit" value="Log In" id="logInButton"/></td>
+		        			</tr>
+		        		</table>
+					</form>
+					
+				</div>
+
+			</section>
+
+		</header>
+		<!-- Section for Account Creation Form -->
 		<section id="createAccountSection">
+
 			<div id="createAccountDiv">
+
 				<form id="createAccount" action="../API_Server/createAccount.php" method="post" autocomplete="on">
 					<h1 id="createAcountHeader">Create a Quizard Quest Account</h1>
 					<table>
 						<tr>
-							<td><label>First Name: </label></td>
-							<td><input type="text" placeholder="First Name" id="firstName" name="fname" title="Cannot be left empty" required/></td>
+							<td><label id="fname">First Name: </label></td>
+							<td>*<input type="text" placeholder="First Name" id="firstName" name="fname" title="Cannot be left empty" required/></td>
 						</tr>
 						<tr>
-							<td><label>Last Name: </label></td>
-							<td><input type="text" placeholder="Last Name" id="lastName" name="lname" title="Cannot be left empty" required/></td>
+							<td><label id="lname">Last Name: </label></td>
+							<td>*<input type="text" placeholder="Last Name" id="lastName" name="lname" title="Cannot be left empty" required/></td>
 						</tr>
 						<tr>
-							<td><label>Email: </label></td>
-							<td><input type="email" placeholder="me@example.com" id="email" name="Email" title="Must be a valid email using '@' and '.' "required /></td>
+							<td><label id="eMail">Email: </label></td>
+							<td>*<input type="email" placeholder="me@example.com" id="email" name="Email" title="Must be a valid email using '@' and '.' "required /></td>
 						</tr>
 						<tr>
-							<td><label>Username: </label></td>
-							<td><input type="text" placeholder="Username" pattern=".{6,20}" name="username" title="Username must be 6-20 characters" id="username" required/></td>
+							<td><label id="newUser">Username: </label></td>
+							<td>*<input type="text" placeholder="Username" pattern=".{6,20}" name="username" title="Username must be 6-20 characters" id="username" required/></td>
 						</tr>
 						<tr>
-							<td><label>Password: </label></td>
-							<td><input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
+							<td><label id="newpassword">Password: </label></td>
+							<td>*<input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
 						</tr>
 						<tr>
-							<td><label>Gender: </label></td>
+							<td><label id="Gender">Gender: </label></td>
 							<td>
 								<input type="radio" name="gender" value="m" id="male" class="gender"/>Male
 								<input type="radio" name="gender" value="f" id="female" class="gender"/>Female
 							</td>
 						</tr>
 						<tr>
-							<td><label>Grade: </label></td>
+							<td><label id="Grade">Grade: </label></td>
 							<td>
 								<select name="Grade" id="grade">
 									<option value="">Select Grade</option>
@@ -100,13 +112,16 @@ Created by nathanDmoore Saturday October 19,2013
 							</td>
 						</tr>
 						<tr>
-							<td></td>
+							<td class="blankData"></td>
 							<td class="submitButton"><input type="submit" value="Sign Up" id="signUp" /></td>
 						</tr>
 					</table>
 				</form>
+
 			</div>
+
 		</section>
 
 	</body>
+
 </html>
