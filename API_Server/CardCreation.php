@@ -8,7 +8,7 @@
 	include "API.php";
 	session_start();
 
-	$username = $_SESSION['userID'];
+	$userID = $_SESSION['userID'];
 	$category = $_POST['category'];
 	$subcategory = $_POST['subcategory'];
 	$question = $_POST['question'];
@@ -18,6 +18,6 @@
 
 	//$file = "../Design_Documents/test.txt";
 	//file_put_contents($file, $category);
-	$card = create_card($username,$question,$answer,$category,$subcategory,$difficulty);
+	$card = create_card($userID,$question,$answer,$category,$subcategory,$difficulty);
 
 ?>
