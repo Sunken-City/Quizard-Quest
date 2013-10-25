@@ -33,6 +33,7 @@ $(document).ready(function(){
 
 		e.preventDefault();
 
+		window.location.href = "cardCreation.html";
 	});
 
 });
