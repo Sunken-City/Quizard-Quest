@@ -192,12 +192,14 @@
         mysqli_close($db);
     }
     
-    // The following is the password salting and hashing functions we found on https://crackstation.net/hashing-security.htm
-    /*
-     * Password hashing with PBKDF2.
-     * Author: havoc AT defuse.ca
-     * www: https://defuse.ca/php-pbkdf2.htm
-     */
+    /*\
+    |*|     :: >>The following is the password salting and hashing functions we found<< ::
+    |*|                    #   on https://crackstation.net/hashing-security.htm
+    |*|                    #   Password hashing with PBKDF2.
+    |*|                    #   Author: havoc AT defuse.ca
+    |*|                    #   www: https://defuse.ca/php-pbkdf2.htm
+    |*| 
+    \*/
 
     // These constants may be changed without breaking existing hashes.
     define("PBKDF2_HASH_ALGORITHM", "sha256");
@@ -310,21 +312,23 @@
         return $diff === 0;
     }
 
-    /*
-     * PBKDF2 key derivation function as defined by RSA's PKCS #5: https://www.ietf.org/rfc/rfc2898.txt
-     * $algorithm - The hash algorithm to use. Recommended: SHA256
-     * $password - The password.
-     * $salt - A salt that is unique to the password.
-     * $count - Iteration count. Higher is better, but slower. Recommended: At least 1000.
-     * $key_length - The length of the derived key in bytes.
-     * $raw_output - If true, the key is returned in raw binary format. Hex encoded otherwise.
-     * Returns: A $key_length-byte key derived from the password and salt.
-     *
-     * Test vectors can be found here: https://www.ietf.org/rfc/rfc6070.txt
-     *
-     * This implementation of PBKDF2 was originally created by https://defuse.ca
-     * With improvements by http://www.variations-of-shadow.com
-     */
+    /*\
+    |*| 
+    |*| :: >>PBKDF2 key derivation function as defined by RSA's PKCS #5: https://www.ietf.org/rfc/rfc2898.txt<< ::
+    |*|                 #   $algorithm - The hash algorithm to use. Recommended: SHA256
+    |*|                 #   $password - The password.
+    |*|                 #   $salt - A salt that is unique to the password.
+    |*|                 #   $count - Iteration count. Higher is better, but slower. Recommended: At least 1000.
+    |*|                 #   $key_length - The length of the derived key in bytes.
+    |*|                 #   $raw_output - If true, the key is returned in raw binary format. Hex encoded otherwise.
+    |*|                 #      Returns: A $key_length-byte key derived from the password and salt.
+    |*| 
+    |*|                 :: Test vectors can be found here: https://www.ietf.org/rfc/rfc6070.txt ::
+    |*| 
+    |*|                 #   This implementation of PBKDF2 was originally created by https://defuse.ca
+    |*|                 #   With improvements by http://www.variations-of-shadow.com
+    |*| 
+    \*/
     function pbkdf2($algorithm, $password, $salt, $count, $key_length, $raw_output = false) {
 
         $algorithm = strtolower($algorithm);
