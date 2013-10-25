@@ -22,7 +22,9 @@ $(document).ready(function(){
 		var answer = document.getElementById('newAnswer').value;
 		var difficulty = document.getElementById('newDifficulty').value;
 
+		var answer = prepareAnswer(answer);
 		//Hoping that this will work now. Let's Test This Out
+		alert(answer);
 
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
@@ -33,5 +35,12 @@ $(document).ready(function(){
 		alert("Question Added");
 		window.location.href = "cardCreation.html";
 	});
+
+	function prepareAnswer(str) {
+		var punctuationless = str.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()@]/g,"")
+		var noSpaces = punctuationless.replace(/\s{2,}/g," ");
+		var finalString =noSpaces.toLowerCase();
+		return finalString;
+	}
 
 });
