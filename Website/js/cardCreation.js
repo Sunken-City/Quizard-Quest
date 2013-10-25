@@ -24,7 +24,6 @@ $(document).ready(function(){
 
 		var answer = prepareAnswer(answer);
 		//Hoping that this will work now. Let's Test This Out
-		alert(answer);
 
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
