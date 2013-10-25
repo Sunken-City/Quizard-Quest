@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 		$.post("../API_Server/CardCreation.php",formData,function(){
 			alert("Question Added");
-		},"json");
+		});
 
 		e.preventDefault();
 
