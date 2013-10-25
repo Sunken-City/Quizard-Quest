@@ -6,6 +6,7 @@
 	\*/
 
 	include "API.php";
+	session_start();
 
 	$username = $_SESSION['username'];
 	$category = $_POST['category'];
