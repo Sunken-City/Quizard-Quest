@@ -4,7 +4,7 @@
     |*|     :: >>API SERVER FOR QUIZZARD QUEST<< ::
     \*/
 
-    //session_start();
+    session_start();
    
     //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
     function create_deck($deckname) {

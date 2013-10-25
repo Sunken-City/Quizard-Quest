@@ -2,5 +2,7 @@
 	/*\
 	|*|		PHP that destroys a session on logout
 	\*/
-	session_destroy();
+	if (isset($_SESSION['userID'])) {
+		session_destroy();
+	}
 ?>
