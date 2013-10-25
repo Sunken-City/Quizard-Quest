@@ -3,13 +3,17 @@ body {
 	color: white;
 }
 
+label {
+	margin-right: 1em;
+}
+
 #logInSection {
 	/*position: absolute;*/
 	/*display:inline;*/
 	/*left:1290px;*/
 	float: right;
 	background-color:gray;
-	width: 260px;
+	width: 285px;
 }
 
 #logInDiv {
@@ -19,8 +23,8 @@ body {
 #createAccountSection{
 	margin-top: 180px;
 	float:right;
-	margin-right: -260px;
-	width: 260px;
+	margin-right: -285px;
+	width: 285px;
 }
 
 #createAccountSection h1{
