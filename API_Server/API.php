@@ -6,7 +6,7 @@
 
     session_start();
 
-    function create_deck($username, $deckname) //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
+    function create_deck($deckname) //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
     {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -16,10 +16,7 @@
             exit();
         }
         
-        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
-        '$username';");
-        $result = mysqli_fetch_assoc($select);
-        $userID = $result["userID"];
+        $userID = $_SESSION['userID'];
         
         if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');"))
         {
@@ -28,10 +25,9 @@
             die('Error: ' . mysqli_error($db));
         }
         
-        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND
-        name = '$deckname');");
+        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND name = '$deckname');");
 
-	$fetch = mysqli_fetch_array($deckID);
+	     $fetch = mysqli_fetch_array($deckID);
 
         $idRow = mysqli_fetch_assoc($fetch);
 
@@ -41,7 +37,7 @@
         return $id;
     }
     
-    function add_card_to_deck($username, $deckID, $cardID) //It protects from bad values, but not very gracefully.
+    function add_card_to_deck($deckID, $cardID) //It protects from bad values, but not very gracefully.
     {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
@@ -81,12 +77,9 @@
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
         
-        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender,
-        grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname',
-        '$lastname', '$gender', '$grade', '$isAdmin');");
+        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');");
         
-        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username =
-        '$username';");
+        $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username = '$username';");
         $result = mysqli_fetch_assoc($select);
         $userID = intval($result['userID'],10);
         
@@ -101,100 +94,96 @@
         return true;
     }
     
-    function create_card($username, $question, $answer, $category, $subCategory = null, $difficulty)
+    function create_card($question, $answer, $category, $subCategory = null, $difficulty)
     {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        $query = "SELECT userID FROM players WHERE (username = '$username');";
-        $select = mysqli_query($db, $query);
-        $result = mysqli_fetch_assoc($select);
-        $userID = $result['userID'];
-        $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) 
-            VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
+        $userID = $_SESSION['userID'];
+        
+        $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
         mysqli_query($db, $query);
         mysqli_close($db);
         
     }
     
-    function get_all_cards($username) //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
+    function get_all_cards() //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
+                             //POTENTIAL FIX: Go through a loop to get each row of the associative array, but store it where?
     {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        
-        $cards = mysqli_query($db, "SELECT * FROM cards INNER JOIN players ON cards.userID =
-        players.userID WHERE players.username = '$username';");
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID';");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
     
-    function get_category_cards($username, $category) //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
+    function get_category_cards($category) //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
     {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-        
-        $cards = mysqli_query($db, "SELECT * FROM cards INNER JOIN players ON cards.userID =
-        players.userID WHERE (cards.username = '$username' AND category = '$category');");
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID' AND category = '$category');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
 
-    function get_options($username)
+    function get_options()
     {
 	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-
-        $cards = mysqli_query($db, "SELECT * FROM options INNER JOIN players ON options.userID =
-        players.userID WHERE (options.username = '$username');");
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM options WHERE userID = '$userID');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
     
-    function get_achievements($username)
+    function get_achievements()
     {
 	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-
-        $cards = mysqli_query($db, "SELECT * FROM achievements INNER JOIN players ON achievements.userID =
-        players.userID WHERE (achievements.username = '$username');");
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM achievements WHERE userID = '$userID');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
     
-    function get_stats($username)
+    function get_stats()
     {
 	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
-
-        $cards = mysqli_query($db, "SELECT * FROM stats INNER JOIN players ON stats.userID =
-        players.userID WHERE (stats.username = '$username');");
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM stats WHERE userID = '$userID');");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
     }
     
-    function set_options(
+    function set_options()
+    {
+    
+    }
     
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
