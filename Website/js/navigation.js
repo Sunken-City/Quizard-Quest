@@ -1,4 +1,19 @@
+/*\
+|*|		Javascript for the all html pages
+\*/
+
 $(document).ready(function() {
+
+	/*\
+	|*|		:: >> Authenticate User After Login << ::
+	|*|
+	|*|		# add a click listener to the log out button
+	|*|		# make an ajax request that sends the form data to 
+	|*|			logOut.php to end the current session
+	|*|		# redirects to the log in page (index.html)
+	|*|
+	\*/
+
 
 	$("#logOut").click(function(e) {
 
@@ -11,6 +26,14 @@ $(document).ready(function() {
 		});
 
 	});
+
+	/*\
+	|*|		:: >> Authenticate User After Login << ::
+	|*|
+	|*|		# add a click listener to the home button
+	|*|		# redirect to mainMenu.html
+	|*|
+	\*/
 
 	$("#home").click(function(e) {
 

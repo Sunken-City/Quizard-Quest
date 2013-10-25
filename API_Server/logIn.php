@@ -1,5 +1,11 @@
 <?php
 
+	/*\
+	|*|		#PHP that receives log in data from index.html
+	|*|			and sends it to the API server for authentication
+	|*|		#returns a string to index.js with the success/failure of authentication
+	\*/
+
 	include "API.php";
 
 	$pass = $_POST['pass'];

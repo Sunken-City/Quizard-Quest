@@ -1,5 +1,10 @@
 <?php
 
+	/*\
+	|*|		#PHP that receives create card data from cardCreation.html
+	|*|			and sends it to the API server for submission
+	\*/
+
 	include "API.php";
 
 	$username = $_SESSION['username'];

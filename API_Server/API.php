@@ -1,5 +1,9 @@
 <?php
 
+    /*\
+    |*|     :: >>API SERVER FOR QUIZZARD QUEST<< ::
+    \*/
+
     function create_deck($username, $deckname) //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
     {
 

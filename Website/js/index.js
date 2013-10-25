@@ -1,5 +1,6 @@
-//Author: Nathan Moore
-//Scripts to run in concert with index.html
+/*\
+|*|		Javascript for the index.html
+\*/
 
 $(document).ready(function() {
 	
@@ -11,7 +12,7 @@ $(document).ready(function() {
 	|*|		# make an ajax request that sends the form data to 
 	|*|			logIn.php for authentication
 	|*|		# if it is authenticated (i.e., success) the page will 
-	|*|			be redirected to the cupcakeordering.html page
+	|*|			be redirected to the mainMenu.html page
 	|*|		# otherwise an alert will go off and form submission will 
 	|*|			be aborted
 	|*|

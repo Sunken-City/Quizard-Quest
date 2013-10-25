@@ -1,5 +1,18 @@
+/*\
+|*|		Javascript for the cardCreation.html
+\*/
+
 $(document).ready(function(){
 
+	/*\
+	|*|			:: >> Submit a New Card to the Database << ::
+	|*|
+	|*|		# add a click listener to the submit button associated 
+	|*|			with card creation
+	|*|		# make an ajax request that sends the form data to 
+	|*|			CardCreation.php for validation
+	|*|
+	\*/
 
 	$("#submitQuestion").click(function(e){
 
