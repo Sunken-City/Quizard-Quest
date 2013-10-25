@@ -16,8 +16,8 @@
 	$difficulty = $_POST['difficulty'];
 
 
-	$file = "../Design_Documents/test.txt";
-	file_put_contents($file, $category);
+	//$file = "../Design_Documents/test.txt";
+	//file_put_contents($file, $category);
 	$card = create_card($username,$question,$answer,$category,$subcategory,$difficulty);
 
 ?>
