@@ -7,6 +7,7 @@
 	\*/
 
 	include "API.php";
+	session_start();
 
 	$pass = $_POST['pass'];
 	$user = $_POST['user'];

@@ -6,6 +6,7 @@
 	\*/
 
         include 'API.php';
+        session_start();
 
         $formData = array(); #an array to house the submitted from data
         #[0] = fname
