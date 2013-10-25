@@ -23,7 +23,7 @@ $(document).ready(function(){
 		var difficulty = document.getElementById('newDifficulty').value;
 
 		alert(category + subcategory + question + answer + difficulty);
-
+		//Hoping that this will work now.
 
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
