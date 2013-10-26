@@ -48,7 +48,6 @@ CREATE TABLE cards (
    difficulty int NOT NULL,
    rating int default 0,
    PRIMARY KEY(cardID),
-   UNIQUE KEY(userID, question, answer, category),
    FOREIGN KEY(userID) REFERENCES players(userID)
 ) engine = InnoDB;
 

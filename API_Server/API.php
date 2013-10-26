@@ -68,6 +68,7 @@
             die('The username you entered is already associated with a user.
                  Please return to the previous page and log in with your 
                  password or use a different username.');
+            return false;
         }
 
         $salt = create_salt();
@@ -140,7 +141,7 @@
     }
 
     function get_options() {
-	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
