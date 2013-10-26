@@ -20,7 +20,7 @@ class NegAPITest extends PHPUnit_Framework_TestCase
   {
     $response = validate_password('ricopiley', 'THISAINTMYPASSWORDLOL');
     //Assert that this is an invalid password.
-    $this->assertTrue(!$response);
+    $this->assertFalse($response);
   }
   
   /**
@@ -30,7 +30,7 @@ class NegAPITest extends PHPUnit_Framework_TestCase
   {
     $response = validate_password('ricopiley', '\' OR 1=1 -- ');
     //Assert that this is an invalid password.
-    $this->assertTrue(!$response);
+    $this->assertFalse($response);
   }
 }
 ?>
