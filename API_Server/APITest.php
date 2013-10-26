@@ -13,6 +13,15 @@ class APITest extends PHPUnit_Framework_TestCase
     $this->assertTrue($response);
   }
   
+  /**
+  * @depends testCreateUser
+  */
+  public function testValidatePassword()
+  {
+    $response = validate_password('picoriley', '12341234');
+    $this->assertTrue($response);
+  }
+  
 }
 
 ?>
