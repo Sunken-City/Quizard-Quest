@@ -84,10 +84,9 @@
         mysqli_query($db,"INSERT INTO achievements (userID) VALUES ('$userID');");
         mysqli_query($db,"INSERT INTO stats (userID) VALUES ('$userID');");
 
-        if(!isset($_SESSION)) 
-	{ 
-	    session_start(); 
-	} 
+        if(!isset($_SESSION)) { 
+	       session_start(); 
+	    } 
         $_SESSION ['userID'] = $userID;
 
         mysqli_close($db);
@@ -295,9 +294,9 @@
             );
         }  
         //if (isset($_SESSION)) 
-        {
-            session_destroy();
-        }
+        //{
+        session_destroy();
+        //}
         //if(!isset($_SESSION)) 
 	{ 
 	    session_start(); 
