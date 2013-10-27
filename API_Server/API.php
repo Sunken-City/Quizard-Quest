@@ -22,7 +22,8 @@
         
         $userID = $_SESSION['userID'];
         $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
-        if (!mysqli_query($db, $query)({
+        if (!mysqli_query($db, $query))
+        {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
@@ -49,7 +50,7 @@
         }
         
         $query = "DELETE FROM decks WHERE deckID = '$deckID';";
-        if (!mysqli_query($db, $query)({
+        if (!mysqli_query($db, $query)){
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
