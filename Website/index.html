@@ -13,6 +13,7 @@
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type = "text/javascript" src="js/index.js"></script>
 		<script type = "text/javascript" src="js/navigation.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
 	</head>
 
@@ -50,11 +51,6 @@
 
 			</header>
 
-			<article id="titles">
-				<h1 id="welcomeTitle">Welcome to Quizard Quest</h1>
-				<h3 id="welcomeSubTitle">Are you ready to begin your Quest?</h3>
-			</article>
-
 			<!-- Section for Account Creation Form -->
 			<section id="createAccountSection">
 
@@ -85,14 +81,14 @@
 							</tr>
 							<tr>
 								<td><label id="Gender">Gender: </label></td>
-								<td>
+								<td id="GENDER"> 
 									<input type="radio" name="gender" value="m" id="male" class="gender"/>Male
 									<input type="radio" name="gender" value="f" id="female" class="gender"/>Female
 								</td>
 							</tr>
 							<tr>
 								<td><label id="Grade">Grade: </label></td>
-								<td>
+								<td id="GRADE">
 									<select name="Grade" id="grade">
 										<option value="">Select Grade</option>
 										<option value="Kinder">Kinder</option>
@@ -119,7 +115,7 @@
 							</tr>
 							<tr>
 								<td class="blankData"></td>
-								<td class="submitButton"><input type="submit" value="Sign Up" id="signUp" /></td>
+								<td class="submitButton" id="SIGNUP"><input type="submit" value="Sign Up" id="signUp" /></td>
 							</tr>
 						</table>
 					</form>
@@ -127,6 +123,16 @@
 				</div>
 
 			</section>
+
+			<article id="titles">
+				<h1 id="welcomeTitle">Welcome to Quizard Quest!</h1>
+				<h2 id="welcomeSubTitle">Are you ready to begin your Quest?</h2>
+			</article>
+
+			<footer>
+				<p>Quizard Quest is brought to you by cd msc/</p>
+				<p>English (US)</p>
+			</footer>
 		</div>
 
 	</body>

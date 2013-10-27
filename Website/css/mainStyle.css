@@ -2,4 +2,106 @@
 body {
 	background-image: url('../../Resources/Backgrounds/black_linen_v2.png');
 	color: rgb(255,153,0);
+	font-family: 'Share Tech Mono', sans-serif;
+}
+
+header {
+	background-color: rgb(66,66,66);
+	margin-bottom: 50px;
+}
+
+#boundary {
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	border: .5em ridge rgb(88,88,88);
+}
+
+section {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+article {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'VT323', cursive;
+}
+
+h1 {
+	font-size: 4em;
+	padding: 0em;
+	margin: .5em;
+}
+
+h2 {
+	font-size: 2em;
+	padding: 0em;
+	margin: .5em;
+}
+
+h3 {
+	font-size: 1em;
+	padding: 0em;
+	margin: .5em;
+}
+
+#titles {
+	width: 900px;
+	margin-left: 0px;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 200px;
+}
+
+#createAccountSection {
+	width: 320px;
+	float: right;
+	margin-top: -20px;
+	text-align: right;
+}
+
+#createAccountSection h2{
+	text-align: center;
+}
+
+#createAccountSection label{
+	padding-right: 20px;
+}
+
+footer {
+	padding-top: 225px;
+	padding-bottom: 5px;
+	font-size: .8em;
+}
+
+p {
+	display: inline;
+	padding-left: 1em;
+	font-size: 1em;
+}
+
+input,label,select {
+	margin-bottom: 1em;
+}
+
+#GENDER,#GRADE,#SIGNUP {
+	text-align: left;
+	padding-left: .6em;
+}
+
+[type="text"],[type="email"],[type="password"] {
+	height: 22px;
+	width: 172px;
+}
+
+header td {
+	display: block;
+}
+
+header input {
+	margin-bottom: 0em;
 }
