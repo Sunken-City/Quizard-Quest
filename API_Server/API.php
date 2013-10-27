@@ -45,6 +45,7 @@
             exit();
         }
         
+        //This also deletes every tuple with this deckID in deckCards, which is awesome
         $query = "DELETE FROM decks WHERE deckID = '$deckID';";
         if (!mysqli_query($db, $query)){
             echo "There was an error processing your request. Please return to the previous page.
@@ -199,6 +200,7 @@
             exit();
         }
         
+        // Also deletes the tuple of deck and card in deckCards if it exists.
         $query = "DELETE FROM cards WHERE cardID = '$cardID';";
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
@@ -237,10 +239,15 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
+        $table = array();
         $userID = $_SESSION['userID'];
-        $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID' AND category = '$category');");
-        $result = mysqli_fetch_assoc($cards);
-        echo json_encode($result);
+        
+        $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID' AND category = '$category';");
+        $x = mysqli_num_rows($cards);
+        for ($i = 0; $i < $x; $i++) {
+            array_push($table, mysqli_fetch_assoc($cards));
+        }
+        echo json_encode($table);
         mysqli_close($db);
     }
    
@@ -294,8 +301,17 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        mysqli_query($db, "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';");
         
+        // This will update all the values. Not all values have to change, since any of the
+        // parameters will show their original value if they are not changed. This reduces the
+        // number of different functions that have to be called or made. 
+        $query = "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';"
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
+        mysqli_close($db);
     }
     
     function set_stats() {
@@ -312,8 +328,16 @@
         $totExp = $_SESSION['totExp'];
         $gold = $_SESSION['gold'];
         $userID = $_SESSION['userID'];
+        
+        // Same as set_options, not all of the values have to be changed, but because we don't 
+        // know which ones will be necessarily, this will cover all of our bases with one function
+        // call
         $query = "UPDATE stats SET mathExp = '$mathExp', sciExp = '$sciExp', ssExp = '$ssExp', engExp = '$engExp', langExp = '$langExp', totExp = '$totExp', gold = '$gold' WHERE userID = '$userID';";
-        mysqli_query($db, $query);
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         mysqli_close($db);   
     }
     
