@@ -21,8 +21,8 @@
         }
         
         $userID = $_SESSION['userID'];
-        
-        if (!mysqli_query($db,"INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');")){
+        $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
+        if (!mysqli_query($db, $query)({
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
@@ -49,7 +49,11 @@
         }
         
         $query = "DELETE FROM decks WHERE deckID = '$deckID';";
-        mysqli_query($db, $query);
+        if (!mysqli_query($db, $query)({
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         mysqli_close($db);
     }
     
@@ -59,19 +63,20 @@
     /***************/
     //It protects from bad values, but not very gracefully.
     function add_card_to_deck($deckID, $cardID) {
-      $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
-        if (mysqli_connect_errno()) {
+         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
-        }
-                
-        if (!mysqli_query($db,"INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');")) {
+         }
+        
+         $query = "INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');";        
+         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
             die('Error: ' . mysqli_error($db));
-        }
-        
+         }
+         mysqli_close($db);
     }
     
     function delete_card_from_deck($deckID, $cardID) {
@@ -83,9 +88,12 @@
          }
          
          $query = "DELETE FROM deckCards WHERE deckID = '$deckID' AND cardID = '$cardID';";
-         mysqli_query($db, $query);
+         if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+         }
          mysqli_close($db);
-         
     }
     
    
@@ -101,6 +109,11 @@
         }
         /*make sure user isn't already in the database*/
         $query = "SELECT * FROM players WHERE (username = '$username');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         $result = mysqli_query($db,$query);
 
         if (!(mysqli_num_rows($result) == 0)) {
@@ -113,15 +126,37 @@
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
         
-        mysqli_query($db,"INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');");
+        $query = "INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         
         $select = mysqli_query($db, "SELECT userID FROM players WHERE players.username = '$username';");
         $result = mysqli_fetch_assoc($select);
         $userID = intval($result['userID'],10);
         
-        mysqli_query($db,"INSERT INTO options (userID) VALUES ('$userID');");
-        mysqli_query($db,"INSERT INTO achievements (userID) VALUES ('$userID');");
-        mysqli_query($db,"INSERT INTO stats (userID) VALUES ('$userID');");
+        $query = "INSERT INTO options (userID) VALUES ('$userID');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
+        
+        $query = "INSERT INTO achievements (userID) VALUES ('$userID');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
+        
+        $query = "INSERT INTO stats (userID) VALUES ('$userID');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
 
         if(!isset($_SESSION)) { 
 	       session_start(); 
@@ -146,7 +181,11 @@
         
         $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
 
-        mysqli_query($db, $query);
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         mysqli_close($db);
         
     }
@@ -159,7 +198,11 @@
         }
         
         $query = "DELETE FROM cards WHERE cardID = '$cardID';";
-        mysqli_query($db, $query);
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error processing your request. Please return to the previous page.
+            Here's the error if you wanted to know:\n";
+            die('Error: ' . mysqli_error($db));
+        }
         mysqli_close($db);
     }
     
