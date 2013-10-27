@@ -210,8 +210,6 @@
     /********************/
     /* RETRIEVING CARDS */
     /********************/
-    //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
-    //POTENTIAL FIX: Go through a loop to get each row of the associative array, but store it where?
     function get_all_cards() {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -298,8 +296,24 @@
         
     }
     
-    
-    
+    function set_stats() {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $mathExp = $_SESSION['mathExp'];
+        $sciExp = $_SESSION['sciExp'];
+        $ssExp = $_SESSION['ssExp'];
+        $engExp = $_SESSION['engExp'];
+        $langExp = $_SESSION['langExp'];
+        $totExp = $_SESSION['totExp'];
+        $gold = $_SESSION['gold'];
+        $userID = $_SESSION['userID'];
+        $query = "UPDATE stats SET mathExp = '$mathExp', sciExp = '$sciExp', ssExp = '$ssExp', engExp = '$engExp', langExp = '$langExp', totExp = '$totExp', gold = '$gold' WHERE userID = '$userID';";
+        mysqli_query($db, $query);
+        mysqli_close($db);   
+    }
     
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
