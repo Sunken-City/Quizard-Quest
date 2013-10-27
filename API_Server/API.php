@@ -292,7 +292,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        mysqli_query($db, "UPDATE options SET avatar = '$avatar', carBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';");
+        mysqli_query($db, "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';");
         
     }
     
