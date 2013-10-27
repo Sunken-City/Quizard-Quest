@@ -34,6 +34,7 @@ CREATE TABLE decks (
    PRIMARY KEY(deckID),
    UNIQUE KEY(userID, name),
    FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
 ) engine = InnoDB;
 
 #Creates the cards table with yet another auto-incremented primary key of cardID. Every card MUST have
@@ -49,6 +50,7 @@ CREATE TABLE cards (
    rating int default 0,
    PRIMARY KEY(cardID),
    FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
 ) engine = InnoDB;
 
 #Creates a reference table between decks and cards so as to relate the two in a coherent manner.
@@ -56,8 +58,10 @@ CREATE TABLE deckCards (
    deckID int NOT NULL,
    cardID int NOT NULL,
    PRIMARY KEY(deckID, cardID),
-   FOREIGN KEY(deckID) REFERENCES decks(deckID),
+   FOREIGN KEY(deckID) REFERENCES decks(deckID)
+      on delete cascade on update cascade,
    FOREIGN KEY(cardID) REFERENCES cards(cardID)
+      on delete cascade on update cascade
 ) engine = InnoDB;
 
 #A table that holds the options for each player, which can be editable.
@@ -67,6 +71,7 @@ CREATE TABLE options (
    bgColor varchar(10),
    userID int NOT NULL,
    FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
 ) engine = InnoDB;
 
 #Creates the table that holds the statistics for each player, which will be updated after the 
@@ -81,6 +86,7 @@ CREATE TABLE stats (
    totExp int default 0,
    gold int default 100,
    FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
 ) engine = InnoDB;
 
 #Creates the table that will keep track of a users achievments, which will be edited by the PHP if
@@ -95,4 +101,5 @@ CREATE TABLE achievements (
    engQuizzard int default 0,
    langQuizzard int default 0,
    FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
 ) engine = InnoDB;

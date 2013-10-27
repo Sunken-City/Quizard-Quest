@@ -5,7 +5,11 @@
     \*/
 
     //session_start();
-   
+    
+    
+    /***************************/
+    /* CREATE AND DELETE DECKS */
+    /***************************/
     //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
     function create_deck($deckname) {
 
@@ -36,6 +40,23 @@
         return $id;
     }
     
+    function delete_deck($deckID) {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        
+        $query = "DELETE FROM decks WHERE deckID = '$deckID';";
+        mysqli_query($db, $query);
+        mysqli_close($db);
+    }
+    
+      
+    /***************/
+    /* EDIT A DECK */
+    /***************/
     //It protects from bad values, but not very gracefully.
     function add_card_to_deck($deckID, $cardID) {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -52,7 +73,25 @@
         }
         
     }
+    
+    function delete_card_from_deck($deckID, $cardID) {
+         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
 
+         if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+         }
+         
+         $query = "DELETE FROM deckCards WHERE deckID = '$deckID' AND cardID = '$cardID';";
+         mysqli_query($db, $query);
+         mysqli_close($db);
+         
+    }
+    
+   
+    /*******************/
+    /* CREATING A USER */
+    /*******************/
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -93,8 +132,12 @@
         return true;
     }
     
+    
+    /****************************/
+    /* CREATING/DELETING A CARD */
+    /****************************/
     function create_card($question, $answer, $category, $subCategory = null, $difficulty) {
-       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -108,6 +151,22 @@
         
     }
     
+    function delete_card($cardID) {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        
+        $query = "DELETE FROM cards WHERE cardID = '$cardID';";
+        mysqli_query($db, $query);
+        mysqli_close($db);
+    }
+    
+    
+    /********************/
+    /* RETRIEVING CARDS */
+    /********************/
     //ISSUES: Appears to only get 1 card in the JSON echo, but it works in mysql. Could this be a problem?
     //POTENTIAL FIX: Go through a loop to get each row of the associative array, but store it where?
     function get_all_cards() {
@@ -141,7 +200,11 @@
         echo json_encode($result);
         mysqli_close($db);
     }
-
+   
+   
+   /********************************/
+   /* RETRIEVING/EDITING USER DATA */
+   /********************************/
     function get_options() {
 	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
