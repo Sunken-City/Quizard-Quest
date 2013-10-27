@@ -19,13 +19,18 @@ class APITest extends PHPUnit_Framework_TestCase
             printf("Connect failed: %s\n", mysqli_connect_errno());
             $this->fail("Couldn't connect to the database. Some database issue?");
         }
-    $result = mysqli_query($db, "SELECT * FROM users WHERE username = 'picoriley';");
+    $result = mysqli_query($db, "SELECT * FROM players WHERE username = 'picoriley';");
+    
+    if ($result == FALSE)
+    {
+      $this->fail("Query failed! Something is wrong with the input query or the database structure.");
+    }
     while($row = mysqli_fetch_array($result))
     {
       $this->assertEquals($row['fName'], 'Pico', $row['fName'].'Did not match Pico');
     }
 
-    mysqli_close($con);
+    mysqli_close($db);
       
   }
   
