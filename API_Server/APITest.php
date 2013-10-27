@@ -27,7 +27,8 @@ class APITest extends PHPUnit_Framework_TestCase
     }
     while($row = mysqli_fetch_array($result))
     {
-      $this->assertEquals($row['fName'], 'Pico', $row['fName'].'Did not match Pico');
+      $this->assertEquals($row['fName'], 'Pico', $row['fName'].' Did not match Pico');
+      $this->assertEquals($row['lName'], 'Riley', $row['lName'].' Did not match Riley');
     }
 
     mysqli_close($db);
