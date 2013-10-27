@@ -21,7 +21,6 @@
         
         $userID = $_SESSION['userID'];
         $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
-        //If the query fails, 
         if (!mysqli_query($db, $query))
         {
             echo "There was an error creating your deck. Please return to the previous page.
