@@ -10,7 +10,23 @@ class APITest extends PHPUnit_Framework_TestCase
   public function testCreateUser()
   {
     $response = create_user('Pico', 'Riley', 'a@a.a', 'picoriley', '12341234', NULL, NULL, 0);
-    $this->assertTrue($response);
+    $this->assertTrue($response, "create_user returned false instead of true.");
+    
+    //Check the database to ensure it works
+    $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) 
+        {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            $this->fail("Couldn't connect to the database. Some database issue?");
+        }
+    $result = mysqli_query($db, "SELECT * FROM users WHERE username = 'picoriley';");
+    while($row = mysqli_fetch_array($result))
+    {
+      $this->assertEquals($row['fName'], 'Pico', $row['fName'].'Did not match Pico');
+    }
+
+    mysqli_close($con);
+      
   }
   
   /**
@@ -19,7 +35,7 @@ class APITest extends PHPUnit_Framework_TestCase
   public function testValidatePassword()
   {
     $response = validate_password('picoriley', '12341234');
-    $this->assertTrue($response);
+    $this->assertTrue($response, "validate_password returned false instead of true.");
   }
   
   /**
