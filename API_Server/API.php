@@ -148,7 +148,7 @@
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
-            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';")
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . mysqli_error($db));
         }
         
@@ -156,7 +156,7 @@
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
-            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';")
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . mysqli_error($db));
         }
 
