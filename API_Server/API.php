@@ -137,10 +137,14 @@
         $result = mysqli_fetch_assoc($select);
         $userID = intval($result['userID'],10);
         
+        // If any of the following queries fail, it deletes the entry from the players table
+        // so as not to cause subsequent retries from failing because of reusing username
+        // and/or email.
         $query = "INSERT INTO options (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . mysqli_error($db));
         }
         
@@ -148,6 +152,7 @@
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';")
             die('Error: ' . mysqli_error($db));
         }
         
@@ -155,6 +160,7 @@
         if (!mysqli_query($db, $query)) {
             echo "There was an error processing your request. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';")
             die('Error: ' . mysqli_error($db));
         }
 
