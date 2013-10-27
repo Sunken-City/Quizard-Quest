@@ -12,7 +12,7 @@ class APITest extends PHPUnit_Framework_TestCase
     $response = create_user('Pico', 'Riley', 'a@a.a', 'picoriley', '12341234', NULL, NULL, 0);
     $this->assertTrue($response, "create_user returned false instead of true.");
     
-    //Check the database to ensure it works
+    //Check the database to ensure it worked
     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) 
         {
@@ -45,21 +45,39 @@ class APITest extends PHPUnit_Framework_TestCase
   }
   
   /**
-  * depends testCreateUser
-  
+  * @depends testValidatePassword
+  */
   public function testCreateCard()
   {
     create_card('picoriley', 'sqrt(onions)', "shallots", 1, null, 2);
+    
+    //Check the database to ensure it worked
     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) 
         {
             printf("Connect failed: %s\n", mysqli_connect_errno());
-            assert
+            $this->fail("Couldn't connect to the database. Some database issue?");
         }
-    mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID';");
-  }*/
+    $result = mysqli_query($db, "SELECT * FROM cards WHERE userID = 1;");
+    
+    if ($result == FALSE)
+    {
+      $this->fail("Query failed! Something is wrong with the input query or the database structure.");
+    }
+    while($row = mysqli_fetch_array($result))
+    {
+      $this->assertEquals($row['question'], 'sqrt(onions)', $row['question'].' did not match sqrt(onions)');
+      $this->assertEquals($row['answer'], 'shallots', $row['answer'].' did not match shallots');
+    }
 
-  
+    mysqli_close($db);
+  }
+
+  /* Stack Question for later.
+  I'm working on a website for a school project involving PHP and mySQL, and because it's the first time I've worked with either, I'm trying to run unit/integration tests on function calls between the two. However, I've run into a snag.
+
+While attempting to unit test a function in the PHP API that uses a session created in an earlier function in the same file, I get back the error `Undefined variable: _SESSION`. From what I grasp, this means that the session goes out of scope in between the two calls to the function.
+*/
 }
 
 ?>

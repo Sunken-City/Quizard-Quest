@@ -19,7 +19,7 @@ class NegAPITest extends PHPUnit_Framework_TestCase
             printf("Connect failed: %s\n", mysqli_connect_errno());
             $this->fail("Couldn't connect to the database. Some database issue?");
         }
-    $result = mysqli_query($db, "SELECT * FROM players WHERE username = 'picoriley';");
+    $result = mysqli_query($db, "SELECT * FROM players WHERE username = 'ricopiley';");
     
     if ($result == FALSE)
     {

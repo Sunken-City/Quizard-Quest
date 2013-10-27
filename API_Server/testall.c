@@ -5,8 +5,8 @@
 int main()
 {
   static const char str[] = 
-  "phpunit --stderr NegAPITest \n \
-   phpunit --stderr APITest\n \
+  "phpunit --stderr APITest \n \
+   phpunit --stderr NegAPITest\n \
   ";
   system(str);
   return 0;
