@@ -140,24 +140,27 @@
         if (!mysqli_query($db, $query)) {
             echo "There was an error creating your options. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
-            die('Error: ' . mysqli_error($db));
+            die('Error: ' . $error);
         }
         
         $query = "INSERT INTO achievements (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
             echo "There was an error creating your achievements. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
-            die('Error: ' . mysqli_error($db));
+            die('Error: ' . $error);
         }
         
         $query = "INSERT INTO stats (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
             echo "There was an error creating your stats. Please return to the previous page.
             Here's the error if you wanted to know:\n";
+            $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
-            die('Error: ' . mysqli_error($db));
+            die('Error: ' . $error);
         }
 
         if(!isset($_SESSION)) { 
