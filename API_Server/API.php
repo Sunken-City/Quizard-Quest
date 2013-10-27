@@ -14,7 +14,6 @@
     function create_deck($deckname) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -22,6 +21,7 @@
         
         $userID = $_SESSION['userID'];
         $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
+        //If the query fails, 
         if (!mysqli_query($db, $query))
         {
             echo "There was an error processing your request. Please return to the previous page.
@@ -30,11 +30,8 @@
         }
         
         $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND name = '$deckname');");
-
 	     $fetch = mysqli_fetch_array($deckID);
-
         $idRow = mysqli_fetch_assoc($fetch);
-
         $id = intval($idRow['decks.deckID'],10);
       
         mysqli_close($db);
@@ -43,7 +40,6 @@
     
     function delete_deck($deckID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -65,7 +61,6 @@
     //It protects from bad values, but not very gracefully.
     function add_card_to_deck($deckID, $cardID) {
          $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-
          if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -82,7 +77,6 @@
     
     function delete_card_from_deck($deckID, $cardID) {
          $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
-
          if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -108,6 +102,7 @@
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
         }
+        
         /*make sure user isn't already in the database*/
         $query = "SELECT * FROM players WHERE (username = '$username');";
         if (!mysqli_query($db, $query)) {
@@ -254,7 +249,7 @@
    /* RETRIEVING/EDITING USER DATA */
    /********************************/
     function get_options() {
-	$db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
             exit();
@@ -321,6 +316,8 @@
         mysqli_query($db, $query);
         mysqli_close($db);   
     }
+    
+    
     
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
