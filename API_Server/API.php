@@ -167,6 +167,7 @@
 	       session_start(); 
 	    } 
         $_SESSION ['userID'] = $userID;
+        $_SESSION ['timeout'] = time();
 
         mysqli_close($db);
         return true;
@@ -452,6 +453,7 @@
 	    session_start(); 
 	} 
         $_SESSION ['userID'] = $userID;
+        $_SESSION ['timeout'] = time();
 
         mysqli_close($db);
 
