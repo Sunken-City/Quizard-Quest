@@ -1,40 +1,45 @@
 <!DOCTYPE HTML>
 <!-- 
-Home Page for Quizard Quest
-Create a Deck page 
-Author : Gustavo Castillo
+	Create a Deck page for Quizard Quest
+	Author : Gustavo Castillo
  -->
-<html>
+<html lang="en">
+
 	<head>
+
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/mainStyle.css"/>
 		<title>Create-a-Deck</title>
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
+		<script type = "text/javascript" src="js/navigation.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 	</head>
+
 	<body>
+
+		<header>
+			<nav class="navbar">
+				<button type="button" id="logOut" class="navButton">Log Out</button>
+				<button type="button" id="home" class="navButton">Home</button>
+			</nav>
+		</header>
 		<h1>Create-a-Deck!</h1>
-		<form id="deckBuilder" action="" method="post" >
-
-			<select name="Categories" id="categories" required>
-									<option value="Science">Science</option>
-									<option value="Math">Math</option>
-									<option value="Geography">Geography</option>
-			</select>
-
-			<table id="UserCards">
-  				
-				<td> 
-					<p> Question: What is the Symbol for Oxygen? </p>
-                	  		<p>Answer: O </p>
-				</td>
-
-				<td> 
-					<p> Question: What year was the war of 1812? </p>
-                	  		<p>Answer: 1812 </p>
-				</td>
-
+		<form id="deckCreate" action="#" method="POST" >
+			<table id="UserCards">  				
+				<select name="Categories" id="categories" required>
+					<option value="1">Math</option>
+					<option value="2">Science</option>
+					<option value="3">History</option>
+					<option value="4">English</option>
+					<option value="5">Language</option>
+				</select>
+				<td><input type="checkbox" name="flashCards" value="Card1">Question: What is 1+1? Answer: 2 </td>
+				<td><input type="checkbox" name="flashCards" value="Card2">Question: What is 2+2? Answer: 4 </td>
+				
 			</table>
+			<input type="submit" value="Create Deck" id="createDeck" />
 		</form>
 
 	</body>
+
 </html>
