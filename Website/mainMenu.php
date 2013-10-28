@@ -15,6 +15,16 @@
 		<script type = "text/javascript" src="js/navigation.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
+		<?php
+			session_start();
+			if(!isset($_SESSION['userID']))
+				{
+				    // not logged in
+				    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
+				    exit();
+				}
+		?>
+
 	</head>
 
 	<body>

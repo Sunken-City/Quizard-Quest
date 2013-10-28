@@ -48,16 +48,41 @@ h1,.makeHeader1 {
 .makeHeader1 {
 	height: 100px;
 	width: 750px;
-	-moz-border-radius: 10px;
-  	-webkit-border-radius: 10px;
+	-moz-border-radius: 8px;
+  	-webkit-border-radius: 8px;
 }
 
 .makeHeader1:hover {
-	border: 3px inset rgb(50,153,187);
+	border: 4px inset rgb(50,153,187);
+	background-color: rgb(77,77,77);
 }
 
 .makeHeader1:active {
-	border: 3px outset rgb(50,153,187);
+	border: 5px outset rgb(255,153,0);
+	color: rgb(50,153,187);
+	background-color: rgb(233,233,233);
+}
+
+input,select,button,select {
+	background-color: rgb(66,66,66);
+	color: rgb(255,153,0);
+	border-color: rgb(50,153,187);
+	-moz-border-radius: 3px;
+  	-webkit-border-radius: 3px;
+}
+
+button:hover,.submitButton:hover,select:hover {
+	background-color: rgb(77,77,77);
+	color: rgb(255,153,0);
+	border-color: rgb(50,153,187);
+	border-style: inset;
+}
+
+button:active,.submitButton:active {
+	background-color: rgb(233,233,233);
+	color: rgb(50,153,187);
+	border-color: rgb(255,153,0);
+	border-style: outset;
 }
 
 h2 {
@@ -151,12 +176,6 @@ input,select {
 #logInButton {
 	padding-top: 3px;
 	height: 24px;
-}
-
-input,select,button {
-	background-color: rgb(66,66,66);
-	color: rgb(233,233,233);
-	border-color: rgb(50,153,187);
 }
 
 input::-webkit-input-placeholder {
