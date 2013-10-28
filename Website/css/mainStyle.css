@@ -132,14 +132,14 @@ input,select {
 
 }
 
-input,select {
+input,select,button {
 	background-color: rgb(66,66,66);
 	color: rgb(233,233,233);
 	border-color: rgb(50,153,187);
 }
 
 input::-webkit-input-placeholder {
-	color: rgb(158,158,158);
+	color: rgb(188,188,188);
 }
 
 #female + label {
