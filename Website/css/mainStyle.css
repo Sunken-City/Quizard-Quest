@@ -101,3 +101,7 @@ input,label,select {
 header label,input {
 	margin-bottom: 0em;
 }
+
+input {
+	font-family: 'Share Tech Mono', sans-serif;
+}
