@@ -1,4 +1,5 @@
 <?php
+        
 
 	/*\
 	|*|		#PHP that receives form data for creating a new user account

@@ -59,6 +59,7 @@ CREATE TABLE deckCards (
    deckID int NOT NULL,
    cardID int NOT NULL,
    PRIMARY KEY(deckCardID),
+   UNIQUE KEY(deckID, cardID),
    FOREIGN KEY(deckID) REFERENCES decks(deckID)
       on delete cascade on update cascade,
    FOREIGN KEY(cardID) REFERENCES cards(cardID)

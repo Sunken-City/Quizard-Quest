@@ -24,15 +24,25 @@ $(document).ready(function(){
 
 		var answer = prepareAnswer(answer);
 		//Hoping that this will work now. Let's Test This Out
-
+		subcategory = subcategory.trim();
+		question = question.trim();
+		answer = answer.trim();
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
+		if(category == 0){
+			alert("Please Select a Category");
+		}
+		else if(difficulty == 0){
+			alert("Please Select a Difficulty");
+		}
+		else{
 		$.post("../API_Server/CardCreation.php",formData,function(){
 		});
 
 		e.preventDefault();
 		alert("Question Added");
 		window.location.href = "cardCreation.html";
+	}
 	});
 
 	function prepareAnswer(str) {
