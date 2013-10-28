@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	$("#home").click(function(e) {
 
-		window.location.href = "mainMenu.html";
+		window.location.href = "mainMenu.php";
 
 	});
 

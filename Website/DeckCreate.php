@@ -12,12 +12,19 @@
 		<title>Create-a-Deck</title>
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type = "text/javascript" src="js/navigation.js"></script>
-<<<<<<< HEAD
-		<script type = "text/javascript" src="js/deckCreate.js"></script>
-=======
 		<script type = "text/javascript" src="js/DeckCreation.js"></script>
->>>>>>> a1bdead5329bf10e3592ce2e3a090e6e2c0c5466
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
+
+		<?php
+			session_start();
+			if(!isset($_SESSION['userID']))
+				{
+				    // not logged in
+				    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
+				    exit();
+				}
+		?>
+		
 	</head>
 
 	<body>
