@@ -14,7 +14,7 @@ $(document).ready(function() {
 	\*/
 
 	$("#createCard").click(function(e) {
-		window.location.href = "cardCreation.php";
+		window.location.href = "cardCreation.html";
 	})
 
 	/*\
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	\*/
 
 	$("#createDeck").click(function(e) {
-		window.location.href = "DeckCreate.php";
+		window.location.href = "DeckCreate.html";
 	});
 
 });
