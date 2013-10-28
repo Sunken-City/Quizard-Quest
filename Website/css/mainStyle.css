@@ -15,7 +15,7 @@ header {
 	border-bottom: .1em ridge rgb(188,188,188);
 }
 
-#boundary {
+.content {
 	width: 1500px;
 	margin-right: auto;
 	margin-left: auto;
@@ -34,14 +34,30 @@ article {
 	padding-right: 1em;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,.makeHeader1 {
 	font-family: 'VT323', cursive;
 }
 
-h1 {
+h1,.makeHeader1 {
 	font-size: 4em;
 	padding: 0em;
 	margin: .5em;
+	color: rgb(255,153,0);
+}
+
+.makeHeader1 {
+	height: 100px;
+	width: 750px;
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+}
+
+.makeHeader1:hover {
+	border: 3px inset rgb(50,153,187);
+}
+
+.makeHeader1:active {
+	border: 3px outset rgb(50,153,187);
 }
 
 h2 {
@@ -51,9 +67,9 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1.5em;
 	padding: 0em;
-	margin: .5em;
+	margin: .5em
 }
 
 #titles {
@@ -111,6 +127,11 @@ input,label,select {
 	margin-bottom: 10px;
 }
 
+.submitButton,select,button {
+	height: 27px;
+	margin-top: 1px;
+}
+
 header label,input {
 	margin-bottom: 0em;
 }
@@ -129,7 +150,7 @@ input,select {
 
 #logInButton {
 	padding-top: 3px;
-
+	height: 24px;
 }
 
 input,select,button {
@@ -147,3 +168,48 @@ input::-webkit-input-placeholder {
 	margin: 0px;
 }
 
+.directions {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1500px;
+	text-align: center;
+}
+
+.directions h3 {
+	margin-bottom: 100px;
+}
+.directions h1 {
+	margin-top: 50px;
+	margin-bottom: 150px;
+	border: 6px inset rgb(50,153,187);
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+	background-color: rgb(36,36,36);
+}
+
+header {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.submitButton,button {
+	margin: 3px;
+}
+
+#submitCard {
+	margin-right: auto;
+	margin-left: auto;
+	width: 1400px;
+	padding-bottom: 25px;
+}
+
+#submitCard table {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#submitCard td {
+	padding-left: 15px;
+	text-align: center;
+}
