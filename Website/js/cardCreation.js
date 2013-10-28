@@ -24,6 +24,7 @@ $(document).ready(function(){
 
 		var answer = prepareAnswer(answer);
 		//Hoping that this will work now. Let's Test This Out
+		subcategory = subcategory.trim();
 		question = question.trim();
 		answer = answer.trim();
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
