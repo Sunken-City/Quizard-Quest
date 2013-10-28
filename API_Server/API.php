@@ -95,6 +95,7 @@
     /*******************/
     /* CREATING A USER */
     /*******************/
+    //Covered by unit test
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -176,6 +177,7 @@
     /****************************/
     /* CREATING/DELETING A CARD */
     /****************************/
+    //Covered by unit test
     function create_card($question, $answer, $category, $subCategory = null, $difficulty) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -195,6 +197,7 @@
         
     }
     
+    //Covered by unit test
     function delete_card($cardID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -399,6 +402,7 @@
             ));
     }
 
+    //Covered by unit test
     function validate_password($username, $password) {
 
         $authenticated = true;

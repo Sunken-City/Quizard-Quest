@@ -9,7 +9,6 @@ $(document).ready(function(){
 		window.location.href = "DeckCreate.html";
 		},"json");
 	e.preventDefault();
-	
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
 	PHP function makes the Deck
