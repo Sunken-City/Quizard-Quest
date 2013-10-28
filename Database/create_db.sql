@@ -55,9 +55,10 @@ CREATE TABLE cards (
 
 #Creates a reference table between decks and cards so as to relate the two in a coherent manner.
 CREATE TABLE deckCards (
+   deckCardID int NOT NULL AUTO_INCREMENT,
    deckID int NOT NULL,
    cardID int NOT NULL,
-   PRIMARY KEY(deckID, cardID),
+   PRIMARY KEY(deckCardID),
    FOREIGN KEY(deckID) REFERENCES decks(deckID)
       on delete cascade on update cascade,
    FOREIGN KEY(cardID) REFERENCES cards(cardID)

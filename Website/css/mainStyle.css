@@ -1,20 +1,27 @@
 /*http://www.colourlovers.com/palette/148712/Gamebookers*/
 body {
-	background-image: url('../../Resources/Backgrounds/black_linen_v2.png');
+	background-image: url('../../Resources/Backgrounds/black_thread.png');
 	color: rgb(255,153,0);
 	font-family: 'Share Tech Mono', sans-serif;
+	margin: 0;
+	padding: 0;
+	display: block;
 }
 
 header {
-	background-color: rgb(66,66,66);
+	/*background-color: rgb(66,66,66);*/
+	background-image: url('../../Resources/Backgrounds/black_linen_v2.png');
 	margin-bottom: 50px;
+	border-bottom: .1em ridge rgb(188,188,188);
 }
 
-#boundary {
+.content {
 	width: 1500px;
 	margin-right: auto;
 	margin-left: auto;
-	border: .5em ridge rgb(88,88,88);
+	margin-top: 10px;
+	border: .3em ridge rgb(233,233,233);
+	background-image: url('../../Resources/Backgrounds/type.png');
 }
 
 section {
@@ -27,14 +34,30 @@ article {
 	padding-right: 1em;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,.makeHeader1 {
 	font-family: 'VT323', cursive;
 }
 
-h1 {
+h1,.makeHeader1 {
 	font-size: 4em;
 	padding: 0em;
 	margin: .5em;
+	color: rgb(255,153,0);
+}
+
+.makeHeader1 {
+	height: 100px;
+	width: 750px;
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+}
+
+.makeHeader1:hover {
+	border: 3px inset rgb(50,153,187);
+}
+
+.makeHeader1:active {
+	border: 3px outset rgb(50,153,187);
 }
 
 h2 {
@@ -44,9 +67,9 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1.5em;
 	padding: 0em;
-	margin: .5em;
+	margin: .5em
 }
 
 #titles {
@@ -55,12 +78,13 @@ h3 {
 	margin-right: auto;
 	text-align: center;
 	margin-top: 200px;
+	padding-bottom: 225px;
 }
 
 #createAccountSection {
 	width: 320px;
 	float: right;
-	margin-top: -20px;
+	margin-top: 20px;
 	text-align: right;
 }
 
@@ -73,15 +97,19 @@ h3 {
 }
 
 footer {
-	padding-top: 225px;
+	padding-top: 5px;
 	padding-bottom: 5px;
 	font-size: .8em;
+	border-top:  .1em ridge rgb(66,66,66);
+	width: 1480px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 p {
 	display: inline;
 	padding-left: 1em;
-	font-size: 1em;
+	font-size: 1em;	
 }
 
 input,label,select {
@@ -96,8 +124,92 @@ input,label,select {
 [type="text"],[type="email"],[type="password"] {
 	height: 22px;
 	width: 172px;
+	margin-bottom: 10px;
+}
+
+.submitButton,select,button {
+	height: 27px;
+	margin-top: 1px;
 }
 
 header label,input {
 	margin-bottom: 0em;
+}
+
+input,select {
+	font-family: 'Share Tech Mono', sans-serif;
+}
+
+#grade {
+	margin-top: 10px;
+}
+
+#logIn table tr:nth-child(2) td:nth-child(3){
+	vertical-align: top;
+}
+
+#logInButton {
+	padding-top: 3px;
+	height: 24px;
+}
+
+input,select,button {
+	background-color: rgb(66,66,66);
+	color: rgb(233,233,233);
+	border-color: rgb(50,153,187);
+}
+
+input::-webkit-input-placeholder {
+	color: rgb(188,188,188);
+}
+
+#female + label {
+	padding: 0px;
+	margin: 0px;
+}
+
+.directions {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1500px;
+	text-align: center;
+}
+
+.directions h3 {
+	margin-bottom: 100px;
+}
+.directions h1 {
+	margin-top: 50px;
+	margin-bottom: 150px;
+	border: 6px inset rgb(50,153,187);
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+	background-color: rgb(36,36,36);
+}
+
+header {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.submitButton,button {
+	margin: 3px;
+}
+
+#submitCard {
+	margin-right: auto;
+	margin-left: auto;
+	width: 1400px;
+	padding-bottom: 25px;
+}
+
+#submitCard table {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#submitCard td {
+	padding-left: 15px;
+	text-align: center;
 }

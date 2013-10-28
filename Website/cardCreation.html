@@ -13,32 +13,63 @@
 	<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<nav class="navbar">
-			<button type="button" id="logOut" class="navButton">Log Out</button>
-			<button type="button" id="home" class="navButton">Home</button>
-		</nav>
-	</header>
+	<div class="content">
 
-	<div id ="submitCard">
-			Category:<select id="categorySelect">
-				<option value="1">Math</option>
-				<option value="2">Science</option>
-				<option value="3">History</option>
-				<option value="4">English</option>
-				<option value="5">Language</option>
-			</select>
-			Subcategory: <input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." required>
-			Question:<input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." required>
-			Correct Answer:<input type ="text" id="newAnswer" maxlength="64" title="Please Enter An Answer." required>
-			Question Difficulty:<select id="newDifficulty">
-				<option value="1"> Easy </option>
-				<option value="2"> Normal </option>
-				<option value="3"> Hard </option>
-				<option value="4"> Impossible </option>
-			</select>
-			<input type ="button" id="submitQuestion" value ="Submit New Card">
+		<header>
+			<nav class="navbar">
+				<button type="button" id="logOut" class="navButton">Log Out</button>
+				<button type="button" id="home" class="navButton">Home</button>
+			</nav>
+		</header>
+
+		<div id ="submitCard">
+			<table>
+				<tr>
+					<td><label for="categorySelect">Category:</label></td>
+					<td><label for="newSubcategory">Subcategory: </label></td>
+					<td><label for="newQuestion">Question: </label></td>
+					<td><label for="newAnswer">Answer: </label></td>
+					<td><label for="newDifficulty">Difficulty: </label></td>
+				</tr>
+				<tr>
+					<td>
+						<select id="categorySelect">
+							<option value="">Select</option>
+							<option value="1">Math</option>
+							<option value="2">Science</option>
+							<option value="3">History</option>
+							<option value="4">English</option>
+							<option value="5">Language</option>
+						</select>
+					</td>
+					<td><input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." placeholder="Subcategory" required></td>
+					<td><input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." placeholder="Question" required></td>
+					<td><input type ="text" id="newAnswer" maxlength="64" title="Please Enter An Answer." placeholder="Answer" required></td>
+					<td>
+						<select id="newDifficulty">
+							<option value="">Select</option>
+							<option value="1">Easy</option>
+							<option value="2">Normal</option>
+							<option value="3">Hard</option>
+							<option value="4">Nigh-Impossible</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="blank"></td>
+					<td class="blank"></td>
+					<td class="blank"></td>
+					<td class="blank"></td>
+					<td><input type ="button" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
+				</tr>	
+			</table>			
+		</div>
+
+		<footer>
+			<p>Quizard Quest is brought to you by cd msc/</p>
+			<p>English (US)</p>
+		</footer>
+
 	</div>
-
 </body>
 </html>

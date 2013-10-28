@@ -307,7 +307,7 @@
         // This will update all the values. Not all values have to change, since any of the
         // parameters will show their original value if they are not changed. This reduces the
         // number of different functions that have to be called or made. 
-        $query = "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';"
+        $query = "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';";
         if (!mysqli_query($db, $query)) {
             echo "There was an error updating your options. Please return to the previous page.
             Here's the error if you wanted to know:\n";

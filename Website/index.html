@@ -19,7 +19,7 @@
 
 	<body>
 
-		<div id="boundary">
+		<div class="content">
 
 			<header>
 
@@ -31,15 +31,13 @@
 						<form id="logIn" action="#" method="POST" autocomplete="off">
 							<table>
 								<tr>
-									<td><label id="uname">Username: </label></td>
-									<td><label id="pwd">Password: </label></td>
+									<td><label  for="pwd" id="uname">Username: </label></td>
+									<td><label for="user" id="pwd">Password: </label></td>
 								</tr>
 								<tr>
 									<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
 									<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
-								</tr>
-								<tr>
-									<td><input type="submit" value="Log In" id="logInButton"/></td>
+									<td><input type="submit" value="Log In" id="logInButton" class="submitButton" /></td>
 								</tr>
 							</table>
 						</form>
@@ -59,30 +57,32 @@
 						<h2 id="createAcountHeader">Become a Quizard!</h2>
 						<table>
 							<tr>
-								<td><label id="fname">First Name: </label></td>
+								<td><label  for="firstName" id="fname">First Name: </label></td>
 								<td>*<input type="text" placeholder="First Name" id="firstName" name="fname" title="Cannot be left empty" required/></td>
 							</tr>
 							<tr>
-								<td><label id="lname">Last Name: </label></td>
+								<td><label for="lastName" id="lname">Last Name: </label></td>
 								<td>*<input type="text" placeholder="Last Name" id="lastName" name="lname" title="Cannot be left empty" required/></td>
 							</tr>
 							<tr>
-								<td><label id="eMail">Email: </label></td>
+								<td><label for="email" id="eMail">Email: </label></td>
 								<td>*<input type="email" placeholder="me@example.com" id="email" name="Email" title="Must be a valid email using '@' and '.' "required /></td>
 							</tr>
 							<tr>
-								<td><label id="newUser">Username: </label></td>
+								<td><label for="username" id="newUser">Username: </label></td>
 								<td>*<input type="text" placeholder="Username" pattern=".{6,20}" name="username" title="Username must be 6-20 characters" id="username" required/></td>
 							</tr>
 							<tr>
-								<td><label id="newpassword">Password: </label></td>
+								<td><label for="newPassword" id="newpassword">Password: </label></td>
 								<td>*<input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
 							</tr>
 							<tr>
-								<td><label id="Gender">Gender: </label></td>
+								<td><label for="GENDER" id="Gender">Gender: </label></td>
 								<td id="GENDER"> 
-									<input type="radio" name="gender" value="m" id="male" class="gender"/>Male
-									<input type="radio" name="gender" value="f" id="female" class="gender"/>Female
+									<input type="radio" name="gender" value="m" id="male" class="gender"/>
+									<label for="male">Male</label>
+									<input type="radio" name="gender" value="f" id="female" class="gender"/>
+									<label for="female">Female</label>
 								</td>
 							</tr>
 							<tr>
@@ -113,7 +113,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="blankData"></td>
+								<td class="blank"></td>
 								<td class="submitButton" id="SIGNUP"><input type="submit" value="Sign Up" id="signUp" /></td>
 							</tr>
 						</table>
@@ -132,6 +132,7 @@
 				<p>Quizard Quest is brought to you by cd msc/</p>
 				<p>English (US)</p>
 			</footer>
+
 		</div>
 
 	</body>
