@@ -8,15 +8,11 @@
 	include "API.php";
 	session_start();
 
-	$category = $_POST['category'];
-	$subcategory = $_POST['subcategory'];
-	$question = $_POST['question'];
-	$answer = $_POST['answer'];
-	$difficulty = $_POST['difficulty'];
+	$name = $_POST['name'];
 
 
 	//$file = "../Design_Documents/test.txt";
 	//file_put_contents($file, $category);
-	$card = create_card($question,$answer,$category,$subcategory,$difficulty);
+	return create_deck($name);
 
 ?>
