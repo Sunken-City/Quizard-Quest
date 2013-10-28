@@ -49,7 +49,10 @@ class APITest extends PHPUnit_Framework_TestCase
   */
   public function testCreateCard()
   {
-    create_card('picoriley', 'sqrt(onions)', "shallots", 1, null, 2);
+    //This function call ensures that we have a session for the subsequent calls.
+    validate_password('picoriley', '12341234');
+    
+    create_card('sqrt(onions)', "shallots", 1, null, 2);
     
     //Check the database to ensure it worked
     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -72,12 +75,31 @@ class APITest extends PHPUnit_Framework_TestCase
 
     mysqli_close($db);
   }
+  
+  /**
+  * @depends testCreateCard
+  */
+  public function testDeleteCard()
+  {
+    //This function call ensures that we have a session for the subsequent calls.
+    validate_password('picoriley', '12341234');
+    
+    delete_card('1');
+    
+    //Check the database to ensure it worked
+    $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) 
+        {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            $this->fail("Couldn't connect to the database. Some database issue?");
+        }
+    $result = mysqli_query($db, "SELECT * FROM cards WHERE cardID = 1;");
+    
+    $this->assertTrue(0 == mysqli_num_rows($result));
 
-  /* Stack Question for later.
-  I'm working on a website for a school project involving PHP and mySQL, and because it's the first time I've worked with either, I'm trying to run unit/integration tests on function calls between the two. However, I've run into a snag.
+    mysqli_close($db);
+  }
 
-While attempting to unit test a function in the PHP API that uses a session created in an earlier function in the same file, I get back the error `Undefined variable: _SESSION`. From what I grasp, this means that the session goes out of scope in between the two calls to the function.
-*/
 }
 
 ?>
