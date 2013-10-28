@@ -96,12 +96,17 @@ input,label,select {
 [type="text"],[type="email"],[type="password"] {
 	height: 22px;
 	width: 172px;
+	margin-bottom: 10px;
 }
 
 header label,input {
 	margin-bottom: 0em;
 }
 
-input {
+input,select {
 	font-family: 'Share Tech Mono', sans-serif;
+}
+
+#grade {
+	margin-top: 10px;
 }
