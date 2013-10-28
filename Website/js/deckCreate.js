@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$("#createDeck").click(function(e){\
+	$("#createDeck").click(function(e){
 
 	var JSON;
 	$.post("../API_Server/DeckCreation.php",function(data){
