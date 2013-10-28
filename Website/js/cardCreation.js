@@ -24,7 +24,8 @@ $(document).ready(function(){
 
 		var answer = prepareAnswer(answer);
 		//Hoping that this will work now. Let's Test This Out
-
+		question = question.trim();
+		answer = answer.trim();
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
 		$.post("../API_Server/CardCreation.php",formData,function(){
