@@ -17,12 +17,12 @@
 
 		<?php
 			session_start();
-			if(!isset($_SESSION['userID']))
-				{
-				    // not logged in
-				    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
-				    exit();
-				}
+			if(!isset($_SESSION['userID'])) {
+			    // not logged in
+			    session_destroy();
+			    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
+			    exit();
+			}
 		?>
 
 	</head>
