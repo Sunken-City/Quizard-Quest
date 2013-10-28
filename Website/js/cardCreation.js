@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 		e.preventDefault();
 		alert("Question Added");
-		window.location.href = "cardCreation.html";
+		window.location.href = "cardCreation.php";
 	}
 	});
 
