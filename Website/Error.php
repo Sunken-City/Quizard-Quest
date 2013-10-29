@@ -17,6 +17,8 @@
 	<body>
 		<div class="content">
 
+			<header><nav class="navbar"></nav></header>
+
 			<article class="directions">
 				<button type="button" class="makeHeader1" id="redirect">
 					Here's Where It All Begins!
