@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 			if(data['success']) {
             	// do successful things
-            	window.location.href = "mainMenu.html";
+            	window.location.href = "mainMenu.php";
         	}
         	else {
             	// do failure things

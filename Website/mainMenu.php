@@ -20,8 +20,8 @@
 			if(!isset($_SESSION['userID'])) {
 			    // not logged in
 			    session_destroy();
-			    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
-			    exit();
+			    die ("You must log in to view this page");
+			    //header('Location: http://54.200.66.93/Quizard-Quest/Website/');
 			}
 		?>
 
