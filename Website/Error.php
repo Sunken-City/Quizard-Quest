@@ -15,12 +15,15 @@
 
 
 	<body>
+		<div class="content">
 
-		<article class="directions">
-			<button type="button" class="makeHeader1" id="redirect">
-				Here's Where It All Begins!
-			</button>
-		</article>
+			<article class="directions">
+				<button type="button" class="makeHeader1" id="redirect">
+					Here's Where It All Begins!
+				</button>
+			</article>
+
+		</div>
 
 	</body>
 
