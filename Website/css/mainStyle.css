@@ -71,7 +71,7 @@ input,select,button,select {
   	-webkit-border-radius: 3px;
 }
 
-input:focus {
+input:focus,select:focus {
 	border-color: rgb(255,153,0);
 }
 
