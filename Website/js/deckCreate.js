@@ -7,10 +7,7 @@ $(document).ready(function(){
 
 	$.getJSON("../API_Server/getCards.php", function(data){
 		
-		JSON = JSON.parse(data);
-		console.log(data);
-		
-		window.location.href = "DeckCreate.php";
+		JSON = $.parseJSON(data);
 		});
 	alert('button Pressed');
 	

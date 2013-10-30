@@ -234,7 +234,7 @@
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
         }
-        return json_encode($table);
+        return $table;
         mysqli_close($db);
     }
     

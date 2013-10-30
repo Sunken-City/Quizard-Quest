@@ -10,6 +10,6 @@
 
 	
 	//file_put_contents($file, $category);
-        echo get_all_cards();
+        echo json_encode(get_all_cards());
 
 ?>
