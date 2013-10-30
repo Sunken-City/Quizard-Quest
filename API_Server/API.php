@@ -256,6 +256,23 @@
         echo json_encode($table);
         mysqli_close($db);
     }
+    
+    function get_deck_cards($deckID) {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $table = array();
+        $userID = $_SESSION['userID'];
+        
+        $cards = mysqli_query($db, "SELECT cards.cardID, cards.question, cards.answer, cards.category, cards.subCateogry, cards.difficulty, cards.rating FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID = '$deckID';");
+        $x = mysqli_num_rows($cards);
+        for ($i = 0; $i < $x; $i++) {
+            array_push($table, mysqli_fetch_assoc($cards));
+        }
+        echo json_encode($table);
+        mysqli_close($db);
    
    
    /********************************/
