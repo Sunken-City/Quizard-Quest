@@ -27,7 +27,7 @@ $(document).ready(function(){
 		var question = document.createElement("p");
 		question.innerHTML = JSON[i].question
 		tableData.appendChild(question);
-		body.getElementById('UserCards').appendChild(tableData);
+		document.getElementById('UserCards').appendChild(tableData);
 	}
 
 	$("#createDeck").click(function(e){
