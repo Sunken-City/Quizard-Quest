@@ -1,18 +1,5 @@
 /* This is the Javascript for creating the deck and loading all the user cards
 to the window */
-var JSON;
-
-$.post("../API_Server/getCards.php", function(data){
-		
-	JSON = $.parseJSON(data);
-});
-
-function FlashCard(){
-	var question;
-	var answer;
-	var cardID;
-	var subCategory;
-}
 
 $(document).ready(function(){
 
@@ -33,6 +20,11 @@ $(document).ready(function(){
 });
 window.addEventListener('load', function() {
 	console.log("window loaded");
+	var JSON;
+
+	$.post("../API_Server/getCards.php", function(data){
+		JSON = $.parseJSON(data);
+	});
 	for( var i = 0, len = JSON.length;  i < len; i++){
 		console.log(i);
 		var tableData = document.createElement("td");
