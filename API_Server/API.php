@@ -123,8 +123,21 @@
         /*make sure email isn't already in the database*/
         $query = "SELECT * FROM players WHERE (email = '$email');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error checking to see if your email already exists. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "
+                    <head>
+
+                <title>QQ: Main Menu</title>
+                <link rel=\"stylesheet\" href=\"css/mainStyle.css\"/>
+                <meta charset=\"UTF-8\">
+                <script type = \"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js\"></script>
+                <script type = \"text/javascript\" src=\"js/mainMenu.js\"></script>
+                <script type = \"text/javascript\" src=\"js/navigation.js\"></script>
+                <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
+                </head>
+                <body>
+		There was an error checking to see if your email already exists. Please return to the previous page.
+		Here's the error if you wanted to tell a developer:\n
+		</body>";
             die('Error: ' . mysqli_error($db));
         }
         $result = mysqli_query($db,$query);
