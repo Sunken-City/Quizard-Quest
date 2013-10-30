@@ -1,16 +1,17 @@
 $(document).ready(function(){
 
-	$("#createDeck").click(function(e){
 
-	
 	var JSON;
 
 	$.post("../API_Server/getCards.php", function(data){
 		
-		JSON = $.parseJSON(data);
-		});
+	JSON = $.parseJSON(data);
+	});
 
 	alert(JSON[0]);
+
+	$("#createDeck").click(function(e){
+	
 	e.preventDefault();
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
