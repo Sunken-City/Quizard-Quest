@@ -17,11 +17,7 @@ function FlashCard(){
 	var subCategory;
 }
 
-
-
-$(document).ready(function(){
-
-	for( var i = 0, len = JSON.length;  i < len; i++){
+for( var i = 0, len = JSON.length;  i < len; i++){
 		console.log(i);
 		var tableData = document.createElement("td");
 		var question = document.createElement("p");
@@ -29,6 +25,11 @@ $(document).ready(function(){
 		tableData.appendChild(question);
 		document.getElementById('UserCards').appendChild(tableData);
 	}
+
+
+$(document).ready(function(){
+
+	
 
 	$("#createDeck").click(function(e){
 	alert(JSON[0]);
