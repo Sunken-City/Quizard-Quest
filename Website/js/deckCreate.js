@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$.getJSON("../API_Server/DeckCreation.php",function(data){
 		JSON = JSON.parse(data);
 		alert(pJSON.question);
-		window.location.href = "DeckCreate.html";
+		window.location.href = "DeckCreate.php";
 		});
 	e.preventDefault();
 	/* Get all the TD that are checked
