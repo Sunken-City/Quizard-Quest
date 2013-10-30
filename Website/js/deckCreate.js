@@ -8,7 +8,7 @@ $.post("../API_Server/getCards.php", function(data){
 		console.log(i);
 		var tableData = document.createElement("td");
 		var question = document.createElement("p");
-		question.innerHTML = JSON[i].question
+		question.innerHTML = "Question: " + JSON[i].question + " \nAnswer: " + JSON[i].answer;
 		tableData.appendChild(question);
 		document.getElementById('UserCards').appendChild(tableData);
 	}
@@ -20,7 +20,6 @@ $.post("../API_Server/getCards.php", function(data){
 $(document).ready(function(){
 
 	$("#createDeck").click(function(e){
-	alert(JSON[0]);
 	e.preventDefault();
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
