@@ -5,7 +5,7 @@ $(document).ready(function(){
 	e.preventDefault();
 	var JSON;
 
-	$.getJSON("../API_Server/getCards.php", function(data){
+	$.post("../API_Server/getCards.php", function(data){
 		
 		JSON = $.parseJSON(data);
 		});
