@@ -1,4 +1,4 @@
-ROR CODES==--
+--==ERROR CODES==--
 Errors are represented as 3 digit numbers.
 The first digit represents whom the error pertains to.
 The second digit represents the page the error comes from.

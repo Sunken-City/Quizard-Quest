@@ -116,9 +116,6 @@
         if (!(mysqli_num_rows($result) == 0)) {
 	    header('Location:http://54.200.66.93/Quizard-Quest/Website/Error.php?err=100');
 	    die();
-            die('The username you entered is already associated with a user.
-                 Please return to the previous page and log in with your 
-                 password or use a different username.');
             return false;
         }
         

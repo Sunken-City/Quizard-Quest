@@ -12,7 +12,15 @@ echo "<html lang="en">
   {
     if($_GET['err'] == 100)
     {
-      echo "<body></body>";
+      echo "<body>The username you entered is already associated with a user.
+                 Please return to the previous page and log in with your 
+                 password or use a different username</body>";
+    }
+    if($_GET['err'] == 101)
+    {
+      echo "<body>The email you entered is already associated with a user.
+                 Please return to the previous page and log in with your 
+                 password or use a different email</body>";
     }
   }
     
