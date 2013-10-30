@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$.getJSON("../API_Server/DeckCreation.php",function(data){
 		JSON = JSON.parse(data);
 		alert(pJSON.question);
+		alert('button Pressed)';
 		window.location.href = "DeckCreate.php";
 		});
 	e.preventDefault();
