@@ -10,7 +10,7 @@ $(document).ready(function(){
 		
 		window.location.href = "DeckCreate.php";
 		});
-	alert('button Pressed)';
+	alert('button Pressed');
 	e.preventDefault();
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
