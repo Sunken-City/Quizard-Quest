@@ -5,11 +5,12 @@ $(document).ready(function(){
 	var JSON;
 
 	$.getJSON("../API_Server/getCards.php",function(data){
-		/*JSON = JSON.parse(data);
-		alert(JSON.question);*/
+		
+		JSON = JSON.parse(data);
 		
 		window.location.href = "DeckCreate.php";
 		});
+	alert(JSON.question);
 	alert('button Pressed');
 	e.preventDefault();
 	/* Get all the TD that are checked
