@@ -22,6 +22,7 @@ function FlashCard(){
 $(document).ready(function(){
 
 	for( var i = 0, len = JSON.length;  i < len; i++){
+		console.log(i);
 		var tableData = document.createElement("td");
 		var question = document.createElement("p");
 		question.innerHTML = JSON[i].question
