@@ -8,7 +8,8 @@ echo "<html lang=\"en\">
 	  <script type = \"text/javascript\" src=\"js/Error.js\"></script>
 	  <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
   </head>";
-  if(isset($_GET['err']) {
+  if(isset($_GET['err']))
+  {
     if($_GET['err'] == 100)
     {
       echo "<body>The username you entered is already associated with a user.
