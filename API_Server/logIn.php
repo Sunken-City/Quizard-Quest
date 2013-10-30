@@ -15,6 +15,7 @@
 	$authenticated = validate_password($user,$pass);
 
 	$postData = array('success' => $authenticated);
+	$_SESSION['redirected'] = "logIn";
 	echo json_encode($postData);
 
 ?>

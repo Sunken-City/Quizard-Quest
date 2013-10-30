@@ -71,6 +71,10 @@ input,select,button,select {
   	-webkit-border-radius: 3px;
 }
 
+input:focus,select:focus {
+	border-color: rgb(255,153,0);
+}
+
 button:hover,.submitButton:hover,select:hover {
 	background-color: rgb(77,77,77);
 	color: rgb(255,153,0);

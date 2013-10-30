@@ -14,12 +14,12 @@
 
 	<?php
 		session_start();
-		if(!isset($_SESSION['userID']))
-			{
-			    // not logged in
-			    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
-			    exit();
-			}
+		if(!isset($_SESSION['userID'])) {
+		    // not logged in
+		    $_SESSION['redirected'] = true;
+		    //die ("You must log in to view this page");
+			header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php');
+		}
 	?>
 	
 </head>
@@ -71,6 +71,7 @@
 					<td class="blank"></td>
 					<td class="blank"></td>
 					<td class="blank"></td>
+					<td><input type ="button" id="previewCard" value = "Preview New Card" /> </td>
 					<td><input type ="button" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
 				</tr>	
 			</table>			
@@ -81,21 +82,21 @@
 			<p>English (US)</p>
 		</footer>
 
+		<div id="card">
+			<div id="cardBackground">
+			</div>
+			<div id="cardCategory">
+			</div>
+			<div id="cardSubcategory">
+			</div>
+			<div id="cardQuestion">
+			</div>
+			<div id="cardDifficulty">
+			</div>
+			<div id="cardAnswer">
+		</div>
 	</div>
-	<div id="card">
-		<div id="cardBackground">
+	</div>
 
-		</div>
-		<div id="cardCategory">
-		</div>
-		<div id="cardSubcategory">
-		</div>
-		<div id="cardQuestion">
-		</div>
-		<div id="cardDifficulty">
-		</div>
-		<div id="cardAnswer">
-		</div>
-	</div>
 </body>
 </html>

@@ -17,14 +17,14 @@
 
 		<?php
 			session_start();
-			if(!isset($_SESSION['userID']))
-				{
-				    // not logged in
-				    header('Location: http://54.200.66.93/Quizard-Quest/Website/');
-				    exit();
-				}
+			if(!isset($_SESSION['userID'])) {
+			    // not logged in
+			    //die ("You must log in to view this page");
+			    $_SESSION['redirected'] = true;
+			    header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php');
+			}
 		?>
-		
+
 	</head>
 
 	<body>

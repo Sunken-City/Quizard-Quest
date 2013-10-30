@@ -45,6 +45,86 @@ $(document).ready(function(){
 	}
 	});
 
+	$("#previewCard").click(function(e){
+		var category = document.getElementById('categorySelect');
+		var subcategory = document.getElementById('newSubcategory');
+		var question = document.getElementById('newQuestion');
+		var answer = document.getElementById('newAnswer');
+		var difficulty = document.getElementById('newDifficulty');
+
+		var categoryValue = category.value;
+		var subcategoryValue = subcategory.value;
+		var questionValue = question.value;
+		var answerValue = answer.value;
+		var difficultyValue = difficulty.value;
+		var categoryName = "Failed";
+		var difficultyName = "Failed";
+
+		switch(categoryValue)
+		{
+			case "1":
+				categoryName="Math";
+				break;
+			case "2":
+				categoryName="Science";
+				break;
+			case "3":
+				categoryName="History";
+				break;
+			case "4":
+				categoryName="English";
+				break;
+			case "5":
+				categoryName="Foreign Languages";
+				break;
+
+		}
+
+		switch(difficultyValue)
+		{
+			case "1":
+				difficultyName="Easy";
+				break;
+			case "2":
+				difficultyName="Normal";
+				break;
+			case "3":
+				difficultyName="Hard";
+				break;
+			case "4":
+				difficultyName="Nigh-Impossible";
+				break;
+		}
+
+		answerValue = prepareAnswer(answerValue);
+		//Hoping that this will work now. Let's Test This Out
+		subcategoryValue = subcategoryValue.trim();
+		questionValue = questionValue.trim();
+		answerValue = answerValue.trim();
+
+
+		var cardCategory = document.getElementById('cardCategory');
+		var cardSubcategory = document.getElementById('cardSubcategory');
+		var cardQuestion = document.getElementById('cardQuestion');
+		var cardAnswer = document.getElementById('cardAnswer');
+		var cardDifficulty = document.getElementById('cardDifficulty');
+
+
+		if(categoryValue == 0){
+			alert("Please Select a Category");
+		}
+		else if(difficultyValue == 0){
+			alert("Please Select a Difficulty");
+		}
+		else{
+		cardCategory.innerHTML = categoryName;
+		cardSubcategory.innerHTML = subcategoryValue;
+		cardQuestion.innerHTML = questionValue;
+		cardAnswer.innerHTML = answerValue;
+		cardDifficulty.innerHTML = difficultyName;
+		}
+	});
+
 	function prepareAnswer(str) {
 		var punctuationless = str.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()@]/g,"")
 		var noSpaces = punctuationless.replace(/\s{2,}/g," ");

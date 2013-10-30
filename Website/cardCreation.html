@@ -35,11 +35,11 @@
 					<td>
 						<select id="categorySelect">
 							<option value="">Select</option>
-							<option value="1">Math</option>
-							<option value="2">Science</option>
-							<option value="3">History</option>
-							<option value="4">English</option>
-							<option value="5">Language</option>
+							<option label="Math"value="1">Math</option>
+							<option label="Science" value="2">Science</option>
+							<option label="History" value="3">History</option>
+							<option label="English" value="4">English</option>
+							<option label="Foreign Language" value="5">Foreign Language</option>
 						</select>
 					</td>
 					<td><input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." placeholder="Subcategory" required></td>
@@ -48,10 +48,10 @@
 					<td>
 						<select id="newDifficulty">
 							<option value="">Select</option>
-							<option value="1">Easy</option>
-							<option value="2">Normal</option>
-							<option value="3">Hard</option>
-							<option value="4">Nigh-Impossible</option>
+							<option label="Easy" value="1">Easy</option>
+							<option label="Normal"value="2">Normal</option>
+							<option label="Hard"value="3">Hard</option>
+							<option label="Nigh-Impossible" value="4">Nigh-Impossible</option>
 						</select>
 					</td>
 				</tr>
@@ -60,6 +60,7 @@
 					<td class="blank"></td>
 					<td class="blank"></td>
 					<td class="blank"></td>
+					<td><input type ="button" id="previewCard" value = "Preview New Card" /> </td>
 					<td><input type ="button" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
 				</tr>	
 			</table>			
@@ -73,9 +74,8 @@
 	</div>
 	<div id="card">
 		<div id="cardBackground">
-
 		</div>
-		<div id="cardCategory">
+		<div id="cardCategory">	
 		</div>
 		<div id="cardSubcategory">
 		</div>
