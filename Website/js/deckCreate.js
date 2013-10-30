@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 	var JSON;
 
-	$.getJSON("../API_Server/getCards.php",function(data){
+	$.getJSON("../API_Server/getCards.php", function(data){
 		
-		JSON = JSON.parse(data);
-		console.log(JSON);
+		/*JSON = JSON.parse(data);*/
+		console.log(data);
 		
 		window.location.href = "DeckCreate.php";
 		});
