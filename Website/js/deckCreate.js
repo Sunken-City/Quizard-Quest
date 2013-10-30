@@ -8,7 +8,7 @@ $.post("../API_Server/getCards.php", function(data){
 		console.log(i);
 		var tableData = document.createElement("td");
 		var question = document.createElement("p");
-		question.innerHTML = "Question: " + JSON[i].question + " Answer: " + JSON[i].answer;
+		question.innerHTML = "Question: " + JSON[i].question + " \nAnswer: " + JSON[i].answer;
 		tableData.appendChild(question);
 		document.getElementById('UserCards').appendChild(tableData);
 	}
