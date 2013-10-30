@@ -1,14 +1,18 @@
-$(document).ready(function(){
 
 
-	var JSON;
 
-	$.post("../API_Server/getCards.php", function(data){
+
+
+var JSON;
+
+$.post("../API_Server/getCards.php", function(data){
 		
 	JSON = $.parseJSON(data);
-	});
+});
 
-	alert(JSON[0]);
+alert(JSON[0]);
+
+$(document).ready(function(){
 
 	$("#createDeck").click(function(e){
 	
@@ -19,7 +23,6 @@ $(document).ready(function(){
 	*/
 
 	/*Also needs a way to import all question from the Database */
-	
 		
 	});
 
