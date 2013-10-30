@@ -17,15 +17,17 @@ function FlashCard(){
 	var subCategory;
 }
 
-for( var i = 0, len = JSON.length;  i < len; i++){
-	var tableData = document.createElement("td");
-	var question = document.createElement("p");
-	question.innerHTML = JSON[i].question
-	tableData.appendChild(question);
-	body.getElementById('UserCards').appendChild(tableData);
-}
+
 
 $(document).ready(function(){
+
+	for( var i = 0, len = JSON.length;  i < len; i++){
+		var tableData = document.createElement("td");
+		var question = document.createElement("p");
+		question.innerHTML = JSON[i].question
+		tableData.appendChild(question);
+		body.getElementById('UserCards').appendChild(tableData);
+	}
 
 	$("#createDeck").click(function(e){
 	alert(JSON[0]);
