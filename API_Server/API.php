@@ -273,6 +273,7 @@
         }
         echo json_encode($table);
         mysqli_close($db);
+   }
    
    
    /********************************/
