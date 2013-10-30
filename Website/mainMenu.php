@@ -3,6 +3,15 @@
 	Main Menu page for Quizard Quest
 	Author: Nathan Moore
 -->
+		<?php
+			session_start();
+			if(!isset($_SESSION['userID'])) {
+			    // not logged in
+			    $_SESSION['redirected'] = true;
+			    header('Location:http://54.200.66.93/Quizard-Quest/Website/Error.php?err=199');
+			    die();
+			}
+		?>
 <html lang="en">
 
 	<head>
@@ -15,15 +24,7 @@
 		<script type = "text/javascript" src="js/navigation.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
-		<?php
-			session_start();
-			if(!isset($_SESSION['userID'])) {
-			    // not logged in
-			    $_SESSION['redirected'] = true;
-			    header('Location:http://54.200.66.93/Quizard-Quest/Website/Error.php?err=199');
-			    die();
-			}
-		?>
+
 
 	</head>
 
