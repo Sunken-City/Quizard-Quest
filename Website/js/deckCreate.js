@@ -8,7 +8,12 @@ $.post("../API_Server/getCards.php", function(data){
 		console.log(i);
 		var tableData = document.createElement("td");
 		var question = document.createElement("p");
+		var checkBox = document.createElement("input");
+		checkBox.value = JSON[i].cardID;
+		checkBox.type = "checkbox";
+		checkBox.name = "flashCard";
 		question.innerHTML = "Question: " + JSON[i].question + " \nAnswer: " + JSON[i].answer;
+		tableData.appendChild(checkBox);
 		tableData.appendChild(question);
 		document.getElementById('UserCards').appendChild(tableData);
 	}
