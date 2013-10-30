@@ -32,6 +32,7 @@ $(document).ready(function(){
 
 });
 window.addEventListener('load', function() {
+	console.log("window loaded");
 	for( var i = 0, len = JSON.length;  i < len; i++){
 		console.log(i);
 		var tableData = document.createElement("td");
