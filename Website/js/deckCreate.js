@@ -9,7 +9,7 @@ $(document).ready(function(){
 		
 		JSON = $.parseJSON(data);
 		});
-	alert('button Pressed');
+	alert(JSON.question);
 	
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
