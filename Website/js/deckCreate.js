@@ -4,12 +4,13 @@ $(document).ready(function(){
 
 	var JSON;
 
-	$.getJSON("../API_Server/DeckCreation.php",function(data){
-		JSON = JSON.parse(data);
-		alert(pJSON.question);
-		alert('button Pressed)';
+	$.getJSON("../API_Server/getCards.php",function(data){
+		/*JSON = JSON.parse(data);
+		alert(JSON.question);*/
+		
 		window.location.href = "DeckCreate.php";
 		});
+	alert('button Pressed)';
 	e.preventDefault();
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
