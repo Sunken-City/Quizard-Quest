@@ -6,3 +6,4 @@ The third digit represents the specific error.
 
 100 = Registration error: User already exists
 101 = Registration error: Email already exists
+199 = Login error: User isn't logged in

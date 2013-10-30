@@ -22,6 +22,14 @@ echo "<html lang=\"en\">
                  Please return to the previous page and log in with your 
                  password or use a different email</body>";
     }
+    else if($_GET['err'] == 199)
+    {
+      echo "<body>You are not logged in. Only registered users can view this page.</body>";
+    }
+    else
+    {
+      echo "<body>Invalid error code. Please stop trying to make up even more errors! :c</body>";
+    }
   }
   else
   {
