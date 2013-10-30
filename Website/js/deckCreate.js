@@ -1,13 +1,14 @@
 /* This is the Javascript for creating the deck and loading all the user cards
 to the window */
+var JSON;
+
+$.post("../API_Server/getCards.php", function(data){
+		JSON = $.parseJSON(data);
+});
+	
+
 
 $(document).ready(function(){
-	var JSON;
-
-	$.post("../API_Server/getCards.php", function(data){
-		JSON = $.parseJSON(data);
-	});
-	
 
 	$("#createDeck").click(function(e){
 	alert(JSON[0]);
