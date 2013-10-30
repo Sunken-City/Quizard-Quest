@@ -130,7 +130,7 @@
         $result = mysqli_query($db,$query);
 
         if (!(mysqli_num_rows($result) == 0)) {
-	    echo "                <head>
+	    echo "<head>
                 <title>QQ: Main Menu</title>
                 <link rel=\"stylesheet\" href=\"css/mainStyle.css\"/>
                 <meta charset=\"UTF-8\">
@@ -143,7 +143,7 @@
                 The email you entered is already associated with a user.
                  Please return to the previous page and log in with your 
                  password or use a different email.
-                </body>"
+                </body>";
             /*die('The email you entered is already associated with a user.
                  Please return to the previous page and log in with your 
                  password or use a different email.');*/
