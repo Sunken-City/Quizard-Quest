@@ -3,9 +3,11 @@ $(document).ready(function(){
 	$("#createDeck").click(function(e){
 
 	var JSON;
+	var pJSON;
 	$.post("../API_Server/DeckCreation.php",function(data){
 		JSON = data;
-		alert(JSON['question']);
+		pJSON = JSON.parse(JSON);
+		alert(pJSON.question);
 		window.location.href = "DeckCreate.html";
 		},"json");
 	e.preventDefault();
