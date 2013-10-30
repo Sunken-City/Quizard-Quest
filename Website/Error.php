@@ -1,5 +1,5 @@
 <?php
-echo "<html lang="en">
+echo "<html lang=\"en\">
   <head>
 	  <title>QQ: Error</title>
 	  <link rel=\"stylesheet\" href=\"css/mainStyle.css\"/>
