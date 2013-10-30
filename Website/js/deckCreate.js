@@ -3,7 +3,16 @@ to the window */
 var JSON;
 
 $.post("../API_Server/getCards.php", function(data){
-		JSON = $.parseJSON(data);
+	JSON = $.parseJSON(data);
+	for( var i = 0, len = JSON.length;  i < len; i++){
+		console.log(i);
+		var tableData = document.createElement("td");
+		var question = document.createElement("p");
+		question.innerHTML = JSON[i].question
+		tableData.appendChild(question);
+		document.getElementById('UserCards').appendChild(tableData);
+	}
+		
 });
 	
 
@@ -25,13 +34,5 @@ $(document).ready(function(){
 });
 window.addEventListener('load', function() {
 	console.log("window loaded");
-	for( var i = 0, len = JSON.length;  i < len; i++){
-		console.log(i);
-		var tableData = document.createElement("td");
-		var question = document.createElement("p");
-		question.innerHTML = JSON[i].question
-		tableData.appendChild(question);
-		document.getElementById('UserCards').appendChild(tableData);
-	}
 }, false);
 
