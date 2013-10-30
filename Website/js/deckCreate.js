@@ -2,7 +2,11 @@
 to the window */
 
 $(document).ready(function(){
+	var JSON;
 
+	$.post("../API_Server/getCards.php", function(data){
+		JSON = $.parseJSON(data);
+	});
 	
 
 	$("#createDeck").click(function(e){
@@ -20,11 +24,6 @@ $(document).ready(function(){
 });
 window.addEventListener('load', function() {
 	console.log("window loaded");
-	var JSON;
-
-	$.post("../API_Server/getCards.php", function(data){
-		JSON = $.parseJSON(data);
-	});
 	for( var i = 0, len = JSON.length;  i < len; i++){
 		console.log(i);
 		var tableData = document.createElement("td");
