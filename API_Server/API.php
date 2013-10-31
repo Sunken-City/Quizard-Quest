@@ -28,7 +28,7 @@
             die('Error: ' . mysqli_error($db));
         }
         
-        $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND name = '$deckname');");
+        $deckID = mysqli_query($db,"SELECT decks.deckID FROM decks WHERE (userID = '$userID' AND name = '$deckname');");
 	     $idRow = mysqli_fetch_assoc($deckID);
         $id = intval($idRow['decks.deckID'],10);
       
