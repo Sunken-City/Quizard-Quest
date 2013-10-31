@@ -28,7 +28,12 @@
 		    {
 		      echo "<body>The username you entered is already associated with a user.
 		                 Please return to the previous page and log in with your 
-		                 password or use a different username</body>";
+		                 password or use a different username.</body>";
+		      echo "<article class=\"directions\">
+				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
+					Click here to return to the main menu
+				</button>
+			    </article>";
 		    }
 		    else if($_GET['err'] == 101)
 		    {
@@ -51,20 +56,10 @@
 		  }
 		    
 
-		    echo "
-
-			<article class=\"directions\">
-				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
-					Click here to return to the main menu
-				</button>
-			</article>
-
-			<footer>
+		    echo "<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
 				<p>English (US)</p>
-			</footer>
-
-		    </html>";
+			</footer></html>";
 		?>
 <!--
 	</head>
