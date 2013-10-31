@@ -40,7 +40,7 @@
 
 			<h1>Create-a-Deck!</h1>
 
-			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
+			<form id="deckCreate" action="#" method="POST" >
 				<table id="UserCards">  				
 					<select name="Categories" id="categories" required>
 						<option value="1">Math</option>
@@ -50,7 +50,7 @@
 						<option value="5">Language</option>
 					</select>
 				</table>
-				<input type="submit" name="deckSubmit" value="Create Deck" id="createDeck" class="submitButton" />
+				<input type="submit" value="Create Deck" id="createDeck" class="submitButton" />
 			</form>
 
 			<footer>
