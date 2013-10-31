@@ -50,6 +50,7 @@ h1,.makeHeader1 {
 	width: 750px;
 	-moz-border-radius: 8px;
   	-webkit-border-radius: 8px;
+  	cursor: pointer;
 }
 
 .makeHeader1:hover {
