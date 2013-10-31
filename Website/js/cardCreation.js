@@ -137,27 +137,33 @@ $(document).ready(function(){
 			'position':'relative',
 			'display':'inline',
 			'font-size':'3em',
+			
 		});
 
 		var SubCategory = $("#cardSubcategory").css({
 			'position':'relative',
 			'display':'inline',
-			'font-size':'2em',
+			'font-size':'2.25em',
+			'clear':'right',
 		});
 
 		var Question = $("#cardQuestion").css({
 			'position':'relative',
 			'font-size':'1.25em',
-			'margin-top':'20px',			
+			'margin-top':'20px',
+			'border':'2px outset rgb(233,233,233)',
+			'display':'inline-block',		
 		});
 
 		var Answer = $("#cardAnswer").css({
 			'position':'relative',
 			'font-size':'1.25em',
+			'border':'2px outset rgb(233,233,233)',
+			'display':'inline-block',
 		});
 
-		var diffheightOffset = -Category.height() - Question.height();
-		var diffhorizOffset = -(Card.width()/2) + $("#cardDifficulty").width();
+		var diffheightOffset = -Category.height() - Question.height() - 10;
+		var diffhorizOffset = (Card.width()/2) - $("#cardDifficulty").width() + 20;
 
 		var Difficulty = $("#cardDifficulty").css({
 			'position':'relative',
