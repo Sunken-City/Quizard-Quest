@@ -4,9 +4,7 @@
 	Author: Peter DeNicola
 -->
 <html lang="en">
-
 	<head>
-
 		<title> Create-A-Card</title>
 		<link rel="stylesheet" href="css/mainStyle.css"/>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -25,9 +23,7 @@
 		?>
 		
 	</head>
-
 	<body>
-
 		<div class="content">
 
 			<header>
@@ -38,9 +34,8 @@
 			</header>
 
 			<div id ="submitCard">
-
 				<form action="#" method="POST" id="cardForm">
-					<table>
+					<table id="cardTable">
 						<tr>
 							<td><label for="categorySelect">Category:</label></td>
 							<td><label for="newSubcategory">Subcategory: </label></td>
@@ -80,15 +75,16 @@
 							<td><input type ="submit" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
 						</tr>	
 					</table>
-				</form>	
-
+				</form>			
 			</div>
 
 			<div id="card">
-				<div id="cardCategory"></div>
-				<div id="cardSubcategory"></div>
+				<div id="cardTitles">
+					<div id="cardDifficulty"></div>
+					<div id="cardCategory" class="cat"></div>
+					<div id="cardSubcategory" class="cat subCat"></div>
+				</div>
 				<div id="cardQuestion"></div>
-				<div id="cardDifficulty"></div>
 				<div id="cardAnswer"></div>
 			</div>
 
@@ -100,5 +96,4 @@
 		</div>
 
 	</body>
-
 </html>
