@@ -7,7 +7,8 @@
 
 	include "API.php";
 	session_start();
-   $deckID = create_deck($name);
+	
+   $deckID = create_deck("TestDeck");
    if (isset($_POST['deckSubmit']))
    {
       if(!empty($_POST['flashCard']))
