@@ -51,7 +51,7 @@
 		    
 
 		    echo "
-		    <div class=\"content\">
+		    
 
 			<header><nav class=\"navbar\"></nav></header>
 
@@ -66,7 +66,7 @@
 				<p>English (US)</p>
 			</footer>
 
-		    </div></html>";
+		    </html>";
 		?>
 <!--
 	</head>
