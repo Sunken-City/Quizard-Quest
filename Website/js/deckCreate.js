@@ -11,7 +11,7 @@ $.post("../API_Server/getCards.php", function(data){
 		var checkBox = document.createElement("input");
 		checkBox.value = JSON[i].cardID;
 		checkBox.type = "checkbox";
-		checkBox.name = "flashCard";
+		checkBox.name = "flashCard[]";
 		question.innerHTML = "Question: " + JSON[i].question + " \nAnswer: " + JSON[i].answer;
 		tableData.appendChild(checkBox);
 		tableData.appendChild(question);

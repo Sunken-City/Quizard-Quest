@@ -49,7 +49,7 @@
 						<option value="5">Language</option>
 					</select>
 				</table>
-				<input type="submit" value="Create Deck" id="createDeck" class="submitButton" />
+				<input type="submit" name="deckSubmit" value="Create Deck" id="createDeck" class="submitButton" />
 			</form>
 
 			<footer>

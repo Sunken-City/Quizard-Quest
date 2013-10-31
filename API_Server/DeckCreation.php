@@ -7,12 +7,15 @@
 
 	include "API.php";
 	session_start();
-
-	$name = $_POST['name'];
-
-
-	//$file = "../Design_Documents/test.txt";
-	//file_put_contents($file, $category);
-	return create_deck($name);
-
+   $deckID = create_deck($name);
+   if (isset($_POST['deckSubmit']))
+   {
+      if(!empty($_POST['flashCard']))
+      {
+         foreach($_POST['flashCard'] as $card)
+         {
+            add_card_to_deck($deckID, $card);
+         }
+      }
+   }
 ?>
