@@ -224,16 +224,38 @@ header {
 #submitCard {
 	margin-right: auto;
 	margin-left: auto;
-	width: 1400px;
+	display: block;
 	padding-bottom: 25px;
+	position: relative;
+	width: 1200px;
+	/*left: 10px;*/
 }
 
 #submitCard table {
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	width: 900px;
 }
 
 #submitCard td {
 	padding-left: 15px;
 	text-align: center;
+}
+
+/*\	
+|*|		:: >>The following is the CSS for how a card will be displayed<< ::		
+\*/
+
+#card {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	width: 700px;
+	padding: 20px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 1.25em;
 }

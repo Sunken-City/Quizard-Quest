@@ -157,7 +157,7 @@ $(document).ready(function(){
 		});
 
 		var diffheightOffset = -Category.height() - Question.height();
-		var diffhorizOffset = -Card.width()/2 + $("#cardDifficulty").width();
+		var diffhorizOffset = -(Card.width()/2) + $("#cardDifficulty").width();
 
 		var Difficulty = $("#cardDifficulty").css({
 			'position':'relative',
