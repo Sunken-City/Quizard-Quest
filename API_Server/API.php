@@ -29,8 +29,7 @@
         }
         
         $deckID = mysqli_query($db,"SELECT decks.deckID FROM cards WHERE (userID = '$userID' AND name = '$deckname');");
-	     $fetch = mysqli_fetch_array($deckID);
-        $idRow = mysqli_fetch_assoc($fetch);
+	     $idRow = mysqli_fetch_assoc($deckID);
         $id = intval($idRow['decks.deckID'],10);
       
         mysqli_close($db);
