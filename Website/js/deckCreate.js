@@ -25,7 +25,6 @@ $.post("../API_Server/getCards.php", function(data){
 $(document).ready(function(){
 
 	$("#createDeck").click(function(e){
-	e.preventDefault();
 	/* Get all the TD that are checked
 	Submit them to a PHP function in an array
 	PHP function makes the Deck
