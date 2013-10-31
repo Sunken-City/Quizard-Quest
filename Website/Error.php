@@ -23,11 +23,12 @@
 		  </head>";
 		  if(isset($_GET['err']))
 		  {
+		    echo '<h1>Error #'.$_GET['err'].'</h1>';
 		    if($_GET['err'] == 100)
 		    {
 		      echo "<body>The username you entered is already associated with a user.
 		                 Please return to the previous page and log in with your 
-		                 password or use a different username</body>";
+		                 password or use a different username.</body>";
 		    }
 		    else if($_GET['err'] == 101)
 		    {
@@ -38,6 +39,20 @@
 		    else if($_GET['err'] == 199)
 		    {
 		      echo "<body>You are not logged in. Only registered users can view this page.</body>";
+		      echo "<article class=\"directions\">
+				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
+					Click here to return to the main menu
+				</button>
+			    </article>";
+		    }
+		    else if($_GET['err'] == 404)
+		    {
+		      echo "<body>The page you requested doesn't exist.</body>";
+		      echo "<article class=\"directions\">
+				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
+					Click here to return to the main menu
+				</button>
+			    </article>";
 		    }
 		    else
 		    {
@@ -46,27 +61,14 @@
 		  }
 		  else
 		  {
-		    echo "<body>No problems here!</body>";
+		    echo "<body>No problems here! Except that you got here without an error. That's a problem.</body>";
 		  }
 		    
 
-		    echo "
-		    
-
-			<header><nav class=\"navbar\"></nav></header>
-
-			<article class=\"directions\">
-				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
-					Click here to return to the main menu
-				</button>
-			</article>
-
-			<footer>
+		    echo "<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
 				<p>English (US)</p>
-			</footer>
-
-		    </html>";
+			</footer></html>";
 		?>
 <!--
 	</head>
