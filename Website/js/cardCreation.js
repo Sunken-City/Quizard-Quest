@@ -30,19 +30,19 @@ $(document).ready(function(){
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
 		if(category == 0){
-			alert("Please Select a Category");
+			//alert("Please Select a Category");
 		}
 		else if(difficulty == 0){
-			alert("Please Select a Difficulty");
+			//alert("Please Select a Difficulty");
 		}
 		else{
-		$.post("../API_Server/CardCreation.php",formData,function(){
-		});
+			$.post("../API_Server/CardCreation.php",formData,function(){
+			});
 
-		e.preventDefault();
-		alert("Question Added");
-		window.location.href = "cardCreation.php";
-	}
+			e.preventDefault();
+			alert("Question Added");
+			window.location.href = "cardCreation.php";
+		}
 	});
 
 	$("#previewCard").click(function(e){
@@ -111,18 +111,60 @@ $(document).ready(function(){
 
 
 		if(categoryValue == 0){
-			alert("Please Select a Category");
+		// 	alert("Please Select a Category");
 		}
 		else if(difficultyValue == 0){
-			alert("Please Select a Difficulty");
+		// 	alert("Please Select a Difficulty");
 		}
 		else{
-		cardCategory.innerHTML = categoryName;
-		cardSubcategory.innerHTML = subcategoryValue;
-		cardQuestion.innerHTML = questionValue;
-		cardAnswer.innerHTML = answerValue;
-		cardDifficulty.innerHTML = difficultyName;
+			cardCategory.innerHTML = categoryName + ": ";
+			cardSubcategory.innerHTML = subcategoryValue;
+			cardQuestion.innerHTML = "Q: " + questionValue;
+			cardAnswer.innerHTML = "A: " + answerValue;
+			cardDifficulty.innerHTML = difficultyName;
 		}
+
+		// var widthForPreview = $(".content").width() - $("#submitCard").width() - 10;
+		// var heightOffset = $("#submitCard").height() - 20;
+		// var widthOffset = $("#submitCard").width() + 40;
+		var Card = $('#card').css({
+			'border':'5px ridge rgb(50,153,187)',
+			'background-color': 'rgba(44,44,44,.35)',			
+			'font-family':"'VT323', cursive",
+		});
+
+		var Category = $("#cardCategory").css({
+			'position':'relative',
+			'display':'inline',
+			'font-size':'3em',
+		});
+
+		var SubCategory = $("#cardSubcategory").css({
+			'position':'relative',
+			'display':'inline',
+			'font-size':'2em',
+		});
+
+		var Question = $("#cardQuestion").css({
+			'position':'relative',
+			'font-size':'1.25em',
+			'margin-top':'20px',			
+		});
+
+		var Answer = $("#cardAnswer").css({
+			'position':'relative',
+			'font-size':'1.25em',
+		});
+
+		var diffheightOffset = -Category.height() - Question.height();
+		var diffhorizOffset = -Card.width()/2 + $("#cardDifficulty").width();
+
+		var Difficulty = $("#cardDifficulty").css({
+			'position':'relative',
+			'top':diffheightOffset + 'px',
+			'right':diffhorizOffset + 'px',
+		});
+
 	});
 
 	function prepareAnswer(str) {
