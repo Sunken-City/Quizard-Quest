@@ -43,9 +43,9 @@
 			</header>
 
 			<article class="directions">
-				<button type="button" class="makeHeader1">
+				<!-- <button type="button" class="makeHeader1">
 					Here's Where It All Begins!
-				</button>
+				</button> -->
 				<h3>Use the navbar at the top of the page to test deck and card creation or log out to the index page!</h3>
 			</article>
 
