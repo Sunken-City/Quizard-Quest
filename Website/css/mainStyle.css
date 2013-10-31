@@ -55,12 +55,11 @@ h1,.makeHeader1 {
 }
 
 .makeHeader1:hover {
-	border: 4px inset rgb(50,153,187);
-	background-color: rgb(77,77,77);
+	border: 2px inset rgb(50,153,187);
 }
 
 .makeHeader1:active {
-	border: 5px outset rgb(255,153,0);
+	border: 2px outset rgb(255,153,0);
 	color: rgb(50,153,187);
 	background-color: rgb(233,233,233);
 }
