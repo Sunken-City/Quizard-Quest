@@ -45,6 +45,15 @@
 				</button>
 			    </article>";
 		    }
+		    else if($_GET['err'] == 404)
+		    {
+		      echo "<body>The page you requested doesn't exist.</body>";
+		      echo "<article class=\"directions\">
+				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
+					Click here to return to the main menu
+				</button>
+			    </article>";
+		    }
 		    else
 		    {
 		      echo "<body>Invalid error code. Please stop trying to make up even more errors! :c</body>";
