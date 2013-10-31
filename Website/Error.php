@@ -29,11 +29,6 @@
 		      echo "<body>The username you entered is already associated with a user.
 		                 Please return to the previous page and log in with your 
 		                 password or use a different username.</body>";
-		      echo "<article class=\"directions\">
-				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
-					Click here to return to the main menu
-				</button>
-			    </article>";
 		    }
 		    else if($_GET['err'] == 101)
 		    {
@@ -44,6 +39,11 @@
 		    else if($_GET['err'] == 199)
 		    {
 		      echo "<body>You are not logged in. Only registered users can view this page.</body>";
+		      echo "<article class=\"directions\">
+				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
+					Click here to return to the main menu
+				</button>
+			    </article>";
 		    }
 		    else
 		    {
