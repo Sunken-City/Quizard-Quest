@@ -39,7 +39,7 @@
 
 			<h1>Create-a-Deck!</h1>
 
-			<form id="deckCreate" action="DeckCreation.php" method="POST" >
+			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
 				<table id="UserCards">  				
 					<select name="Categories" id="categories" required>
 						<option value="1">Math</option>
