@@ -23,6 +23,7 @@
 		  </head>";
 		  if(isset($_GET['err']))
 		  {
+		    echo '<h1>Error #'.$_GET['err'].'</h1>';
 		    if($_GET['err'] == 100)
 		    {
 		      echo "<body>The username you entered is already associated with a user.
@@ -46,14 +47,11 @@
 		  }
 		  else
 		  {
-		    echo "<body>No problems here!</body>";
+		    echo "<body>No problems here! Except that you got here without an error. That's a problem.</body>";
 		  }
 		    
 
 		    echo "
-		    
-
-			<header><nav class=\"navbar\"></nav></header>
 
 			<article class=\"directions\">
 				<button type=\"button\" class=\"makeHeader1\" id=\"redirect\">
