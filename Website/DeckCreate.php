@@ -21,7 +21,8 @@
 			    // not logged in
 			    //die ("You must log in to view this page");
 			    $_SESSION['redirected'] = true;
-			    header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php');
+			    header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php?err=199');
+			    // header('Location: http://Quizard-Quest/Website/Error.php?err=199');
 			}
 		?>
 

@@ -47,11 +47,15 @@ h1,.makeHeader1 {
 }
 
 .makeHeader1 {
-	height: 100px;
-	width: 750px;
+	font-size: 2em;
+	height: 40px;
+	/*width: 500px;*/
 	-moz-border-radius: 8px;
   	-webkit-border-radius: 8px;
   	cursor: pointer;
+  	font-weight: normal;
+  	display: inline;
+  	padding: 0px 5px 10px 10px;
 }
 
 .makeHeader1:hover {
@@ -266,4 +270,27 @@ header {
 
 #cardDifficulty {
 	display: block;
+}
+
+.error {
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+	text-align: center;
+}
+
+#Error {
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	text-align: center;
+}
+
+#redirections {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 60px;
+	margin-top: 60px;
 }
