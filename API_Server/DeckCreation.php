@@ -8,10 +8,10 @@
 	include "API.php";
 	session_start();
 	
-   	$deckID = create_deck('TestDeck2');
-   if (isset($_POST['deckSubmit']))
+   	
+   if (isset($_POST['Deckname']))
    {
-      //$deckID = create_deck($_POST['Deckname']);
+      $deckID = create_deck($_POST['Deckname']);
       if(!empty($_POST['flashCard']))
       {
          foreach($_POST['flashCard'] as $card)
