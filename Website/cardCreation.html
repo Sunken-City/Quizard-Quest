@@ -14,11 +14,12 @@
 
 		<?php
 			session_start();
+			include '../API_Server/url.php';
 			if(!isset($_SESSION['userID'])) {
 			    // not logged in
 			    $_SESSION['redirected'] = true;
 			    //die ("You must log in to view this page");
-				header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php?err=199');
+				header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=199');
 				// header('Location: http://Quizard-Quest/Website/Error.php?err=199');
 			}
 		?>

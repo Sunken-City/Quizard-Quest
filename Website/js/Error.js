@@ -4,6 +4,8 @@
 
 $(document).ready(function() {
 	$("#redirect").click(function (e) {
-		window.location.href = "http://54.200.66.93/Quizard-Quest/Website/";
+		$.post("../API_Server/url.php",function (url) {
+			window.location.href = "http://" + url + "/Quizard-Quest/Website/";
+		},"json")
 	});
 });
