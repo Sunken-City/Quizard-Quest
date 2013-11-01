@@ -96,7 +96,7 @@ $(document).ready(function(){
 				break;
 		}
 
-		answerValue = prepareAnswer(answerValue);
+		//answerValue = prepareAnswer(answerValue);
 		//Hoping that this will work now. Let's Test This Out
 		subcategoryValue = subcategoryValue.trim();
 		questionValue = questionValue.trim();

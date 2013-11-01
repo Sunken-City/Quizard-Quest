@@ -57,7 +57,7 @@
 							</td>
 							<td><input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." placeholder="Subcategory" required></td>
 							<td><input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." placeholder="Question" required></td>
-							<td><input type ="text" id="newAnswer" maxlength="64" title="Please Enter An Answer." placeholder="Answer" required></td>
+							<td><input type ="text" id="newAnswer" maxlength="256" title="Please Enter An Answer." placeholder="Answer" required></td>
 							<td>
 								<select id="newDifficulty" required>
 									<option value="">Select</option>
