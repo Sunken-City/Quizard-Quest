@@ -11,7 +11,7 @@
    
    if (isset($_POST['deckSubmit']))
    {
-      $deckID = create_deck($_POST['name']);
+      $deckID = create_deck($_POST['Deckname']);
       if(!empty($_POST['flashCard']))
       {
          foreach($_POST['flashCard'] as $card)
