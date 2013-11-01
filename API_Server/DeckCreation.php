@@ -16,6 +16,7 @@
       {
          foreach($_POST['flashCard'] as $card)
          {
+         	echo $card
             add_card_to_deck($deckID, $card);
          }
       }
