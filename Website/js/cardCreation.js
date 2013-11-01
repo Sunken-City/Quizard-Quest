@@ -36,7 +36,7 @@ $(document).ready(function(){
 			//alert("Please Select a Difficulty");
 		}
 		else{
-			$.post("../../API_Server/CardCreation.php",formData,function(){
+			$.post("../API_Server/CardCreation.php",formData,function(){
 			});
 
 			e.preventDefault();
