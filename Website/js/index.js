@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 		var formData = {pass: password, user: username};
 
-		$.post("../API_Server/logIn.php",formData,function(data){
+		$.post("../../API_Server/logIn.php",formData,function(data){
 
 			if(data['success']) {
             	// do successful things

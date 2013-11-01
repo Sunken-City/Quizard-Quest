@@ -2,7 +2,7 @@
 to the window */
 var JSON;
 
-$.post("../API_Server/getCards.php", function(data){
+$.post("../../API_Server/getCards.php", function(data){
 	JSON = $.parseJSON(data);
 	for( var i = 0, len = JSON.length;  i < len; i++){
 		console.log(i);
