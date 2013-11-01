@@ -1,13 +1,12 @@
 <?php
         
 
-	/*\
-	|*|		#PHP that receives form data for creating a new user account
-	|*|			and sends it to the API server for authentication
-	\*/
+        /*\
+        |*|                #PHP that receives form data for creating a new user account
+        |*|                        and sends it to the API server for authentication
+        \*/
 
         include 'API.php';
-        include 'url.php';
         session_start();
 
         // if ($_SESSION['timeout'] + 10 * 60 < time()) {
@@ -15,6 +14,8 @@
         //         session_destroy();
 
         //         $timedOut = array('timeout' => true );
+
+        //         header("Location: http://54.200.66.93/Quizard-Quest/Website/timedOut.html");
 
         // } else {
                 // session ok
@@ -66,7 +67,7 @@
                         }
 
                 } else {
-                        header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
+                        die ("I don't know what you did, but it was a mistake. Go back and do not return here!");
                 }
 
                 #################################################
@@ -76,7 +77,7 @@
                 /* Nathan's EC2: Location: http://54.200.66.93/Quizard-Quest/Website/mainMenu.html */
                 $_SESSION['redirected'] = "createAccount";
 
-                header('Location:http://'.$url.'/Quizard-Quest/Website/mainMenu.php');
+                header("Location: http://54.200.66.93/Quizard-Quest/Website/mainMenu.php");
         // }
 
         // echo json_encode($timedOut);
