@@ -115,7 +115,6 @@
 
         if (!(mysqli_num_rows($result) == 0)) {
 	    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
-	    die();
             return false;
         }
         
@@ -130,7 +129,6 @@
 
         if (!(mysqli_num_rows($result) == 0)) {
 	    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
-	    die();
             return false;
         }
 
