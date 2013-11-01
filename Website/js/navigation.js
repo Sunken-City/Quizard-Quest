@@ -20,7 +20,7 @@ $(document).ready(function() {
 		$.ajax({
 			url: "../API_Server/logOut.php",
 			success: function () {
-				$.post("../API_Server/ajaxurl.php",function (url) {
+				$.post("../../API_Server/ajaxurl.php",function (url) {
 					window.location.href = "http://" + url + "/Quizard-Quest/Website/";
 				},"json");
 				//http://54.200.66.93/Quizard-Quest/Website/

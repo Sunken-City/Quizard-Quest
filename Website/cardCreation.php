@@ -20,7 +20,6 @@
 			    $_SESSION['redirected'] = true;
 			    //die ("You must log in to view this page");
 				header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=199');
-				// header('Location: http://Quizard-Quest/Website/Error.php?err=199');
 			}
 		?>
 		
