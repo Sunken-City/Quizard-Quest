@@ -21,7 +21,7 @@
 			if(!isset($_SESSION['userID'])) {
 			    // not logged in
 			    $_SESSION['redirected'] = true;
-			    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=19999999999994123480941204');
+			    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=199');
 			    die();
 			}
 		?>
