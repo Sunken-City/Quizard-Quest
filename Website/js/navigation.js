@@ -20,7 +20,9 @@ $(document).ready(function() {
 		$.ajax({
 			url: "../API_Server/logOut.php",
 			success: function () {
-				window.location.href = "http://54.200.66.93/Quizard-Quest/Website/";
+				$.post("../API_Server/url.php",function (url) {
+					window.location.href = "http://" + url + "/Quizard-Quest/Website/";
+				},"json");
 				//http://54.200.66.93/Quizard-Quest/Website/
 			}
 		});
