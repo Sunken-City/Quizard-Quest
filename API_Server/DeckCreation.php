@@ -6,6 +6,7 @@
 	\*/
 
 	include "API.php";
+   include "url.php";
 	session_start();
 	
    	
@@ -21,5 +22,5 @@
          }
       }
    }
-   header("Location: http://54.200.66.93/Quizard-Quest/Website/mainMenu.php");
+   header("Location: http://'.$url.'/Quizard-Quest/Website/mainMenu.php");
 ?>
