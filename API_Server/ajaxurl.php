@@ -1,4 +1,4 @@
 <?php
-	$url = '54.200.66.93';
+	include 'url.php';
 	echo json_encode($url);
 ?>
