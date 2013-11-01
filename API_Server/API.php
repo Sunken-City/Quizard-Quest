@@ -115,7 +115,7 @@
 
         if (!(mysqli_num_rows($result) == 0)) {
 	    header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
-	    die();
+	    die('That username is already in use');
             return false;
         }
         
@@ -130,7 +130,7 @@
 
         if (!(mysqli_num_rows($result) == 0)) {
 	    header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
-	    die();
+	    die('That email is already in use');
             return false;
         }
 
