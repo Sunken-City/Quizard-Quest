@@ -29,11 +29,25 @@
 	</head>
 	
 	<body>
-	<h1> Decks </h1>
-	<ul id="Decks">
-	
-	</ul>
+		<div class="content">
 
+			<header>
+				<nav class="navbar">
+					<button type="button" id="logOut" class="navButton">Log Out</button>
+					<button type="button" id="home" class="navButton">Home</button>
+				</nav>
+			</header>
+
+			<h1> Your Decks </h1>
+			<ul id="Decks">			
+			</ul>
+
+			<footer>
+				<p>Quizard Quest is brought to you by cd msc/</p>
+				<p>English (US)</p>
+			</footer>
+
+		</div>
 	</body>
 
 </html>
