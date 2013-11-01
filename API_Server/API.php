@@ -114,7 +114,7 @@
         $result = mysqli_query($db,$query);
 
         if (!(mysqli_num_rows($result) == 0)) {
-	    //header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
+	    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
             return false;
         }
         
@@ -128,7 +128,7 @@
         $result = mysqli_query($db,$query);
 
         if (!(mysqli_num_rows($result) == 0)) {
-	    //header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
+	    header('Location:http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
             return false;
         }
 
