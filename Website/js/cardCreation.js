@@ -23,7 +23,7 @@ $(document).ready(function(){
 		var difficulty = document.getElementById('newDifficulty').value;
 
 		//var answer = prepareAnswer(answer);
-		//Hoping that this will work now. Let's Test This Out
+		//Hoping that this will work now. Let's Test This Out.
 		subcategory = subcategory.trim();
 		question = question.trim();
 		answer = answer.trim();
