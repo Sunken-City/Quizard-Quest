@@ -16,12 +16,13 @@
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
 		<?php
+			include '../API_Server/url.php';
 			session_start();
 			if(!isset($_SESSION['userID'])) {
 			    // not logged in
 			    //die ("You must log in to view this page");
 			    $_SESSION['redirected'] = true;
-			    header('Location: http://54.200.66.93/Quizard-Quest/Website/Error.php?err=199');
+			    header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=199');
 			    // header('Location: http://Quizard-Quest/Website/Error.php?err=199');
 			}
 		?>
