@@ -250,6 +250,23 @@
         return $table;
         mysqli_close($db);
     }
+
+    function get_deck_names() {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $table = array();
+        $userID = $_SESSION['userID'];
+        $decks = mysqli_query($db, "SELECT name FROM decks WHERE userID = '$userID';");
+        $x = mysqli_num_rows($decks);
+        for ($i = 0; $i < $x; $i++) {
+            array_push($table, mysqli_fetch_assoc($decks));
+        }
+        return $table;
+        mysqli_close($db);
+    }
     
     //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
     function get_category_cards($category) {
