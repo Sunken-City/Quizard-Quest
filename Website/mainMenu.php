@@ -37,6 +37,7 @@
 					<button type="button" id="logOut" class="navButton">Log Out</button>
 					<button type="button" id="createCard" >Create a Card!</button>
 					<button type="button" id="createDeck" >Create a Deck!</button>
+					<button type="button" id="reviewDecks" >Review your Decks!</button>
 				</nav>
 
 			</header>

@@ -29,4 +29,8 @@ $(document).ready(function() {
 		window.location.href = "DeckCreate.php";
 	});
 
+	$("#reviewDecks").click(function(e) {
+		window.location.href = "DeckDisplay.php";
+	});
+
 });
