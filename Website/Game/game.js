@@ -107,6 +107,7 @@ function Game()
       this.background.init(0,0);
       
       this.monster = new Monster();
+      //Center the monster in the middle of the screen.
       var monsterX = iRepo.background.width/2 - iRepo.monster.width;
       var monsterY = iRepo.background.height/4 + iRepo.monster.height;
       this.monster.init(monsterX,monsterY);
