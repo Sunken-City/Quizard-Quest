@@ -107,7 +107,7 @@ function Game()
       this.background.init(0,0);
       
       this.monster = new Monster();
-      var monsterX = iRepo.background.width/4 - iRepo.monster.width;
+      var monsterX = iRepo.background.width/2 - iRepo.monster.width;
       var monsterY = iRepo.background.height/4 + iRepo.monster.height;
       this.monster.init(monsterX,monsterY);
       
