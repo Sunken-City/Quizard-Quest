@@ -110,8 +110,40 @@ Background.prototype = new Drawable();
 
 function Monster()
 {
+  this.idleVal = 0;
+  this.idleUp = true;
+  this.speed = 1;
+  
   this.draw = function() {
     this.context.drawImage(iRepo.monster, this.x, this.y);
+  };
+  
+  //Make the monster float up and down in an idling sequence
+  this.idle = function() {
+    this.context.clearRect(this.x, this.y, this.width, this.height);
+    
+    //If we hit a boundary, then change direction
+    if (this.idleVal === 10)
+    {
+      this.idleUp = false;
+    }
+    else if (this.idleVal === -10)
+    {
+      this.idleUp = true;
+    }
+    
+    if (idleUp)
+    {
+      this.idleVal++;
+      this.y++;
+    }
+    else
+    {
+      this.idleVal--;
+      this.y--;
+    }
+    
+    this.draw;
   };
 }
 
@@ -158,6 +190,8 @@ function Game()
   };
   
   this.start = function() {
+    this.background.draw();
+    this.monster.draw();
     animate();
   };
 }
@@ -170,8 +204,7 @@ function Game()
  */
 function animate() {
   requestAnimFrame( animate );
-  game.background.draw();
-  game.monster.draw();
+  this.monster.idle();
 }
  
 /**
