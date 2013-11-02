@@ -38,8 +38,44 @@ var iRepo = new function() {
   }
   
   // Set images src
-  this.background.src = path + "Backgrounds/Plains.png";
-  this.monster.src = path + "Sprites/Centipede.png";
+  this.background.src = path + randomBackground();
+  this.monster.src = path + randomMonster();
+}
+
+//Picks a random monster image from the available pool of monsters
+function randomMonster()
+{
+  var choice = Math.floor((Math.random() * 3) + 1);
+  if (choice === 1)
+  {
+    return "Sprites/Centipede.png";
+  }
+  else if (choice === 2)
+  {
+    return "Sprites/Slug.png";
+  }
+  else if (choice === 3)
+  {
+    return "Sprites/Stag.png";
+  }
+}
+
+//Picks a random background image from the available pool of backgrounds
+function randomBackground()
+{
+  var choice = Math.floor((Math.random() * 3) + 1);
+  if (choice === 1)
+  {
+    return "Backgrounds/Plains.png";
+  }
+  else if (choice === 2)
+  {
+    return "Backgrounds/Cliff.png";
+  }
+  else if (choice === 3)
+  {
+    return "Backgrounds/Forest.png";
+  }
 }
 
 //The interface for anything that gets drawn on screen
