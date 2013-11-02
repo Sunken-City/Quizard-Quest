@@ -17,3 +17,22 @@ var imageRepository = new function() {
   // Set images src
   this.background.src = path + "Backgrounds/Plains.png";
 }
+
+//The interface for anything that gets drawn on screen
+function Drawable()
+{
+  this.init = function(x, y){
+    //Default variables
+    this.x = x;
+    this.y = y;
+  }
+  
+  this.speed = 0;
+  this.canvasWidth = 0;
+  this.canvasHeight = 0;
+  
+  //Implemented in children
+  this.draw = function(){
+  }
+}
+
