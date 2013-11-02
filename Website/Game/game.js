@@ -131,7 +131,7 @@ function Monster()
       this.idleUp = true;
     }
     
-    if (idleUp)
+    if (this.idleUp)
     {
       this.idleVal++;
       this.y++;
