@@ -107,7 +107,9 @@ function Game()
       this.background.init(0,0);
       
       this.monster = new Monster();
-      this.monster.init(0,0);
+      var monsterX = this.mCanvas.width/2 - iRepo.monster.width;
+      var monsterY = this.mCanvas.height/2 + iRepo.monster.height;
+      this.monster.init(monsterX,monsterY);
       
       return true;
     }
