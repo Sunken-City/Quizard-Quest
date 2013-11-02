@@ -1,7 +1,8 @@
 /** THE GAME
  * Author: Anthony Cloudy
  * Learning from a tutorial on http://blog.sklambert.com/html5-canvas-game-panning-a-background/
- * 
+ * Sections are copied from that website, but mostly I'm trying to rewrite them as much as possible
+ */
 
 
 /**
@@ -25,7 +26,7 @@ function Drawable()
     //Default variables
     this.x = x;
     this.y = y;
-  }
+  };
   
   this.speed = 0;
   this.canvasWidth = 0;
@@ -33,18 +34,83 @@ function Drawable()
   
   //Implemented in children
   this.draw = function(){
-  }
+  };
 }
 
 function Background()
 {
   this.draw = function() {
     this.context.drawImage(iRepo.background, this.x, this.y);
-  }
+  };
 }
 
 //Get the background object to copy all of Drawable's information
 Background.prototype = new Drawable();
 
+function Game()
+{
+  this.init = function() {
+    //Grab the canvas from the page
+    this.bgCanvas = document.getElementById('background');
+    
+    //Check to see if we can use the canvas
+    if (this.bgCanvas.getContext)
+    {
+      this.bgContext = this.bgCanvas.getContext('2d');
+      
+      Background.prototype.context = this.bgContext;
+      Background.prototype.canvasWidth = this.bgCanvas.width;
+      Background.prototype.canvasHeight = this.bgCanvas.height;
+      
+      this.background = new Background();
+      this.background.init(0,0);
+      return true;
+    }
+    else
+    {
+      //Return false if we don't have canvas support on this bozo's computer. IE6 PROBLEMS >:I
+      return false;
+    }
+  };
+  
+  this.start = function() {
+    animate();
+  };
+}
+      
+/**
+ * The animation loop. Calls the requestAnimationFrame shim to
+ * optimize the game loop and draws all game objects. This
+ * function must be a gobal function and cannot be within an
+ * object.
+ */
+function animate() {
+  requestAnimFrame( animate );
+  game.background.draw();
+}
+ 
+/**
+ * requestAnim shim layer by Paul Irish
+ * Finds the first API that works to optimize the animation loop,
+ * otherwise defaults to setTimeout().
+ */
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame   ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame    ||
+      window.oRequestAnimationFrame      ||
+      window.msRequestAnimationFrame     ||
+      function(/* function */ callback, /* DOMElement */ element){
+        window.setTimeout(callback, 1000 / 60);
+      };
+})();
 
+var game = new Game();
 
+function init()
+{
+  if(game.init())
+  {
+    game.start();
+  }
+}
