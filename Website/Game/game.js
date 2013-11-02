@@ -10,7 +10,7 @@
  * singleton.
  */
 var path = "../../Resources/Game/";
-var imageRepository = new function() {
+var iRepo = new function() {
   // Define images
   this.background = new Image();
  
@@ -35,4 +35,16 @@ function Drawable()
   this.draw = function(){
   }
 }
+
+function Background()
+{
+  this.draw = function() {
+    this.context.drawImage(iRepo.background, this.x, this.y);
+  }
+}
+
+//Get the background object to copy all of Drawable's information
+Background.prototype = new Drawable();
+
+
 
