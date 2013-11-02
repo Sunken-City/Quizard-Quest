@@ -74,12 +74,12 @@ Background.prototype = new Drawable();
 
 function Monster()
 {
-  this.draw = function(){
+  this.draw = function() {
     this.context.drawImage(iRepo.monster, this.x, this.y);
   };
 }
 
-Monster.prototype = new Monster();
+Monster.prototype = new Drawable();
 
 
 function Game()
@@ -119,7 +119,6 @@ function Game()
   };
   
   this.start = function() {
-    this.monster.draw();
     animate();
   };
 }
@@ -133,6 +132,7 @@ function Game()
 function animate() {
   requestAnimFrame( animate );
   game.background.draw();
+  game.monster.draw();
 }
  
 /**
