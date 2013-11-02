@@ -4,11 +4,9 @@ var JSON;
 $.post("../API_Server/DeckReview.php", function(data){
 	JSON = $.parseJSON(data);
 	for( var i = 0, len = JSON.length;  i < len; i++){
-		var listData = document.createElement("li");
-		var Deck = document.createElement("p");
-		
+		var Deck = document.createElement("option");
+		Deck.value = JSON[i].name;
 		Deck.innerHTML = JSON[i].name;
-		listData.appendChild(Deck);
 		document.getElementById('Decks').appendChild(listData);
 	}
 		

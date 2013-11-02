@@ -39,9 +39,14 @@
 				</nav>
 			</header>
 
-			<h1> Your Decks </h1>
-			<ul id="Decks">			
-			</ul>
+			<h1> Select the deck you wish to edit</h1>
+			<form id="deckSelect" action="../API_Server/" method="post" >
+				
+				<select name="Decks" id="Decks">
+					<option value="">Select Grade</option>
+				</select>
+				<input class="submitButton" type="submit" value="deckSelected" id="deckToEdit" />
+			</form>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
