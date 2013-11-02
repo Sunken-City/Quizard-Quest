@@ -43,7 +43,7 @@
 			<form id="deckSelect" action="../API_Server/" method="post" >
 				
 				<select name="Decks" id="Decks">
-					<option value="">Select Grade</option>
+					<option value="">Select Deck</option>
 				</select>
 				<input class="submitButton" type="submit" value="deckSelected" id="deckToEdit" />
 			</form>

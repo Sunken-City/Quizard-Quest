@@ -7,7 +7,7 @@ $.post("../API_Server/DeckReview.php", function(data){
 		var Deck = document.createElement("option");
 		Deck.value = JSON[i].name;
 		Deck.innerHTML = JSON[i].name;
-		document.getElementById('Decks').appendChild(listData);
+		document.getElementById('Decks').appendChild(Deck);
 	}
 		
 });
