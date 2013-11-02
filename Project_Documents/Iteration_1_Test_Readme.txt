@@ -41,7 +41,7 @@ Just a few quick pointers to help you out:
 
 3. Please try your hardest to break everything! The more bugs you find, the less users will!
 
-
+4. We don't have any Android running yet, nor is the actual game working/developed.
 
 
 
