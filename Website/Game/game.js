@@ -204,7 +204,7 @@ function Game()
  */
 function animate() {
   requestAnimFrame( animate );
-  this.monster.idle();
+  game.monster.idle();
 }
  
 /**
