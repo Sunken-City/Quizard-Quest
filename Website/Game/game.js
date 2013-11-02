@@ -112,7 +112,6 @@ function Monster()
 {
   this.idleVal = 0;
   this.idleUp = true;
-  this.speed = 1;
   
   this.draw = function() {
     this.context.drawImage(iRepo.monster, this.x, this.y);
@@ -190,8 +189,6 @@ function Game()
   };
   
   this.start = function() {
-    this.background.draw();
-    this.monster.draw();
     animate();
   };
 }
@@ -205,6 +202,8 @@ function Game()
 function animate() {
   requestAnimFrame( animate );
   game.monster.idle();
+  game.background.draw();
+  game.monster.draw();
 }
  
 /**
