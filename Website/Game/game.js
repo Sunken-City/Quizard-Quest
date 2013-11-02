@@ -119,6 +119,7 @@ function Game()
   };
   
   this.start = function() {
+    this.monster.draw();
     animate();
   };
 }
