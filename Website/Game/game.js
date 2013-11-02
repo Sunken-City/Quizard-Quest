@@ -122,27 +122,27 @@ function Monster()
     this.context.clearRect(this.x, this.y, this.width, this.height);
     
     //If we hit a boundary, then change direction
-    if (this.idleVal === 10)
+    if (this.idleVal === 20)
     {
       this.idleUp = false;
     }
-    else if (this.idleVal === -10)
+    else if (this.idleVal === -20)
     {
       this.idleUp = true;
     }
     
-    if (this.idleUp)
+    if (this.idleUp && (this.idleVal % 2 === 0))
     {
       this.idleVal++;
       this.y++;
+      this.draw;
     }
-    else
+    else if (this.idleVal % 2 === 0)
     {
       this.idleVal--;
       this.y--;
+      this.draw;
     }
-    
-    this.draw;
   };
 }
 
@@ -189,6 +189,7 @@ function Game()
   };
   
   this.start = function() {
+    this.monster.draw();
     animate();
   };
 }
@@ -203,7 +204,6 @@ function animate() {
   requestAnimFrame( animate );
   game.monster.idle();
   game.background.draw();
-  game.monster.draw();
 }
  
 /**
