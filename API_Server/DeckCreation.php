@@ -22,5 +22,5 @@
          }
       }
    }
-   header("Location: http://'.$url.'/Quizard-Quest/Website/mainMenu.php");
+   header('Location: http://'.$url.'/Quizard-Quest/Website/mainMenu.php');
 ?>
