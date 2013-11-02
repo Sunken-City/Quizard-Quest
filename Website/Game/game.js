@@ -4,28 +4,53 @@
  * Sections are copied from that website, but mostly I'm trying to rewrite them as much as possible
  */
 
+//The path to the resources folder for the game
+var path = "../../Resources/Game/";
 
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
  * singleton.
  */
-var path = "../../Resources/Game/";
 var iRepo = new function() {
   // Define images
   this.background = new Image();
+  this.monster = new Image()
  
+  var numImages = 2;
+  var numLoaded = 0;
+  
+  function imageLoaded()
+  {
+    numLoaded++;
+    if (numLoaded === numImages)
+    {
+      window.init();
+    }
+  }
+  
+  this.background.onload = function(){
+    imageLoaded();
+  }
+  
+  this.monster.onload = function(){
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + "Backgrounds/Plains.png";
+  this.monster.src = path + "Sprites/Centipede.png";
 }
 
 //The interface for anything that gets drawn on screen
 function Drawable()
 {
-  this.init = function(x, y){
+  this.init = function(x, y, width, height){
     //Default variables
     this.x = x;
     this.y = y;
+    this.width = width;
+    this.height = height;
   };
   
   this.speed = 0;
@@ -47,23 +72,43 @@ function Background()
 //Get the background object to copy all of Drawable's information
 Background.prototype = new Drawable();
 
+function Monster()
+{
+  this.draw = function(){
+    this.context.drawImage(iRepo.monster, this.x, this.y);
+  };
+}
+
+Monster.prototype = new Monster();
+
+
 function Game()
 {
   this.init = function() {
     //Grab the canvas from the page
     this.bgCanvas = document.getElementById('background');
+    this.mCanvas = document.getElementById('monster');
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
     {
       this.bgContext = this.bgCanvas.getContext('2d');
+      this.mContext = this.mCanvas.getContext('2d');
       
       Background.prototype.context = this.bgContext;
       Background.prototype.canvasWidth = this.bgCanvas.width;
       Background.prototype.canvasHeight = this.bgCanvas.height;
       
+      Monster.prototype.context = this.mContext;
+      Monster.prototype.canvasWidth = this.mCanvas.width;
+      Monster.prototype.canvasHeight = this.mCanvas.height;
+      
       this.background = new Background();
       this.background.init(0,0);
+      
+      this.monster = new Monster();
+      this.monster.init(0,0);
+      
       return true;
     }
     else

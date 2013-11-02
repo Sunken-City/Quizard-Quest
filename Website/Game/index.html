@@ -9,13 +9,23 @@
         left: 0px;
         background: transparent;
       }
+      #background
+      {
+        z-index: -2;
+      }
+      #enemy
+      {
+	z-index: -1;
+      }
     </style>
   </head>
-  <body onload="init()">
-    <!-- The canvas for the panning background -->
+  <body>
+    <!-- The canvas for the background -->
     <canvas id="background" width="765" height="666">
       Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
     </canvas>
+    <!-- The canvas for the monster -->
+    <canvas id="monster" width="765" height="666"></canvas>
     <script src="game.js"></script>
   </body>
 </html>
