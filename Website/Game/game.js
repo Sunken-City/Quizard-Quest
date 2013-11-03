@@ -195,8 +195,8 @@ Avatar.prototype = new Drawable();
 
 function Text()
 {
-    this.init = function(text, x, y, width){
-    this.text = text;
+    this.init = function(font, x, y, width){
+    this.context.font = font;
     this.x = x;
     this.y = y;
     this.width = width;
@@ -248,7 +248,7 @@ function Game()
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
       this.text = new Text();
-      this.text.init("NRNRNRNRNRNRNR", 0, 400, 100);
+      this.text.init("30px Arial", 0, 400, 100);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
