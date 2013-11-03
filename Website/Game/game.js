@@ -167,7 +167,7 @@ function colorFromPhase(phase)
   if (phase == undefined) phase = 0;
   var center = 128;
   var width = 127;
-  var frequency = Math.PI*2/str.length;
+  var frequency = 1;//Math.PI*2/str.length;
   for (var i = 0; i < str.length; ++i)
   {
      var red   = Math.sin(frequency*i+2+phase) * width + center;
