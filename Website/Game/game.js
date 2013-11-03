@@ -216,7 +216,7 @@ function Game()
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       this.avatar = new Avatar();
-      this.avatar.init(0, 333 - iRepo.avatar.height, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
       return true;
     }
@@ -245,6 +245,7 @@ function animate() {
   game.monster.idle();
   game.monster.draw();
   game.avatar.draw();
+  game.avatar.move();
 }
  
 /**
