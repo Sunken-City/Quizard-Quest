@@ -40,7 +40,7 @@
 			</header>
 
 			<h1> Select the deck you wish to edit</h1>
-			<form id="deckSelect" action="../API_Server/" method="post" >
+			<form id="deckSelect" action="../API_Server/getCards.php" method="post" >
 				
 				<select name="Decks" id="Decks">
 					<option value="">Select Deck</option>
