@@ -134,7 +134,7 @@ function Monster()
     if (this.idleUp)
     {
       this.idleVal++;
-      if ((this.idleVal % 2) == 0)
+      //if ((this.idleVal % 2) == 0)
       {
 	this.y++;
 	this.draw;
@@ -143,7 +143,7 @@ function Monster()
     else 
     {
       this.idleVal--;
-      if ((this.idleVal % 2) == 0)
+      //if ((this.idleVal % 2) == 0)
       {
 	this.y--;
 	this.draw;
