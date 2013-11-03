@@ -161,8 +161,8 @@ function Monster()
 
 Monster.prototype = new Drawable();
 
-/*http://krazydad.com/tutorials/makecolors.php
-function colorText(str,phase)
+//Modified from: http://krazydad.com/tutorials/makecolors.php
+function colorFromPhase(phase)
 {
   if (phase == undefined) phase = 0;
   var center = 128;
@@ -173,9 +173,9 @@ function colorText(str,phase)
      var red   = Math.sin(frequency*i+2+phase) * width + center;
      var green = Math.sin(frequency*i+0+phase) * width + center;
      var blue  = Math.sin(frequency*i+4+phase) * width + center;
-     document.write( '<font color="' + RGB2Color(red,green,blue) + '">' + str.substr(i,1) + '</font>');
+     return "rgba(" + red "," + green + "," + blue + ", 0)";
   }
-}*/
+}
 
 function Avatar()
 {
@@ -189,7 +189,7 @@ function Avatar()
   
   this.move = function() {
     this.x++;
-    this.context.fillStyle = 'rgba(0,0,0,0.05)';
+    this.context.fillStyle = colorFromPhase(this.x);
     this.context.fillRect(0, this.y, this.width + this.x - 25, this.height);
   };
 }
