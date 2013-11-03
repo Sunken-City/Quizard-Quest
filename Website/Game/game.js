@@ -189,8 +189,8 @@ function Avatar()
   
   this.move = function() {
     this.x++;
-    context.fillStyle = 'rgba(0,0,0,0.05)';
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+    this.context.fillStyle = 'rgba(0,0,0,0.05)';
+    this.context.fillRect(0, 0, context.canvas.width, context.canvas.height);
   };
 }
 
