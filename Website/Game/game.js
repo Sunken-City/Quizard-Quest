@@ -59,7 +59,7 @@ function randomMonster()
   }
   else if (choice === 2)
   {
-    return "Sprites/Slug.png";
+    return "Sprites/Stag.png";
   }
   else if (choice === 3)
   {
@@ -186,7 +186,7 @@ function Avatar()
   this.move = function() {
     this.x++;
     this.context.fillStyle = colorFromPhase(this.x);
-    this.context.fill(iRepo.avatar, this.x, this.y, this.width - 25, this.height);
+    this.context.fillRect(iRepo.avatar, this.x, this.y, this.width - 25, this.height);
   };
 }
 
