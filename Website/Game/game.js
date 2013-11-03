@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatar/";
+var avatarPath = "../../Resources/Avatars/";
 
 /**
  * Define an object to hold all our images for the game so images
