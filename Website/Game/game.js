@@ -167,9 +167,9 @@ function colorFromPhase(phase)
   if (phase == undefined) phase = 0;
   var center = 128;
   var width = 127;
-  var red   = Math.sin(2 + phase) * width + center;
-  var green = Math.sin(0 + phase) * width + center;
-  var blue  = Math.sin(4 + phase) * width + center; 
+  var red   = Math.floor(Math.sin(2 + phase) * width + center);
+  var green = Math.floor(Math.sin(0 + phase) * width + center);
+  var blue  = Math.floor(Math.sin(4 + phase) * width + center); 
   return "rgba(" + red + "," + green + "," + blue + ", 0.05)";
 }
 
