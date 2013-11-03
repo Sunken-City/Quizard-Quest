@@ -101,7 +101,7 @@ function Drawable()
 function Background()
 {
   this.draw = function() {
-    this.context.drawImage(iRepo.background, this.x, this.y);
+    this.context.drawImage(iRepo.background, this.x, this.y, this.width, this.height);
   };
 }
 
@@ -114,7 +114,7 @@ function Monster()
   this.idleUp = true;
   
   this.draw = function() {
-    this.context.drawImage(iRepo.monster, this.x, this.y);
+    this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
   //Make the monster float up and down in an idling sequence
@@ -137,7 +137,6 @@ function Monster()
       if (this.idleVal % 2 == 0)
       {
 	this.y++;
-	this.draw;
       }
     }
     else 
@@ -146,9 +145,9 @@ function Monster()
       if (this.idleVal % 2 == 0)
       {
 	this.y--;
-	this.draw;
       }
     }
+    this.draw;
   };
 }
 
@@ -207,7 +206,7 @@ function Game()
  * object.
  */
 function animate() {
-  requestAnimFrame( animate );
+  requestAnimFrame(animate);
   game.background.draw();
   game.monster.idle();
 }
