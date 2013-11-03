@@ -164,7 +164,7 @@ Monster.prototype = new Drawable();
 //Modified from: http://krazydad.com/tutorials/makecolors.php
 function colorFromPhase(phase)
 {
-  phase = phase * .005;
+  phase = phase * .01;
   var center = 128;
   var width = 127;
   var red   = Math.floor(Math.sin(2 + phase) * width + center);
