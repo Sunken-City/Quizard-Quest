@@ -119,7 +119,7 @@ function Monster()
   
   //Make the monster float up and down in an idling sequence
   this.idle = function() {
-    //this.context.clearRect(this.x, this.y, this.width, this.height);
+    this.context.clearRect(this.x, this.y, this.width, this.height);
     
     //If we hit a boundary, then change direction
     if (this.idleVal == 10)
