@@ -248,7 +248,7 @@ function Game()
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
       this.text = new Text();
-      this.text.init("Text", 0, 0, 50);
+      this.text.init("NRNRNRNRNRNRNR", 0, 400, 50);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
