@@ -168,13 +168,10 @@ function colorFromPhase(phase)
   var center = 128;
   var width = 127;
   var frequency = 1;//Math.PI*2/str.length;
-  for (var i = 0; i < str.length; ++i)
-  {
-     var red   = Math.sin(frequency*i+2+phase) * width + center;
-     var green = Math.sin(frequency*i+0+phase) * width + center;
-     var blue  = Math.sin(frequency*i+4+phase) * width + center; 
-     return "rgba(" + red + "," + green + "," + blue + ", 0)";
-  }
+  var red   = Math.sin(frequency*i+2+phase) * width + center;
+  var green = Math.sin(frequency*i+0+phase) * width + center;
+  var blue  = Math.sin(frequency*i+4+phase) * width + center; 
+  return "rgba(" + red + "," + green + "," + blue + ", 0)";
 }
 
 function Avatar()
