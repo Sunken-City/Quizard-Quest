@@ -216,9 +216,7 @@ function Game()
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       this.avatar = new Avatar();
-      //Center the avatar at the bottom of the background
-      var avatarY = iRepo.background.height + iRepo.avatar.height;
-      this.avatar.init(0, avatarY, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
       
       return true;
     }
