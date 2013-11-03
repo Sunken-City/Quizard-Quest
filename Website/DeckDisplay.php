@@ -48,6 +48,12 @@
 				<input class="submitButton" type="submit" value="deckSelected" id="deckToEdit" />
 			</form>
 
+			<form id="cardRemove" action=# method="POST" >
+				<table id="deckCards">  				
+				</table>
+				<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
+			</form>
+
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
 				<p>English (US)</p>
