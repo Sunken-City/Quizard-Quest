@@ -185,7 +185,7 @@ function Game()
     //Grab the canvas from the page
     this.bgCanvas = document.getElementById('background');
     this.mCanvas = document.getElementById('monster');
-    this.aCanvas = document.getelementById('avatar');
+    this.aCanvas = document.getElementById('avatar');
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
