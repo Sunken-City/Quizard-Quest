@@ -147,7 +147,7 @@ function Monster()
 	this.y--;
       }
     }
-    this.draw;
+    //this.draw;
   };
 }
 
