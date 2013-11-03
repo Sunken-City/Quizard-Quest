@@ -193,6 +193,24 @@ function Avatar()
 //Get the background object to copy all of Drawable's information
 Avatar.prototype = new Drawable();
 
+function Text()
+{
+    this.init = function(text, x, y, width){
+    this.text = text;
+    this.x = x;
+    this.y = y;
+    this.width = width;
+  };
+  
+  this.draw = function(input) {
+    this.text = input;
+    this.context.fillText(this.text, this.x, this.y, this.width);
+  };
+}
+
+//Get the background object to copy all of Drawable's information
+Text.prototype = new Drawable();
+
 function Game()
 {
   this.init = function() {
@@ -200,6 +218,7 @@ function Game()
     this.bgCanvas = document.getElementById('background');
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
+    this.tCanvas = document.getElementById('text');
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -207,6 +226,7 @@ function Game()
       this.bgContext = this.bgCanvas.getContext('2d');
       this.mContext = this.mCanvas.getContext('2d');
       this.aContext = this.aCanvas.getContext('2d');
+      this.tContext = this.tCanvas.getContext('2d');
       
       Background.prototype.context = this.bgContext;
       Background.prototype.canvasWidth = this.bgCanvas.width;
@@ -219,9 +239,16 @@ function Game()
       Avatar.prototype.context = this.aContext;
       Avatar.prototype.canvasWidth = this.aCanvas.width;
       Avatar.prototype.canvasHeight = this.aCanvas.height;
+
+      Text.prototype.context = this.tContext;
+      Text.prototype.canvasWidth = this.tCanvas.width;
+      Text.prototype.canvasHeight = this.tCanvas.height;
       
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
+      
+      this.text = new Text();
+      this.text.init("Text", 0, 0, 50);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
@@ -259,7 +286,8 @@ function animate() {
   game.monster.idle();
   game.monster.draw();
   game.avatar.draw();
-  game.avatar.move();
+  game.text.draw();
+  //game.avatar.move();
   
 }
  
