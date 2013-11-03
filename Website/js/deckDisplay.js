@@ -11,25 +11,30 @@ $.post("../API_Server/DeckReview.php", function(data){
 	}		
 });
 
+function showDeck(str)
+{
+	if (str=="")
+	  {
+		  document.getElementById("Decks").innerHTML="";
+		  return;
+	  } 
+	if (window.XMLHttpRequest)
+ 	 {// code for IE7+, Firefox, Chrome, Opera, Safari
+ 		 xmlhttp=new XMLHttpRequest();
+	  }
+	xmlhttp.onreadystatechange=function()
+  	{
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+   	 {
+   	 document.getElementById("cardRemove").innerHTML=xmlhttp.responseText;
+  	  }
+ 	 }
+	xmlhttp.open("GET","../API_Server/getDeckCards.php?q="+str,true);
+	xmlhttp.send();
+}	
+
 $(document).ready(function(){
 
-	$("#deckToEdit").click(function(e){
-	$.post("../API_Server/getCards.php", function(data){
-	JSON = $.parseJSON(data);
-	for( var i = 0, len = JSON.length;  i < len; i++){
-		console.log(i);
-		var tableData = document.createElement("td");
-		var question = document.createElement("p");
-		var checkBox = document.createElement("input");
-		checkBox.value = JSON[i].cardID;
-		checkBox.type = "checkbox";
-		checkBox.name = "flashCard[]";
-		question.innerHTML = "Question: " + JSON[i].question + " \nAnswer: " + JSON[i].answer;
-		tableData.appendChild(checkBox);
-		tableData.appendChild(question);
-		document.getElementById('deckCards').appendChild(tableData);
-	}
-	e.preventDefault();
 		
 });
 

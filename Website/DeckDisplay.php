@@ -40,12 +40,11 @@
 			</header>
 
 			<h1> Select the deck you wish to edit</h1>
-			<form id="deckSelect" action="../API_Server/getCards.php" method="post" >
+			<form id="deckSelect">
 				
-				<select name="Decks" id="Decks">
+				<select name="Decks" id="Decks" onchange="showDeck(this.value)">
 					<option value="">Select Deck</option>
 				</select>
-				<input class="submitButton" type="submit" value="deckSelected" id="deckToEdit" />
 			</form>
 
 			<form id="cardRemove" action=# method="POST" >
