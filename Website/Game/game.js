@@ -170,7 +170,7 @@ function colorFromPhase(phase)
   var red   = Math.sin(2 + phase) * width + center;
   var green = Math.sin(0 + phase) * width + center;
   var blue  = Math.sin(4 + phase) * width + center; 
-  return "rgba(" + red + "," + green + "," + blue + ", 0)";
+  return "rgba(" + red + "," + green + "," + blue + ", 0.05)";
 }
 
 function Avatar()
