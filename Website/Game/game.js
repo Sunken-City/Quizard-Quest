@@ -134,21 +134,14 @@ function Monster()
     if (this.idleUp)
     {
       this.idleVal++;
-      //if ((this.idleVal % 2) == 0)
-      {
-	this.y++;
-	this.draw;
-      }
+      this.y++;
     }
     else 
     {
       this.idleVal--;
-      //if ((this.idleVal % 2) == 0)
-      {
-	this.y--;
-	this.draw;
-      }
+      this.y--;
     }
+    this.draw;
   };
 }
 
