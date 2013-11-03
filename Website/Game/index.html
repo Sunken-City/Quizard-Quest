@@ -20,9 +20,13 @@
       {
         z-index: -2;
       }
-      #enemy
+      #monster
       {
 	z-index: -1;
+      }
+      #avatar
+      {
+	z-index: 0;
       }
     </style>
   </head>
@@ -33,6 +37,8 @@
     </canvas>
     <!-- The canvas for the monster -->
     <canvas id="monster" width="765" height="666"></canvas>
+    <!-- The canvas for the avatar progress bar -->
+    <canvas id="avatar" width="765" height="666"></canvas>
     <script src="game.js"></script>
   </body>
 </html>

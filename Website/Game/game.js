@@ -6,6 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
+var avatarPath = "../../Resources/Avatar/";
 
 /**
  * Define an object to hold all our images for the game so images
@@ -15,9 +16,10 @@ var path = "../../Resources/Game/";
 var iRepo = new function() {
   // Define images
   this.background = new Image();
-  this.monster = new Image()
+  this.monster = new Image();
+  this.avatar = new Image();
  
-  var numImages = 2;
+  var numImages = 3;
   var numLoaded = 0;
   
   function imageLoaded()
@@ -37,9 +39,14 @@ var iRepo = new function() {
     imageLoaded();
   }
   
+  this.avatar.onload = function(){
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
+  this.avatar.src = avatarPath + "Greg.png";
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -154,6 +161,23 @@ function Monster()
 
 Monster.prototype = new Drawable();
 
+function Avatar()
+{
+  this.draw = function() {
+    this.context.drawImage(iRepo.avatar, this.x, this.y, this.width, this.height);
+  };
+  
+  this.clear = function() {
+    this.context.clearRect(this.x, this.y, this.width, this.height);
+  };
+  
+  this.move = function() {
+    this.x++;
+  };
+}
+
+//Get the background object to copy all of Drawable's information
+Avatar.prototype = new Drawable();
 
 function Game()
 {
@@ -161,12 +185,14 @@ function Game()
     //Grab the canvas from the page
     this.bgCanvas = document.getElementById('background');
     this.mCanvas = document.getElementById('monster');
+    this.aCanvas = document.getelementById('avatar');
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
     {
       this.bgContext = this.bgCanvas.getContext('2d');
       this.mContext = this.mCanvas.getContext('2d');
+      this.aContext = this.aCanvas.getContext('2d');
       
       Background.prototype.context = this.bgContext;
       Background.prototype.canvasWidth = this.bgCanvas.width;
@@ -176,6 +202,10 @@ function Game()
       Monster.prototype.canvasWidth = this.mCanvas.width;
       Monster.prototype.canvasHeight = this.mCanvas.height;
       
+      Avatar.prototype.context = this.aContext;
+      Avatar.prototype.canvasWidth = this.aCanvas.width;
+      Avatar.prototype.canvasHeight = this.aCanvas.height;
+      
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
@@ -184,6 +214,11 @@ function Game()
       var monsterX = iRepo.background.width/2 - iRepo.monster.width;
       var monsterY = iRepo.background.height/4 + iRepo.monster.height;
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
+      
+      this.avatar = new Avatar();
+      //Center the avatar at the bottom of the background
+      var avatarY = iRepo.background.height + iRepo.avatar.height;
+      this.avatar.init(0, avatarY, iRepo.avatar.width, iRepo.avatar.height);
       
       return true;
     }
@@ -211,6 +246,7 @@ function animate() {
   game.monster.clear();
   game.monster.idle();
   game.monster.draw();
+  game.avatar.draw();
 }
  
 /**
