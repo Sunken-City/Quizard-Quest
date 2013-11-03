@@ -172,9 +172,8 @@ function colorFromPhase(phase)
   {
      var red   = Math.sin(frequency*i+2+phase) * width + center;
      var green = Math.sin(frequency*i+0+phase) * width + center;
-     var blue  = Math.sin(frequency*i+4+phase) * width + center;
-     var str = "rgba(" + red "," + green + "," + blue + ", 0)";
-     return str;
+     var blue  = Math.sin(frequency*i+4+phase) * width + center; 
+     return "rgba(" + red + "," + green + "," + blue + ", 0)";
   }
 }
 
