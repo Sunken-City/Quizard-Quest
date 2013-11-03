@@ -117,10 +117,12 @@ function Monster()
     this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
+  this.clear = function() {
+    this.context.clearRect(this.x, this.y, this.width, this.height);
+  };
+  
   //Make the monster float up and down in an idling sequence
-  this.idle = function() {
-    //this.context.clearRect(this.x, this.y, this.width, this.height);
-    
+  this.idle = function() {  
     //If we hit a boundary, then change direction
     if (this.idleVal == 10)
     {
@@ -147,7 +149,6 @@ function Monster()
 	this.y--;
       }
     }
-    //this.draw;
   };
 }
 
@@ -206,9 +207,10 @@ function Game()
  */
 function animate() {
   requestAnimFrame(animate);
-  game.monster.draw();
   game.background.draw();
+  game.monster.clear();
   game.monster.idle();
+  game.monster.draw();
 }
  
 /**
