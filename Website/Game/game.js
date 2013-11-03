@@ -186,7 +186,7 @@ function Avatar()
   this.move = function() {
     this.x++;
     this.context.fillStyle = colorFromPhase(this.x);
-    this.context.fillRect(0, this.y, this.width + this.x - 25, this.height);
+    this.context.fillRect(this.x, this.y, this.width + this.x - 25, this.height);
   };
 }
 
