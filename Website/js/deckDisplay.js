@@ -14,7 +14,6 @@ $.post("../API_Server/DeckReview.php", function(data){
 $(document).ready(function(){
 
 	$("#deckToEdit").click(function(e){
-	e.preventDefault();
 	$.post("../API_Server/getCards.php", function(data){
 	JSON = $.parseJSON(data);
 	for( var i = 0, len = JSON.length;  i < len; i++){
@@ -30,6 +29,7 @@ $(document).ready(function(){
 		tableData.appendChild(question);
 		document.getElementById('deckCards').appendChild(tableData);
 	}
+	e.preventDefault();
 		
 });
 
