@@ -124,11 +124,11 @@ function Monster()
   //Make the monster float up and down in an idling sequence
   this.idle = function() {  
     //If we hit a boundary, then change direction
-    if (this.idleVal == 10)
+    if (this.idleVal == 20)
     {
       this.idleUp = false;
     }
-    else if (this.idleVal == -10)
+    else if (this.idleVal == -20)
     {
       this.idleUp = true;
     }
@@ -136,7 +136,7 @@ function Monster()
     if (this.idleUp)
     {
       this.idleVal++;
-      if (this.idleVal % 2 == 0)
+      if (this.idleVal % 4 == 0)
       {
 	this.y++;
       }
@@ -144,7 +144,7 @@ function Monster()
     else 
     {
       this.idleVal--;
-      if (this.idleVal % 2 == 0)
+      if (this.idleVal % 4 == 0)
       {
 	this.y--;
       }
