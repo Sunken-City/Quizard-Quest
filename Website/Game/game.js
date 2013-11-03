@@ -122,11 +122,11 @@ function Monster()
     this.context.clearRect(this.x, this.y, this.width, this.height);
     
     //If we hit a boundary, then change direction
-    if (this.idleVal == 20)
+    if (this.idleVal == 10)
     {
       this.idleUp = false;
     }
-    else if (this.idleVal == -20)
+    else if (this.idleVal == -10)
     {
       this.idleUp = true;
     }
@@ -207,7 +207,7 @@ function Game()
  */
 function animate() {
   requestAnimFrame( animate );
-  game.monster.draw();
+  //game.monster.draw();
   game.monster.idle();
   game.background.draw();
 }
