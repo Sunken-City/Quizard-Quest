@@ -6,7 +6,7 @@ $q=$_GET["q"];
 
 	
 	//file_put_contents($file, $category);
-        echo json_encode(get_all_cards());
+        echo get_deck_cards_byName($q);
 	
 	
 ?>
