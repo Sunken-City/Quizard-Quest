@@ -194,7 +194,6 @@ function Game()
   };
   
   this.start = function() {
-    this.monster.draw();
     animate();
   };
 }
@@ -207,6 +206,7 @@ function Game()
  */
 function animate() {
   requestAnimFrame(animate);
+  game.monster.draw();
   game.background.draw();
   game.monster.idle();
 }
