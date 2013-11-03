@@ -208,8 +208,8 @@ function Game()
  */
 function animate() {
   requestAnimFrame( animate );
-  game.monster.idle();
   game.background.draw();
+  game.monster.idle();
 }
  
 /**
