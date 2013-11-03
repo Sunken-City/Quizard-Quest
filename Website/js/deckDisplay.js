@@ -33,13 +33,4 @@ function showDeck(str)
 	xmlhttp.send();
 }	
 
-$(document).ready(function(){
 
-		
-});
-
-	/*Also needs a way to import all question from the Database */
-		
-	});
-
-});
