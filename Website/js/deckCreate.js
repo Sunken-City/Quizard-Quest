@@ -41,11 +41,49 @@ $.post("../API_Server/getCards.php", function(data){
 		cardCategory.className = "cat cardCategory";
 		cardSubcategory.className = "cat subCat cardSubcategory";
 		cardTitles.className = "cardTitles";
+		difficultyValue = JSON[i].difficulty;
+		categoryValue = JSON[i].category;
+
+		switch(categoryValue)
+		{
+			case "1":
+				categoryName="Math";
+				break;
+			case "2":
+				categoryName="Science";
+				break;
+			case "3":
+				categoryName="History";
+				break;
+			case "4":
+				categoryName="English";
+				break;
+			case "5":
+				categoryName="Foreign Languages";
+				break;
+
+		}
+
+		switch(difficultyValue)
+		{
+			case "1":
+				difficultyName="Easy";
+				break;
+			case "2":
+				difficultyName="Normal";
+				break;
+			case "3":
+				difficultyName="Hard";
+				break;
+			case "4":
+				difficultyName="Nigh-Impossible";
+				break;
+		}
 
 		cardQuestion.innerHTML = "Q: " + JSON[i].question;
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
-		cardDifficulty.innerHTML = JSON[i].difficulty;
-		cardCategory.innerHTML = JSON[i].category + ": ";
+		cardDifficulty.innerHTML = difficultyValue;
+		cardCategory.innerHTML = categoryValue + ": ";
 		cardSubcategory.innerHTML = JSON[i].subCategory;
 
 		cardTitles.appendChild(cardDifficulty);
