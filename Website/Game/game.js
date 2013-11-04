@@ -59,7 +59,7 @@ function randomMonster()
   }
   else if (choice === 2)
   {
-    return "Sprites/Stag.png";
+    return "Sprites/Slug.png";
   }
   else if (choice === 3)
   {
