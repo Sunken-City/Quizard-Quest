@@ -359,11 +359,11 @@ header {
 |*|		:: >>The following is the CSS for how a card will be displayed in deck creation<< ::		
 \*/
 
-#UsersCards {
+#UserCards {
 	width: 1450px;
 	max-width: 1450px;
 }
 
 .deckCreateTd {
-	-webkit-transform: scale(.4,.5);
+	-webkit-transform: scale(.7,.7);
 }
