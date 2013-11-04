@@ -279,7 +279,7 @@
         $table = array();
         $userID = $_SESSION['userID'];
         
-        $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID' AND category = '$category';");
+        $cards = mysqli_query($db, "SELECT DISTINCT * FROM cards WHERE userID = '$userID' AND category = '$category';");
         $x = mysqli_num_rows($cards);
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
@@ -297,7 +297,7 @@
         $table = array();
         $userID = $_SESSION['userID'];
         
-        $cards = mysqli_query($db, "SELECT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID = '$deckID';");
+        $cards = mysqli_query($db, "SELECT DISTINCT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID = '$deckID';");
         $x = mysqli_num_rows($cards);
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
@@ -315,7 +315,7 @@
         $table = array();
         $userID = $_SESSION['userID'];
         
-        $cards = mysqli_query($db, "SELECT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID != '$deckID';");
+        $cards = mysqli_query($db, "SELECT DISTINCT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID != '$deckID';");
         $x = mysqli_num_rows($cards);
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
