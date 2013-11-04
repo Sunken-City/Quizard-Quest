@@ -13,6 +13,7 @@ $(document).ready(function(){
 	|*|			CardCreation.php for validation
 	|*|
 	\*/
+	var selected = false;
 
 	$("#submitQuestion").click(function(e){
 
@@ -43,6 +44,11 @@ $(document).ready(function(){
 			alert("Question Added");
 			window.location.href = "cardCreation.php";
 		}
+	});
+
+	$("#closePreview").click(function(e) {
+		selected = false;
+		$('#card').slideUp();
 	});
 
 	$("#previewCard").click(function(e){
@@ -124,79 +130,10 @@ $(document).ready(function(){
 			cardAnswer.innerHTML = "A: " + answerValue;
 		}
 
-		// var widthForPreview = $(".content").width() - $("#submitCard").width() - 10;
-		// var heightOffset = $("#submitCard").height() - 20;
-		// var widthOffset = $("#submitCard").width() + 40;
-
-		var Card = $('#card');
-		var titles = $('#cardTitles');
-		var Category = $("#cardCategory");
-		var SubCategory = $("#cardSubcategory");
-		var Question = $("#cardQuestion");
-		var Answer = $("#cardAnswer");
-		var Difficulty = $("#cardDifficulty");
-
-		$('#card').css({
-			'border':'5px ridge rgb(188,188,188)',
-			'background-color': 'rgba(0,113,147,.25)',			
-			'font-family':"'VT323', cursive",
-		});
-
-		$('#cardTitles').css({
-			'border-bottom':'2px groove rgb(188,188,188)',
-			'background-color':'rgba(0,113,147,.45)',
-			'margin':'-10px',
-			'-moz-border-top-left-radius': '12px',
-  			'-webkit-border-top-right-radius': '12px',
-  			'-moz-border-top-right-radius': '12px',
-  			'-webkit-border-top-left-radius': '12px',
-		});
-
-		$("#cardCategory").css({
-			'position':'relative',
-			'display':'inline-block',
-			'font-size':'3em',			
-		});
-
-		$("#cardSubcategory").css({
-			'position':'relative',
-			'display':'inline-block',
-			'font-size':'2.25em',
-		});
-
-		$('.cat').css({
-			'margin-top':'-5px',
-			'margin-bottom':'10px',
-		});
-
-		$("#cardQuestion").css({
-			'position':'relative',
-			'font-size':'1.75em',
-			'margin-top':'40px',
-			'margin-bottom':'50px',
-			'margin-left':'40px',
-			'margin-right':'40px',
-			'text-align':'center',
-		});
-
-		$("#cardAnswer").css({
-			'position':'relative',
-			'font-size':'1.25em',
-			'border':'4px outset rgb(233,233,233)',
-			'padding':'10px',
-			'background-color': 'rgba(0,113,147,.25)',
-			'margin-left':'80px',
-			'margin-right':'80px',
-			'margin-bottom':'30px',
-			'-moz-border-radius': '5px',
-  			'-webkit-border-radius': '5px',
-		});
-
-		$("#cardDifficulty").css({
-			'text-align': 'right',
-			'padding-right': '20px',
-			'padding-top': '5px',
-		});
+		if (!selected) {
+			selected = true;
+			$('#card').slideDown();
+		}
 
 	});
 

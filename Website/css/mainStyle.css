@@ -266,6 +266,10 @@ header {
 	font-size: 1.25em;
 	-moz-border-radius: 18px;
   	-webkit-border-radius: 18px;
+  	border:5px ridge rgb(188,188,188);
+	background-color: rgba(0,113,147,.25);		
+	font-family: "VT323", cursive;
+	display: none;
 }
 
 #cardDifficulty {
@@ -293,4 +297,60 @@ header {
 	text-align: center;
 	margin-bottom: 60px;
 	margin-top: 60px;
+}
+
+#cardTitles {
+	border-bottom:2px groove rgb(188,188,188);
+	background-color:rgba(0,113,147,.45);
+	margin:-10px;
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
+}
+
+#cardCategory {
+	position:relative;
+	display:inline-block;
+	font-size:3em;			
+}
+
+#cardSubcategory {
+	position:relative;
+	display:inline-block;
+	font-size:2.25em;
+}
+
+.cat{
+	margin-top:-5px;
+	margin-bottom:10px;
+}
+
+#cardQuestion {
+	position:relative;
+	font-size:1.75em;
+	margin-top:40px;
+	margin-bottom:50px;
+	margin-left:40px;
+	margin-right:40px;
+	text-align:center;
+}
+
+#cardAnswer{
+	position:relative;
+	font-size:1.25em;
+	border:4px outset rgb(233,233,233);
+	padding:10px;
+	background-color: rgba(0,113,147,.25);
+	margin-left:80px;
+	margin-right:80px;
+	margin-bottom:30px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#cardDifficulty {
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 5px;
 }

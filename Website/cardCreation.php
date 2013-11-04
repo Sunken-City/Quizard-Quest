@@ -71,8 +71,8 @@
 						<tr>
 							<td class="blank"></td>
 							<td class="blank"></td>
-							<td class="blank"></td>
 							<td><button type ="button" id="previewCard" class="submitButton">Preview New Card</button></td>
+							<td><button type ="button" id="closePreview" class="submitButton">Close Preview</button></td>
 							<td><input type ="submit" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
 						</tr>	
 					</table>
