@@ -54,7 +54,7 @@ $.post("../API_Server/getCards.php", function(data){
 		card.appendChild(cardTitles);
 		card.appendChild(cardQuestion);
 		card.appendChild(cardAnswer);
-		td.appendChild(checkbox);
+		td.appendChild(checkBox);
 		td.appendChild(card);
 		document.getElementById('UserCards').appendChild(td);
 	}
