@@ -8,6 +8,8 @@
 	$test = json_decode($deckCards);
 	$row = count($test);
 	for ($count =0; $count < $row; $count++){
-		echo $test[$count]->{'question'};
+		echo "<td>".$test[$count]->{'question'}."<br>";
+		echo $test[$count]->{'answer'};
+		echo "<input type=\"checkbox\" value=".$test[$count]->{'cardID'}." name=\"cardRemove[]\"</input></td>";
 	}
 ?>
