@@ -6,6 +6,6 @@
 	//file_put_contents($file, $category);
         $deckCards =  get_deck_cards($q);
 	
-	echo $deckCards.question;
+	echo $deckCards[0].question;
 	
 ?>
