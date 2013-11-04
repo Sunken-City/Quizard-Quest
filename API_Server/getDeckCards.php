@@ -6,6 +6,6 @@
 	//file_put_contents($file, $category);
         $deckCards =  get_non_deck_cards($q);
 	
-	var_dump($deckCards);
+	var_dump(json_decode($deckCards));
 	
 ?>
