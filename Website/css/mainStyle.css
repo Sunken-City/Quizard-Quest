@@ -359,6 +359,10 @@ header {
 |*|		:: >>The following is the CSS for how a card will be displayed in deck creation<< ::		
 \*/
 
+#UsersCards {
+	float: right;
+}
+
 .deckCreateTd {
-	-webkit-transform: scale(.5,.5);
+	-webkit-transform: scale(.4,.5);
 }
