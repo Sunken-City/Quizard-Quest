@@ -261,7 +261,7 @@ function Game()
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
       this.heart = new Etc();
-      this.heart.init(0, 0, iRepo.heart.width, iRepo.heart.height);
+      this.heart.init(50, 550, iRepo.heart.width, iRepo.heart.height);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
