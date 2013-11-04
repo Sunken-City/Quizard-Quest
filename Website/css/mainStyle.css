@@ -360,7 +360,7 @@ header {
 \*/
 
 #UsersCards {
-	float: right;
+	width: inherit;
 }
 
 .deckCreateTd {
