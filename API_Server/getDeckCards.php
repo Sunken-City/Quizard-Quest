@@ -5,9 +5,9 @@
 	session_start();
 	//file_put_contents($file, $category);
         $deckCards =  get_deck_cards($q);
-	$test = json_decode($deckCards,true);
+	$test = json_decode($deckCards);
 	
 	foreach ($test as $card){
-		echo $card[0];
+		echo $card->{'question'};
 	}
 ?>
