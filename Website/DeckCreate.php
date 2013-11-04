@@ -43,13 +43,6 @@
 
 			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
 				<input type="text" name="Deckname" maxlength="32" title="Please Enter A Deck Name" placeholder="Deck Name" required>
-				<select name="Categories" id="categories" required>
-					<option value="1">Math</option>
-					<option value="2">Science</option>
-					<option value="3">History</option>
-					<option value="4">English</option>
-					<option value="5">Language</option>
-				</select>
 				<table id="UserCards">  				
 				</table>
 				<input type="submit" value="Create Deck" id="createDeck" class="submitButton" />
