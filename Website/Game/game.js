@@ -210,7 +210,7 @@ function Avatar()
 function Etc()
 {  
   this.draw = function() {
-    this.context.drawImage(iRepo.etc, this.x, this.y, this.width, this.height);
+    this.context.drawImage(iRepo.heart, this.x, this.y, this.width, this.height);
   };
 }
 
@@ -253,9 +253,9 @@ function Game()
       Avatar.prototype.canvasWidth = this.aCanvas.width;
       Avatar.prototype.canvasHeight = this.aCanvas.height;
 
-      Etc.prototype.context = this.tContext;
-      Etc.prototype.canvasWidth = this.tCanvas.width;
-      Etc.prototype.canvasHeight = this.tCanvas.height;
+      Etc.prototype.context = this.eContext;
+      Etc.prototype.canvasWidth = this.eCanvas.width;
+      Etc.prototype.canvasHeight = this.eCanvas.height;
       
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
