@@ -260,7 +260,7 @@
         $table = array();
         $userID = $_SESSION['userID'];
         $decks = mysqli_query($db, "SELECT deckID, name FROM decks WHERE userID = '$userID';");
-        foreach (mysqli_feth_assoc($cards) as $value) {
+        foreach (mysqli_feth_assoc($decks) as $value) {
             array_push($table, $value);
         }
         return $table;
