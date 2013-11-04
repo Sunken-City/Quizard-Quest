@@ -41,8 +41,10 @@ $.post("../API_Server/getCards.php", function(data){
 		cardCategory.className = "cat cardCategory";
 		cardSubcategory.className = "cat subCat cardSubcategory";
 		cardTitles.className = "cardTitles";
-		difficultyValue = JSON[i].difficulty;
-		categoryValue = JSON[i].category;
+		var difficultyValue = JSON[i].difficulty;
+		var categoryValue = JSON[i].category;
+		var categoryName;
+		var difficultyName;
 
 		switch(categoryValue)
 		{
@@ -82,8 +84,8 @@ $.post("../API_Server/getCards.php", function(data){
 
 		cardQuestion.innerHTML = "Q: " + JSON[i].question;
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
-		cardDifficulty.innerHTML = difficultyValue;
-		cardCategory.innerHTML = categoryValue + ": ";
+		cardDifficulty.innerHTML = difficultyName;
+		cardCategory.innerHTML = categoryName + ": ";
 		cardSubcategory.innerHTML = JSON[i].subCategory;
 
 		cardTitles.appendChild(cardDifficulty);
