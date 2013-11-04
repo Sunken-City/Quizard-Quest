@@ -34,13 +34,13 @@ $.post("../API_Server/getCards.php", function(data){
 		checkBox.type = "checkbox";
 		checkBox.name = "flashCard[]";
 
-		card.toggleClass("card");
-		cardQuestion.toggleClass("cardQuestion");
-		cardAnswer.toggleClass("cardAnswer");
-		cardDifficulty.toggleClass("cardDifficulty");
-		cardCategory.toggleClass("cat cardCategory");
-		cardSubcategory.toggleClass("cat subCat cardSubcategory");
-		cardTitles.toggleClass("cardTitles");
+		card.className = "card";
+		cardQuestion.className = "cardQuestion";
+		cardAnswer.className = "cardAnswer";
+		cardDifficulty.className = "cardDifficulty";
+		cardCategory.className = "cat cardCategory";
+		cardSubcategory.className = "cat subCat cardSubcategory";
+		cardTitles.className = "cardTitles";
 
 		cardQuestion.innerHTML = "Q: " + JSON[i].question;
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
