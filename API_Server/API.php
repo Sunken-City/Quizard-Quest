@@ -302,7 +302,7 @@
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
         }
-        echo $table;
+        echo json_encode($table);
         mysqli_close($db);
    }
    
