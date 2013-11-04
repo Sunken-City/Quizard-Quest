@@ -244,9 +244,8 @@
         $userID = $_SESSION['userID'];
         
         $cards = mysqli_query($db, "SELECT * FROM cards WHERE userID = '$userID';");
-        $x = mysqli_num_rows($cards);
-        for ($i = 0; $i < $x; $i++) {
-            array_push($table, mysqli_fetch_assoc($cards));
+        foreach (mysqli_feth_assoc($cards) as $value) {
+            array_push($table, $value);
         }
         return $table;
         mysqli_close($db);
@@ -261,9 +260,8 @@
         $table = array();
         $userID = $_SESSION['userID'];
         $decks = mysqli_query($db, "SELECT deckID, name FROM decks WHERE userID = '$userID';");
-        $x = mysqli_num_rows($decks);
-        for ($i = 0; $i < $x; $i++) {
-            array_push($table, mysqli_fetch_assoc($decks));
+        foreach (mysqli_feth_assoc($cards) as $value) {
+            array_push($table, $value);
         }
         return $table;
         mysqli_close($db);
@@ -280,9 +278,8 @@
         $userID = $_SESSION['userID'];
         
         $cards = mysqli_query($db, "SELECT DISTINCT * FROM cards WHERE userID = '$userID' AND category = '$category';");
-        $x = mysqli_num_rows($cards);
-        for ($i = 0; $i < $x; $i++) {
-            array_push($table, mysqli_fetch_assoc($cards));
+        foreach (mysqli_feth_assoc($cards) as $value) {
+            array_push($table, $value);
         }
         echo json_encode($table);
         mysqli_close($db);
@@ -298,9 +295,8 @@
         $userID = $_SESSION['userID'];
         
         $cards = mysqli_query($db, "SELECT DISTINCT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID = '$deckID';");
-        $x = mysqli_num_rows($cards);
-        for ($i = 0; $i < $x; $i++) {
-            array_push($table, mysqli_fetch_assoc($cards));
+        foreach (mysqli_feth_assoc($cards) as $value) {
+            array_push($table, $value);
         }
         echo json_encode($table);
         mysqli_close($db);
@@ -316,9 +312,8 @@
         $userID = $_SESSION['userID'];
         
         $cards = mysqli_query($db, "SELECT DISTINCT cards.* FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID != '$deckID';");
-        $x = mysqli_num_rows($cards);
-        for ($i = 0; $i < $x; $i++) {
-            array_push($table, mysqli_fetch_assoc($cards));
+        foreach (mysqli_feth_assoc($cards) as $value) {
+            array_push($table, $value);
         }
         echo json_encode($table);
         mysqli_close($db);
