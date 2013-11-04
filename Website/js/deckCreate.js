@@ -49,6 +49,8 @@ $.post("../API_Server/getCards.php", function(data){
 		td.appendChild(checkbox);
 		td.appendChild(card);
 		document.getElementById('UserCards').appendChild(td);
+
+		$(".card").show();
 	}
 
 	/** Format to output for cards **
