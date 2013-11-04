@@ -38,7 +38,7 @@ $.post("../API_Server/getCards.php", function(data){
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
 		cardDifficulty.innerHTML = JSON[i].difficulty;
 		cardCategory.innerHTML = JSON[i].category + ": ";
-		cardSubcategory = JSON[i].subCategory;
+		cardSubcategory.innerHTML = JSON[i].subCategory;
 
 		cardTitles.appendChild(cardDifficulty);
 		cardTitles.appendChild(cardCategory);
