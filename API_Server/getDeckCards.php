@@ -8,6 +8,6 @@
 	$test = json_decode($deckCards,true);
 	
 	foreach ($test as $card){
-		echo $card;
+		echo $card[0];
 	}
 ?>
