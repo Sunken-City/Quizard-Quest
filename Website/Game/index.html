@@ -36,26 +36,29 @@
       .lives 
       {
         position: absolute;
-        top: 5px;
-        left: 480px;
-        color: #FF7F00;
+        top: 50px;
+        left: 600px;
+        color: #FF0000;
         font-family: 'VT323', sans-serif;
+        font-size: 50px;
         cursor: default;
       }
     </style>
   </head>
   <body>
-    <!-- The canvas for the background -->
-    <canvas id="background" width="765" height="666">
-      Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
-    </canvas>
-    <!-- The canvas for the monster -->
-    <canvas id="monster" width="765" height="666"></canvas>
-    <!-- The canvas for the avatar progress bar -->
-    <canvas id="avatar" width="765" height="666"></canvas>
-    <!-- The canvas for the text onscreen -->
-    <canvas id="text" width="765" height="666"></canvas>
-    <div class="lives">LIVES: <span id="lives"></span></div>
+    <div class="Game">
+      <!-- The canvas for the background -->
+      <canvas id="background" width="765" height="666">
+	Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
+      </canvas>
+      <!-- The canvas for the monster -->
+      <canvas id="monster" width="765" height="666"></canvas>
+      <!-- The canvas for the avatar progress bar -->
+      <canvas id="avatar" width="765" height="666"></canvas>
+      <!-- The canvas for the text onscreen -->
+      <canvas id="text" width="765" height="666"></canvas>
+      <div class="lives"> X <span id="lives"></span></div>
+    </div>
     <script src="game.js"></script>
   </body>
 </html>
