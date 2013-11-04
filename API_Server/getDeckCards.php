@@ -4,7 +4,7 @@
 	include "API.php";
 	session_start();
 	//file_put_contents($file, $category);
-        $deckCards =  get_deck_cards($q);
+        $deckCards =  json_encode(get_deck_cards($q));
 	
 	foreach($deckCards as $card){
 		
