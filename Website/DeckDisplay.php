@@ -48,8 +48,7 @@
 			</form>
 
 			<form id="cardRemove" action=# method="POST" >
-				<table id="deckCards">  				
-				</table>
+				<div id="deckCards"></div>
 				<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
 			</form>
 

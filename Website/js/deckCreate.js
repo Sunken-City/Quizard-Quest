@@ -20,7 +20,7 @@ $.post("../API_Server/getCards.php", function(data){
 
 	for (var i = 0, len = JSON.length; i < len; i++) {
 
-		var td = document.createElement("td");
+		var td = document.createElement("div");
 		var card = document.createElement("div");
 		var cardTitles = document.createElement("div");
 		var cardDifficulty = document.createElement("div");
@@ -34,7 +34,7 @@ $.post("../API_Server/getCards.php", function(data){
 		checkBox.type = "checkbox";
 		checkBox.name = "flashCard[]";
 
-		td.className = "deckCreateTd";
+		td.className = "deckCreateDiv";
 		card.className = "card";
 		cardQuestion.className = "cardQuestion";
 		cardAnswer.className = "cardAnswer";

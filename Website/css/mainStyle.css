@@ -364,6 +364,7 @@ header {
 	max-width: 1450px;
 }
 
-.deckCreateTd {
-	-webkit-transform: scale(.7,.7);
+.deckCreateDiv {
+	-webkit-transform: scale(.6,.7);
+	display: inline-block;
 }
