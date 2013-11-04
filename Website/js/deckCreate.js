@@ -32,7 +32,15 @@ $.post("../API_Server/getCards.php", function(data){
 
 		checkBox.value = JSON[i].cardID;
 		checkBox.type = "checkbox";
-		checkBox.name = "flashCard[]"
+		checkBox.name = "flashCard[]";
+
+		card.toggleClass("card");
+		cardQuestion.toggleClass("cardQuestion");
+		cardAnswer.toggleClass("cardAnswer");
+		cardDifficulty.toggleClass("cardDifficulty");
+		cardCategory.toggleClass("cat cardCategory");
+		cardSubcategory.toggleClass("cat subCat cardSubcategory");
+		cardTitles.toggleClass("cardTitles");
 
 		cardQuestion.innerHTML = "Q: " + JSON[i].question;
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
