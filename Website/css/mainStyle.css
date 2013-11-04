@@ -354,3 +354,11 @@ header {
 	padding-right: 20px;
 	padding-top: 5px;
 }
+
+/*\	
+|*|		:: >>The following is the CSS for how a card will be displayed in deck creation<< ::		
+\*/
+
+.deckCreate {
+	-webkit-transform: scale(.33,.33);
+}
