@@ -8,6 +8,30 @@
 var path = "../../Resources/Game/";
 var avatarPath = "../../Resources/Avatars/";
 
+//Game Mode
+this.GameMode = 
+{
+    Training : 0,
+    Quest : 1,
+    Test : 2
+}
+
+/**
+ * Misc functions
+ */
+
+//Modified from: http://krazydad.com/tutorials/makecolors.php
+function colorFromPhase(phase)
+{
+  phase = (phase - 20) * .01;
+  var center = 104;
+  var width = 127;
+  var red   = Math.floor(Math.sin(2 + phase) * width + center);
+  var green = Math.floor(Math.sin(0 + phase) * width + center);
+  var blue  = Math.floor(Math.sin(4 + phase) * width + center); 
+  return "rgba(" + red + "," + green + "," + blue + ", 1)";
+}
+
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
@@ -105,15 +129,16 @@ function Drawable()
   };
 }
 
+/**
+ * Canvas Creation
+ */
+
 function Background()
 {
   this.draw = function() {
     this.context.drawImage(iRepo.background, this.x, this.y, this.width, this.height);
   };
 }
-
-//Get the background object to copy all of Drawable's information
-Background.prototype = new Drawable();
 
 function Monster()
 {
@@ -159,20 +184,6 @@ function Monster()
   };
 }
 
-Monster.prototype = new Drawable();
-
-//Modified from: http://krazydad.com/tutorials/makecolors.php
-function colorFromPhase(phase)
-{
-  phase = (phase - 20) * .01;
-  var center = 104;
-  var width = 127;
-  var red   = Math.floor(Math.sin(2 + phase) * width + center);
-  var green = Math.floor(Math.sin(0 + phase) * width + center);
-  var blue  = Math.floor(Math.sin(4 + phase) * width + center); 
-  return "rgba(" + red + "," + green + "," + blue + ", 1)";
-}
-
 function Avatar()
 {
   this.draw = function() {
@@ -190,9 +201,6 @@ function Avatar()
   };
 }
 
-//Get the background object to copy all of Drawable's information
-Avatar.prototype = new Drawable();
-
 function Text()
 {
     this.init = function(font, x, y, width){
@@ -208,8 +216,13 @@ function Text()
   };
 }
 
+
 //Get the background object to copy all of Drawable's information
+Background.prototype = new Drawable();
+Avatar.prototype = new Drawable();
+Monster.prototype = new Drawable();
 Text.prototype = new Drawable();
+
 
 function Game()
 {
@@ -219,6 +232,8 @@ function Game()
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.tCanvas = document.getElementById('text');
+    
+    this.lives = 5;
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -288,6 +303,7 @@ function animate() {
   game.avatar.draw();
   game.text.draw("NRNRNRNRNRNRRNRNRNR");
   game.avatar.move();
+  document.getElementById('lives').innerHTML = game.lives;
   
 }
  
