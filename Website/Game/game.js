@@ -210,7 +210,7 @@ function Avatar()
 function Etc()
 {  
   this.draw = function() {
-    this.context.drawImage(iRepo.etc, this.x, this.y, this.width, this.height);
+    this.context.drawImage(iRepo.heart, this.x, this.y, this.width, this.height);
   };
 }
 
