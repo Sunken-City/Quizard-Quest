@@ -281,7 +281,7 @@
         foreach (mysqli_feth_assoc($cards) as $value) {
             array_push($table, $value);
         }
-        echo json_encode($table);
+        return $table;
         mysqli_close($db);
     }
     
@@ -298,7 +298,7 @@
         foreach (mysqli_feth_assoc($cards) as $value) {
             array_push($table, $value);
         }
-        echo json_encode($table);
+        return $table;
         mysqli_close($db);
    }
    
@@ -315,7 +315,7 @@
         foreach (mysqli_feth_assoc($cards) as $value) {
             array_push($table, $value);
         }
-        echo json_encode($table);
+        return $table;
         mysqli_close($db);
    }
    
