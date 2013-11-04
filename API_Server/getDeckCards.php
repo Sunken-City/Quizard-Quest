@@ -6,8 +6,8 @@
 	//file_put_contents($file, $category);
         $deckCards =  get_deck_cards($q);
 	$test = json_decode($deckCards);
-	
-	foreach ($test as $card){
-		echo $card->{'question'};
+	$row = count($test);
+	for ($count =0; $count < $row; $count++){
+		echo $test[$count]->{'question'};
 	}
 ?>
