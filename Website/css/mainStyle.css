@@ -360,7 +360,8 @@ header {
 \*/
 
 #UsersCards {
-	width: inherit;
+	width: 1450px;
+	max-width: 1450px;
 }
 
 .deckCreateTd {
