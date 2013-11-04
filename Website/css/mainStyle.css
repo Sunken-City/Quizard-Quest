@@ -359,6 +359,6 @@ header {
 |*|		:: >>The following is the CSS for how a card will be displayed in deck creation<< ::		
 \*/
 
-.deckCreate {
-	-webkit-transform: scale(.33,.33);
+.deckCreateTd {
+	-webkit-transform: scale(.5,.5);
 }

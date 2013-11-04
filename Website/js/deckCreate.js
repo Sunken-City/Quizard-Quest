@@ -34,7 +34,8 @@ $.post("../API_Server/getCards.php", function(data){
 		checkBox.type = "checkbox";
 		checkBox.name = "flashCard[]";
 
-		card.className = "card deckCreate";
+		td.className = "deckCreateTd";
+		card.className = "card";
 		cardQuestion.className = "cardQuestion";
 		cardAnswer.className = "cardAnswer";
 		cardDifficulty.className = "cardDifficulty";
