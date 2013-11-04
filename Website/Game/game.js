@@ -42,8 +42,9 @@ var iRepo = new function() {
   this.background = new Image();
   this.monster = new Image();
   this.avatar = new Image();
+  this.heart = new Image();
  
-  var numImages = 3;
+  var numImages = 4;
   var numLoaded = 0;
   
   function imageLoaded()
@@ -67,10 +68,15 @@ var iRepo = new function() {
     imageLoaded();
   }
   
+  this.heart.onload = function(){
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
   this.avatar.src = avatarPath + "Greg.png";
+  this.heart.src = path + "Diamond.png";
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -201,18 +207,10 @@ function Avatar()
   };
 }
 
-function Text()
-{
-    this.init = function(font, x, y, width){
-    this.context.font = font;
-    this.x = x;
-    this.y = y;
-    this.width = width;
-  };
-  
-  this.draw = function(input) {
-    this.text = input;
-    this.context.fillText(this.text, this.x, this.y, this.width);
+function Etc()
+{  
+  this.draw = function() {
+    this.context.drawImage(iRepo.etc, this.x, this.y, this.width, this.height);
   };
 }
 
@@ -221,7 +219,7 @@ function Text()
 Background.prototype = new Drawable();
 Avatar.prototype = new Drawable();
 Monster.prototype = new Drawable();
-Text.prototype = new Drawable();
+Etc.prototype = new Drawable();
 
 
 function Game()
@@ -231,7 +229,7 @@ function Game()
     this.bgCanvas = document.getElementById('background');
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
-    this.tCanvas = document.getElementById('text');
+    this.eCanvas = document.getElementById('etc');
     
     this.lives = 5;
     
@@ -241,7 +239,7 @@ function Game()
       this.bgContext = this.bgCanvas.getContext('2d');
       this.mContext = this.mCanvas.getContext('2d');
       this.aContext = this.aCanvas.getContext('2d');
-      this.tContext = this.tCanvas.getContext('2d');
+      this.eContext = this.eCanvas.getContext('2d');
       
       Background.prototype.context = this.bgContext;
       Background.prototype.canvasWidth = this.bgCanvas.width;
@@ -255,15 +253,15 @@ function Game()
       Avatar.prototype.canvasWidth = this.aCanvas.width;
       Avatar.prototype.canvasHeight = this.aCanvas.height;
 
-      Text.prototype.context = this.tContext;
-      Text.prototype.canvasWidth = this.tCanvas.width;
-      Text.prototype.canvasHeight = this.tCanvas.height;
+      Etc.prototype.context = this.tContext;
+      Etc.prototype.canvasWidth = this.tCanvas.width;
+      Etc.prototype.canvasHeight = this.tCanvas.height;
       
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      this.text = new Text();
-      this.text.init("60px Arial", 0, 400, 666);
+      this.heart = new Etc();
+      this.heart.init(0, 0, iRepo.heart.width, iRepo.heart.height);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
@@ -294,17 +292,20 @@ function Game()
  * function must be a gobal function and cannot be within an
  * object.
  */
-function animate() {
+function animate() 
+{
   requestAnimFrame(animate);
   game.background.draw();
+  
   game.monster.clear();
   game.monster.idle();
   game.monster.draw();
-  game.avatar.draw();
-  game.text.draw("NRNRNRNRNRNRRNRNRNR");
-  game.avatar.move();
-  document.getElementById('lives').innerHTML = game.lives;
   
+  game.avatar.draw();
+  game.avatar.move();
+  
+  game.heart.draw();
+  document.getElementById('lives').innerHTML = game.lives;  
 }
  
 /**
