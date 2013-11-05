@@ -143,7 +143,7 @@ function Background()
 {
   this.draw = function() {
     this.context.drawImage(iRepo.background, this.x, this.y, this.width, this.height);
-    this.context.fillRect(0, 333, 765, 666);
+    //this.context.fillRect(0, 333, 765, 666);
   };
 }
 
