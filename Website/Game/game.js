@@ -431,3 +431,33 @@ function Display(size, offset, openInNewWindow) {
  
 	this.init(this.size);
 }
+
+//From https://gist.github.com/ebonneville/3929297
+// basic position class, holds x and y coordinates and utility functions
+function Vector2(x, y) {
+	this.x = x;
+	this.y = y;
+	
+	this.add = function(other) {
+		return new Vector2(this.x + other.x, this.y + other.y);
+	};
+	
+	this.distance = function(pos) {
+		var dx = pos.x - this.x;
+		var dy = pos.y - this.y;
+		
+		return Math.abs(Math.sqrt((dx * dx) + (dy * dy)));
+	};
+	
+	this.manhattan = function(pos) {
+		return(Math.abs(this.x - pos.x) + Math.abs(this.y - pos.y));
+	};
+	
+	this.clone = function() {
+		return(new Vector2(this.x, this.y));
+	};
+	
+	this.toString = function() {
+		return("(" + this.x + ", " + this.y + ")");
+	};
+}
