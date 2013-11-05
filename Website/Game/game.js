@@ -275,6 +275,8 @@ function Game()
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
+      this.display = new Display(800, false, true);
+      
       return true;
     }
     else
@@ -285,7 +287,6 @@ function Game()
   };
   
   this.start = function() {
-    Display(800, false, true);
     animate();
   };
 }
