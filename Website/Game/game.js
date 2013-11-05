@@ -275,7 +275,7 @@ function Game()
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
-      this.display = new Display(800, false, true);
+      //this.display = new Display(800, false, true);
       
       return true;
     }
@@ -342,7 +342,7 @@ function init()
 }
 
 
-
+/*
 function Display(size, offset, openInNewWindow) {
 	var display = this;
 	
@@ -431,10 +431,11 @@ function Display(size, offset, openInNewWindow) {
 	}
  
 	this.init(this.size);
-}
+}*/
 
 //From https://gist.github.com/ebonneville/3929297
 // basic position class, holds x and y coordinates and utility functions
+/*
 function Vector2(x, y) {
 	this.x = x;
 	this.y = y;
@@ -462,3 +463,4 @@ function Vector2(x, y) {
 		return("(" + this.x + ", " + this.y + ")");
 	};
 }
+*/
