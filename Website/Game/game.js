@@ -232,6 +232,7 @@ function Game()
     this.eCanvas = document.getElementById('etc');
     
     this.lives = 5;
+    this.question = "sqrt(Onions)";
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -306,6 +307,7 @@ function animate()
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
+  document.getElementById('question').innerHTML = game.question;  
 }
  
 /**
