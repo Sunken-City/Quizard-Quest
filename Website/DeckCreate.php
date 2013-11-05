@@ -43,8 +43,7 @@
 
 			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
 				<input type="text" name="Deckname" maxlength="32" title="Please Enter A Deck Name" placeholder="Deck Name" required>
-				<table id="UserCards">  				
-				</table>
+				<div id="UserCards"></div>
 				<input type="submit" value="Create Deck" id="createDeck" class="submitButton" />
 			</form>
 
