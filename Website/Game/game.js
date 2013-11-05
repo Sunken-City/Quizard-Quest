@@ -76,7 +76,7 @@ var iRepo = new function() {
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
   this.avatar.src = avatarPath + "Greg.png";
-  this.heart.src = path + "/Sprites/Diamond.png";
+  this.heart.src = path + "/Sprites/Heart.png";
 }
 
 //Picks a random monster image from the available pool of monsters
