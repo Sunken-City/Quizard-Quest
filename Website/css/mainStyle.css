@@ -365,6 +365,83 @@ header {
 }
 
 .deckCreateDiv {
-	-webkit-transform: scale(.6,.7);
 	display: inline-block;
+}
+
+.card.deckCreate {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	width: 469px;
+	padding: 7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 1em;
+	-moz-border-radius: 12px;
+  	-webkit-border-radius: 12px;
+  	border:4px ridge rgb(188,188,188);
+	background-color: rgba(0,113,147,.25);		
+	/*font-family: "VT323", cursive;*/
+	/*display: none;*/
+}
+
+.cardDifficulty.deckCreate {
+	display: block;
+}
+
+.cardTitles.deckCreate {
+	border-bottom:2px groove rgb(188,188,188);
+	background-color:rgba(0,113,147,.45);
+	margin:-10px;
+	-moz-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-top-right-radius: 8px;
+	-webkit-border-top-left-radius: 8px;
+}
+
+.cardCategory.deckCreate {
+	position:relative;
+	display:inline-block;
+	font-size:2.5em;			
+}
+
+.cardSubcategory.deckCreate {
+	position:relative;
+	display:inline-block;
+	font-size:2em;
+}
+
+.cat.deckCreate{
+	margin-top:-5px;
+	margin-bottom:10px;
+}
+
+.cardQuestion.deckCreate {
+	position:relative;
+	font-size:1.25em;
+	margin-top:30px;
+	margin-bottom:40px;
+	margin-left:30px;
+	margin-right:30px;
+	text-align:center;
+}
+
+.cardAnswer.deckCreate{
+	position:relative;
+	font-size:1.25em;
+	border:4px outset rgb(233,233,233);
+	padding:10px;
+	background-color: rgba(0,113,147,.25);
+	margin-left:60px;
+	margin-right:60px;
+	margin-bottom:20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.cardDifficulty.deckCreate {
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 5px;
 }

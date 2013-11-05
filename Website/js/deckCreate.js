@@ -34,14 +34,14 @@ $.post("../API_Server/getCards.php", function(data){
 		checkBox.type = "checkbox";
 		checkBox.name = "flashCard[]";
 
-		td.className = "deckCreateDiv";
-		card.className = "card";
-		cardQuestion.className = "cardQuestion";
-		cardAnswer.className = "cardAnswer";
-		cardDifficulty.className = "cardDifficulty";
-		cardCategory.className = "cat cardCategory";
-		cardSubcategory.className = "cat subCat cardSubcategory";
-		cardTitles.className = "cardTitles";
+		td.className = "deckCreateDiv deckCreate";
+		card.className = "card deckCreate";
+		cardQuestion.className = "cardQuestion deckCreate";
+		cardAnswer.className = "cardAnswer deckCreate";
+		cardDifficulty.className = "cardDifficulty deckCreate";
+		cardCategory.className = "cat cardCategory deckCreate";
+		cardSubcategory.className = "cat subCat cardSubcategory deckCreate";
+		cardTitles.className = "cardTitles deckCreate";
 		var difficultyValue = JSON[i].difficulty;
 		var categoryValue = JSON[i].category;
 		var categoryName;
@@ -99,7 +99,6 @@ $.post("../API_Server/getCards.php", function(data){
 		td.appendChild(card);
 		document.getElementById('UserCards').appendChild(td);
 	}
-		$(".card").slideDown();
 
 	/** Format to output for cards **
 	<div class="card">
