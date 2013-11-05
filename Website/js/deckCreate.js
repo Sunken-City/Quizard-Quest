@@ -99,6 +99,7 @@ $.post("../API_Server/getCards.php", function(data){
 		td.appendChild(card);
 		document.getElementById('UserCards').appendChild(td);
 	}
+		$(".card").slideDown();
 
 	/** Format to output for cards **
 	<div class="card">
