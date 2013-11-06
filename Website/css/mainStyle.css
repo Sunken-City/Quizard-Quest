@@ -44,6 +44,7 @@ h1,.makeHeader1 {
 	margin: .5em;
 	color: rgb(255,153,0);
 	font-weight: normal;
+	text-align: center;
 }
 
 .makeHeader1 {
@@ -99,6 +100,7 @@ h2 {
 	padding: 0em;
 	margin: .5em;	
 	font-weight: normal;
+	text-align: center;
 }
 
 h3 {
@@ -106,6 +108,7 @@ h3 {
 	padding: 0em;
 	margin: .5em;
 	font-weight: normal;
+	text-align: center;
 }
 
 #titles {
