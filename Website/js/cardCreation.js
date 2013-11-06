@@ -38,11 +38,11 @@ $(document).ready(function(){
 		}
 		else{
 			$.post("../API_Server/CardCreation.php",formData,function(){
+				alert("Question Added");
+				window.location.href = "cardCreation.php";
 			});
 
 			e.preventDefault();
-			alert("Question Added");
-			window.location.href = "cardCreation.php";
 		}
 	});
 
@@ -117,12 +117,14 @@ $(document).ready(function(){
 
 
 		if(categoryValue == 0){
-		// 	alert("Please Select a Category");
-		}
-		else if(difficultyValue == 0){
-		// 	alert("Please Select a Difficulty");
-		}
-		else{			
+		 	alert("Please Select a Category");
+		} else if(difficultyValue == 0){
+		 	alert("Please Select a Difficulty");
+		} else if (question == 0) {
+			alert("Please Enter a Question");
+		} else if (answer == 0) {
+			alert("Please Enter an Answer");
+		} else{			
 			cardDifficulty.innerHTML = difficultyName;
 			cardCategory.innerHTML = categoryName + ": ";
 			cardSubcategory.innerHTML = subcategoryValue;
