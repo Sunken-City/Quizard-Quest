@@ -43,7 +43,7 @@ CREATE TABLE cards (
    cardID int NOT NULL AUTO_INCREMENT,
    userID int NOT NULL,
    question varchar(512) NOT NULL,
-   answer varchar(256) NOT NULL,
+   answer varchar(512) NOT NULL,
    category int NOT NULL,
    subCategory varchar(32),
    difficulty int NOT NULL,
