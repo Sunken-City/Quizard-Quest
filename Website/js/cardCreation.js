@@ -30,10 +30,20 @@ $(document).ready(function(){
 		answer = answer.trim();
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
-		$.post("../API_Server/CardCreation.php",formData,function(){
+		if(category == 0){
+		 	alert("Please Select a Category");
+		} else if(subcategory == 0){
+		 	alert("Please Select a Difficulty");
+		} else if (question == 0) {
+			alert("Please Enter a Question");
+		} else if (answer == 0) {
+			alert("Please Enter an Answer");
+		} else {			
+			$.post("../API_Server/CardCreation.php",formData,function(){
 				alert("Question Added");
 				window.location.href = "cardCreation.php";
 			});
+		}		
 
 		e.preventDefault();
 	});
