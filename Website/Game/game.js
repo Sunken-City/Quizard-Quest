@@ -56,6 +56,11 @@ var iRepo = new function() {
     }
   }
   
+  function changeImage(var i, var pathTail)
+  {
+    i.src = path + pathTail;
+  }
+  
   this.background.onload = function(){
     imageLoaded();
   }
@@ -158,6 +163,11 @@ function Monster()
   
   this.clear = function() {
     this.context.clearRect(this.x, this.y, this.width, this.height);
+  };
+  
+  this.change = function() 
+  {
+    iRepo.changeImage(iRepo.monster, "Sprites/Heart.png");
   };
   
   //Make the monster float up and down in an idling sequence
