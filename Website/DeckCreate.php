@@ -49,7 +49,7 @@
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
-				<p>English (US)</p>
+				<p>2013 English (US)</p>
 			</footer>
 
 		</div>

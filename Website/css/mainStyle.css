@@ -277,6 +277,7 @@ header {
 	margin-right: auto;
 	margin-left: auto;
 	width: 40%;
+	text-align: center;
 }
 
 #deckCreate {
@@ -292,6 +293,19 @@ header {
 #nameDeck {
 	margin-left: 3px;
 	margin-bottom: 20px;
+}
+
+#innerContent {
+	margin-right: auto;
+	margin-left: auto;
+	width: 98%;
+}
+
+#deckDisplayHeading {
+	margin-left:auto;
+	margin-right: auto;
+	width: 40%;
+	text-align: center;
 }
 
 /*\	
