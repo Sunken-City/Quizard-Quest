@@ -32,13 +32,13 @@ $(document).ready(function(){
 
 		if(category == 0){
 		 	alert("Please Select a Category");
-		} else if(subcategory == 0){
-		 	alert("Please Select a Difficulty");
 		} else if (question == 0) {
 			alert("Please Enter a Question");
 		} else if (answer == 0) {
 			alert("Please Enter an Answer");
-		} else {			
+		} else if(difficulty == 0){
+		 	alert("Please Select a Difficulty");
+		 } else {			
 			$.post("../API_Server/CardCreation.php",formData,function(){
 				alert("Question Added");
 				window.location.href = "cardCreation.php";
@@ -120,12 +120,12 @@ $(document).ready(function(){
 
 		if(categoryValue == 0){
 		 	alert("Please Select a Category");
-		} else if(difficultyValue == 0){
-		 	alert("Please Select a Difficulty");
 		} else if (questionValue == 0) {
 			alert("Please Enter a Question");
 		} else if (answerValue == 0) {
 			alert("Please Enter an Answer");
+		} else if(difficultyValue == 0){
+		 	alert("Please Select a Difficulty");
 		} else{			
 			cardDifficulty.innerHTML = difficultyName;
 			cardCategory.innerHTML = categoryName + ": ";
