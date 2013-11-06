@@ -112,9 +112,9 @@ $(document).ready(function(){
 		 	alert("Please Select a Category");
 		} else if(difficultyValue == 0){
 		 	alert("Please Select a Difficulty");
-		} else if (question == 0) {
+		} else if (questionValue == 0) {
 			alert("Please Enter a Question");
-		} else if (answer == 0) {
+		} else if (answerValue == 0) {
 			alert("Please Enter an Answer");
 		} else{			
 			cardDifficulty.innerHTML = difficultyName;
