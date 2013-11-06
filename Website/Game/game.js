@@ -8,6 +8,9 @@
 var path = "../../Resources/Game/";
 var avatarPath = "../../Resources/Avatars/";
 
+//Global variables for game control
+var avatarMoveTo = 0;
+
 //Game Mode
 this.GameMode = 
 {
@@ -210,7 +213,7 @@ function Avatar()
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x - 2, this.y, this.width, this.height + 3);
+    this.context.clearRect(this.x - 2, this.y, this.width, this.height);
   };
   
   this.move = function(nextPoint) 
@@ -324,7 +327,7 @@ function animate()
   game.monster.draw();
   
   game.avatar.draw();
-  game.avatar.move(300);
+  game.avatar.move(avatarMoveTo);
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
