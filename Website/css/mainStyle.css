@@ -412,10 +412,10 @@ header {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: 60%;
-	padding: 10px;
-	margin-top: 10px;
-	margin-bottom: 30px;
+	width: 80%;
+	padding: 8px;
+	margin-top: 8px;
+	margin-bottom: 24px;
 	text-align: center;
 	font-size: 1em;
 	-moz-border-radius: 18px;
@@ -433,7 +433,7 @@ header {
 .cardTitles.deckCreate {
 	border-bottom:2px groove rgb(188,188,188);
 	background-color:rgba(0,113,147,.45);
-	margin:-10px;
+	margin:-8px;
 	-moz-border-top-left-radius: 12px;
 	-webkit-border-top-right-radius: 12px;
 	-moz-border-top-right-radius: 12px;
@@ -453,17 +453,17 @@ header {
 }
 
 .cat.deckCreate{
-	margin-top:-5px;
-	margin-bottom:10px;
+	margin-top:-4px;
+	margin-bottom:8px;
 }
 
 .cardQuestion.deckCreate {
 	position:relative;
 	font-size:1.4em;
-	margin-top:40px;
-	margin-bottom:50px;
-	margin-left:40px;
-	margin-right:40px;
+	margin-top:32px;
+	margin-bottom:40px;
+	margin-left:32px;
+	margin-right:32px;
 	text-align:center;
 }
 
@@ -473,15 +473,15 @@ header {
 	border:4px outset rgb(233,233,233);
 	padding:10px;
 	background-color: rgba(0,113,147,.25);
-	margin-left:80px;
-	margin-right:80px;
-	margin-bottom:30px;
+	margin-left:64px;
+	margin-right:64px;
+	margin-bottom:24px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
 
 .cardDifficulty.deckCreate {
 	text-align: right;
-	padding-right: 20px;
+	padding-right: 16px;
 	padding-top: 5px;
 }
