@@ -417,12 +417,12 @@ header {
 	margin-top: 10px;
 	margin-bottom: 30px;
 	text-align: center;
-	font-size: 1.25em;
+	font-size: 1em;
 	-moz-border-radius: 18px;
   	-webkit-border-radius: 18px;
   	border:5px ridge rgb(188,188,188);
 	background-color: rgba(0,113,147,.25);		
-	font-family: "VT323", cursive;
+	/*font-family: "VT323", cursive;*/
 	display: none;
 }
 
@@ -443,13 +443,13 @@ header {
 .cardCategory.deckCreate {
 	position:relative;
 	display:inline-block;
-	font-size:3em;			
+	font-size:2.4em;			
 }
 
 .cardSubcategory.deckCreate {
 	position:relative;
 	display:inline-block;
-	font-size:2.25em;
+	font-size:1.8em;
 }
 
 .cat.deckCreate{
@@ -459,7 +459,7 @@ header {
 
 .cardQuestion.deckCreate {
 	position:relative;
-	font-size:1.75em;
+	font-size:1.4em;
 	margin-top:40px;
 	margin-bottom:50px;
 	margin-left:40px;
@@ -469,7 +469,7 @@ header {
 
 .cardAnswer.deckCreate{
 	position:relative;
-	font-size:1.25em;
+	font-size:1em;
 	border:4px outset rgb(233,233,233);
 	padding:10px;
 	background-color: rgba(0,113,147,.25);
