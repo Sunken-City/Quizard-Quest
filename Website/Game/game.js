@@ -210,7 +210,7 @@ function Avatar()
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y, this.width, this.height);
+    this.context.clearRect(this.x - 2, this.y, this.width, this.height + 3);
   };
   
   this.move = function(nextPoint) 
@@ -218,6 +218,7 @@ function Avatar()
     if (this.x < nextPoint)
     {
       this.x++;
+      //Code for a rainbow trail:
       //this.context.fillStyle = colorFromPhase(this.x);
       //this.context.fillRect(this.x, this.y, this.width - 25, this.height);
     }
