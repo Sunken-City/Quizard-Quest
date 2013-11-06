@@ -406,6 +406,7 @@ header {
 
 .deckCreateDiv {
 	display: inline-block;
+	vertical-align: top;
 }
 
 .card.deckCreate {
