@@ -212,10 +212,15 @@ function Avatar()
     this.context.clearRect(this.x, this.y, this.width, this.height);
   };
   
-  this.move = function() {
-    this.x++;
-    this.context.fillStyle = colorFromPhase(this.x);
-    this.context.fillRect(this.x, this.y, this.width - 25, this.height);
+  this.move = function(nextPoint) 
+  {
+    if (this.x < nextPoint)
+    {
+      this.x++;
+      this.context.clearRect(this.x + 25, this.y, this.width - 25, this.height);
+      this.context.fillStyle = colorFromPhase(this.x);
+      this.context.fillRect(this.x, this.y, this.width - 25, this.height);
+    }
   };
 }
 
@@ -318,7 +323,7 @@ function animate()
   game.monster.draw();
   
   game.avatar.draw();
-  game.avatar.move();
+  game.avatar.move(100);
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
