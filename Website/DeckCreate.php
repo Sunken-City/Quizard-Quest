@@ -39,10 +39,10 @@
 				</nav>
 			</header>
 
-			<h1>Create-a-Deck!</h1>
+			<h1 id="CreateDeckHeading">Create-a-Deck!</h1>
 
 			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
-				<input type="text" name="Deckname" maxlength="32" title="Please Enter A Deck Name" placeholder="Deck Name" required>
+				<input id="nameDeck" type="text" name="Deckname" maxlength="32" title="Please Enter A Deck Name" placeholder="Deck Name" required>
 				<div id="UserCards"></div>
 				<input type="submit" value="Create Deck" id="createDeck" class="submitButton" />
 			</form>

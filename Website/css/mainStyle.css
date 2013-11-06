@@ -16,7 +16,7 @@ header {
 }
 
 .content {
-	width: 1500px;
+	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 10px;
@@ -137,7 +137,7 @@ footer {
 	padding-bottom: 5px;
 	font-size: .8em;
 	border-top:  .1em ridge rgb(66,66,66);
-	width: 1480px;
+	width: 98%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -201,7 +201,7 @@ input::-webkit-input-placeholder {
 .directions {
 	margin-left: auto;
 	margin-right: auto;
-	width: 1500px;
+	width: 90%;
 	text-align: center;
 }
 
@@ -233,7 +233,7 @@ header {
 	display: block;
 	padding-bottom: 25px;
 	position: relative;
-	width: 1200px;
+	width: 100%;
 	/*left: 10px;*/
 }
 
@@ -242,7 +242,7 @@ header {
 	margin-left: auto;
 	margin-bottom: 40px;
 	margin-top: 40px;
-	width: 900px;
+	width: 75%;
 }
 
 #submitCard td {
@@ -253,7 +253,7 @@ header {
 .error {
 	margin-right: auto;
 	margin-left: auto;
-	width: 1000px;
+	width: 80%;
 	text-align: center;
 }
 
@@ -273,6 +273,27 @@ header {
 	margin-top: 60px;
 }
 
+#CreateDeckHeading {
+	margin-right: auto;
+	margin-left: auto;
+	width: 40%;
+}
+
+#deckCreate {
+	margin-left: auto;
+	margin-right: auto;
+	width: 98%;
+}
+
+#createDeck {
+	margin-bottom: 40px;
+}
+
+#nameDeck {
+	margin-left: 3px;
+	margin-bottom: 20px;
+}
+
 /*\	
 |*|		:: >>The following is the CSS for how a card will be displayed<< ::		
 \*/
@@ -281,7 +302,7 @@ header {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: 700px;
+	width: 60%;
 	padding: 10px;
 	margin-top: 10px;
 	margin-bottom: 30px;
@@ -364,8 +385,9 @@ header {
 \*/
 
 #UserCards {
-	width: 1450px;
-	max-width: 1450px;
+	width: 98%;
+	max-width: 98%;
+	word-wrap: break-word;
 }
 
 .deckCreateDiv {
