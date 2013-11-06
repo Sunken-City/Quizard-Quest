@@ -42,7 +42,7 @@ INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) 
 
 #cardID = 29 to 32
 INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) VALUES(3, "10", "11", 3, "Binary", 5);
-INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) VALUES(3, "100", "101, 3, "Binary", 4);
+INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) VALUES(3, "100", "101", 3, "Binary", 4);
 INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) VALUES(3, "110", "111", 3, "Binary", 3);
 INSERT INTO cards (userID, question, answer, category, subCategory, difficulty) VALUES(3, "1000", "1001", 3, "Binary", 2);
 
