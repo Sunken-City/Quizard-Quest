@@ -16,7 +16,7 @@ header {
 }
 
 .content {
-	width: 1500px;
+	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 10px;
@@ -137,7 +137,7 @@ footer {
 	padding-bottom: 5px;
 	font-size: .8em;
 	border-top:  .1em ridge rgb(66,66,66);
-	width: 1480px;
+	width: 98%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -201,7 +201,7 @@ input::-webkit-input-placeholder {
 .directions {
 	margin-left: auto;
 	margin-right: auto;
-	width: 1500px;
+	width: 90%;
 	text-align: center;
 }
 
@@ -233,7 +233,7 @@ header {
 	display: block;
 	padding-bottom: 25px;
 	position: relative;
-	width: 1200px;
+	width: 100%;
 	/*left: 10px;*/
 }
 
@@ -242,7 +242,7 @@ header {
 	margin-left: auto;
 	margin-bottom: 40px;
 	margin-top: 40px;
-	width: 900px;
+	width: 75%;
 }
 
 #submitCard td {
@@ -253,7 +253,7 @@ header {
 .error {
 	margin-right: auto;
 	margin-left: auto;
-	width: 1000px;
+	width: 80%;
 	text-align: center;
 }
 
@@ -273,15 +273,50 @@ header {
 	margin-top: 60px;
 }
 
+#CreateDeckHeading {
+	margin-right: auto;
+	margin-left: auto;
+	width: 40%;
+	text-align: center;
+}
+
+#deckCreate {
+	margin-left: auto;
+	margin-right: auto;
+	width: 98%;
+}
+
+#createDeck {
+	margin-bottom: 40px;
+}
+
+#nameDeck {
+	margin-left: 3px;
+	margin-bottom: 20px;
+}
+
+#innerContent {
+	margin-right: auto;
+	margin-left: auto;
+	width: 98%;
+}
+
+#deckDisplayHeading {
+	margin-left:auto;
+	margin-right: auto;
+	width: 40%;
+	text-align: center;
+}
+
 /*\	
 |*|		:: >>The following is the CSS for how a card will be displayed<< ::		
 \*/
 
-.card {
+.card,#card {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: 700px;
+	width: 60%;
 	padding: 10px;
 	margin-top: 10px;
 	margin-bottom: 30px;
@@ -295,11 +330,11 @@ header {
 	display: none;
 }
 
-.cardDifficulty {
+.cardDifficulty,#cardDifficulty {
 	display: block;
 }
 
-.cardTitles {
+.cardTitles,#cardTitles {
 	border-bottom:2px groove rgb(188,188,188);
 	background-color:rgba(0,113,147,.45);
 	margin:-10px;
@@ -309,16 +344,18 @@ header {
 	-webkit-border-top-left-radius: 12px;
 }
 
-.cardCategory {
+.cardCategory,#cardCategory {
 	position:relative;
 	display:inline-block;
-	font-size:3em;			
+	font-size:3em;
+	word-wrap:break-word;			
 }
 
-.cardSubcategory {
+.cardSubcategory,#cardSubcategory {
 	position:relative;
 	display:inline-block;
 	font-size:2.25em;
+	word-wrap:break-word;
 }
 
 .cat{
@@ -326,7 +363,7 @@ header {
 	margin-bottom:10px;
 }
 
-.cardQuestion {
+.cardQuestion,#cardQuestion {
 	position:relative;
 	font-size:1.75em;
 	margin-top:40px;
@@ -334,9 +371,10 @@ header {
 	margin-left:40px;
 	margin-right:40px;
 	text-align:center;
+	word-wrap:break-word;
 }
 
-.cardAnswer{
+.cardAnswer,#cardAnswer {
 	position:relative;
 	font-size:1.25em;
 	border:4px outset rgb(233,233,233);
@@ -347,9 +385,10 @@ header {
 	margin-bottom:30px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	word-wrap:break-word;
 }
 
-.cardDifficulty {
+.cardDifficulty,#cardDifficulty {
 	text-align: right;
 	padding-right: 20px;
 	padding-top: 5px;
@@ -359,10 +398,91 @@ header {
 |*|		:: >>The following is the CSS for how a card will be displayed in deck creation<< ::		
 \*/
 
-#UsersCards {
-	width: inherit;
+#UserCards {
+	width: 98%;
+	max-width: 98%;
+	word-wrap: break-word;
 }
 
-.deckCreateTd {
-	-webkit-transform: scale(.4,.5);
+.deckCreateDiv {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.card.deckCreate {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	padding: 8px;
+	margin-top: 8px;
+	margin-bottom: 24px;
+	text-align: center;
+	font-size: 1em;
+	-moz-border-radius: 18px;
+  	-webkit-border-radius: 18px;
+  	border:5px ridge rgb(188,188,188);
+	background-color: rgba(0,113,147,.25);		
+	/*font-family: "VT323", cursive;*/
+	display: none;
+}
+
+.cardDifficulty.deckCreate {
+	display: block;
+}
+
+.cardTitles.deckCreate {
+	border-bottom:2px groove rgb(188,188,188);
+	background-color:rgba(0,113,147,.45);
+	margin:-8px;
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
+}
+
+.cardCategory.deckCreate {
+	position:relative;
+	display:inline-block;
+	font-size:2.4em;			
+}
+
+.cardSubcategory.deckCreate {
+	position:relative;
+	display:inline-block;
+	font-size:1.8em;
+}
+
+.cat.deckCreate{
+	margin-top:-4px;
+	margin-bottom:8px;
+}
+
+.cardQuestion.deckCreate {
+	position:relative;
+	font-size:1.4em;
+	margin-top:32px;
+	margin-bottom:40px;
+	margin-left:32px;
+	margin-right:32px;
+	text-align:center;
+}
+
+.cardAnswer.deckCreate{
+	position:relative;
+	font-size:1em;
+	border:4px outset rgb(233,233,233);
+	padding:10px;
+	background-color: rgba(0,113,147,.25);
+	margin-left:64px;
+	margin-right:64px;
+	margin-bottom:24px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.cardDifficulty.deckCreate {
+	text-align: right;
+	padding-right: 16px;
+	padding-top: 5px;
 }

@@ -76,7 +76,7 @@ var iRepo = new function() {
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
   this.avatar.src = avatarPath + "Greg.png";
-  this.heart.src = path + "/Sprites/Diamond.png";
+  this.heart.src = path + "/Sprites/Heart.png";
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -143,6 +143,7 @@ function Background()
 {
   this.draw = function() {
     this.context.drawImage(iRepo.background, this.x, this.y, this.width, this.height);
+    //this.context.fillRect(0, 333, 765, 666);
   };
 }
 
@@ -232,6 +233,8 @@ function Game()
     this.eCanvas = document.getElementById('etc');
     
     this.lives = 5;
+    this.question = "sqrt(Onions)";
+    this.answer = "Shallots";
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -261,16 +264,18 @@ function Game()
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
       this.heart = new Etc();
-      this.heart.init(50, 550, iRepo.heart.width, iRepo.heart.height);
+      this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
-      var monsterX = iRepo.background.width/2 - iRepo.monster.width;
+      var monsterX = iRepo.background.width/2 - iRepo.monster.width/2;
       var monsterY = iRepo.background.height/4 + iRepo.monster.height;
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
+      
+      //this.display = new Display(800, false, true);
       
       return true;
     }
@@ -306,6 +311,8 @@ function animate()
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
+  document.getElementById('question').innerHTML = game.question;  
+  document.getElementById('answer').innerHTML = game.answer;  
 }
  
 /**
@@ -333,3 +340,127 @@ function init()
     game.start();
   }
 }
+
+
+/*
+function Display(size, offset, openInNewWindow) {
+	var display = this;
+	
+	if(offset) {
+		this.offset = offset;
+	} else {
+		this.offset = new Vector2(0, 0);
+	}
+	
+	this.tileSize = new Vector2(10, 16);
+	this.nodes = [];
+	this.size = size;
+    this.pixelSize = new Vector2(this.size.x*this.tileSize.x + this.offset.x + 10, 
+        this.size.y * this.tileSize.y + this.offset.y + 17);
+	
+    if(openInNewWindow) {
+        var paramsString = "width=" + (this.size.x*this.tileSize.x + this.offset.x + 10)
+            + ", height=" + (this.size.y * this.tileSize.y + this.offset.y + 17);
+        this.window = window.open("", "", paramsString);
+    } else {
+        this.window = window;
+    }
+	
+	this.init = function(size) {
+		// style popup window nicely
+		$("body", this.window.document).css({
+			"background-color": "black",
+			"font-family": "Courier"
+		});
+		
+		$("head", this.window.document).html("<title>Saege</title>");
+		
+		var $message = $('<div id="message_bar">', this.window.document).css({
+			"color": "white",
+			"margin-left": "3px"
+		});
+		
+		$("body", this.window.document).html($message);
+		this.$message = $("#message_bar", this.window.document);
+		
+		// create HTML element for the display
+		var $display = $('<div id="display">', this.window.document);
+		this.$display = $display;
+		
+		// populate it with <span> elements
+		for(var x = 0; x<size.x; x++) {
+			this.nodes[x] = [];
+			
+			for(var y = 0; y<size.y; y++) {
+				var $span = $('<span class="tile" id="' + "t_" + x + "_" + y + '">', this.window.document);
+				$span.css({
+					position: "absolute",
+					width: display.tileSize.x,
+					height: display.tileSize.y,
+					left: display.tileSize.x * x + display.offset.x,
+					top: display.tileSize.y * y + display.offset.y
+				});
+				$span.text(" ");
+				$display.append($span);
+				
+				this.nodes[x][y] = $span[0];
+			}
+		}
+ 
+		$("body", this.window.document).append($display);
+	}
+	
+	this.ch = function(character, position, color, opacity, backgroundColor) {
+		var tile = this.nodes[position.x][position.y]
+		
+		if(character) {	
+			tile.innerHTML = character;
+		}
+		
+		if(color) {
+			tile.style.color = color;
+		}
+		
+		if(opacity) {
+			tile.style.opacity = opacity;
+		}
+		
+		if(backgroundColor) {
+			tile.style.backgroundColor = backgroundColor;
+		}
+	}
+ 
+	this.init(this.size);
+}*/
+
+//From https://gist.github.com/ebonneville/3929297
+// basic position class, holds x and y coordinates and utility functions
+/*
+function Vector2(x, y) {
+	this.x = x;
+	this.y = y;
+	
+	this.add = function(other) {
+		return new Vector2(this.x + other.x, this.y + other.y);
+	};
+	
+	this.distance = function(pos) {
+		var dx = pos.x - this.x;
+		var dy = pos.y - this.y;
+		
+		return Math.abs(Math.sqrt((dx * dx) + (dy * dy)));
+	};
+	
+	this.manhattan = function(pos) {
+		return(Math.abs(this.x - pos.x) + Math.abs(this.y - pos.y));
+	};
+	
+	this.clone = function() {
+		return(new Vector2(this.x, this.y));
+	};
+	
+	this.toString = function() {
+		return("(" + this.x + ", " + this.y + ")");
+	};
+}
+*/
