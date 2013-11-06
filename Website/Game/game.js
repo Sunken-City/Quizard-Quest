@@ -56,7 +56,7 @@ var iRepo = new function() {
     }
   }
   
-  function changeImage(var i, var pathTail)
+  function changeImage(i, pathTail)
   {
     i.src = path + pathTail;
   }
