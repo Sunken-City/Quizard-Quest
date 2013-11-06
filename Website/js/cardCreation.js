@@ -40,9 +40,11 @@ $(document).ready(function(){
 		 	alert("Please Select a Difficulty");
 		 } else {			
 			$.post("../API_Server/CardCreation.php",formData,function(){
-				alert("Question Added");
-				window.location.href = "cardCreation.php";
 			});
+
+			alert("Question Added");
+			window.location.href = "cardCreation.php";
+			e.preventDefault();
 		}		
 
 		e.preventDefault();
