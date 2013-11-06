@@ -277,7 +277,7 @@ header {
 |*|		:: >>The following is the CSS for how a card will be displayed<< ::		
 \*/
 
-.card {
+.card,#card {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
@@ -295,11 +295,11 @@ header {
 	display: none;
 }
 
-.cardDifficulty {
+.cardDifficulty,#cardDifficulty {
 	display: block;
 }
 
-.cardTitles {
+.cardTitles,#cardTitles {
 	border-bottom:2px groove rgb(188,188,188);
 	background-color:rgba(0,113,147,.45);
 	margin:-10px;
@@ -309,13 +309,13 @@ header {
 	-webkit-border-top-left-radius: 12px;
 }
 
-.cardCategory {
+.cardCategory,#cardCategory {
 	position:relative;
 	display:inline-block;
 	font-size:3em;			
 }
 
-.cardSubcategory {
+.cardSubcategory,#cardSubcategory {
 	position:relative;
 	display:inline-block;
 	font-size:2.25em;
@@ -326,7 +326,7 @@ header {
 	margin-bottom:10px;
 }
 
-.cardQuestion {
+.cardQuestion,#cardQuestion {
 	position:relative;
 	font-size:1.75em;
 	margin-top:40px;
@@ -336,7 +336,7 @@ header {
 	text-align:center;
 }
 
-.cardAnswer{
+.cardAnswer,#cardAnswer {
 	position:relative;
 	font-size:1.25em;
 	border:4px outset rgb(233,233,233);
@@ -349,7 +349,7 @@ header {
 	-webkit-border-radius: 5px;
 }
 
-.cardDifficulty {
+.cardDifficulty,#cardDifficulty {
 	text-align: right;
 	padding-right: 20px;
 	padding-top: 5px;

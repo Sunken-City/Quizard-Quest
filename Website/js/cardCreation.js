@@ -30,20 +30,12 @@ $(document).ready(function(){
 		answer = answer.trim();
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
-		if(category == 0){
-			//alert("Please Select a Category");
-		}
-		else if(difficulty == 0){
-			//alert("Please Select a Difficulty");
-		}
-		else{
-			$.post("../API_Server/CardCreation.php",formData,function(){
+		$.post("../API_Server/CardCreation.php",formData,function(){
 				alert("Question Added");
 				window.location.href = "cardCreation.php";
 			});
 
-			e.preventDefault();
-		}
+		e.preventDefault();
 	});
 
 	$("#closePreview").click(function(e) {
@@ -130,11 +122,11 @@ $(document).ready(function(){
 			cardSubcategory.innerHTML = subcategoryValue;
 			cardQuestion.innerHTML = "Q: " + questionValue;
 			cardAnswer.innerHTML = "A: " + answerValue;
-		}
 
-		if (!selected) {
-			selected = true;
-			$('#card').slideDown();
+			if (!selected) {
+				selected = true;
+				$('#card').slideDown();
+			}
 		}
 
 	});
