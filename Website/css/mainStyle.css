@@ -407,13 +407,15 @@ header {
 .deckCreateDiv {
 	display: inline-block;
 	vertical-align: top;
+	width: 30%;
+	margin: 0px 20px 0px 20px;
 }
 
 .card.deckCreate {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: 80%;
+	width: 100%;
 	padding: 8px;
 	margin-top: 8px;
 	margin-bottom: 24px;
@@ -462,9 +464,9 @@ header {
 	position:relative;
 	font-size:1.4em;
 	margin-top:32px;
-	margin-bottom:40px;
-	margin-left:32px;
-	margin-right:32px;
+	margin-bottom:20px;
+	margin-left:5px;
+	margin-right:5px;
 	text-align:center;
 }
 
@@ -474,9 +476,9 @@ header {
 	border:4px outset rgb(233,233,233);
 	padding:10px;
 	background-color: rgba(0,113,147,.25);
-	margin-left:64px;
-	margin-right:64px;
-	margin-bottom:24px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
