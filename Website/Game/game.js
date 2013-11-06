@@ -10,6 +10,8 @@ var avatarPath = "../../Resources/Avatars/";
 
 //Global variables for game control
 var avatarMoveTo = 0;
+var numCards = 100;
+var avatarInc = 765 / numCards;
 
 //Game Mode
 this.GameMode = 
@@ -86,6 +88,7 @@ function nextCard()
 {
   iRepo.monster.src = path + randomMonster();
   iRepo.background.src = path + randomBackground();
+  avatarMoveTo = avatarMoveTo + avatarInc;
 }
 
 //Picks a random monster image from the available pool of monsters
