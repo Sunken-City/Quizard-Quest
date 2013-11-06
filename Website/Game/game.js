@@ -56,11 +56,6 @@ var iRepo = new function() {
     }
   }
   
-  function changeImage(i, pathTail)
-  {
-    i.src = path + pathTail;
-  }
-  
   this.background.onload = function(){
     imageLoaded();
   }
@@ -82,6 +77,12 @@ var iRepo = new function() {
   this.monster.src = path + randomMonster();
   this.avatar.src = avatarPath + "Greg.png";
   this.heart.src = path + "/Sprites/Heart.png";
+}
+
+function nextCard()
+{
+  iRepo.monster.src = path + randomMonster();
+  iRepo.background.src = path + randomBackground();
 }
 
 //Picks a random monster image from the available pool of monsters
