@@ -205,6 +205,7 @@ function Monster()
 function Avatar()
 {
   this.draw = function() {
+    this.clear();
     this.context.drawImage(iRepo.avatar, this.x, this.y, this.width, this.height);
   };
   
@@ -217,9 +218,8 @@ function Avatar()
     if (this.x < nextPoint)
     {
       this.x++;
-      this.context.clearRect(this.x + 25, this.y, this.width - 25, this.height);
-      this.context.fillStyle = colorFromPhase(this.x);
-      this.context.fillRect(this.x, this.y, this.width - 25, this.height);
+      //this.context.fillStyle = colorFromPhase(this.x);
+      //this.context.fillRect(this.x, this.y, this.width - 25, this.height);
     }
   };
 }
@@ -323,7 +323,7 @@ function animate()
   game.monster.draw();
   
   game.avatar.draw();
-  game.avatar.move(100);
+  game.avatar.move(300);
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
