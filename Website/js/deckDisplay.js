@@ -39,16 +39,16 @@ function getNonDeckCards(str)
 
     if (window.XMLHttpRequest)
  	    {// code for IE7+, Firefox, Chrome, Opera, Safari
- 	    	 xmlhttp=new XMLHttpRequest();
+ 	    	 xmlhttp2=new XMLHttpRequest();
 	    }
-	    xmlhttp.onreadystatechange=function()
+	    xmlhttp2.onreadystatechange=function()
   	    {
-  	        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  	        if (xmlhttp2.readyState==4 && xmlhttp.status==200)
    	        {
-   	            document.getElementById("userCards").innerHTML=xmlhttp.responseText;
+   	            document.getElementById("userCards").innerHTML=xmlhttp2.responseText;
   	        }
  	    }
-	xmlhttp.open("GET","../API_Server/getNondeckCards.php?q="+str,true);
-	xmlhttp.send();
+	xmlhttp2.open("GET","../API_Server/getNondeckCards.php?q="+str,true);
+	xmlhttp2.send();
 }
 
