@@ -127,6 +127,24 @@ $.post("../API_Server/getCards.php", function(data){
 $(document).ready(function(){
 
 	$("#createDeck").click(function(e){
+	/* Get all the TD that are checked
+	Submit them to a PHP function in an array
+	PHP function makes the Deck
+	*/
+
+	/*Also needs a way to import all question from the Database */
+		
+	});
+
+});
+window.addEventListener('load', function() {
+	console.log("window loaded");
+}, false);
+
+/*
+$(document).ready(function(){
+
+	$("#createDeck").click(function(e){
 
 		var Deckname = $("#nameDeck").val();
 		var checkNameFirst = true;
@@ -151,9 +169,4 @@ $(document).ready(function(){
 		},"json");
 		
 	});
-
-});
-window.addEventListener('load', function() {
-	console.log("window loaded");
-}, false);
-
+*/
