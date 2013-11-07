@@ -21,7 +21,6 @@
 
             $failure = array('success' => false);
             echo json_encode($failure);
-            return false;
 
          } else {
 
@@ -32,7 +31,7 @@
       } else {
 
          if (isset($_POST['Deckname'])) {
-            
+
             $deckID = create_deck($_POST['Deckname']);
 
             if(!empty($_POST['flashCard'])) {
