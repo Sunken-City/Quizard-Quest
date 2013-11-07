@@ -127,12 +127,17 @@ $.post("../API_Server/getCards.php", function(data){
 $(document).ready(function(){
 
 	$("#createDeck").click(function(e){
-	/* Get all the TD that are checked
-	Submit them to a PHP function in an array
-	PHP function makes the Deck
-	*/
+	
+		$.post("../API_Server/DeckCreation.php",formData,function(data){
+			if (data['success']) {
+				// do successful things
+            	window.location.href = "mainMenu.php";
+			} else {
+				alert('That deck name is already taken! Please choose another.');
+			}
+		})
 
-	/*Also needs a way to import all question from the Database */
+		e.preventDefault();
 		
 	});
 

@@ -24,9 +24,10 @@
         $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
         if (!mysqli_query($db, $query))
         {
-            echo "There was an error creating your deck. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
-            die('Error: ' . mysqli_error($db));
+            // echo "There was an error creating your deck. Please return to the previous page.
+            // Here's the error if you wanted to tell a developer:\n";
+            // die('Error: ' . mysqli_error($db));
+            return false;
         }
         
         $deckID = mysqli_query($db,"SELECT deckID FROM decks WHERE (userID = '$userID' AND name = '$deckname');");
