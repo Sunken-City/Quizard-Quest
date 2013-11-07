@@ -141,8 +141,9 @@ $(document).ready(function(){
 		for (var i = 0, len = deckNames.length; i < len; i++) {
 
 			if (inputName === deckNames[i].name) {
-				e.preventDefault;
+				e.preventDefault();
 				alert("That deckname has already been used: Please use another!");
+				break;
 			}
 
 		}
