@@ -29,8 +29,7 @@ $(document).ready(function() {
 			if(data['success']) {
             	// do successful things
             	window.location.href = "mainMenu.php";
-        	}
-        	else {
+        	} else {
             	// do failure things
             	alert("Username or Password is Invalid!");
         	}
@@ -38,6 +37,27 @@ $(document).ready(function() {
 
 		e.preventDefault();
 
+	});
+
+	$("#signUp").click(function (e) {
+		$.post("../API_Server/createAccount.php",formData, function(data) {
+
+			if(data['success'] === 'username') {
+				// do failure things
+            	alert("That username is already in use!");
+
+        	} else if (data['success'] === 'email') {
+            	// do failure things
+            	alert("That email is already in use!");
+
+        	} else {
+        		// do successful things
+            	window.location.href = "mainMenu.php";
+        	}
+
+		},"json");
+
+		e.preventDefault();
 	});
 
 });

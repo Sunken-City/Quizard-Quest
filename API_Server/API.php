@@ -113,26 +113,30 @@
         }
         $result = mysqli_query($db,$query);
 
-        if (!(mysqli_num_rows($result) == 0)) {
-	    header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
-	    echo 'ERROR: That username is already in use';
-            return false;
+        if (mysqli_num_rows($result) != 0) {
+    	    // header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
+    	    // echo 'ERROR: That username is already in use';
+            return 'username';
         }
         
         /*make sure email isn't already in the database*/
         $query = "SELECT * FROM players WHERE (email = '$email');";
         if (!mysqli_query($db, $query)) {
             echo "There was an error checking to see if your email already exists. Please return to the previous page.
-		Here's the error if you wanted to tell a developer:\n";
+		          Here's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         $result = mysqli_query($db,$query);
 
-        if (!(mysqli_num_rows($result) == 0)) {
-	    header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
-	    echo 'ERROR: That email is already in use';
-            return false;
+        if (mysqli_num_rows($result) != 0) {
+    	    // header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
+    	    // echo 'ERROR: That email is already in use';
+            return 'email';
         }
+        // if (mysqli_num_rows($correct_hash) == 0) {
+        //     //$authenticated = false;
+        //     return false;
+        // }
 
         $salt = create_salt();
         $password = create_hash_with_salt($password, $salt);
