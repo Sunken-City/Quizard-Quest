@@ -34,6 +34,6 @@
       }
    }
 
-   $failure = array('success':true);
+   $failure = array('success' => true);
    echo json_encode($failure);
 ?>
