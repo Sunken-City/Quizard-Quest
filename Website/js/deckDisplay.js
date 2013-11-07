@@ -42,7 +42,7 @@ function showDeck(str)
    	 document.getElementById("userCards").innerHTML=xmlhttp.responseText;
   	  }
  	 }
-	xmlhttp.open("GET","../API_Server/getNonDeckCards.php?q="+str,true);
+	xmlhttp.open("GET","../API_Server/getNondeckCards.php?q="+str,true);
 	xmlhttp.send();
 }	
 
