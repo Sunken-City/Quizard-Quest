@@ -72,6 +72,6 @@
         $result2 = array('success' => $result);
 
         echo json_encode($result2);
-        return true;
+        //return true;
         // header('Location:http://'.$url.'/Quizard-Quest/Website/mainMenu.php');        
 ?>

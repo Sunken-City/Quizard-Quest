@@ -70,7 +70,7 @@ $(document).ready(function() {
 		};
 
 		$.post("../API_Server/createAccount.php",formData, function(data) {
-			alert("Success");
+
 			if (data['success'] === 'username') {
 				// do failure things
             	alert("That username is already in use!");
@@ -84,7 +84,7 @@ $(document).ready(function() {
             	window.location.href = "mainMenu.php";
         	}
 
-		});
+		},"json");
 
 		e.preventDefault();
 	});
