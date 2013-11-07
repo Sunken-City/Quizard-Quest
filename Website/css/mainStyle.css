@@ -330,12 +330,8 @@ header {
 	margin-right: -.6em;
 }
 
-#cardTable [type="text"],[type="email"],[type="password"] {
+#cardTable [type="text"],#cardTable [type="email"],#cardTable [type="password"] {
 	margin-bottom: .25em;
-}
-
-#logIn tr:nth-child(2) {
-	vertical-align: top;
 }
 
 /*\	
