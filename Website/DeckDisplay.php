@@ -49,7 +49,7 @@
 					</select>
 				</form>
 
-				<form id="cardRemove" action="deleteCards.php" method="POST" >
+				<form id="cardRemove" action="DeckDisplay.php" method="POST" >
 					<p>Current Deck Cards</p>
 					<table id="deckCards">  				
 					</table>
