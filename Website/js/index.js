@@ -41,8 +41,8 @@ $(document).ready(function() {
 
 	$("#signUp").click(function (e) {
 		$.post("../API_Server/createAccount.php",formData, function(data) {
-
-			if(data['success'] === 'username') {
+			alert("Success");
+			if (data['success'] === 'username') {
 				// do failure things
             	alert("That username is already in use!");
 

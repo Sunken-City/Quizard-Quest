@@ -334,6 +334,10 @@ header {
 	margin-bottom: .25em;
 }
 
+#logIn tr:nth-child(2) {
+	vertical-align: top;
+}
+
 /*\	
 |*|		:: >>The following is the CSS for how a card will be displayed<< ::		
 \*/
