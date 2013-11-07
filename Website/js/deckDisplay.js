@@ -34,7 +34,7 @@ function showDeck(str)
 	getNonDeckCards();
 	
 }	
-function getNonDeckCards()
+function getNonDeckCards(str)
 {
 
     if (window.XMLHttpRequest)
