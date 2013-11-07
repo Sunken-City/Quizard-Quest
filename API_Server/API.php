@@ -114,9 +114,10 @@
         $result = mysqli_query($db,$query);
 
         if (mysqli_num_rows($result) != 0) {
-    	    // header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=100');
-    	    // echo 'ERROR: That username is already in use';
-            return 'username';
+    	    # header('Location: http://'.url.'/Quizard-Quest/Website/Error.php?err=100');
+    	    # echo 'ERROR: That username is already in use';
+            $u = "username";
+            return $u;
         }
         
         /*make sure email isn't already in the database*/
@@ -129,9 +130,10 @@
         $result = mysqli_query($db,$query);
 
         if (mysqli_num_rows($result) != 0) {
-    	    // header('Location: http://'.$url.'/Quizard-Quest/Website/Error.php?err=101');
+    	    // header('Location: http://'.url.'/Quizard-Quest/Website/Error.php?err=101');
     	    // echo 'ERROR: That email is already in use';
-            return 'email';
+            $e = "email";
+            return $e;
         }
         // if (mysqli_num_rows($correct_hash) == 0) {
         //     //$authenticated = false;
