@@ -313,12 +313,17 @@ header {
 }
 
 .charLimitDiv {
-	display: inline;
+	width: 3em;
+	display: inline-block;
+}
+
+#cardTable tr:nth-child(2) {
+	vertical-align: top;
 }
 
 .charLimit {
 	font-size: .75em;
-	color: rgb(205,50,0);
+	color: rgb(255,110,0);
 }
 
 .num {

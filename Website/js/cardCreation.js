@@ -4,6 +4,8 @@
 
 $(document).ready(function(){
 
+	var offset = $("#newSubcategory").parent().width() - $("#newSubcategory").width() ;
+
 	/*\
 	|*|			:: >> Submit a New Card to the Database << ::
 	|*|
