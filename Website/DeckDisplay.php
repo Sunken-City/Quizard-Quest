@@ -49,10 +49,14 @@
 					</select>
 				</form>
 
-				<form id="cardRemove" action=# method="POST" >
+				<form id="cardRemove" action="deleteCards.php" method="POST" >
+					<p>Current Deck Cards</p>
 					<table id="deckCards">  				
 					</table>
-					<input type="submit" value="Remove Selected Cards" id="removeCards" class="submitButton" />
+					<p>Cards to Add </p>
+					<table id="userCards">  				
+					</table>
+					<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
 				</form>
 
 			</div>

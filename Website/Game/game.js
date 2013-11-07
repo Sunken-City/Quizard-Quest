@@ -8,6 +8,11 @@
 var path = "../../Resources/Game/";
 var avatarPath = "../../Resources/Avatars/";
 
+//Global variables for game control
+var avatarMoveTo = 0;
+var numCards = 100;
+var avatarInc = 765 / numCards;
+
 //Game Mode
 this.GameMode = 
 {
@@ -77,6 +82,13 @@ var iRepo = new function() {
   this.monster.src = path + randomMonster();
   this.avatar.src = avatarPath + "Greg.png";
   this.heart.src = path + "/Sprites/Heart.png";
+}
+
+function nextCard()
+{
+  iRepo.monster.src = path + randomMonster();
+  iRepo.background.src = path + randomBackground();
+  avatarMoveTo = avatarMoveTo + avatarInc;
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -160,6 +172,11 @@ function Monster()
     this.context.clearRect(this.x, this.y, this.width, this.height);
   };
   
+  this.change = function() 
+  {
+    iRepo.changeImage(iRepo.monster, "Sprites/Heart.png");
+  };
+  
   //Make the monster float up and down in an idling sequence
   this.idle = function() {  
     //If we hit a boundary, then change direction
@@ -194,17 +211,23 @@ function Monster()
 function Avatar()
 {
   this.draw = function() {
+    this.clear();
     this.context.drawImage(iRepo.avatar, this.x, this.y, this.width, this.height);
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y, this.width, this.height);
+    this.context.clearRect(this.x - 2, this.y, this.width, this.height);
   };
   
-  this.move = function() {
-    this.x++;
-    this.context.fillStyle = colorFromPhase(this.x);
-    this.context.fillRect(this.x, this.y, this.width - 25, this.height);
+  this.move = function(nextPoint) 
+  {
+    if (this.x < nextPoint)
+    {
+      this.x++;
+      //Code for a rainbow trail:
+      //this.context.fillStyle = colorFromPhase(this.x);
+      //this.context.fillRect(this.x, this.y, this.width - 25, this.height);
+    }
   };
 }
 
@@ -307,7 +330,7 @@ function animate()
   game.monster.draw();
   
   game.avatar.draw();
-  game.avatar.move();
+  game.avatar.move(avatarMoveTo);
   
   game.heart.draw();
   document.getElementById('lives').innerHTML = game.lives;  
