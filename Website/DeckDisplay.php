@@ -47,7 +47,7 @@
 				</select>
 			</form>
 
-			<form id="cardRemove" action=# method="POST" >
+			<form id="cardRemove" action="deleteCards.php" method="POST" >
 				<table id="deckCards">  				
 				</table>
 				<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
