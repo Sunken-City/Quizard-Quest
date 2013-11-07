@@ -7,7 +7,7 @@
 	<head>
 		<title> Create-A-Card</title>
 		<link rel="stylesheet" href="css/mainStyle.css"/>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type = "text/javascript" src="js/cardCreation.js"></script>
 		<script type = "text/javascript" src="js/navigation.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
@@ -55,9 +55,27 @@
 									<option value="5">Language</option>
 								</select>
 							</td>
-							<td><input type="text" id="newSubcategory" maxlength="32" placeholder="Subcategory"></td>
-							<td><input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." placeholder="Question" required></td>
-							<td><input type ="text" id="newAnswer" maxlength="512" title="Please Enter An Answer." placeholder="Answer" required></td>
+							<td>
+								<input type="text" id="newSubcategory" placeholder="Subcategory">
+								<div class="charLimitDiv">
+									<span class="charLimit num" id="subCategoryCharLimit"></span>
+									<span class="charLimit">/32</span>
+								</div>
+							</td>
+							<td>
+								<input type ="text" id="newQuestion" title="Please Enter A Question." placeholder="Question" required>
+								<div class="charLimitDiv">
+									<span class="charLimit num" id="questionCharLimit"></span>
+									<span class="charLimit">/512</span>
+								</div>
+							</td>
+							<td>
+								<input type ="text" id="newAnswer" title="Please Enter An Answer." placeholder="Answer" required>
+								<div class="charLimitDiv">
+									<span class="charLimit num" id="answerCharLimit"></span>
+									<span class="charLimit">/512</span>
+								</div>
+							</td>
 							<td>
 								<select id="newDifficulty" required>
 									<option value="">Select</option>

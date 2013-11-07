@@ -150,4 +150,54 @@ $(document).ready(function(){
 		return finalString;
 	}
 
+	var subCharLimit = 32;
+	var charLimit = 512;
+
+
+	$("#subCategoryCharLimit").html(charLimit-charLimit);
+	$("#questionCharLimit").html(charLimit-charLimit);
+	$("#answerCharLimit").html(charLimit-charLimit);
+
+	$("#newSubcategory").bind('keyup', function() {
+
+		var charUsed = $(this).val().length;
+
+		if (charUsed > subCharLimit) {
+			charUsed = subCharLimit;
+			$(this).val($(this).val().substr(0, subCharLimit));
+			alert("You've passed the limit of characters allowed!");
+		}
+		
+		$("#subCategoryCharLimit").html(charUsed);
+
+	});
+
+	$("#newQuestion").bind('keyup', function() {
+
+		var charUsed = $(this).val().length;
+
+		if (charUsed > charLimit) {
+			charUsed = charLimit;
+			$(this).val($(this).val().substr(0, charLimit));
+			alert("You've passed the limit of characters allowed!");
+		}
+
+		$("#questionCharLimit").html(charUsed);
+
+	});
+
+	$("#newAnswer").bind('keyup', function() {
+
+		var charUsed = $(this).val().length;
+
+		if (charUsed > charLimit) {
+			charUsed = charLimit;
+			$(this).val($(this).val().substr(0, charLimit));
+			alert("You've passed the limit of characters allowed!");
+		}
+
+		$("#answerCharLimit").html(charUsed);
+
+	});
+
 });
