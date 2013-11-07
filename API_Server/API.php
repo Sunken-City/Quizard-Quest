@@ -52,8 +52,7 @@
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);
-    }
-    
+    }    
       
     /***************/
     /* EDIT A DECK */

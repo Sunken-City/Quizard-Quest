@@ -126,13 +126,26 @@ $.post("../API_Server/getCards.php", function(data){
 
 $(document).ready(function(){
 
-	$("#createDeck").click(function(e){
-	/* Get all the TD that are checked
-	Submit them to a PHP function in an array
-	PHP function makes the Deck
-	*/
+	var deckNames;
 
-	/*Also needs a way to import all question from the Database */
+	$.post("../API_Server/DeckReview.php", function(data){
+
+		deckNames = $.parseJSON(data);
+		
+	});
+
+	$("#createDeck").click(function(e){
+
+		var inputName = $("#nameDeck").val();
+	
+		for (var i = 0, len = deckNames.length; i < len; i++) {
+
+			if (inputName === deckNames[i].name) {
+				e.preventDefault;
+				alert("That deckname has already been used: Please use another!");
+			}
+
+		}
 		
 	});
 
