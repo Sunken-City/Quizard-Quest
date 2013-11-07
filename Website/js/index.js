@@ -40,6 +40,35 @@ $(document).ready(function() {
 	});
 
 	$("#signUp").click(function (e) {
+
+		var fname = $("#firstName").val();
+		var lname = $("#lastName").val();
+		var Email = $("#email").val();
+		var username = $("#username").val();
+		var newpwd = $("#newPassword").val();
+		var gender;
+
+		if ($("#male").val() != null) {
+
+			gender = $("#male").val();
+
+		} else {
+
+			gender = $("#female").val();
+		}
+
+		var Grade = $("#grade").val();
+
+		formData = {
+			'fname':fname,
+			'lname':lname,
+			'Email':Email,
+			'username':username,
+			'newpwd':newpwd,
+			'gender':gender,
+			'Grade':Grade
+		};
+
 		$.post("../API_Server/createAccount.php",formData, function(data) {
 			alert("Success");
 			if (data['success'] === 'username') {
@@ -55,7 +84,7 @@ $(document).ready(function() {
             	window.location.href = "mainMenu.php";
         	}
 
-		},"json");
+		});
 
 		e.preventDefault();
 	});
