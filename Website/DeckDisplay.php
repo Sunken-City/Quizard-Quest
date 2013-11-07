@@ -50,7 +50,11 @@
 				</form>
 
 				<form id="cardRemove" action="deleteCards.php" method="POST" >
+					<p>Current Deck Cards</p>
 					<table id="deckCards">  				
+					</table>
+					<p>Cards to Add </p>
+					<table id="userCards">  				
 					</table>
 					<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
 				</form>

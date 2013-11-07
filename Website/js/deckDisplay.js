@@ -15,7 +15,6 @@ function showDeck(str)
 {
 	if (str=="")
 	  {
-		  document.getElementById("Decks").innerHTML="";
 		  return;
 	  } 
 	if (window.XMLHttpRequest)
@@ -30,6 +29,20 @@ function showDeck(str)
   	  }
  	 }
 	xmlhttp.open("GET","../API_Server/getDeckCards.php?q="+str,true);
+	xmlhttp.send();
+
+	if (window.XMLHttpRequest)
+ 	 {// code for IE7+, Firefox, Chrome, Opera, Safari
+ 		 xmlhttp=new XMLHttpRequest();
+	  }
+	xmlhttp.onreadystatechange=function()
+  	{
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+   	 {
+   	 document.getElementById("userCards").innerHTML=xmlhttp.responseText;
+  	  }
+ 	 }
+	xmlhttp.open("GET","../API_Server/getNonDeckCards.php?q="+str,true);
 	xmlhttp.send();
 }	
 
