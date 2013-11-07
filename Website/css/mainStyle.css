@@ -248,9 +248,10 @@ header {
 	width: 75%;
 }
 
-#submitCard td {
-	padding-left: 15px;
-	text-align: center;
+#submitCard td input {
+	/*padding-left: 15px;
+	text-align: center;*/
+	/*display:block;*/
 }
 
 .error {
@@ -309,6 +310,23 @@ header {
 	margin-right: auto;
 	width: 40%;
 	text-align: center;
+}
+
+.charLimitDiv {
+	display: inline;
+}
+
+.charLimit {
+	font-size: .75em;
+	color: rgb(205,50,0);
+}
+
+.num {
+	margin-right: -.6em;
+}
+
+#cardTable [type="text"],[type="email"],[type="password"] {
+	margin-bottom: .25em;
 }
 
 /*\	
