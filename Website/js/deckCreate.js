@@ -127,17 +127,28 @@ $.post("../API_Server/getCards.php", function(data){
 $(document).ready(function(){
 
 	$("#createDeck").click(function(e){
+
+		var Deckname = $("#nameDeck").val();
+		var checkNameFirst = true;
+
+		var formData = {'Deckname':Deckname, 'checkNameFirst':checkNameFirst};
 	
 		$.post("../API_Server/DeckCreation.php",formData,function(data){
 			if (data['success']) {
 				// do successful things
-            	window.location.href = "mainMenu.php";
+				checkNameFirst = false;
+				formData = {'checkNameFirst':checkNameFirst};
+
+				$.post("../API_Server/DeckCreation.php",formData,function() {
+					window.location.href = "mainMenu.php";
+				});
+
+            	
 			} else {
+				e.preventDefault();
 				alert('That deck name is already taken! Please choose another.');
 			}
-		})
-
-		e.preventDefault();
+		},"json");
 		
 	});
 
