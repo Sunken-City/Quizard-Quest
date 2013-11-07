@@ -20,7 +20,7 @@ $.post("../API_Server/getCards.php", function(data){
 
 	for (var i = 0, len = JSON.length; i < len; i++) {
 
-		var td = document.createElement("td");
+		var td = document.createElement("div");
 		var card = document.createElement("div");
 		var cardTitles = document.createElement("div");
 		var cardDifficulty = document.createElement("div");
@@ -32,13 +32,62 @@ $.post("../API_Server/getCards.php", function(data){
 
 		checkBox.value = JSON[i].cardID;
 		checkBox.type = "checkbox";
-		checkBox.name = "flashCard[]"
+		checkBox.name = "flashCard[]";
+
+		td.className = "deckCreateDiv deckCreate";
+		card.className = "card deckCreate";
+		cardQuestion.className = "cardQuestion deckCreate";
+		cardAnswer.className = "cardAnswer deckCreate";
+		cardDifficulty.className = "cardDifficulty deckCreate";
+		cardCategory.className = "cat cardCategory deckCreate";
+		cardSubcategory.className = "cat subCat cardSubcategory deckCreate";
+		cardTitles.className = "cardTitles deckCreate";
+		var difficultyValue = JSON[i].difficulty;
+		var categoryValue = JSON[i].category;
+		var categoryName;
+		var difficultyName;
+
+		switch(categoryValue)
+		{
+			case "1":
+				categoryName="Math";
+				break;
+			case "2":
+				categoryName="Science";
+				break;
+			case "3":
+				categoryName="History";
+				break;
+			case "4":
+				categoryName="English";
+				break;
+			case "5":
+				categoryName="Foreign Languages";
+				break;
+
+		}
+
+		switch(difficultyValue)
+		{
+			case "1":
+				difficultyName="Easy";
+				break;
+			case "2":
+				difficultyName="Normal";
+				break;
+			case "3":
+				difficultyName="Hard";
+				break;
+			case "4":
+				difficultyName="Nigh-Impossible";
+				break;
+		}
 
 		cardQuestion.innerHTML = "Q: " + JSON[i].question;
 		cardAnswer.innerHTML = "A: " + JSON[i].answer;
-		cardDifficulty.innerHTML = JSON[i].difficulty;
-		cardCategory.innerHTML = JSON[i].category + ": ";
-		cardSubcategory = JSON[i].subCategory;
+		cardDifficulty.innerHTML = difficultyName;
+		cardCategory.innerHTML = categoryName + ": ";
+		cardSubcategory.innerHTML = JSON[i].subCategory;
 
 		cardTitles.appendChild(cardDifficulty);
 		cardTitles.appendChild(cardCategory);
@@ -46,10 +95,11 @@ $.post("../API_Server/getCards.php", function(data){
 		card.appendChild(cardTitles);
 		card.appendChild(cardQuestion);
 		card.appendChild(cardAnswer);
-		td.appendChild(checkbox);
+		td.appendChild(checkBox);
 		td.appendChild(card);
 		document.getElementById('UserCards').appendChild(td);
 	}
+		$(".card").slideDown();
 
 	/** Format to output for cards **
 	<div class="card">

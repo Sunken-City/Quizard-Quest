@@ -31,19 +31,23 @@ $(document).ready(function(){
 		var formData = {category:category,subcategory:subcategory,question:question, answer:answer, difficulty:difficulty};
 
 		if(category == 0){
-			//alert("Please Select a Category");
-		}
-		else if(difficulty == 0){
-			//alert("Please Select a Difficulty");
-		}
-		else{
+		 	alert("Please Select a Category");
+		} else if (question == 0) {
+			alert("Please Enter a Question");
+		} else if (answer == 0) {
+			alert("Please Enter an Answer");
+		} else if(difficulty == 0){
+		 	alert("Please Select a Difficulty");
+		 } else {			
 			$.post("../API_Server/CardCreation.php",formData,function(){
 			});
 
-			e.preventDefault();
 			alert("Question Added");
 			window.location.href = "cardCreation.php";
-		}
+			e.preventDefault();
+		}		
+
+		e.preventDefault();
 	});
 
 	$("#closePreview").click(function(e) {
@@ -117,22 +121,24 @@ $(document).ready(function(){
 
 
 		if(categoryValue == 0){
-		// 	alert("Please Select a Category");
-		}
-		else if(difficultyValue == 0){
-		// 	alert("Please Select a Difficulty");
-		}
-		else{			
+		 	alert("Please Select a Category");
+		} else if (questionValue == 0) {
+			alert("Please Enter a Question");
+		} else if (answerValue == 0) {
+			alert("Please Enter an Answer");
+		} else if(difficultyValue == 0){
+		 	alert("Please Select a Difficulty");
+		} else{			
 			cardDifficulty.innerHTML = difficultyName;
 			cardCategory.innerHTML = categoryName + ": ";
 			cardSubcategory.innerHTML = subcategoryValue;
 			cardQuestion.innerHTML = "Q: " + questionValue;
 			cardAnswer.innerHTML = "A: " + answerValue;
-		}
 
-		if (!selected) {
-			selected = true;
-			$('#card').slideDown();
+			if (!selected) {
+				selected = true;
+				$('#card').slideDown();
+			}
 		}
 
 	});

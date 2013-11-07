@@ -55,9 +55,9 @@
 									<option value="5">Language</option>
 								</select>
 							</td>
-							<td><input type="text" id="newSubcategory" maxlength="32" title="Please Enter A Subcategory." placeholder="Subcategory" required></td>
+							<td><input type="text" id="newSubcategory" maxlength="32" placeholder="Subcategory"></td>
 							<td><input type ="text" id="newQuestion" maxlength="512" title="Please Enter A Question." placeholder="Question" required></td>
-							<td><input type ="text" id="newAnswer" maxlength="256" title="Please Enter An Answer." placeholder="Answer" required></td>
+							<td><input type ="text" id="newAnswer" maxlength="512" title="Please Enter An Answer." placeholder="Answer" required></td>
 							<td>
 								<select id="newDifficulty" required>
 									<option value="">Select</option>
@@ -79,19 +79,19 @@
 				</form>			
 			</div>
 
-			<div id="card">
-				<div id="cardTitles">
-					<div id="cardDifficulty"></div>
-					<div id="cardCategory" class="cat"></div>
-					<div id="cardSubcategory" class="cat subCat"></div>
+			<div id="card" class="card">
+				<div id="cardTitles" class="cardTitles">
+					<div id="cardDifficulty" class="cardDifficulty"></div>
+					<div id="cardCategory" class="cat cardCategory"></div>
+					<div id="cardSubcategory" class="cat subCat cardSubcategory"></div>
 				</div>
-				<div id="cardQuestion"></div>
-				<div id="cardAnswer"></div>
+				<div id="cardQuestion" class="cardQuestion"></div>
+				<div id="cardAnswer" class="cardAnswer"></div>
 			</div>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
-				<p>English (US)</p>
+				<p>2013 English (US)</p>
 			</footer>
 
 		</div>

@@ -39,23 +39,27 @@
 				</nav>
 			</header>
 
-			<h1> Select the deck you wish to edit</h1>
-			<form id="deckSelect">
-				
-				<select name="Decks" id="Decks" onchange="showDeck(this.value)">
-					<option value="">Select Deck</option>
-				</select>
-			</form>
+			<h1 id="deckDisplayHeading"> Select the Deck You Wish to Edit!</h1>
 
-			<form id="cardRemove" action="deleteCards.php" method="POST" >
-				<table id="deckCards">  				
-				</table>
-				<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
-			</form>
+			<div id="innerContent">
+
+				<form id="deckSelect">				
+					<select name="Decks" id="Decks" onchange="showDeck(this.value)">
+						<option value="">Select Deck</option>
+					</select>
+				</form>
+
+				<form id="cardRemove" action="deleteCards.php" method="POST" >
+					<table id="deckCards">  				
+					</table>
+					<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
+				</form>
+
+			</div>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
-				<p>English (US)</p>
+				<p>2013 English (US)</p>
 			</footer>
 
 		</div>

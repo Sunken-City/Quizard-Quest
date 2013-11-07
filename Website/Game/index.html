@@ -36,9 +36,29 @@
       .lives 
       {
         position: absolute;
-        top: 50px;
-        left: 600px;
-        color: #FF0000;
+        top: 55px;
+        left: 630px;
+        color: #000000;
+        font-family: 'VT323', sans-serif;
+        font-size: 50px;
+        cursor: default;
+      }
+      .question
+      {
+        position: absolute;
+        top: 360px;
+        left: 0px;
+        color: #FF9900;
+        font-family: 'VT323', sans-serif;
+        font-size: 50px;
+        cursor: default;
+      }
+      .answer
+      {
+        position: absolute;
+        top: 420px;
+        left: 0px;
+        color: #FF9900;
         font-family: 'VT323', sans-serif;
         font-size: 50px;
         cursor: default;
@@ -57,7 +77,10 @@
       <canvas id="avatar" width="765" height="666"></canvas>
       <!-- The canvas for the msc things onscreen -->
       <canvas id="etc" width="765" height="666"></canvas>
-      <div class="lives"> X <span id="lives"></span></div>
+
+      <div class="lives"> x<span id="lives"></span></div>
+      <div class="question">>Q: <span id="question"></span></div>
+      <div class="answer">>A: <span id="answer"></span></div>
     </div>
     <script src="game.js"></script>
   </body>
