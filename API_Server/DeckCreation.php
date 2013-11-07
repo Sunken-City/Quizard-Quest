@@ -14,10 +14,10 @@
    if (isset($_POST['Deckname']))
    {
       $deckID = create_deck($_POST['Deckname']);
-      
+
       if ($deckID === false) {
 
-         $failure = array('success':false);
+         $failure = array('success' => false);
          echo json_encode($failure);
          return false;
 
