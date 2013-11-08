@@ -31,7 +31,7 @@ function showDeck(str)
 	xmlhttp.open("GET","../API_Server/getDeckCards.php?q="+str,true);
 	xmlhttp.send();
 
-	getNonDeckCards();
+	getNonDeckCards(str);
 	
 }	
 function getNonDeckCards(str)
