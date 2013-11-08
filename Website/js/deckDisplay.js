@@ -43,7 +43,7 @@ function getNonDeckCards(str)
 	    }
 	    xmlhttp2.onreadystatechange=function()
   	    {
-  	        if (xmlhttp2.readyState==4 && xmlhttp.status==200)
+  	        if (xmlhttp2.readyState==4 && xmlhttp2.status==200)
    	        {
    	            document.getElementById("userCards").innerHTML=xmlhttp2.responseText;
   	        }
