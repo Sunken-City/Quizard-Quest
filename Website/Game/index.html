@@ -1,75 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+
+<html lang="en">
+
   <head>
+
     <title>Quizard Quest Demo</title>
     <link rel="stylesheet" href="../css/mainStyle.css"/>
+    <link rel="stylesheet" href="css/gameStyle.css"/>
     <meta charset="UTF-8">
-    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type = "text/javascript" src="../js/mainMenu.js"></script>
     <script type = "text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
-    <style>
-      canvas 
-      {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background: transparent;
-      }
-      #background
-      {
-        z-index: -2;
-      }
-      #monster
-      {
-	z-index: -1;
-      }
-      #avatar
-      {
-	z-index: 0;
-      }
-      #text
-      {
-	z-index: 1;
-      }
-      .lives 
-      {
-        position: absolute;
-        top: 55px;
-        left: 630px;
-        color: #000000;
-        font-family: 'VT323', sans-serif;
-        font-size: 50px;
-        cursor: default;
-      }
-      .question
-      {
-        position: absolute;
-        top: 360px;
-        left: 0px;
-        color: #FF9900;
-        font-family: 'VT323', sans-serif;
-        font-size: 50px;
-        cursor: default;
-      }
-      .answer
-      {
-        position: absolute;
-        top: 420px;
-        left: 0px;
-        color: #FF9900;
-        font-family: 'VT323', sans-serif;
-        font-size: 50px;
-        cursor: default;
-      }
-    </style>
   </head>
+
   <body>
+
     <div class="Game">
+
       <!-- The canvas for the background -->
       <canvas id="background" width="765" height="666">
-	Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
+	       Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
       </canvas>
       <!-- The canvas for the monster -->
       <canvas id="monster" width="765" height="666"></canvas>
@@ -81,7 +34,9 @@
       <div class="lives"> x<span id="lives"></span></div>
       <div class="question">>Q: <span id="question"></span></div>
       <div class="answer">>A: <span id="answer"></span></div>
+
     </div>
-    <script src="game.js"></script>
+
   </body>
+
 </html>
