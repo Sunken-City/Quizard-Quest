@@ -7,7 +7,7 @@
 
 	<head>
 
-		<title>QQ: Main Menu</title>
+		<title>QQ: Your Profile</title>
 		<link rel="stylesheet" href="css/mainStyle.css"/>
 		<meta charset="UTF-8">
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -43,12 +43,13 @@
 
 			</header>
 
-			<article class="directions">
-				<!-- <button type="button" class="makeHeader1">
-					Here's Where It All Begins!
-				</button> -->
-				<h3>Use the navbar at the top of the page to test deck and card creation or log out to the index page!</h3>
-			</article>
+			<section id = "userProfile">
+
+				<img id="avatar"></img>
+				<h2 id="userName"></h2>
+				
+
+			</section>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
