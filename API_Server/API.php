@@ -11,7 +11,12 @@
     /***************************/
     /* CREATE AND DELETE DECKS */
     /***************************/
-    //ISSUES: Doesn't return the deck ID properly (returns 0), and throws warnings.
+    /*\
+    |*|  Creates a deck by inserting the session's userID
+    |*|  and the name of the deck chosen by the user into the 
+    |*|  decks table. The table auto-increments a deckID for each
+    |*|  deck. It returns the deckID.
+    \*/
     function create_deck($deckname) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -37,6 +42,13 @@
         return $id;
     }
     
+    
+    /*\
+    |*|  Deletes a deck given the deckID. Because of the way that primary keys
+    |*|  are arranged, this will also get rid of any entry of that deck in any
+    |*|  other table, which makes things much easier.
+    |*|
+    \*/
     function delete_deck($deckID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -57,7 +69,12 @@
     /***************/
     /* EDIT A DECK */
     /***************/
-    //It protects from bad values, but not very gracefully.
+    /*\
+    |*|  Adds a card to a deck by inserting the deckID and cardID into the deckCards
+    |*|  table. This table is a relational table between cards and deck since it is 
+    |*|  a many to many relationship between the two. deckCards also autoincrements
+    |*|  the ID for each tuple of deckID and cardID.
+    \*/
     function add_card_to_deck($deckID, $cardID) {
          $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
          if (mysqli_connect_errno()) {
@@ -74,6 +91,12 @@
          mysqli_close($db);
     }
     
+    /*\
+    |*|  Deletes a card from the deck given the deckID and cardID, by deleting 
+    |*|  the tuple in deckCards. Since these are foreign keys, the parent 
+    |*|  values will not be affected, nor should any other instance of foreign 
+    |*|  keys to those parent values.
+    \*/    
     function delete_card_from_deck($deckID, $cardID) {
          $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
          if (mysqli_connect_errno()) {
@@ -94,7 +117,17 @@
     /*******************/
     /* CREATING A USER */
     /*******************/
-    //Covered by unit test
+    /*\
+    |*|  This first makes sure that a username is not already present inside of the
+    |*|  database. It then checks to see if an email is already present. If both of
+    |*|  those checks are passed, the password the user entered is hashed, and then 
+    |*|  the hashed password, the salt for the password, and all the other info
+    |*|  the user entered is input into the database. Following that, an entry
+    |*|  inside all the related tables (achievements, options, stats) is created
+    |*|  for the user. If at any point these entries fail, then the user is deleted
+    |*|  from the database so that an email and username aren't taken by a failed
+    |*|  user creation.
+    \*/
     function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -197,7 +230,10 @@
     /****************************/
     /* CREATING/DELETING A CARD */
     /****************************/
-    //Covered by unit test
+    /*\
+    |*|  Adds a card to the cards table given the various items necessary
+    |*|  for a card to exist. 
+    \*/
     function create_card($question, $answer, $category, $subCategory = null, $difficulty) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -217,7 +253,12 @@
         
     }
     
-    //Covered by unit test
+    /*\
+    |*|  Deletes a card from the cards table in a similar manner that decks are
+    |*|  deleted. This ensures that cards that when cards are deleted, then
+    |*|  entries in deckCards are also deleted, since that card can no longer
+    |*|  exist in various decks.
+    \*/
     function delete_card($cardID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -239,6 +280,12 @@
     /********************/
     /* RETRIEVING CARDS */
     /********************/
+    /*\
+    |*|  Retrieves all cards that a user has created. The specific user is 
+    |*|  determined by the session's userID value. This is mainly used
+    |*|  when a user is creating a deck so that they can choose from all
+    |*|  the cards they've created.
+    \*/
     function get_all_cards() {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -256,7 +303,13 @@
         return $table;
         mysqli_close($db);
     }
-
+    
+    /*\
+    |*|  Retrieves all the names and deckIDs of the decks that a given user 
+    |*|  has. The user is determined through session. This function is
+    |*|  mainly used for when a user wants to review a deck, and needs to 
+    |*|  choose one to look at.
+    \*/
     function get_deck_names() {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -274,7 +327,12 @@
         mysqli_close($db);
     }
     
-    //ISSUES: Another Warning with the fetch_assoc. Doesn't return anything because of it.
+    /*\
+    |*|  Similar to get_all_cards, except that it only returns cards from a
+    |*|  specific user that have a specific category specified by the user.
+    |*|  Mainly used for when a user is creating a deck so as to expedite
+    |*|  the process.
+    \*/
     function get_category_cards($category) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -293,6 +351,12 @@
         mysqli_close($db);
     }
     
+    /*\
+    |*|  Retrieves all the cards in a specific deck by joining cards and deckCards
+    |*|  and looking for where the deckID's match up. This function will be used
+    |*|  the most, as it will be needed for a player to play the game and to 
+    |*|  review the cards in a deck.
+    \*/
     function get_deck_cards($deckID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -311,6 +375,13 @@
         mysqli_close($db);
    }
    
+    /*\
+    |*|  This retrieves all the cards a user has created that are specifically
+    |*|  NOT in the specified deck. This will be used for adding cards to a
+    |*|  deck. The reason the query seems so complicated is because cards can
+    |*|  be in multiple decks, so it requires a NOT IN and not a simple WHERE
+    |*|  deckID != '$deckID'.
+    \*/
    function get_non_deck_cards($deckID) {
        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -332,6 +403,10 @@
    /********************************/
    /* RETRIEVING/EDITING USER DATA */
    /********************************/
+    /*\
+    |*|  Retrieves the options that were set by a user. Each user has a single
+    |*|  tuple for each entry, so there is no need to have an array.
+    \*/
     function get_options() {
 	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -345,6 +420,9 @@
         mysqli_close($db);
     }
     
+    /*\
+    |*|  Retrieves the achievements a player has. Similar to get_options()
+    \*/
     function get_achievements() {
 	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -358,6 +436,9 @@
         mysqli_close($db);
     }
     
+    /*\
+    |*|  Retreives the stats that a user has acquired. Similar to get_options()
+    \*/
     function get_stats() {
 	     $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
