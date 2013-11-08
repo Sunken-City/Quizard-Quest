@@ -6,12 +6,18 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatars/";
+var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
+var gamePlaying = true;
+
 var avatarMoveTo = 0;
 var numCards = 100;
 var avatarInc = 765 / numCards;
+
+var lives = 5;
+var question = "sqrt(Onions)";
+var answer = "Shallots";
 
 //Game Mode
 this.GameMode = 
@@ -80,7 +86,7 @@ var iRepo = new function() {
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
-  this.avatar.src = avatarPath + "Greg.png";
+  this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
 
@@ -89,6 +95,20 @@ function nextCard()
   iRepo.monster.src = path + randomMonster();
   iRepo.background.src = path + randomBackground();
   avatarMoveTo = avatarMoveTo + avatarInc;
+}
+
+function setQuestion(q)
+{
+  question = q;
+}
+
+function loseLive()
+{
+  lives = lives - 1;
+  if (lives == 0)
+  {
+   gamePlaying = false; 
+  }
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -231,10 +251,12 @@ function Avatar()
   };
 }
 
-function Etc()
-{  
-  this.draw = function() {
-    this.context.drawImage(iRepo.heart, this.x, this.y, this.width, this.height);
+function Etc(Image)
+{ 
+  this.image = Image;
+  this.draw = function() 
+  {
+    this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
 }
 
@@ -254,10 +276,6 @@ function Game()
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
-    
-    this.lives = 5;
-    this.question = "sqrt(Onions)";
-    this.answer = "Shallots";
     
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -286,7 +304,7 @@ function Game()
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      this.heart = new Etc();
+      this.heart = new Etc(iRepo.heart);
       this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
       
       this.monster = new Monster();
@@ -322,20 +340,23 @@ function Game()
  */
 function animate() 
 {
-  requestAnimFrame(animate);
-  game.background.draw();
-  
-  game.monster.clear();
-  game.monster.idle();
-  game.monster.draw();
-  
-  game.avatar.draw();
-  game.avatar.move(avatarMoveTo);
-  
-  game.heart.draw();
-  document.getElementById('lives').innerHTML = game.lives;  
-  document.getElementById('question').innerHTML = game.question;  
-  document.getElementById('answer').innerHTML = game.answer;  
+  if (gamePlaying)
+  {
+    requestAnimFrame(animate);
+    game.background.draw();
+
+    game.monster.clear();
+    game.monster.idle();
+    game.monster.draw();
+
+    game.avatar.draw();
+    game.avatar.move(avatarMoveTo);
+
+    game.heart.draw();
+    document.getElementById('lives').innerHTML = lives;  
+    document.getElementById('question').innerHTML = question;  
+    document.getElementById('answer').innerHTML = answer;  
+  }
 }
  
 /**
