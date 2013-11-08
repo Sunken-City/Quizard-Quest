@@ -31,7 +31,13 @@ function showDeck(str)
 	xmlhttp.open("GET","../API_Server/getDeckCards.php?q="+str,true);
 	xmlhttp.send();
 
-	    if (window.XMLHttpRequest)
+	getNonDeckCards(str);
+	
+}	
+function getNonDeckCards(str)
+{
+
+    if (window.XMLHttpRequest)
  	    {// code for IE7+, Firefox, Chrome, Opera, Safari
  	    	 var xmlhttp2=new XMLHttpRequest();
 	    }
@@ -42,13 +48,7 @@ function showDeck(str)
    	            document.getElementById("userCards").innerHTML=xmlhttp2.responseText;
   	        }
  	    }
-	xmlhttp2.open("GET","../API_Server/getNondeckCards.php?q="+str,true);
+	xmlhttp2.open("GET","../API_Server/getNondeckCards.php?q="+str,false);
 	xmlhttp2.send();
-	
-}	
-function getNonDeckCards(str)
-{
-
-
 }
 
