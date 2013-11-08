@@ -9,9 +9,15 @@ var path = "../../Resources/Game/";
 var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
+var gamePlaying = true;
+
 var avatarMoveTo = 0;
 var numCards = 100;
 var avatarInc = 765 / numCards;
+
+var lives = 5;
+var question = "sqrt(Onions)";
+var answer = "Shallots";
 
 //Game Mode
 this.GameMode = 
@@ -89,6 +95,20 @@ function nextCard()
   iRepo.monster.src = path + randomMonster();
   iRepo.background.src = path + randomBackground();
   avatarMoveTo = avatarMoveTo + avatarInc;
+}
+
+function setQuestion(q)
+{
+  question = q;
+}
+
+function loseLive()
+{
+  lives = lives - 1;
+  if (lives == 0)
+  {
+   gamePlaying = false; 
+  }
 }
 
 //Picks a random monster image from the available pool of monsters
@@ -257,10 +277,6 @@ function Game()
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
     
-    this.lives = 5;
-    this.question = "sqrt(Onions)";
-    this.answer = "Shallots";
-    
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
     {
@@ -324,20 +340,23 @@ function Game()
  */
 function animate() 
 {
-  requestAnimFrame(animate);
-  game.background.draw();
-  
-  game.monster.clear();
-  game.monster.idle();
-  game.monster.draw();
-  
-  game.avatar.draw();
-  game.avatar.move(avatarMoveTo);
-  
-  game.heart.draw();
-  document.getElementById('lives').innerHTML = game.lives;  
-  document.getElementById('question').innerHTML = game.question;  
-  document.getElementById('answer').innerHTML = game.answer;  
+  if (gamePlaying)
+  {
+    requestAnimFrame(animate);
+    game.background.draw();
+
+    game.monster.clear();
+    game.monster.idle();
+    game.monster.draw();
+
+    game.avatar.draw();
+    game.avatar.move(avatarMoveTo);
+
+    game.heart.draw();
+    document.getElementById('lives').innerHTML = lives;  
+    document.getElementById('question').innerHTML = question;  
+    document.getElementById('answer').innerHTML = answer;  
+  }
 }
  
 /**
