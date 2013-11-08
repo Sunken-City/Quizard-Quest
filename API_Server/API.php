@@ -321,7 +321,7 @@
         $userID = $_SESSION['userID'];
         
         $deckCards = mysqli_query($db, "SELECT DISTINCT cards.* FROM cards WHERE userID = '$userID' AND (cards.cardID NOT IN (SELECT DISTINCT cards.cardID FROM cards JOIN deckCards ON cards.cardID = deckCards.cardID WHERE deckCards.deckID = '$deckID';");
-        $x = mysqli_num_rows($cards);
+        $x = mysqli_num_rows($deckCards);
         for ($i = 0; $i < $x; $i++) {
             array_push($table, mysqli_fetch_assoc($cards));
         }
