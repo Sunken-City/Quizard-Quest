@@ -20,7 +20,8 @@
             echo $card;
             delete_card_from_deck($deckID, $card);
          }
-      }cardAdd
+      }
+	
 	  if(!empty($_POST['cardAdd']))
         {
            foreach($_POST['cardAdd'] as $card)
