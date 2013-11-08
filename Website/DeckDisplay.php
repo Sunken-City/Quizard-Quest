@@ -56,7 +56,7 @@
 					<p>Cards to Add </p>
 					<table id="userCards">  				
 					</table>
-					<input type="submit" value="removeCards" id="removeCards" class="submitButton" />
+					<input type="submit" value="Submit Changes" id="removeCards" class="submitButton" />
 				</form>
 
 			</div>
