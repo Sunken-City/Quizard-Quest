@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatars/";
+var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
 var avatarMoveTo = 0;
@@ -80,7 +80,7 @@ var iRepo = new function() {
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = path + randomMonster();
-  this.avatar.src = avatarPath + "Greg.png";
+  this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
 
@@ -231,10 +231,12 @@ function Avatar()
   };
 }
 
-function Etc()
-{  
-  this.draw = function() {
-    this.context.drawImage(iRepo.heart, this.x, this.y, this.width, this.height);
+function Etc(Image)
+{ 
+  this.image = Image;
+  this.draw = function() 
+  {
+    this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
 }
 
@@ -286,7 +288,7 @@ function Game()
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      this.heart = new Etc();
+      this.heart = new Etc(iRepo.heart);
       this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
       
       this.monster = new Monster();
