@@ -43,7 +43,7 @@
 
 			<div id="innerContent">
 
-				<form id="cardRemove" action="DeckDisplay.php" method="POST" >
+				<form id="cardRemove" action="../API_Server/editDeck.php" method="POST" >
 					<select name="Decks" id="Decks" onchange="showDeck(this.value)">
 						<option value="">Select Deck</option>
 					</select>
