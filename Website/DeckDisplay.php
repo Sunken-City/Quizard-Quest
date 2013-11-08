@@ -43,13 +43,10 @@
 
 			<div id="innerContent">
 
-				<form id="deckSelect">				
+				<form id="cardRemove" action="DeckDisplay.php" method="POST" >
 					<select name="Decks" id="Decks" onchange="showDeck(this.value)">
 						<option value="">Select Deck</option>
 					</select>
-				</form>
-
-				<form id="cardRemove" action="DeckDisplay.php" method="POST" >
 					<p>Current Deck Cards</p>
 					<table id="deckCards">  				
 					</table>
