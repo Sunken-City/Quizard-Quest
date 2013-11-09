@@ -104,11 +104,15 @@ var iRepo = new function() {
 
 function nextCard()
 {
-  currCard = deck.draw();
-  setQuestion(currCard.question);
-  iRepo.monster.src = path + randomMonster();
-  iRepo.background.src = path + randomBackground();
+  if (deck.cards.length != 0)
+  {
+    currCard = deck.draw();
+    setQuestion(currCard.question);
+    iRepo.monster.src = path + randomMonster();
+    iRepo.background.src = path + randomBackground();
+  }
   avatarMoveTo = avatarMoveTo + avatarInc;
+  gamePlaying = false;
 }
 
 function setQuestion(q)
@@ -494,9 +498,6 @@ function animate()
     game.monster.idle();
     game.monster.draw();
 
-    game.avatar.draw();
-    game.avatar.move(avatarMoveTo);
-
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
     
@@ -506,6 +507,9 @@ function animate()
       document.getElementById('lives').innerHTML = " x" + lives;  
     }
   }
+  game.avatar.draw();
+  game.avatar.move(avatarMoveTo);
+  document.getElementById('question').innerHTML = "FINISHED!";  
 }
  
 //Temporary function to test out deck creation.
