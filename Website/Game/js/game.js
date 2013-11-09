@@ -114,10 +114,9 @@ function setQuestion(q)
 
 function Deck()
 {
-  this.init = function(cards)
+  this.init = function()
   {
-    this.cards = cards;
-    this.cards = shuffle(this.cards);
+    this.cards = new Array();
   }
   
   this.add = function(card)
