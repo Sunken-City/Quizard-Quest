@@ -158,21 +158,11 @@ function loseLife()
   }
 }
 
+/*
 function submitAnswer()
 {
-  //if (currCard.answer ==  game.input._value)
-  {
-    nextCard();
-  }
-  //else
-  {
-    if (gameMode > GameMode.Training)
-    {
-      loseLife();
-    }
-    nextCard();
-  }
-}
+
+}*/
 
 //Picks a random monster image from the available pool of monsters
 function randomMonster()
@@ -408,7 +398,20 @@ function Game()
       backgroundColor: '#222222',
       borderColor: '#FF9900',
       boxShadow: '1px 1px 0px rgba(0, 0, 0, 1)',
-      onsubmit: submitAnswer()
+      onsubmit: submitAnswer() {
+	  if (currCard.answer ==  game.input._value)
+	  {
+	    nextCard();
+	  }
+	  else
+	  {
+	    if (gameMode > GameMode.Training)
+	    {
+	      loseLife();
+	    }
+	    nextCard();
+	  }
+      }
     });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
