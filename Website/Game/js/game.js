@@ -306,7 +306,6 @@ function Monster()
 function Avatar()
 {
   this.pointCache = 0;
-  this.inCount = 0;
   
   this.draw = function() {
     this.clear();
@@ -323,9 +322,8 @@ function Avatar()
     {
       if (this.pointCache != nextPoint)
       {
-	this.inCount++;
 	this.pointCache = nextPoint;
-	this.turningPoint = (nextPoint - this.x)/2;
+	this.turningPoint = (pointCache - this.x)/2;
 	this.multiplier = 2;
       }
       
