@@ -531,9 +531,13 @@ header {
 	vertical-align: top;
 	text-align: center;
 	width: 30%;
-	margin: 0px 20px 0px 20px;
-	background-color: rgba(0,113,147,.25);
+	margin: 0px 20px 20px 20px;
+	background-color: rgba(0,133,167,.35);
 	font-size:1em;
 	border:4px outset rgb(233,233,233);
 	padding:10px;
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
 }
