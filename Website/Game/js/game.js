@@ -329,12 +329,12 @@ function Avatar()
       
       if (this.x < this.turningPoint)
       {
-	this.x = this.x + (1 * this.multiplier);
+	this.x = this.x + this.multiplier;
 	this.multiplier++;
       }
       else
       {
-	this.x = this.x + (1 * this.multiplier);
+	this.x = this.x + this.multiplier;
 	this.multiplier--;
 	if (this.multiplier < 1)
 	{
@@ -345,6 +345,7 @@ function Avatar()
       if (this.x > nextPoint)
       {
 	this.x = nextPoint;
+	this.multiplier = 2;
       }
       //Code for a rainbow trail:
       //this.context.fillStyle = colorFromPhase(this.x);
