@@ -16,7 +16,7 @@ var numCards = 100;
 var avatarInc = 765 / numCards;
 
 var lives = 5;
-var question = "sqrt(Onions)";
+var question = ">Q: sqrt(Onions)";
 var answer = "Shallots";
 
 //Game Mode
@@ -24,7 +24,7 @@ this.GameMode =
 {
     Training : 0,
     Quest : 1,
-    Test : 2
+    SaveTheWorld : 2
 }
 var gameMode = GameMode.Training;
 
@@ -108,7 +108,7 @@ function nextCard()
 
 function setQuestion(q)
 {
-  question = q;
+  question = ">Q: " + q;
 }
 
 function loseLife()
@@ -378,10 +378,10 @@ function animate()
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
     
-    if (gameMode > 0)
+    if (gameMode > GameMode.Training)
     {
       game.heart.draw();
-      document.getElementById('lives').innerHTML = lives;  
+      document.getElementById('lives').innerHTML = " x" + lives;  
     }
   }
 }
@@ -406,7 +406,7 @@ var game = new Game();
 
 function init()
 {
-  gameMode = GameMode.Training;
+  gameMode = GameMode.SaveTheWorld;
   if(game.init())
   {
     game.start();
