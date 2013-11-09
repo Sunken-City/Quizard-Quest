@@ -548,3 +548,9 @@ header {
 	-moz-border-bottom-right-radius: 12px;
 	-webkit-border-bottom-left-radius: 12px;
 }
+
+.semiCard input {
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
