@@ -403,6 +403,8 @@ function Game()
       this.backgroundAudio.load();
       
       this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
+      
+      this.backgroundAudio.play();
     }
     else
     {
