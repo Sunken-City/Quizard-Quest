@@ -318,7 +318,7 @@ function Avatar()
   
   this.move = function(nextPoint) 
   {
-    if (this.x < nextPoint)
+    //if (this.x < nextPoint)
     {
       if (this.pointCache != nextPoint)
       {
