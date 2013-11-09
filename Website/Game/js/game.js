@@ -13,12 +13,14 @@ var gamePlaying = true;
 var mute = true;
 
 var avatarMoveTo = 0;
-var numCards = 100;
-var avatarInc = 765 / numCards;
+var numCards;
+var avatarInc;
+
+var currCard;
 
 var lives = 5;
-var question = ">Q: sqrt(Onions)";
-var answer = "Shallots";
+var question;
+var answer;
 
 //Game Mode variables
 this.GameMode = 
@@ -102,6 +104,8 @@ var iRepo = new function() {
 
 function nextCard()
 {
+  currCard = deck.draw();
+  setQuestion(currCard.question);
   iRepo.monster.src = path + randomMonster();
   iRepo.background.src = path + randomBackground();
   avatarMoveTo = avatarMoveTo + avatarInc;
@@ -486,6 +490,25 @@ function animate()
   }
 }
  
+//Temporary function to test out deck creation.
+function initCardsAndDeck()
+{
+  var card1 = new Card();
+  card1.init("Sqrt(Onions)", "Shallots", 1);
+  var card2 = new Card();
+  card2.init("Who dabes?", "I'm dabes", 2);
+  var card3 = new Card();
+  card3.init("2 + 2 = ?", "4", 3);
+  numCards = 3;
+  avatarInc = 765 / numCards;
+  deck.add(card1);
+  deck.add(card2);
+  deck.add(card3);
+  deck.shuffle();
+  currCard = deck.draw();
+  setQuestion(currCard.question);
+}
+ 
 /**
  * requestAnim shim layer by Paul Irish
  * Finds the first API that works to optimize the animation loop,
@@ -510,4 +533,5 @@ function init()
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
+  initCardsAndDeck();
 }
