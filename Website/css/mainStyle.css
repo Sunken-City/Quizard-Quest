@@ -523,6 +523,9 @@ header {
 	width: 98%;
 	max-width: 98%;
 	word-wrap: break-word;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .semiCard {
