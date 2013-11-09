@@ -494,6 +494,7 @@ function Game()
 function animate() 
 {
   requestAnimFrame(animate);
+  
   if (gamePlaying)
   {
     game.background.draw();
@@ -501,25 +502,25 @@ function animate()
     game.monster.clear();
     game.monster.idle();
     game.monster.draw();
-    
-    game.avatar.draw();
-    game.avatar.move(avatarMoveTo);
 
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
-    
-    if (gameMode > GameMode.Training)
-    {
-      game.heart.draw();
-      document.getElementById('lives').innerHTML = " x" + lives;  
-    }
   }
+  
   else
   {
-    game.avatar.draw();
-    game.avatar.move(avatarMoveTo);
     document.getElementById('question').innerHTML = "FINISHED!";  
   }
+   
+  if (gameMode > GameMode.Training)
+  {
+    game.heart.draw();
+    document.getElementById('lives').innerHTML = " x" + lives;  
+  }
+  
+  game.avatar.draw();
+  game.avatar.move(avatarMoveTo);
+
 }
  
 //Temporary function to test out deck creation.
