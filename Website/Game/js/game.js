@@ -532,7 +532,7 @@ function initCardsAndDeck()
   var card3 = new Card();
   card3.init("2 + 2 = ?", "4", 3);
   numCards = 3;
-  avatarInc = 765 / numCards;
+  avatarInc = 715 / numCards;
   deck.add(card1);
   deck.add(card2);
   deck.add(card3);
