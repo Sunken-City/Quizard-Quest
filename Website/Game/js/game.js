@@ -160,7 +160,7 @@ function loseLife()
 
 function submitAnswer()
 {
-  if (currCard.answer ==  game.input._value)
+  //if (currCard.answer ==  game.input._value)
   {
     nextCard();
   }
@@ -408,7 +408,7 @@ function Game()
       backgroundColor: '#222222',
       borderColor: '#FF9900',
       boxShadow: '1px 1px 0px rgba(0, 0, 0, 1)',
-      onsubmit:submitAnswer()
+      onsubmit: submitAnswer()
     });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
