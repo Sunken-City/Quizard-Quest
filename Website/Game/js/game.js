@@ -276,10 +276,16 @@ function Game()
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
-    var input = new CanvasInput({
+    this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 100,
-      y: 420
+      y: 520,
+      width:400,
+      height: 70,
+      fontFamily: 'VT323',
+      fontSize: 50,
+      fontColor: '#FF9900',
+      placeHolder: 'Enter an Answer...'
     });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -357,7 +363,7 @@ function animate()
     game.heart.draw();
     document.getElementById('lives').innerHTML = lives;  
     document.getElementById('question').innerHTML = question;  
-    document.getElementById('answer').innerHTML = answer;  
+    document.getElementById('answer').innerHTML = input.getValue();  
   }
 }
  
