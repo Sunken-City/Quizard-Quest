@@ -497,6 +497,9 @@ function animate()
     game.monster.clear();
     game.monster.idle();
     game.monster.draw();
+    
+    game.avatar.draw();
+    game.avatar.move(avatarMoveTo);
 
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
