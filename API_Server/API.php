@@ -530,7 +530,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        $value = mysqli_query($db, "SELECT answer FROM securityQuestions WHERE userID = '$userID';";
+        $value = mysqli_query($db, "SELECT answer FROM securityQuestions WHERE userID = '$userID';");
         $answer = mysqli_fetch_assoc($value);
         
         if($answer['answer'] == $guess) {
