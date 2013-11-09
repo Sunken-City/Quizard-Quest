@@ -39,6 +39,10 @@ $(document).ready(function() {
 
 	});
 
+	$("#resetPassword").click(function (e) {
+		window.location.href= "passwordReset.php";
+	})
+
 	$("#signUp").click(function (e) {
 
 		var fname = $("#firstName").val();
