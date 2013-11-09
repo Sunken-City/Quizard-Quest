@@ -105,3 +105,12 @@ CREATE TABLE achievements (
    FOREIGN KEY(userID) REFERENCES players(userID)
       on delete cascade on update cascade
 ) engine = InnoDB;
+
+#Creates a table that will hold a users security question
+CREATE TABLE securityQuestions (
+   userID int NOT NULL,
+   questionID int NOT NULL,
+   answer varchar(32) NOT NULL,
+   FOREIGN KEY(userID) REFERENCES players(userID)
+      on delete cascade on update cascade
+) engine = InnoDB;

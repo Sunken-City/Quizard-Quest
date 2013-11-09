@@ -29,8 +29,9 @@
         $query = "INSERT INTO decks (userID, name) VALUES ('$userID', '$deckname');";
         if (!mysqli_query($db, $query))
         {
-            echo "There was an error creating your deck. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error creating your deck. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         
@@ -59,8 +60,9 @@
         //This also deletes every tuple with this deckID in deckCards, which is awesome
         $query = "DELETE FROM decks WHERE deckID = '$deckID';";
         if (!mysqli_query($db, $query)){
-            echo "There was an error deleting your deck. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error deleting your deck. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);
@@ -84,8 +86,9 @@
         
          $query = "INSERT INTO deckCards (deckID, cardID) VALUES ('$deckID', '$cardID');";        
          if (!mysqli_query($db, $query)) {
-            echo "There was an error adding a card to your deck. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error adding a card to your deck. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
          }
          mysqli_close($db);
@@ -106,8 +109,9 @@
          
          $query = "DELETE FROM deckCards WHERE deckID = '$deckID' AND cardID = '$cardID';";
          if (!mysqli_query($db, $query)) {
-            echo "There was an error deleting a card from your deck. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error deleting a card from your deck. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
          }
          mysqli_close($db);
@@ -128,7 +132,7 @@
     |*|  from the database so that an email and username aren't taken by a failed
     |*|  user creation.
     \*/
-    function create_user($firstname, $lastname, $email, $username, $password, $gender = NULL, $grade = NULL, $isAdmin = 0) {
+    function create_user($firstname, $lastname, $email, $username, $password, $questionID, $answer, $gender = NULL, $grade = NULL, $isAdmin = 0) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
@@ -139,8 +143,9 @@
         /*make sure user isn't already in the database*/
         $query = "SELECT * FROM players WHERE (username = '$username');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error checking to see if your username already exists. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error checking to see if your username already exists. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         $result = mysqli_query($db,$query);
@@ -155,8 +160,9 @@
         /*make sure email isn't already in the database*/
         $query = "SELECT * FROM players WHERE (email = '$email');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error checking to see if your email already exists. Please return to the previous page.
-		          Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error checking to see if your email already exists. 
+            \nPlease return to the previous page.
+		      \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         $result = mysqli_query($db,$query);
@@ -177,8 +183,9 @@
         
         $query = "INSERT INTO players (username, password, salt, email, fName, lName, gender, grade, permissions) VALUES ('$username', '$password', '$salt', '$email', '$firstname', '$lastname', '$gender', '$grade', '$isAdmin');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error adding your username to our database. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error adding your username to our database. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         
@@ -191,8 +198,9 @@
         // and/or email.
         $query = "INSERT INTO options (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error creating your options. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error creating your options. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . $error);
@@ -200,8 +208,9 @@
         
         $query = "INSERT INTO achievements (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error creating your achievements. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error creating your achievements. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . $error);
@@ -209,8 +218,19 @@
         
         $query = "INSERT INTO stats (userID) VALUES ('$userID');";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error creating your stats. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error creating your stats.
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
+            $error = mysqli_error($db);
+            mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
+            die('Error: ' . $error);
+        }
+        
+        $query = "INSERT INTO securityQuestions (userID, questionID, answer) VALUES ('$userID', '$questionID', '$answer');";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error storing your security question. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             $error = mysqli_error($db);
             mysqli_query($db, "DELETE FROM players WHERE userID = '$userID';");
             die('Error: ' . $error);
@@ -245,8 +265,9 @@
         $query = "INSERT INTO cards(userID, question, answer, category, subCategory, difficulty) VALUES ('$userID', '$question', '$answer', '$category', '$subCategory', '$difficulty');";
 
         if (!mysqli_query($db, $query)) {
-            echo "There was an error creating your card. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error creating your card. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);
@@ -269,8 +290,9 @@
         // Also deletes the tuple of deck and card in deckCards if it exists.
         $query = "DELETE FROM cards WHERE cardID = '$cardID';";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error deleting your card. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error deleting your card. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);
@@ -465,8 +487,9 @@
         // number of different functions that have to be called or made. 
         $query = "UPDATE options SET avatar = '$avatar', cardBoarder = '$cardBoarder', bgColor = '$bgColor' WHERE userID = '$userID';";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error updating your options. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error updating your options. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);
@@ -492,14 +515,32 @@
         // call
         $query = "UPDATE stats SET mathExp = '$mathExp', sciExp = '$sciExp', ssExp = '$ssExp', engExp = '$engExp', langExp = '$langExp', totExp = '$totExp', gold = '$gold' WHERE userID = '$userID';";
         if (!mysqli_query($db, $query)) {
-            echo "There was an error adjusting your stats. Please return to the previous page.
-            Here's the error if you wanted to tell a developer:\n";
+            echo "There was an error adjusting your stats. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
             die('Error: ' . mysqli_error($db));
         }
         mysqli_close($db);   
     }
-    
-    
+
+    function check_security_answer($guess) {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+        $value = mysqli_query($db, "SELECT answer FROM securityQuestions WHERE userID = '$userID';";
+        $answer = mysqli_fetch_assoc($value);
+        
+        if($answer['answer'] == $guess) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        mysqli_close($db);
+    }   
     
     /*\
     |*|     :: >>The following is the password salting and hashing functions we found<< ::
