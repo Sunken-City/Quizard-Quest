@@ -112,6 +112,40 @@ function setQuestion(q)
   question = ">Q: " + q;
 }
 
+function Deck()
+{
+  this.init = function(cards)
+  {
+    this.cards = cards;
+    this.cards = shuffle(this.cards);
+  }
+  
+  this.add = function(card)
+  {
+    this.cards.push(card); 
+  }
+  
+  this.draw = function()
+  {
+    return this.cards.pop();
+  }
+  
+  this.shuffle = function()
+  {
+    this.cards = shuffle(this.cards);
+  }
+}
+
+function Card()
+{
+  this.init = function(question, answer, category)
+  {
+    this.question = question;
+    this.answer = answer;
+    this.category = category;
+  }
+}
+
 function loseLife()
 {
   lives = lives - 1;
@@ -475,4 +509,5 @@ function init()
 {
   gameMode = GameMode.SaveTheWorld;
   game.init();
+  deck.init();
 }
