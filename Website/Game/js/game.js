@@ -313,7 +313,7 @@ function Avatar()
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x - 2 * this.multiplier, this.y, this.width, this.height);
+    this.context.clearRect(0, this.y, 765, this.height);
   };
   
   this.move = function(nextPoint) 
@@ -336,6 +336,10 @@ function Avatar()
       {
 	this.multiplier--;
 	this.x = this.x + (1 * this.multiplier);
+	if (this.multiplier < 1)
+	{
+	  this.multiplier = 2;
+	}
       }
       
       if (this.x > nextPoint)
