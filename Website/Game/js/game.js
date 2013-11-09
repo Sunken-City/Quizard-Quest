@@ -327,7 +327,7 @@ function Avatar()
 	this.multiplier = 2;
       }
       
-      if (this.x < this.turningPoint)
+      if (this.x <= this.turningPoint)
       {
 	this.x = this.x + this.multiplier;
 	this.multiplier++;
