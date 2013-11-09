@@ -164,7 +164,7 @@ function submitAnswer()
   {
     nextCard();
   }
-  else
+  //else
   {
     if (gameMode > GameMode.Training)
     {
