@@ -168,19 +168,22 @@ function loseLife()
 
 function submitAnswer()
 {
-  if (currCard.answer ==  game.input._value)
+  if (gamePlaying)
   {
-    nextCard();
-  }
-  else
-  {
-    if (gameMode > GameMode.Training)
+    if (currCard.answer == game.input._value)
     {
-      loseLife();
+      nextCard();
     }
-    nextCard();
+    else
+    {
+      if (gameMode > GameMode.Training)
+      {
+	loseLife();
+      }
+      nextCard();
+    }
+    game.input._value = "";
   }
-  game.input._value = "";
 }
 
 //Picks a random monster image from the available pool of monsters
