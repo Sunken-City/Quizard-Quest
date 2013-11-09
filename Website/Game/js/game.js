@@ -26,10 +26,19 @@ this.GameMode =
     Quest : 1,
     Test : 2
 }
+var gameMode = GameMode.Training;
+
 
 /**
  * Misc functions
  */
+
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/array/shuffle [v1.0]
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
 //Modified from: http://krazydad.com/tutorials/makecolors.php
 function colorFromPhase(phase)
@@ -317,8 +326,11 @@ function Game()
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      this.heart = new Etc(iRepo.heart);
-      this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
+      if (gameMode > 0)
+      {
+	this.heart = new Etc(iRepo.heart);
+	this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
+      }
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
@@ -363,10 +375,14 @@ function animate()
     game.avatar.draw();
     game.avatar.move(avatarMoveTo);
 
-    game.heart.draw();
-    document.getElementById('lives').innerHTML = lives;  
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
+    
+    if (gameMode > 0)
+    {
+      game.heart.draw();
+      document.getElementById('lives').innerHTML = lives;  
+    }
   }
 }
  
@@ -390,6 +406,7 @@ var game = new Game();
 
 function init()
 {
+  gameMode = GameMode.Training;
   if(game.init())
   {
     game.start();
