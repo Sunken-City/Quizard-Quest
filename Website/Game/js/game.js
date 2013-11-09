@@ -306,6 +306,7 @@ function Monster()
 function Avatar()
 {
   this.pointCache = 0;
+  this.inCount = 0;
   
   this.draw = function() {
     this.clear();
