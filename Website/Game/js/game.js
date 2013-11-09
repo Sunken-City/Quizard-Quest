@@ -507,9 +507,12 @@ function animate()
       document.getElementById('lives').innerHTML = " x" + lives;  
     }
   }
-  game.avatar.draw();
-  game.avatar.move(avatarMoveTo);
-  document.getElementById('question').innerHTML = "FINISHED!";  
+  else
+  {
+    game.avatar.draw();
+    game.avatar.move(avatarMoveTo);
+    document.getElementById('question').innerHTML = "FINISHED!";  
+  }
 }
  
 //Temporary function to test out deck creation.
