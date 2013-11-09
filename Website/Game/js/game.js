@@ -110,9 +110,13 @@ function nextCard()
     setQuestion(currCard.question);
     iRepo.monster.src = path + randomMonster();
     iRepo.background.src = path + randomBackground();
+    avatarMoveTo = avatarMoveTo + avatarInc;
   }
-  avatarMoveTo = avatarMoveTo + avatarInc;
-  gamePlaying = false;
+  else
+  {
+    avatarMoveTo = avatarMoveTo + avatarInc;
+    gamePlaying = false;
+  }
 }
 
 function setQuestion(q)
