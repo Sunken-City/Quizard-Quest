@@ -493,9 +493,9 @@ function Game()
  */
 function animate() 
 {
+  requestAnimFrame(animate);
   if (gamePlaying)
   {
-    requestAnimFrame(animate);
     game.background.draw();
 
     game.monster.clear();
