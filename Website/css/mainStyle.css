@@ -540,4 +540,8 @@ header {
 	-webkit-border-top-right-radius: 12px;
 	-moz-border-top-right-radius: 12px;
 	-webkit-border-top-left-radius: 12px;
+	-moz-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-moz-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
 }
