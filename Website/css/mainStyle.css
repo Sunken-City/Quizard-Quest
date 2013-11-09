@@ -552,4 +552,5 @@ header {
 .semiCard input {
 	position: relative;
 	display:block;
+	margin-bottom:-1em;
 }
