@@ -172,6 +172,7 @@ function submitAnswer()
     }
     nextCard();
   }
+  game.input._value = "";
 }
 
 //Picks a random monster image from the available pool of monsters
