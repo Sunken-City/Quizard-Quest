@@ -322,6 +322,7 @@ function Avatar()
     {
       if (this.pointCache != nextPoint)
       {
+	this.inCount++;
 	this.pointCache = nextPoint;
 	this.turningPoint = (nextPoint - this.x)/2;
 	this.multiplier = 2;
