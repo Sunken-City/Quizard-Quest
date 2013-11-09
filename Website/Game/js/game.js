@@ -276,7 +276,11 @@ function Game()
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
-    
+    var input = new CanvasInput({
+      canvas: document.getElementById('input')
+      x: 100;
+      y: 420;
+    });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
     {
@@ -315,8 +319,6 @@ function Game()
       
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
-      
-      //this.display = new Display(800, false, true);
       
       return true;
     }
