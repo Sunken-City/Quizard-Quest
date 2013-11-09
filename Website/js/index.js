@@ -46,6 +46,8 @@ $(document).ready(function() {
 		var Email = $("#email").val();
 		var username = $("#username").val();
 		var newpwd = $("#newPassword").val();
+		var SecurityQuestion = $("#securityQuestion").val();
+		var SecurityAnswer = $("#securityAnswer").val();
 		var gender;
 
 		if ($("#male").val() != null) {
@@ -66,7 +68,9 @@ $(document).ready(function() {
 			'username':username,
 			'newpwd':newpwd,
 			'gender':gender,
-			'Grade':Grade
+			'Grade':Grade,
+			'SecurityAnswer':SecurityAnswer,
+			'SecurityQuestion':SecurityQuestion
 		};
 
 		$.post("../API_Server/createAccount.php",formData, function(data) {

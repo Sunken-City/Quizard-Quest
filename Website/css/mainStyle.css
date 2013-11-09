@@ -121,10 +121,13 @@ h3 {
 }
 
 #createAccountSection {
-	width: 320px;
 	float: right;
-	margin-top: 20px;
+	margin-top: -40px;
 	text-align: right;
+}
+
+#createAccountSection td:nth-child(2) {
+	text-align: left;
 }
 
 #createAccountSection h2{
@@ -164,6 +167,7 @@ input,label,select {
 	height: 22px;
 	width: 172px;
 	margin-bottom: 10px;
+	word-wrap:break-word;
 }
 
 .submitButton,select,button {
