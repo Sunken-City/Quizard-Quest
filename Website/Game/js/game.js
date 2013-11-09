@@ -345,7 +345,7 @@ function Avatar()
       if (this.x > nextPoint)
       {
 	this.x = nextPoint;
-	this.multiplier = 2;
+	this.multiplier = 20;
       }
       //Code for a rainbow trail:
       //this.context.fillStyle = colorFromPhase(this.x);
