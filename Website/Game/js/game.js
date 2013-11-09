@@ -285,7 +285,10 @@ function Game()
       fontFamily: 'VT323',
       fontSize: 50,
       fontColor: '#FF9900',
-      placeHolder: 'Enter an Answer...'
+      placeHolder: 'Enter an Answer...',
+      backgroundColor: '#222222',
+      borderColor: '#FF9900',
+      
     });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
@@ -363,7 +366,7 @@ function animate()
     game.heart.draw();
     document.getElementById('lives').innerHTML = lives;  
     document.getElementById('question').innerHTML = question;  
-    document.getElementById('answer').innerHTML = input.getValue();  
+    document.getElementById('answer').innerHTML = game.input._value;  
   }
 }
  
