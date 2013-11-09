@@ -278,8 +278,8 @@ function Game()
     this.eCanvas = document.getElementById('etc');
     var input = new CanvasInput({
       canvas: document.getElementById('input')
-      x: 100;
-      y: 420;
+      x: 100
+      y: 420
     });
     //Check to see if we can use the canvas
     if (this.bgCanvas.getContext)
