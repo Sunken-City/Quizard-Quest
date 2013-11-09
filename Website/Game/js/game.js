@@ -305,6 +305,8 @@ function Monster()
 
 function Avatar()
 {
+  this.pointCache = 0;
+  
   this.draw = function() {
     this.clear();
     this.context.drawImage(iRepo.avatar, this.x, this.y, this.width, this.height);
@@ -318,7 +320,28 @@ function Avatar()
   {
     if (this.x < nextPoint)
     {
-      this.x++;
+      if (this.pointCache != nextPoint)
+      {
+	this.pointCache = nextPoint;
+	this.turningPoint = (nextPoint - this.x)/2;
+	this.multiplier = 2;
+      }
+      
+      if (this.x < this.turningPoint)
+      {
+	this.x = this.x + (1 * this.multiplier);
+	this.multiplier++;
+      }
+      else
+      {
+	this.multiplier--;
+	this.x = this.x + (1 * this.multiplier);
+      }
+      
+      if (this.x > nextPoint)
+      {
+	this.x = nextPoint;
+      }
       //Code for a rainbow trail:
       //this.context.fillStyle = colorFromPhase(this.x);
       //this.context.fillRect(this.x, this.y, this.width - 25, this.height);
