@@ -10,6 +10,7 @@ var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
 var gamePlaying = true;
+var mute = true;
 
 var avatarMoveTo = 0;
 var numCards = 100;
@@ -404,7 +405,10 @@ function Game()
       
       this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
       
-      this.backgroundAudio.play();
+      if (mute == false)
+      {
+	this.backgroundAudio.play();
+      }
     }
     else
     {
