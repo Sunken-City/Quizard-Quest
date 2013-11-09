@@ -277,8 +277,8 @@ function Game()
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
     var input = new CanvasInput({
-      canvas: document.getElementById('input')
-      x: 100
+      canvas: document.getElementById('input'),
+      x: 100,
       y: 420
     });
     //Check to see if we can use the canvas
