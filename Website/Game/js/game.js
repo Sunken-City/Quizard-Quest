@@ -504,6 +504,7 @@ window.requestAnimFrame = (function(){
 })();
 
 var game = new Game();
+var deck = new Deck();
 
 function init()
 {
