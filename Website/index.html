@@ -77,6 +77,27 @@
 								<td>*<input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
 							</tr>
 							<tr>
+								<td>
+									<label id="SecurityQuestion">Security Question: </label>
+								</td>
+								<td>
+									*<select name="SecurityQuestion" id="securityQuestion" required>
+										<option value="">Select a Question</option>
+										<option value="maidenName">What is your mother's maiden name?</option>
+										<option value="scrabbleValue">What is the Scrabble value of your mother's maiden name?</option>
+										<option value="dreamCar">What is your dream car?</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label id="SecurityAnswer">Security Answer: </label>
+								</td>
+								<td>
+									*<input type="text" id="securityAnswer" placeholder="Answer" name="SecutiryAnswer" required />
+								</td>
+							</tr>
+							<tr>
 								<td><label for="GENDER" id="Gender">Gender: </label></td>
 								<td id="GENDER"> 
 									<input type="radio" name="gender" value="m" id="male" class="gender"/>

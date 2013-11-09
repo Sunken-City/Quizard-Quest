@@ -19,6 +19,8 @@
         #[4] = newpwd
         #[5] = gender
         #[6] = Grade
+        #[7] = SecurityAnswer
+        #[8] = SecurityQuestion
 
         ###############################################
         #Insert user input data from form in $formData#
@@ -33,29 +35,33 @@
         # User just submitted data to create a new account#
         ######################################################
         if (isset($formData['fname']) && isset($formData['lname']) && isset($formData['Email']) 
-                && isset($formData['username']) && isset($formData['newpwd'])) {
+                && isset($formData['username']) && isset($formData['newpwd']) && isset($formData['SecurityQuestion'])
+                 && isset($formData['SecurityAnswer'])) {
 
                 // send validated data to next layer for submission to database
                 if (!(isset($formData['gender']) && isset($formData['Grade']))) {
                                 # if gender and grade are not in the submitted data then only submit what's required #
 
-                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd']);
+                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$formData['SecurityQuestion'],$formData['SecurityAnswer']);
 
                 } else if (isset($formData['gender']) && !isset($formData['Grade'])) {
                                 # if gender is set but grade is not then only submit what's included #
 
-                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$formData['gender']);
+                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],
+                            $formData['SecurityQuestion'],$formData['SecurityAnswer'],$formData['gender']);
 
                 } else if (!isset($formData['gender']) && isset($formData['Grade'])) {
                                 # if grade is set and gender is not then submit gender as null with everything that is included #
 
                         $gender = NULL;
-                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$gender,$formData['Grade']);
+                        $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],
+                            $formData['SecurityQuestion'],$formData['SecurityAnswer'],$gender,$formData['Grade']);
                         
                 } else if (isset($formData['gender']) && isset($formData['Grade'])){
                         # if gender and grade are in the submitted data then submit everything #
 
-                         $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],$formData['gender'],$formData['Grade']);
+                         $result = create_user($formData['fname'],$formData['lname'],$formData['Email'],$formData['username'],$formData['newpwd'],
+                            $formData['SecurityQuestion'],$formData['SecurityAnswer'],$formData['gender'],$formData['Grade']);
                 }
 
         } else {
