@@ -38,7 +38,9 @@
 					<button type="button" id="logOut" class="navButton">Log Out</button>
 					<button type="button" id="createCard" >Create a Card!</button>
 					<button type="button" id="createDeck" >Create a Deck!</button>
-					<button type="button" id="reviewDecks" >Review your Decks!</button>
+					<button type="button" id="reviewDecks" >Edit your Decks</button>
+					<button type="button" id="startGame" >Begin your Quest!</button>
+					<button type="button" id="gotoStore" >Quizards' Outfitters</button>
 				</nav>
 
 			</header>
@@ -47,7 +49,32 @@
 
 				<img id="avatar"></img>
 				<h2 id="userName"></h2>
+				<!-- Display user's decks -->
+				<!--
+					=>	List the User's Decks
+						->	Each tag is selectable
+						->	When selected:
+							>	Display all cards in that deck
+				  -->
+				<div id="profileDecks">
+
+				</div>
 				
+				<!-- Display user's stats -->
+				<!--
+					=>	Display by Category
+						->	Math
+						->	Science
+						->	English
+						->	Language
+						->	History
+					=>	Display Total
+					=>	Display Gold Earned
+					=>	Display Achievements
+				  -->
+				<div id="profileStats">
+
+				</div>
 
 			</section>
 

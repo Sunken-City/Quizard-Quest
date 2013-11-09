@@ -1,5 +1,5 @@
-/* This is the Javascript for creating the deck and loading all the user cards
-to the window */
+/* This is the Javascript for creating the deck and loading all the user cards to the window */
+//Gus did this...mostly
 var JSON;
 
 $.post("../API_Server/getCards.php", function(data){
