@@ -334,8 +334,8 @@ function Avatar()
       }
       else
       {
-	this.multiplier--;
 	this.x = this.x + (1 * this.multiplier);
+	this.multiplier--;
 	if (this.multiplier < 1)
 	{
 	  this.multiplier = 2;
