@@ -416,6 +416,7 @@ function Monster()
     iRepo.monster.src = randomMonster();
     this.width = iRepo.monster.width;
     this.height = iRepo.monster.height;
+    this.context.clearRect(0, 0, 765, 333);
   };
   
   //Make the monster float up and down in an idling sequence
