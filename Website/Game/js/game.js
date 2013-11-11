@@ -243,18 +243,126 @@ function randomMonster()
 //Picks a random background image from the available pool of backgrounds
 function randomBackground()
 {
-  var choice = Math.floor((Math.random() * 3) + 1);
+  var choice = Math.floor((Math.random() * 30) + 1);
   if (choice === 1)
   {
-    return "Backgrounds/Plains.png";
+    return "Backgrounds/Altar.png";
   }
   else if (choice === 2)
   {
-    return "Backgrounds/Cliff.png";
+    return "Backgrounds/Altar2.png";
   }
   else if (choice === 3)
   {
+    return "Backgrounds/Castle1.png";
+  }
+  else if (choice === 4)
+  {
+    return "Backgrounds/Castle2.png";
+  }
+  else if (choice === 5)
+  {
+    return "Backgrounds/Castle3.png";
+  }
+  else if (choice === 6)
+  {
+    return "Backgrounds/Castle4.png";
+  }
+  else if (choice === 7)
+  {
+    return "Backgrounds/CastleGate.png";
+  }
+  else if (choice === 8)
+  {
+    return "Backgrounds/CastleGrounds.png";
+  }
+  else if (choice === 9)
+  {
+    return "Backgrounds/Cave.png";
+  }
+  else if (choice === 10)
+  {
+    return "Backgrounds/Cave2.png";
+  }
+  else if (choice === 11)
+  {
+    return "Backgrounds/Cave3.png";
+  }
+  else if (choice === 12)
+  {
+    return "Backgrounds/Cliff.png";
+  }
+  else if (choice === 13)
+  {
+    return "Backgrounds/Desert.png";
+  }
+  else if (choice === 14)
+  {
+    return "Backgrounds/DesertTemple.png";
+  }
+  else if (choice === 15)
+  {
     return "Backgrounds/Forest.png";
+  }
+  else if (choice === 16)
+  {
+    return "Backgrounds/Forest2.png";
+  }
+  else if (choice === 17)
+  {
+    return "Backgrounds/Landscape.png";
+  }
+  else if (choice === 18)
+  {
+    return "Backgrounds/Landscape2.png";
+  }
+  else if (choice === 19)
+  {
+    return "Backgrounds/Mine.png";
+  }
+  else if (choice === 20)
+  {
+    return "Backgrounds/Mine2.png";
+  }
+  else if (choice === 21)
+  {
+    return "Backgrounds/Mountain.png";
+  }
+  else if (choice === 22)
+  {
+    return "Backgrounds/Ocean.png";
+  }
+  else if (choice === 23)
+  {
+    return "Backgrounds/Plains.png";
+  }
+  else if (choice === 24)
+  {
+    return "Backgrounds/Prison.png";
+  }
+  else if (choice === 25)
+  {
+    return "Backgrounds/Prison2.png";
+  }
+  else if (choice === 26)
+  {
+    return "Backgrounds/PurpleOcean.png";
+  }
+  else if (choice === 27)
+  {
+    return "Backgrounds/Temple.png";
+  }
+  else if (choice === 28)
+  {
+    return "Backgrounds/Temple2.png";
+  }
+  else if (choice === 29)
+  {
+    return "Backgrounds/Volcano.png";
+  }
+  else if (choice === 30)
+  {
+    return "Backgrounds/Volcano2.png";
   }
 }
 
