@@ -32,15 +32,15 @@
 
 		<div class="content">
 
-			<header>
+			<header class="nonIndex">
 
-				<nav class="navbar">
-					<button type="button" id="logOut" class="navButton">Log Out</button>
+				<nav class="navbar" class="nonIndex">
+					<button type="button" id="startGame" >Begin your Quest!</button>
+					<button type="button" id="gotoStore" >Quizards' Outfitters</button>
 					<button type="button" id="createCard" >Create a Card!</button>
 					<button type="button" id="createDeck" >Create a Deck!</button>
 					<button type="button" id="reviewDecks" >Edit your Decks</button>
-					<button type="button" id="startGame" >Begin your Quest!</button>
-					<button type="button" id="gotoStore" >Quizards' Outfitters</button>
+					<button type="button" id="logOut" class="navButton">Log Out</button>
 				</nav>
 
 			</header>

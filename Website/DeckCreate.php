@@ -32,10 +32,12 @@
 
 		<div class="content">
 
-			<header>
+			<header class="nonIndex">
 				<nav class="navbar">
-					<button type="button" id="logOut" class="navButton">Log Out</button>
 					<button type="button" id="home" class="navButton">Home</button>
+					<button type="button" id="createCard" >Create a Card!</button>
+					<button type="button" id="reviewDecks" >Edit your Decks</button>
+					<button type="button" id="logOut" class="navButton">Log Out</button>
 				</nav>
 			</header>
 
