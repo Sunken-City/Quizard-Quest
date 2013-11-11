@@ -10,7 +10,7 @@
 	for ($count =0; $count < $row; $count++){
 		echo "<div class=\"semiCard\">
 				<input type=\"checkbox\" value=".$test[$count]->{'cardID'}." name=\"cardAdd[]\"</input>
-				<p>Q: ".$test[$count]->{'question'}."<br>";
+				<p> Q: ".$test[$count]->{'question'}."<br>";
 		echo "A: " . $test[$count]->{'answer'} . "</p>";
 		echo "</div>";
 	}
