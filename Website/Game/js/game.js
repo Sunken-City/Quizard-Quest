@@ -108,7 +108,7 @@ function nextCard()
   {
     currCard = deck.draw();
     setQuestion(currCard.question);
-    iRepo.monster.src = path + randomMonster();
+    iRepo.monster.src = randomMonster();
     iRepo.background.src = path + randomBackground();
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
