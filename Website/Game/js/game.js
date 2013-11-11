@@ -108,7 +108,7 @@ function nextCard()
   {
     currCard = deck.draw();
     setQuestion(currCard.question);
-    iRepo.monster.src = randomMonster();
+    game.monster.change();
     iRepo.background.src = path + randomBackground();
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
@@ -413,7 +413,9 @@ function Monster()
   
   this.change = function() 
   {
-    iRepo.changeImage(iRepo.monster, "Sprites/Heart.png");
+    iRepo.monster.src = randomMonster();
+    this.width = iRepo.monster.width;
+    this.height = iRepo.monster.height;
   };
   
   //Make the monster float up and down in an idling sequence
