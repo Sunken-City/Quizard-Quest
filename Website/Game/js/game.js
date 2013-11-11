@@ -97,7 +97,7 @@ var iRepo = new function() {
   
   // Set images src
   this.background.src = path + randomBackground();
-  this.monster.src = path + randomMonster();
+  this.monster.src = randomMonster();
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
@@ -189,18 +189,54 @@ function submitAnswer()
 //Picks a random monster image from the available pool of monsters
 function randomMonster()
 {
-  var choice = Math.floor((Math.random() * 3) + 1);
+  var choice = Math.floor((Math.random() * 12) + 1);
   if (choice === 1)
   {
-    return "Sprites/Centipede.png";
+    return "../../Resources/Game/Sprites/Bugs/Centipede.png";
   }
   else if (choice === 2)
   {
-    return "Sprites/Slug.png";
+    return "../../Resources/Game/Sprites/Bugs/Slug.png";
   }
   else if (choice === 3)
   {
-    return "Sprites/Stag.png";
+    return "../../Resources/Game/Sprites/Bugs/Stag.png";
+  }
+  else if (choice === 4)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Ant.png";
+  }
+  else if (choice === 5)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Butterfly.png";
+  }
+  else if (choice === 6)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Ekans.png";
+  }
+  else if (choice === 7)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Beadrill.png";
+  }
+  else if (choice === 8)
+  {
+    return "../../Resources/Game/Sprites/Bugs/BigWingBug.png";
+  }
+  else if (choice === 9)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Dragonfly.png";
+  }
+  else if (choice === 10)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Frog.png";
+  }
+  else if (choice === 11)
+  {
+    return "../../Resources/Game/Sprites/Bugs/FuzzyBug.png";
+  }
+  else if (choice === 12)
+  {
+    return "../../Resources/Game/Sprites/Bugs/RedBug.png";
   }
 }
 
