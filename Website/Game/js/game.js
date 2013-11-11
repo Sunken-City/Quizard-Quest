@@ -97,7 +97,7 @@ var iRepo = new function() {
   
   // Set images src
   this.background.src = path + randomBackground();
-  this.monster.src = path + randomMonster();
+  this.monster.src = randomMonster();
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
@@ -108,7 +108,7 @@ function nextCard()
   {
     currCard = deck.draw();
     setQuestion(currCard.question);
-    iRepo.monster.src = path + randomMonster();
+    game.monster.change();
     iRepo.background.src = path + randomBackground();
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
@@ -189,36 +189,180 @@ function submitAnswer()
 //Picks a random monster image from the available pool of monsters
 function randomMonster()
 {
-  var choice = Math.floor((Math.random() * 3) + 1);
+  var choice = Math.floor((Math.random() * 12) + 1);
   if (choice === 1)
   {
-    return "Sprites/Centipede.png";
+    return "../../Resources/Game/Sprites/Bugs/Centipede.png";
   }
   else if (choice === 2)
   {
-    return "Sprites/Slug.png";
+    return "../../Resources/Game/Sprites/Bugs/Slug.png";
   }
   else if (choice === 3)
   {
-    return "Sprites/Stag.png";
+    return "../../Resources/Game/Sprites/Bugs/Stag.png";
+  }
+  else if (choice === 4)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Ant.png";
+  }
+  else if (choice === 5)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Butterfly.png";
+  }
+  else if (choice === 6)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Ekans.png";
+  }
+  else if (choice === 7)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Beadrill.png";
+  }
+  else if (choice === 8)
+  {
+    return "../../Resources/Game/Sprites/Bugs/BigWingBug.png";
+  }
+  else if (choice === 9)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Dragonfly.png";
+  }
+  else if (choice === 10)
+  {
+    return "../../Resources/Game/Sprites/Bugs/Frog.png";
+  }
+  else if (choice === 11)
+  {
+    return "../../Resources/Game/Sprites/Bugs/FuzzyBug.png";
+  }
+  else if (choice === 12)
+  {
+    return "../../Resources/Game/Sprites/Bugs/RedBug.png";
   }
 }
 
 //Picks a random background image from the available pool of backgrounds
 function randomBackground()
 {
-  var choice = Math.floor((Math.random() * 3) + 1);
+  var choice = Math.floor((Math.random() * 30) + 1);
   if (choice === 1)
   {
-    return "Backgrounds/Plains.png";
+    return "Backgrounds/Altar.png";
   }
   else if (choice === 2)
   {
-    return "Backgrounds/Cliff.png";
+    return "Backgrounds/Altar2.png";
   }
   else if (choice === 3)
   {
+    return "Backgrounds/Castle1.png";
+  }
+  else if (choice === 4)
+  {
+    return "Backgrounds/Castle2.png";
+  }
+  else if (choice === 5)
+  {
+    return "Backgrounds/Castle3.png";
+  }
+  else if (choice === 6)
+  {
+    return "Backgrounds/Castle4.png";
+  }
+  else if (choice === 7)
+  {
+    return "Backgrounds/CastleGate.png";
+  }
+  else if (choice === 8)
+  {
+    return "Backgrounds/CastleGrounds.png";
+  }
+  else if (choice === 9)
+  {
+    return "Backgrounds/Cave.png";
+  }
+  else if (choice === 10)
+  {
+    return "Backgrounds/Cave2.png";
+  }
+  else if (choice === 11)
+  {
+    return "Backgrounds/Cave3.png";
+  }
+  else if (choice === 12)
+  {
+    return "Backgrounds/Cliff.png";
+  }
+  else if (choice === 13)
+  {
+    return "Backgrounds/Desert.png";
+  }
+  else if (choice === 14)
+  {
+    return "Backgrounds/DesertTemple.png";
+  }
+  else if (choice === 15)
+  {
     return "Backgrounds/Forest.png";
+  }
+  else if (choice === 16)
+  {
+    return "Backgrounds/Forest2.png";
+  }
+  else if (choice === 17)
+  {
+    return "Backgrounds/Landscape.png";
+  }
+  else if (choice === 18)
+  {
+    return "Backgrounds/Landscape2.png";
+  }
+  else if (choice === 19)
+  {
+    return "Backgrounds/Mine.png";
+  }
+  else if (choice === 20)
+  {
+    return "Backgrounds/Mine2.png";
+  }
+  else if (choice === 21)
+  {
+    return "Backgrounds/Mountain.png";
+  }
+  else if (choice === 22)
+  {
+    return "Backgrounds/Ocean.png";
+  }
+  else if (choice === 23)
+  {
+    return "Backgrounds/Plains.png";
+  }
+  else if (choice === 24)
+  {
+    return "Backgrounds/Prison.png";
+  }
+  else if (choice === 25)
+  {
+    return "Backgrounds/Prison2.png";
+  }
+  else if (choice === 26)
+  {
+    return "Backgrounds/PurpleOcean.png";
+  }
+  else if (choice === 27)
+  {
+    return "Backgrounds/Temple.png";
+  }
+  else if (choice === 28)
+  {
+    return "Backgrounds/Temple2.png";
+  }
+  else if (choice === 29)
+  {
+    return "Backgrounds/Volcano.png";
+  }
+  else if (choice === 30)
+  {
+    return "Backgrounds/Volcano2.png";
   }
 }
 
@@ -269,7 +413,11 @@ function Monster()
   
   this.change = function() 
   {
-    iRepo.changeImage(iRepo.monster, "Sprites/Heart.png");
+    this.context.clearRect(0, 0, 765, 333);
+    iRepo.monster.src = randomMonster();
+    this.width = iRepo.monster.width;
+    this.height = iRepo.monster.height;
+    //this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
   //Make the monster float up and down in an idling sequence
