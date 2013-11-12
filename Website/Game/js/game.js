@@ -413,6 +413,10 @@ function Monster()
     this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
+  this.clearAll = function() {
+    this.context.clearRect(0, 0, 765, 333);
+  };
+  
   this.clear = function() {
     this.context.clearRect(this.x, this.y, this.width, this.height);
   };
@@ -422,10 +426,8 @@ function Monster()
       loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
-      
+      game.monster.clearAll();
     });
-    this.context.clearRect(0, 0, 765, 333);
-    //this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
   //Make the monster float up and down in an idling sequence
