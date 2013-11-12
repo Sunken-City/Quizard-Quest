@@ -3,6 +3,11 @@
 \*/
 
 $(document).ready(function() {
+
+	var newHeight = $("#logInSection").height();
+	$("#headerIndex").css({
+		'height':newHeight + 'px',
+	});
 	
 	/*\
 	|*|				:: >> Authenticate User After Login << ::
@@ -39,9 +44,9 @@ $(document).ready(function() {
 
 	});
 
-	$("#resetPassword").click(function (e) {
-		window.location.href= "passwordReset.php";
-	})
+	// $("#resetPassword").click(function (e) {
+	// 	window.location.href= "passwordReset.php";
+	// })
 
 	$("#signUp").click(function (e) {
 

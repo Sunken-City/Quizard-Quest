@@ -21,8 +21,7 @@
 
 		<div class="content">
 
-			<header>
-
+			<header id="headerIndex">
 				<!-- Section for the Log In form -->
 				<section id="logInSection">
 
@@ -38,7 +37,10 @@
 									<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
 									<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
 									<td><input type="submit" value="Log In" id="logInButton" class="submitButton" /></td>
-									<td><button type="button" id="resetPassword">Reset Password</button></td>
+								</tr>
+								<tr>
+									<td class="blankData"></td>
+									<td id="resetPasswordTd"><a href="passwordReset.php" id="resetPassword">Reset Password</a></td>
 								</tr>
 							</table>
 						</form>
@@ -85,7 +87,7 @@
 									*<select name="SecurityQuestion" id="securityQuestion" required>
 										<option value="">Select a Question</option>
 										<option value="1">What is your mother's maiden name?</option>
-										<option value="2">What is the Scrabble value of your mother's maiden name?</option>
+										<option value="2">Who is your favorite grade school teacher?</option>
 										<option value="3">What is your dream car?</option>
 									</select>
 								</td>

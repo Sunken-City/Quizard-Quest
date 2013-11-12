@@ -111,6 +111,15 @@ h3 {
 	text-align: center;
 }
 
+.navbar button {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.navbar #logOut {
+	margin-left: 2em;
+}
+
 #titles {
 	width: 900px;
 	margin-left: 0px;
@@ -122,7 +131,7 @@ h3 {
 
 #createAccountSection {
 	float: right;
-	margin-top: -40px;
+	/*margin-top: -40px;*/
 	text-align: right;
 }
 
@@ -138,6 +147,15 @@ h3 {
 	padding-right: 20px;
 }
 
+#logInSection {
+	float: right;
+}
+
+.navbar {
+	float: right;
+	margin-right: .5em;
+}
+
 footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -148,10 +166,34 @@ footer {
 	margin-left: auto;
 }
 
+a {
+	font-family: 'Share Tech Mono', sans-serif;
+	font-size: .75em;
+	color: rgb(50,153,187);
+	vertical-align: text-top;
+	padding-left: .25em;
+}
+
+a:visited {
+	font-family: 'Share Tech Mono', sans-serif;
+	font-size: .75em;
+	color: rgb(188,188,188);
+}
+
+a:active {
+	font-family: 'Share Tech Mono', sans-serif;
+	font-size: .75em;
+	color: rgb(10,113,147);
+}
+
 p {
 	display: inline;
 	padding-left: 1em;
 	font-size: 1em;	
+}
+
+#resetPasswordTd {
+	margin-top: -.25em;
 }
 
 input,label,select {
@@ -168,6 +210,10 @@ input,label,select {
 	width: 172px;
 	margin-bottom: 10px;
 	word-wrap:break-word;
+}
+
+#logIn [type="text"],#logIn [type="email"],#logIn [type="password"] {
+	margin-bottom: 0px;
 }
 
 .submitButton,select,button {
@@ -187,7 +233,7 @@ input,select {
 	margin-top: 10px;
 }
 
-#logIn table tr:nth-child(2) td:nth-child(3){
+#logIn table tr:nth-child(2) td:nth-child(3),#logIn table tr:nth-child(2) td:nth-child(4){
 	vertical-align: top;
 }
 
