@@ -5,7 +5,7 @@
 $(document).ready(function() {
 
 	var newHeight = $(".navbar").height() * 2;
-	var halfHeight = newHeight/2;
+	var lessHeight = newHeight/4;
 
 	$("header.nonIndex").css({
 		'height':newHeight + 'px',
@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
 	$(".navbar").css({
-		'margin-top': halfHeight + 'px',
+		'margin-top': lessHeight + 'px',
 	});
 
 	/*\
