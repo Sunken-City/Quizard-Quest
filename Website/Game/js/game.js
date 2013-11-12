@@ -95,17 +95,17 @@ var iRepo = new function() {
     imageLoaded();
   }
   
-  function loadMonster(src, callback) 
-  {
-    this.monster.src = src;
-    monster.onload = callback;
-  }
-  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = randomMonster();
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
+}
+
+function loadMonster(src, callback) 
+{
+  iRepo.monster.src = src;
+  iRepo.monster.onload = callback;
 }
 
 function nextCard()
@@ -419,7 +419,7 @@ function Monster()
   
   this.change = function() 
   {
-    iRepo.loadMonster(randomMonster(), function() {
+      loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
       this.context.clearRect(0, 0, 765, 333);
