@@ -8,6 +8,7 @@ $(document).ready(function() {
 
 	$("header.nonIndex").css({
 		'height':newHeight + 'px',
+		'vertical-align':'middle',
 	});
 
 	/*\
