@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 
-	var newHeight = $(".navbar").height();
+	var newHeight = $(".navbar").height() * 2;
 
 	$("header.nonIndex").css({
 		'height':newHeight + 'px',
