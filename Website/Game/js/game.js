@@ -419,7 +419,7 @@ function Monster()
   
   this.change = function() 
   {
-    loadSprite(randomMonster(), function() {
+    iRepo.loadSprite(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
       this.context.clearRect(0, 0, 765, 333);
