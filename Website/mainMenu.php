@@ -33,7 +33,7 @@
 		<div class="content">
 
 			<header class="nonIndex">
-
+				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar" class="nonIndex">
 					<button type="button" id="startGame" >Begin your Quest!</button>
 					<button type="button" id="gotoStore" >Quizards' Outfitters</button>
