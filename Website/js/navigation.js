@@ -5,10 +5,15 @@
 $(document).ready(function() {
 
 	var newHeight = $(".navbar").height() * 2;
+	var halfHeight = newHeight/2;
 
 	$("header.nonIndex").css({
 		'height':newHeight + 'px',
 		'vertical-align':'middle',
+	});
+
+	$(".navbar").css({
+		'margin-top': halfHeight + 'px';
 	});
 
 	/*\
