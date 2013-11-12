@@ -95,10 +95,10 @@ var iRepo = new function() {
     imageLoaded();
   }
   
-  function loadSprite(src, callback) 
+  function loadMonster(src, callback) 
   {
     this.monster.src = src;
-    sprite.onload = callback;
+    monster.onload = callback;
   }
   
   // Set images src
@@ -419,7 +419,7 @@ function Monster()
   
   this.change = function() 
   {
-    iRepo.loadSprite(randomMonster(), function() {
+    iRepo.loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
       this.context.clearRect(0, 0, 765, 333);
