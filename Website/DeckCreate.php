@@ -33,6 +33,7 @@
 		<div class="content">
 
 			<header class="nonIndex">
+				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar">
 					<button type="button" id="home" class="navButton">Home</button>
 					<button type="button" id="createCard" >Create a Card!</button>

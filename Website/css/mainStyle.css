@@ -221,6 +221,12 @@ input,label,select {
 	margin-top: 1px;
 }
 
+#headerLogo {
+	height:inherit;
+	width:15%;
+	padding-left:.5em;
+}
+
 header label,input {
 	margin-bottom: 0em;
 }
