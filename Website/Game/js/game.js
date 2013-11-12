@@ -422,9 +422,9 @@ function Monster()
       loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
-      this.context.clearRect(0, 0, 765, 333);
+      
     });
-
+    this.context.clearRect(0, 0, 765, 333);
     //this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
