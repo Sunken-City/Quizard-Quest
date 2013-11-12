@@ -1,0 +1,23 @@
+body {
+	background-color:blue;
+}
+
+#logInSection {
+	left:1290px;
+	background-color:gray;
+}
+
+#logInDiv {
+	background-color: gray;
+	
+}
+
+#createAccountSection{
+	margin-top: 180px;
+	float:right;
+	
+}
+
+#createAccountDiv {
+	background-color:red;
+}

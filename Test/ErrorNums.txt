@@ -1,0 +1,9 @@
+--==ERROR CODES==--
+Errors are represented as 3 digit numbers.
+The first digit represents whom the error pertains to.
+The second digit represents the page the error comes from.
+The third digit represents the specific error.
+
+100 = Registration error: User already exists
+101 = Registration error: Email already exists
+199 = Login error: User isn't logged in

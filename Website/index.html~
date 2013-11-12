@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!-- 
+Home Page for Quizard Quest
+Created by nathanDmoore Saturday October 19,2013
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Quizard Quest: Home</title>
+		<link rel="stylesheet" href="css/mainStyle.css"/>
+		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type = "text/javascript" src="js/index.js"></script>
+	</head>
+	<body>
+		<section id="logInSection">
+			<div id="logInDiv">
+				<form id="logIn" action="#" method="POST" autocomplete="off">
+					<table>
+						<tr>
+							<td><label>Username: </label></td>
+							<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
+						</tr>
+						<tr>
+		        			<td><label>Password: </label></td>
+		        			<td><input type="password" placeholder="Password" name="password" id="password" required/></td>
+		        		</tr>
+	        			<tr>
+	        				<td></td>
+	        				<td class="submitButton"><input type="submit" value="Log In" id="logInButton"/></td>
+	        			</tr>
+	        		</table>
+				</form>
+			</div>
+		</section>
+
+		<section id="createAccountSection">
+			<div id="createAccountDiv">
+				<form id="createAccount" action="../API_Server/createAccount.php" method="post" autocomplete="on">
+					<h1 id="createAcountHeader">Create a Quizard Quest Account</h1>
+					<table>
+						<tr>
+							<td><label>First Name: </label></td>
+							<td><input type="text" placeholder="First Name" id="firstName" name="fname" title="Cannot be left empty" required/></td>
+						</tr>
+						<tr>
+							<td><label>Last Name: </label></td>
+							<td><input type="text" placeholder="Last Name" id="lastName" name="lname" title="Cannot be left empty" required/></td>
+						</tr>
+						<tr>
+							<td><label>Email: </label></td>
+							<td><input type="email" placeholder="me@example.com" id="email" name="Email" title="Must be a valid email using '@' and '.' "required /></td>
+						</tr>
+						<tr>
+							<td><label>Username: </label></td>
+							<td><input type="text" placeholder="Username" pattern=".{6,20}" name="username" title="Username must be 6-20 characters" id="username" required/></td>
+						</tr>
+						<tr>
+							<td><label>Password: </label></td>
+							<td><input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
+						</tr>
+						<tr>
+							<td><label>Gender: </label></td>
+							<td>
+								<input type="radio" name="gender" value="m" id="male" class="gender"/>Male
+								<input type="radio" name="gender" value="f" id="female" class="gender"/>Female
+							</td>
+						</tr>
+						<tr>
+							<td><label>Grade: </label></td>
+							<td>
+								<select name="Grade" id="grade">
+									<option value="">Select Grade</option>
+									<option value="Kinder">Kinder</option>
+									<option value="First">1st</option>
+									<option value="Second">2nd</option>
+									<option value="Third">3rd</option>
+									<option value="Fourth">4th</option>
+									<option value="Fifth">5th</option>
+									<option value="Sixth">6th</option>
+									<option value="Seventh">7th</option>
+									<option value="Eighth">8th</option>
+									<option value="Ninth">9th</option>
+									<option value="Tenth">10th</option>
+									<option value="Eleventh">11th</option>
+									<option value="Twelfth">12th</option>
+									<option value="Freshman">Freshman</option>
+									<option value="Sophomore">Sophomore</option>
+									<option value="Junior">Junior</option>
+									<option value="Senior">Senior</option>
+									<option value="Graduate">Graduate</option>
+									<option value="Post-Graduate">Post-Graduate</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="submitButton"><input type="submit" value="Sign Up" id="signUp" /></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</section>
+
+	</body>
+</html>
