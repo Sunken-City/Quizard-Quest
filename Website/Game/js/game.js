@@ -105,8 +105,8 @@ var iRepo = new function() {
   function reloadMonster()
   {
     //    this.monster.src = randomMonster();
-    game.monster.width = this.monster.width;
-    game.monster.height = this.monster.height;
+    game.monster.width = iRepo.monster.width;
+    game.monster.height = iRepo.monster.height;
   }
   
   // Set images src
