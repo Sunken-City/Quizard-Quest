@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
 	$(".navbar").css({
-		'margin-top': halfHeight + 'px';
+		'margin-top': halfHeight + 'px',
 	});
 
 	/*\
