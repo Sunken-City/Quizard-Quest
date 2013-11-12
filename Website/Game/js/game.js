@@ -104,7 +104,6 @@ var iRepo = new function() {
   
   function reloadMonster()
   {
-    //    this.monster.src = randomMonster();
     game.monster.width = iRepo.monster.width;
     game.monster.height = iRepo.monster.height;
   }
@@ -427,8 +426,8 @@ function Monster()
   
   this.change = function() 
   {
-    this.context.clearRect(0, 0, 765, 333);
     iRepo.monster.src = randomMonster();
+    this.context.clearRect(0, 0, 765, 333);
     //this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
