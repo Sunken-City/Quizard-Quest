@@ -84,14 +84,7 @@ var iRepo = new function() {
   }
   
   this.monster.onload = function(){
-    if (numLoaded < numImages)
-    {
-      imageLoaded();
-    }
-    else
-    {
-      reloadMonster();
-    }
+    imageLoaded();
   }
   
   this.avatar.onload = function(){
@@ -102,10 +95,10 @@ var iRepo = new function() {
     imageLoaded();
   }
   
-  function reloadMonster()
+  function loadSprite(src, callback) 
   {
-    game.monster.width = iRepo.monster.width;
-    game.monster.height = iRepo.monster.height;
+    this.monster.src = src;
+    sprite.onload = callback;
   }
   
   // Set images src
@@ -426,8 +419,12 @@ function Monster()
   
   this.change = function() 
   {
-    iRepo.monster.src = randomMonster();
-    this.context.clearRect(0, 0, 765, 333);
+    loadSprite(randomMonster(), function() {
+      game.monster.width = iRepo.monster.width;
+      game.monster.height = iRepo.monster.height;
+      this.context.clearRect(0, 0, 765, 333);
+    });
+
     //this.context.drawImage(iRepo.monster, this.x, this.y, this.width, this.height);
   };
   
