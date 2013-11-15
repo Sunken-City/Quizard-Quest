@@ -70,28 +70,25 @@ var iRepo = new function() {
   var numImages = 4;
   var numLoaded = 0;
   
-  function imageLoaded()
-  {
+  function imageLoaded() {
     numLoaded++;
     if (numLoaded === numImages)
-    {
       window.init();
-    }
   }
   
-  this.background.onload = function(){
+  this.background.onload = function() {
     imageLoaded();
   }
   
-  this.monster.onload = function(){
+  this.monster.onload = function() {
     imageLoaded();
   }
   
-  this.avatar.onload = function(){
+  this.avatar.onload = function() {
     imageLoaded();
   }
   
-  this.heart.onload = function(){
+  this.heart.onload = function() {
     imageLoaded();
   }
   
@@ -102,90 +99,74 @@ var iRepo = new function() {
   this.heart.src = path + "/Sprites/Heart.png";
 }
 
-function loadMonster(src, callback) 
-{
+function loadMonster(src, callback) {
+  
   iRepo.monster.src = src;
   iRepo.monster.onload = callback;
 }
 
-function nextCard()
-{
-  if (deck.cards.length != 0)
-  {
+function nextCard() {
+  
+  if (deck.cards.length != 0) {
     currCard = deck.draw();
     setQuestion(currCard.question);
     game.monster.change();
     iRepo.background.src = path + randomBackground();
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
-  else
-  {
+  else {
     avatarMoveTo = avatarMoveTo + avatarInc;
     gamePlaying = false;
   }
 }
 
-function setQuestion(q)
-{
+function setQuestion(q) {
   question = ">Q: " + q;
 }
 
-function Deck()
-{
-  this.init = function()
-  {
+function Deck() {
+  
+  this.init = function() {
     this.cards = new Array();
   }
   
-  this.add = function(card)
-  {
+  this.add = function(card) {
     this.cards.push(card); 
   }
   
-  this.draw = function()
-  {
+  this.draw = function() {
     return this.cards.pop();
   }
   
-  this.shuffle = function()
-  {
+  this.shuffle = function() {
     this.cards = shuffle(this.cards);
   }
 }
 
-function Card()
-{
-  this.init = function(question, answer, category)
-  {
+function Card() {
+  
+  this.init = function(question, answer, category) {
     this.question = question;
     this.answer = answer;
     this.category = category;
   }
 }
 
-function loseLife()
-{
+function loseLife() {
   lives = lives - 1;
   if (lives == 0)
-  {
    gamePlaying = false; 
-  }
 }
 
-function submitAnswer()
-{
-  if (gamePlaying)
-  {
-    if (currCard.answer == game.input._value)
-    {
+function submitAnswer() {
+  if (gamePlaying) {
+    if (currCard.answer == game.input._value) {
       nextCard();
     }
-    else
-    {
+    else {
       if (gameMode > GameMode.Training)
-      {
-	loseLife();
-      }
+         loseLife();
+      
       nextCard();
     }
     game.input._value = "";
@@ -193,189 +174,144 @@ function submitAnswer()
 }
 
 //Picks a random monster image from the available pool of monsters
-function randomMonster()
-{
+function randomMonster() {
   var choice = Math.floor((Math.random() * 12) + 1);
   if (choice === 1)
-  {
     return "../../Resources/Game/Sprites/Bugs/Centipede.png";
-  }
+  
   else if (choice === 2)
-  {
     return "../../Resources/Game/Sprites/Bugs/Slug.png";
-  }
+  
   else if (choice === 3)
-  {
     return "../../Resources/Game/Sprites/Bugs/Stag.png";
-  }
+  
   else if (choice === 4)
-  {
     return "../../Resources/Game/Sprites/Bugs/Ant.png";
-  }
+  
   else if (choice === 5)
-  {
     return "../../Resources/Game/Sprites/Bugs/Butterfly.png";
-  }
+  
   else if (choice === 6)
-  {
     return "../../Resources/Game/Sprites/Bugs/Ekans.png";
-  }
+  
   else if (choice === 7)
-  {
     return "../../Resources/Game/Sprites/Bugs/Beadrill.png";
-  }
+
   else if (choice === 8)
-  {
     return "../../Resources/Game/Sprites/Bugs/BigWingBug.png";
-  }
+  
   else if (choice === 9)
-  {
     return "../../Resources/Game/Sprites/Bugs/Dragonfly.png";
-  }
+  
   else if (choice === 10)
-  {
     return "../../Resources/Game/Sprites/Bugs/Frog.png";
-  }
+  
   else if (choice === 11)
-  {
     return "../../Resources/Game/Sprites/Bugs/FuzzyBug.png";
-  }
+ 
   else if (choice === 12)
-  {
     return "../../Resources/Game/Sprites/Bugs/RedBug.png";
-  }
 }
 
 //Picks a random background image from the available pool of backgrounds
-function randomBackground()
-{
+function randomBackground() {
   var choice = Math.floor((Math.random() * 30) + 1);
   if (choice === 1)
-  {
     return "Backgrounds/Altar.png";
-  }
+  
   else if (choice === 2)
-  {
     return "Backgrounds/Altar2.png";
-  }
+  
   else if (choice === 3)
-  {
     return "Backgrounds/Castle1.png";
-  }
+  
   else if (choice === 4)
-  {
     return "Backgrounds/Castle2.png";
-  }
+  
   else if (choice === 5)
-  {
     return "Backgrounds/Castle3.png";
-  }
+  
   else if (choice === 6)
-  {
     return "Backgrounds/Castle4.png";
-  }
+  
   else if (choice === 7)
-  {
     return "Backgrounds/CastleGate.png";
-  }
+  
   else if (choice === 8)
-  {
     return "Backgrounds/CastleGrounds.png";
-  }
+  
   else if (choice === 9)
-  {
     return "Backgrounds/Cave.png";
-  }
+  
   else if (choice === 10)
-  {
     return "Backgrounds/Cave2.png";
-  }
+  
   else if (choice === 11)
-  {
     return "Backgrounds/Cave3.png";
-  }
+  
   else if (choice === 12)
-  {
     return "Backgrounds/Cliff.png";
-  }
+
   else if (choice === 13)
-  {
     return "Backgrounds/Desert.png";
-  }
+
   else if (choice === 14)
-  {
     return "Backgrounds/DesertTemple.png";
-  }
+  
   else if (choice === 15)
-  {
     return "Backgrounds/Forest.png";
-  }
+  
   else if (choice === 16)
-  {
     return "Backgrounds/Forest2.png";
-  }
+  
   else if (choice === 17)
-  {
     return "Backgrounds/Landscape.png";
-  }
+  
   else if (choice === 18)
-  {
     return "Backgrounds/Landscape2.png";
-  }
+  
   else if (choice === 19)
-  {
     return "Backgrounds/Mine.png";
-  }
+  
   else if (choice === 20)
-  {
     return "Backgrounds/Mine2.png";
-  }
+  
   else if (choice === 21)
-  {
     return "Backgrounds/Mountain.png";
-  }
+  
   else if (choice === 22)
-  {
     return "Backgrounds/Ocean.png";
-  }
+  
   else if (choice === 23)
-  {
     return "Backgrounds/Plains.png";
-  }
+  
   else if (choice === 24)
-  {
     return "Backgrounds/Prison.png";
-  }
+  
   else if (choice === 25)
-  {
     return "Backgrounds/Prison2.png";
-  }
+  
   else if (choice === 26)
-  {
     return "Backgrounds/PurpleOcean.png";
-  }
+  
   else if (choice === 27)
-  {
     return "Backgrounds/Temple.png";
-  }
+  
   else if (choice === 28)
-  {
     return "Backgrounds/Temple2.png";
-  }
+  
   else if (choice === 29)
-  {
     return "Backgrounds/Volcano.png";
-  }
+  
   else if (choice === 30)
-  {
     return "Backgrounds/Volcano2.png";
-  }
+  
 }
 
 //The interface for anything that gets drawn on screen
-function Drawable()
-{
-  this.init = function(x, y, width, height){
+function Drawable() {
+  
+  this.init = function(x, y, width, height) {
     //Default variables
     this.x = x;
     this.y = y;
@@ -388,24 +324,23 @@ function Drawable()
   this.canvasHeight = 0;
   
   //Implemented in children
-  this.draw = function(){
-  };
+  this.draw = function() {};
 }
 
 /**
  * Canvas Creation
  */
 
-function Background()
-{
+function Background() {
+  
   this.draw = function() {
     this.context.drawImage(iRepo.background, this.x, this.y, this.width, this.height);
     //this.context.fillRect(0, 333, 765, 666);
   };
 }
 
-function Monster()
-{
+function Monster() {
+  
   this.idleVal = 0;
   this.idleUp = true;
   
@@ -421,8 +356,7 @@ function Monster()
     this.context.clearRect(this.x, this.y, this.width, this.height);
   };
   
-  this.change = function() 
-  {
+  this.change = function() {
       loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
@@ -434,35 +368,26 @@ function Monster()
   this.idle = function() {  
     //If we hit a boundary, then change direction
     if (this.idleVal == 20)
-    {
       this.idleUp = false;
-    }
-    else if (this.idleVal == -20)
-    {
-      this.idleUp = true;
-    }
     
-    if (this.idleUp)
-    {
+    else if (this.idleVal == -20)
+      this.idleUp = true;
+        
+    if (this.idleUp) {
       this.idleVal++;
       if (this.idleVal % 10 == 0)
-      {
-	this.y++;
-      }
+      	this.y++;
     }
-    else 
-    {
+    else {
       this.idleVal--;
       if (this.idleVal % 10 == 0)
-      {
-	this.y--;
-      }
+      	this.y--;
     }
   };
 }
 
-function Avatar()
-{
+function Avatar() {
+  
   this.pointCache = 0;
   
   this.draw = function() {
@@ -474,36 +399,28 @@ function Avatar()
     this.context.clearRect(0, this.y, 765, this.height);
   };
   
-  this.move = function(nextPoint) 
-  {
-    if (this.x < nextPoint)
-    {
-      if (this.pointCache != nextPoint)
-      {
-	this.pointCache = nextPoint;
-	this.turningPoint = (this.pointCache - this.x)/2 + this.x;
-	this.multiplier = 2;
+  this.move = function(nextPoint) {
+    if (this.x < nextPoint) {
+      if (this.pointCache != nextPoint) {
+	      this.pointCache = nextPoint;
+	      this.turningPoint = (this.pointCache - this.x)/2 + this.x;
+	      this.multiplier = 2;
       }
       
-      if (this.x <= this.turningPoint)
-      {
-	this.x = this.x + this.multiplier;
-	this.multiplier++;
+      if (this.x <= this.turningPoint) {
+	      this.x = this.x + this.multiplier;
+	      this.multiplier++;
       }
-      else
-      {
-	this.x = this.x + this.multiplier;
-	this.multiplier--;
-	if (this.multiplier < 1)
-	{
-	  this.multiplier = 2;
-	}
+      else {
+	      this.x = this.x + this.multiplier;
+	      this.multiplier--;
+	      if (this.multiplier < 1)
+	         this.multiplier = 2;
       }
       
-      if (this.x > nextPoint)
-      {
-	this.x = nextPoint;
-	this.multiplier = 20;
+      if (this.x > nextPoint) {
+	      this.x = nextPoint;
+	      this.multiplier = 20;
       }
       //Code for a rainbow trail:
       //this.context.fillStyle = colorFromPhase(this.x);
@@ -512,11 +429,10 @@ function Avatar()
   };
 }
 
-function Etc(Image)
-{ 
+function Etc(Image) { 
+  
   this.image = Image;
-  this.draw = function() 
-  {
+  this.draw = function() {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
 }
@@ -576,17 +492,16 @@ Etc.prototype = new Drawable();
 /**
  * Ensure the game sound has loaded before starting the game
  */
-function checkReadyState() 
-{
-  if (game.backgroundAudio.readyState === 4) 
-  {
+function checkReadyState() {
+
+  if (game.backgroundAudio.readyState === 4) {
     window.clearInterval(game.checkAudio);
     game.start();
   }
 }
 
-function Game()
-{
+function Game() {
+
   this.init = function() {
     //Grab the canvas from the page
     this.bgCanvas = document.getElementById('background');
@@ -609,8 +524,7 @@ function Game()
       onsubmit: function() {submitAnswer()}
     });
     //Check to see if we can use the canvas
-    if (this.bgCanvas.getContext)
-    {
+    if (this.bgCanvas.getContext) {
       this.bgContext = this.bgCanvas.getContext('2d');
       this.mContext = this.mCanvas.getContext('2d');
       this.aContext = this.aCanvas.getContext('2d');
@@ -635,10 +549,9 @@ function Game()
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      if (gameMode > 0)
-      {
-	this.heart = new Etc(iRepo.heart);
-	this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
+      if (gameMode > 0) {
+	      this.heart = new Etc(iRepo.heart);
+	      this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
       }
       
       this.monster = new Monster();
@@ -658,15 +571,11 @@ function Game()
       this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
       
       if (mute == false)
-      {
-	this.backgroundAudio.play();
-      }
+      	this.backgroundAudio.play();
     }
-    else
-    {
-      //Return if we don't have canvas support on this bozo's computer. IE6 PROBLEMS >:I
+    //Return if we don't have canvas support on this bozo's computer. IE6 PROBLEMS >:I
+    else  
       return;
-    }
   };
   
   this.start = function() {
@@ -680,12 +589,10 @@ function Game()
  * function must be a gobal function and cannot be within an
  * object.
  */
-function animate() 
-{
+function animate() {
   requestAnimFrame(animate);
   
-  if (gamePlaying)
-  {
+  if (gamePlaying) {
     game.background.draw();
 
     game.monster.clear();
@@ -696,13 +603,11 @@ function animate()
     document.getElementById('answer').innerHTML = game.input._value;  
   }
   
-  else
-  {
+  else {
     document.getElementById('question').innerHTML = "FINISHED!";  
   }
    
-  if (gameMode > GameMode.Training)
-  {
+  if (gameMode > GameMode.Training) {
     game.heart.draw();
     document.getElementById('lives').innerHTML = " x" + lives;  
   }
@@ -713,8 +618,8 @@ function animate()
 }
  
 //Temporary function to test out deck creation.
-function initCardsAndDeck()
-{
+function initCardsAndDeck(){
+  
   var card1 = new Card();
   card1.init("Sqrt(Onions)", "Shallots", 1);
   var card2 = new Card();
@@ -753,8 +658,8 @@ window.requestAnimFrame = (function(){
 var game = new Game();
 var deck = new Deck();
 
-function init()
-{
+function init() {
+  
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
