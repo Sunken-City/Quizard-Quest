@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var lessHeight = newHeight/4;
 
 	$("header.nonIndex").css({
-		'height':newHeight + 'px',
+		// 'height':newHeight + 'px',
 		'vertical-align':'middle',
 	});
 
