@@ -1,5 +1,7 @@
 /* This is the Javascript for gameMenu.js */
 
+$(document).ready(function() {
+
 var JSON;
 
 /*\
@@ -15,3 +17,26 @@ $.post("../API_Server/DeckReview.php", function(data){
 		document.getElementById('deckSelect').appendChild(Deck);
 	}		
 });
+
+	/*\
+	|*|		:: >>Click listener for begin quest button<< ::
+	|*|
+	|*|		#	set session variable
+	|*|		#	redirects to the game index
+	|*|
+	\*/
+
+	$("#begin").click(function (e) {
+
+		var deck = $("#modeSelect").val();
+		var quest = $("#questSelect").val();
+
+		var sendData = {deckSelected:deck, questSelected:quest};
+
+		$.post("../API_Server/questSetup.php",sendData, function() {
+			window.location.href = "Game/index.html";
+		});
+
+	});
+
+};
