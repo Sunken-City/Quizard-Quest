@@ -91,4 +91,12 @@ $(document).ready(function() {
 		window.location.href = "DeckDisplay.php";
 	});
 
+	$("#startGame").click(function(e) {
+		window.location.href = "gameMenu.html";
+	});
+
+	$("#gotoStore").click(function(e) {
+		// window.location.href = "DeckDisplay.php";
+	});
+
 });
