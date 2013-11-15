@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/scroll_stock"
+>
+
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deck_string"
+            android:gravity="center"
+            android:layout_marginTop="80sp"
+            android:textSize="25sp"
+            android:id="@+id/deckwelcome"
+            />
+        
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decklist"
+            android:gravity="center"
+            android:layout_marginTop="80sp"
+            android:layout_below="@+id/deckwelcome"
+            />
+
+</RelativeLayout>

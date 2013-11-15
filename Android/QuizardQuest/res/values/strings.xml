@@ -9,4 +9,6 @@
 	<string name="login">Login: </string>
 	<string name="welcomemessage">Are you ready to begin your Quest?</string>
 	<string name="login_button">Begin</string>
+	<string name="deck_string">Choose your Spellbook</string>
+	<string name="deckname">Deck Name</string>
 </resources>

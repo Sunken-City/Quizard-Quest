@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="songname">Stickshifts and Safetybelts</string>
+    <string name="bandname">Cake</string>
+    <string name="repeat">repeat</string>
+    <string name="shuffle">shuffle</string>
+    <string name="lyrics">Stickshifts and safetybelts,\n
+        Bucket seats have all got to go.\n
+        When we\'re driving in the car,\n
+        It makes my baby seem so far.\n
+        I need you here with me,\n
+        Not way over in a bucket seat.\n
+        I need you to be here with me&#8230;</string>
+    <string name="app_name">a9Denicola</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_send">Send</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="hello_world">Hello world!</string>
+</resources>
