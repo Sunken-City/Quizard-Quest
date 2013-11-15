@@ -426,8 +426,8 @@ function Monster()
       loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
-      game.monster.x = 382.5 - iRepo.monster.width/2;
-      game.monster.y = 84 + iRepo.monster.height;
+      game.monster.x = 382.5 - (iRepo.monster.width/2);
+      game.monster.y = 84 + (iRepo.monster.height/2);
       game.monster.clearAll();
     });
   };
@@ -645,8 +645,8 @@ function Game()
       
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
-      var monsterX = iRepo.background.width/2 - iRepo.monster.width/2;
-      var monsterY = iRepo.background.height/4 + iRepo.monster.height;
+      var monsterX = 382.5 - (iRepo.monster.width/2);
+      var monsterY = 84 + (iRepo.monster.height/2);
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       this.avatar = new Avatar();
