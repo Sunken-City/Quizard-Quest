@@ -23,8 +23,7 @@ var question;
 var answer;
 
 //Game Mode variables
-this.GameMode = 
-{
+this.GameMode = {
     Training : 0,
     Quest : 1,
     SaveTheWorld : 2
@@ -38,14 +37,13 @@ var gameMode = GameMode.Training;
 
 //+ Jonas Raoni Soares Silva
 //@ http://jsfromhell.com/array/shuffle [v1.0]
-function shuffle(o){
+function shuffle(o) {
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
 
 //Modified from: http://krazydad.com/tutorials/makecolors.php
-function colorFromPhase(phase)
-{
+function colorFromPhase(phase) {
   phase = (phase - 20) * .01;
   var center = 104;
   var width = 127;
