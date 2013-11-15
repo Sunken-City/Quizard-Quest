@@ -4,17 +4,17 @@
 
 $(document).ready(function() {
 
-	var newHeight = $(".navbar").height() * 2;
-	var lessHeight = newHeight/4;
+	// var newHeight = $(".navbar").height() * 2;
+	// var lessHeight = newHeight/4;
 
-	$("header.nonIndex").css({
-		'height':newHeight + 'px',
-		'vertical-align':'middle',
-	});
+	// $("header.nonIndex").css({
+	// 	'height':newHeight + 'px',
+	// 	'vertical-align':'middle',
+	// });
 
-	$(".navbar").css({
-		'margin-top': lessHeight + 'px',
-	});
+	// $(".navbar").css({
+	// 	'margin-top': lessHeight + 'px',
+	// });
 
 	/*\
 	|*|		:: >> Authenticate User After Login << ::
