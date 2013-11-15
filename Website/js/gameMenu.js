@@ -39,4 +39,4 @@ $.post("../API_Server/DeckReview.php", function(data){
 
 	});
 
-};
+}
