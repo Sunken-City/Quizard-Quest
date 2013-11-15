@@ -426,8 +426,8 @@ function Monster()
       loadMonster(randomMonster(), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
-      game.monster.x = iRepo.background.width/2 - iRepo.monster.width/2;
-      game.monster.y = iRepo.background.height/4 + iRepo.monster.height;
+      game.monster.x = 382.5 - iRepo.monster.width/2;
+      game.monster.y = 84 + iRepo.monster.height;
       game.monster.clearAll();
     });
   };
