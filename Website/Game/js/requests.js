@@ -11,7 +11,7 @@
 |*|
 \*/
 
-// function returnDeck() {
+function returnDeck() {
 
 	/*\
 	|*|		:: >> Deck Object << ::
@@ -61,7 +61,7 @@
 	var deck1 = new Deck();
 	deck1.cards = cardArray;
 
-// 	return deck1;
-// }
+	return deck1;
+}
 
 
