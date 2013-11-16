@@ -11,14 +11,14 @@
 |*|
 \*/
 
-function returnDeck () {
+function returnDeck() {
 
 	/*\
 	|*|		:: >> Deck Object << ::
 	\*/
 
 	function Deck() {
-		var cards = [];
+		var cards;
 	}
 
 	/*\
@@ -35,7 +35,7 @@ function returnDeck () {
 	|*|		:: >> Request Deck Data << ::
 	\*/
 
-	var deck = new Deck();
+	var cardArray = [];
 	var data;
 	var sendData = {tokenDta:'lalala'};
 
@@ -55,10 +55,13 @@ function returnDeck () {
 		newCard.answer = data[i]['answer'];
 		newCard.category = data[i]['category'];
 
-		deck.cards.push(newCard);
+		cardArray.push(newCard);
 	}
 
-	return deck;
+	var deck1 = new Deck();
+	deck1.cards = cardArray;
+
+	return deck1;
 }
 
 
