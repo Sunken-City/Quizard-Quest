@@ -63,3 +63,16 @@ function returnDeck () {
 
 	return deck;
 }
+
+$(document).ready(function() {
+
+	var data;
+	var sendData = {tokenDta:'lalala'};
+
+	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+
+		data = returnData;
+
+	},"json");
+
+});
