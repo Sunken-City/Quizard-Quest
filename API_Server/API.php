@@ -246,6 +246,8 @@
         return true;
     }
     
+    
+    
     function get_userID($username) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
