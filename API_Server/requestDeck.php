@@ -1,6 +1,6 @@
 <?php
-	include "API.php"
-	sessionstart();
+	include "API.php";
+	session_start();
 
 	$deckID = $_SESSION['deckSelected'];
 
