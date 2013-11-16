@@ -18,7 +18,7 @@ function returnDeck () {
 	\*/
 
 	function Deck() {
-		var cards = array();
+		var cards = [];
 	}
 
 	/*\
