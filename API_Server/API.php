@@ -246,7 +246,10 @@
         return true;
     }
     
-    
+    /*\
+    |*|  Returns the userID based on the username. It is primarily used
+    |*|  for calls from the android version.
+    \*/
     
     function get_userID($username) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
@@ -258,6 +261,8 @@
         $userIDList = mysqli_query($db, "SELECT userID FROM players WHERE username = '$username';");
         
         return mysqli_fetch_assoc($userIDList);
+        
+    }
     
     /****************************/
     /* CREATING/DELETING A CARD */
@@ -535,6 +540,17 @@
         mysqli_close($db);   
     }
 
+    function get_security_question() {
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+        $question = mysqli_fetch_assoc(mysqli_query($db, "SELECT question FROM securityQuestions WHERE userID = '$userID';");
+        return $question;
+    }
+        
     function check_security_answer($guess) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
