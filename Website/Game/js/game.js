@@ -182,7 +182,7 @@ function loseLife() {
   {
    gamePlaying = false; 
    lose = true;
-  game.heart.timer = 29;
+  game.heart.timer = 99;
   game.heart.lose();
   }
 }
@@ -460,7 +460,7 @@ function Etc(Image) {
   {
       this.timer --;
       
-      if (this.timer > 0)
+      if (this.timer > 0 && !lose)
       {
 	if (this.timer % 5 == 0)
 	{
