@@ -364,7 +364,7 @@ function Monster() {
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y, this.width, this.height);
+    this.context.clearRect(this.x, this.y - 1, this.width, this.height + 1);
   };
   
   this.change = function(category) {
