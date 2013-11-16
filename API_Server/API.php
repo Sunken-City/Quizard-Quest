@@ -260,7 +260,7 @@
         
         $userIDList = mysqli_query($db, "SELECT userID FROM players WHERE username = '$username';");
         if (mysqli_num_rows($userIDList) == 0)
-           return false
+           return false;
         else
            return mysqli_fetch_assoc($userIDList);
         
