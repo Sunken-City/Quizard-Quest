@@ -108,7 +108,7 @@ var iRepo = new function() {
   
   // Set images src
   this.background.src = path + randomBackground();
-  this.monster.src = randomMonster(currCard.category);
+  this.monster.src = randomMonster(6);
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
