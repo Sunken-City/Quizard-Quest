@@ -165,7 +165,7 @@ function Card() {
 
 function loseLife() {
   lives = lives - 1;
-  game.heart.timer = 1999;
+  game.heart.timer = 199;
   game.heart.toggle = true;
   game.heart.hurt();
   if (lives == 0)
@@ -485,20 +485,22 @@ function Etc(Image) {
       
       if (this.timer > 0)
       {
-	if (this.timer % 50 == 0)
+	if (this.timer % 10 == 0)
 	{
 	  this.toggle = !this.toggle;
 	  console.log(this.toggle);
+	  
+	  if (this.toggle)
+	  {
+	    this.context.fillStyle = "rgba(255,0,0,.5)";
+	    this.context.fillRect(0, 0, 765, 335);
+	  }
+	  else
+	  {
+	    this.context.clearRect(0, 0, 765, 335);
+	  }
 	}
-	if (this.toggle)
-	{
-	  this.context.fillStyle = "rgba(255,0,0,.5)";
-	  this.context.fillRect(0, 0, 765, 335);
-	}
-	else
-	{
-	  this.context.clearRect(0, 0, 765, 335);
-	}
+
 	var func = wrapFunction(this.hurt, this, []);
 	funQueue.push(func);
       }
