@@ -487,7 +487,7 @@ function Etc(Image) {
 	{
 	  this.context.clearRect(0, 0, 765, 335);
 	}
-	funQueue.push(this.hurt());
+	funQueue.push(game.heart.hurt());
       }
       
   };
