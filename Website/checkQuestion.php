@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- 
-	Password Reset Page
+	Check the Security Question 
 	Author : Gustavo Castillo
  -->
 <html lang="en">
@@ -18,11 +18,9 @@
 	</head>
 	
 	<body>
-			<form id="pwReset" action="../API_Server/getSecurityQuestion.php" method="POST" >
+			<form id="username" action="../API_Server/checkSecurityQuestion.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
-				<button type="button" value="Get Question" id="getSecurity" />
-				<div id="securityQuestion">
-				</div>
+				<input type="submit" value="Submit" id="getSecurity" class="submitButton" />
 			</form>
 
 

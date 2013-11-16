@@ -18,7 +18,7 @@ $.post("../API_Server/DeckReview.php", function(data){
 
 /*\
 |*|		:: >> Retrieve cards in selected deck << ::
-\*/
+\*/`
 
 function showDeck(str) {
 
