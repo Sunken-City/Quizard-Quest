@@ -745,7 +745,7 @@ var deckity;
 function init() {
   
   console.log("game.js init");
-  deckity = returnDeck();
+  //deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
