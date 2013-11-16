@@ -472,11 +472,14 @@ function Etc(Image) {
   this.hurt = function() 
   {
       this.timer --;
+      console.log(timer);
+      
       if (this.timer > 0)
       {
 	if (this.timer % 50 == 0)
 	{
 	  this.toggle = !this.toggle;
+	  console.log(toggle);
 	}
 	if (this.toggle)
 	{
