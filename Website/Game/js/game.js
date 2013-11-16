@@ -87,8 +87,8 @@ var iRepo = new function() {
     if (numLoaded === numImages)
     {
       console.log("Images Loaded");
-      $('loading').remove();
-      $('loadingImage').remove();
+      $('.loading').remove();
+      $('.loadingImage').remove();
       window.init();
     }
   }
