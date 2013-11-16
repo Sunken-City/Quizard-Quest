@@ -54,7 +54,7 @@ canvas {
 .loading {
   position: absolute;
   top: 118px;
-  left: 340px;
+  left: 280px;
   color: #FF9900;
   font-family: 'VT323', sans-serif;
   font-size: 50px;
@@ -65,5 +65,5 @@ canvas {
   position: absolute;
   top: 170px;
   left: 360px;
-  content:url('../../Resources/Game/Sprites/load.gif');
+  content:url('../../../Resources/Game/Sprites/load.gif');
 }
