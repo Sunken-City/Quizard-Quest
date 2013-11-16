@@ -87,10 +87,8 @@ var iRepo = new function() {
     if (numLoaded === numImages)
     {
       console.log("Images Loaded");
-      var load = document.getElementById('loading');
-      load.parentNode.removeChild(load);
-      load = document.getElementById('loadingImage');
-      load.parentNode.removeChild(load);
+      $('loading').remove();
+      $('loadingImage').remove();
       window.init();
     }
   }
