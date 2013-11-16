@@ -491,7 +491,7 @@ function Etc(Image) {
       {
 	if (this.timer % 5 == 0)
 	{	  
-	  this.context.fillStyle = "rgba(255,0,0,.05)";
+	  this.context.fillStyle = "rgba(255,0,0,.1)";
 	  this.context.fillRect(0, 0, 765, 335);
 	}
 
