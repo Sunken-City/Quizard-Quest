@@ -51,7 +51,7 @@ function returnDeck () {
 	\*/
 
 	for (something in data) {
-		var newCard = new Car();
+		var newCard = new Card();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
 		newCard.answer = data['answer'];
