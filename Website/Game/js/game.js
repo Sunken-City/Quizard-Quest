@@ -154,7 +154,7 @@ function Card() {
 
 function loseLife() {
   lives = lives - 1;
-  game.heart.timer = 199;
+  game.heart.timer = 1999;
   game.heart.hurt();
   if (lives == 0)
    gamePlaying = false; 
@@ -461,7 +461,7 @@ function Etc(Image) {
   
   this.image = Image;
   
-  this.timer = 199;
+  this.timer = 1999;
   
   this.toggle = true;
   
@@ -474,7 +474,7 @@ function Etc(Image) {
       this.timer --;
       if (this.timer > 0)
       {
-	if (this.timer % 10 == 0)
+	if (this.timer % 50 == 0)
 	{
 	  this.toggle = !this.toggle;
 	}
