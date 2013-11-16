@@ -18,7 +18,7 @@ function returnDeck () {
 	\*/
 
 	function Deck() {
-		var cards = array();
+		var cards = [];
 	}
 
 	/*\
@@ -38,6 +38,7 @@ function returnDeck () {
 
 	var deck = new Deck();
 	var data;
+	var sendData = {tokenDta:'lalala'};
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
@@ -49,7 +50,7 @@ function returnDeck () {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (var i = 0, len = data.length; i < len; i++) {
+	for (something in data) {
 		var newCard = new Car();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);

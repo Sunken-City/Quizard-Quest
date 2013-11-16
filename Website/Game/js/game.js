@@ -192,7 +192,7 @@ function submitAnswer() {
 
 //Picks a random monster image from the available pool of monsters
 function randomMonster() {
-  var choice = Math.floor((Math.random() * 21) + 1);
+  var choice = Math.floor((Math.random() * 20) + 1);
   if (choice === 1)
     return "../../Resources/Game/Sprites/Bugs/Centipede.png";
   
@@ -733,11 +733,12 @@ window.requestAnimFrame = (function(){
 
 var game = new Game();
 var deck = new Deck();
+var deckity;
 
 function init() {
   
   console.log("game.js init");
-  var deckity = returnDeck();
+  deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
