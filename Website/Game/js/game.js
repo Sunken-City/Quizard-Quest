@@ -460,7 +460,7 @@ function Etc(Image) {
   {
       this.timer --;
       
-      if (this.timer > 0 && !lose) //Comment!
+      if (this.timer > 0 && !lose)
       {
 	if (this.timer % 5 == 0)
 	{
@@ -745,7 +745,7 @@ var deckity;
 function init() {
   
   console.log("game.js init");
-  deckity = returnDeck();
+  //deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
