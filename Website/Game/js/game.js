@@ -55,6 +55,17 @@ function colorFromPhase(phase) {
   return "rgba(" + red + "," + green + "," + blue + ", 1)";
 }
 
+// Function wrapping code.
+// fn - reference to function.
+// context - what you want "this" to be.
+// params - array of parameters to pass to function.
+// Shamelessly stolen from http://stackoverflow.com/questions/899102/how-do-i-store-javascript-functions-in-a-queue-for-them-to-be-executed-eventuall
+var wrapFunction = function(fn, context, params) {
+    return function() {
+        fn.apply(context, params);
+    };
+}
+
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
@@ -466,6 +477,12 @@ function Etc(Image) {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
   
+  this.wrap = function()
+  {
+    var func = wrapFunction(hurt, this, []);
+    return func;
+  }
+  
   this.hurt = function() 
   {
       this.timer --;
@@ -488,7 +505,7 @@ function Etc(Image) {
 	{
 	  this.context.clearRect(0, 0, 765, 335);
 	}
-	funQueue.push(game.heart.hurt);
+	funQueue.push(func);
       }
       
   };
