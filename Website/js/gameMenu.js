@@ -29,12 +29,12 @@ $(document).ready(function() {
 	$("#begin").click(function (e) {
 
 		var deck = $("#deckSelect").val();
-		var quest = $("#modeSelect").val();
+		var mode = $("#modeSelect").val();
 
-		var sendData = {deckSelected:deck, questSelected:quest};
+		var sendData = {deckSelect:deck, modeSelect:mode};
 
 		$.post("../API_Server/questSetup.php",sendData, function() {
-			window.location.href = "Game/index.php";
+			window.location.href = "index.php";
 		});
 
 	});
