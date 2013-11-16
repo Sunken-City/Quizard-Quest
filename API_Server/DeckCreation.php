@@ -10,13 +10,10 @@
 	session_start();
 	
    	
-   if (isset($_POST['Deckname']))
-   {
+   if (isset($_POST['Deckname'])) {
       $deckID = create_deck($_POST['Deckname']);
-      if(!empty($_POST['flashCard']))
-      {
-         foreach($_POST['flashCard'] as $card)
-         {
+      if(!empty($_POST['flashCard'])) {
+         foreach($_POST['flashCard'] as $card) {
             echo $card;
             add_card_to_deck($deckID, $card);
          }
