@@ -499,7 +499,7 @@ function Etc(Image) {
 	{
 	  this.context.clearRect(0, 0, 765, 335);
 	}
-	var func = wrapFunction(hurt, this, []);
+	var func = wrapFunction(this.hurt, this, []);
 	funQueue.push(func);
       }
       
