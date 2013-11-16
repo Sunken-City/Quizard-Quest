@@ -477,12 +477,6 @@ function Etc(Image) {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
   
-  this.wrap = function()
-  {
-    var func = wrapFunction(hurt, this, []);
-    return func;
-  }
-  
   this.hurt = function() 
   {
       this.timer --;
@@ -505,6 +499,7 @@ function Etc(Image) {
 	{
 	  this.context.clearRect(0, 0, 765, 335);
 	}
+	var func = wrapFunction(hurt, this, []);
 	funQueue.push(func);
       }
       
