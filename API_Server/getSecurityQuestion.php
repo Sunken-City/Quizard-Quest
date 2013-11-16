@@ -1,7 +1,8 @@
 <?
    include "API.php";
    session_start();
-   $username = $_GET["u"];
+   $username = $_GET["q"];
+   echo $username."</br>";
    $value = get_userID($username);
    if ($value == false)
       echo "ERROR: Username does not exist";
