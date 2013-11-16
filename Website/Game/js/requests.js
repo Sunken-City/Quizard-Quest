@@ -11,6 +11,8 @@
 |*|
 \*/
 
+var data;
+
 function returnDeck () {
 
 	/*\
@@ -37,14 +39,14 @@ function returnDeck () {
 	\*/
 
 	var deck = new Deck();
-	var data;
+	// var data;
 	var sendData = {tokenDta:'lalala'};
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
-		data = returnData;
+		data = $.parseJSON(returnData);
 
-	},"json");
+	});
 
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
