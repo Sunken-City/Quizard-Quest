@@ -77,8 +77,9 @@ var iRepo = new function() {
   this.monster = new Image();
   this.avatar = new Image();
   this.heart = new Image();
- 
-  var numImages = 4;
+  this.scroll = new Image();
+  
+  var numImages = 5;
   var numLoaded = 0;
   
   function imageLoaded() {
@@ -106,11 +107,16 @@ var iRepo = new function() {
     imageLoaded();
   }
   
+  this.scroll.onload = function() {
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = randomMonster(6);
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
+  this.scroll.src = path + "/Sprites/Scroll1.png";
 }
 
 function loadMonster(src, callback) {
@@ -587,6 +593,8 @@ function Game() {
       if (gameMode > 0) {
 	      this.heart = new Etc(iRepo.heart);
 	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
+	      this.scroll = new Etc(iRepo.scroll);
+	      this.heart.init(500, 45, iRepo.scroll.width, iRepo.scroll.height);
       }
       
       this.monster = new Monster();
@@ -648,6 +656,7 @@ function animate() {
   }
    
   if (gameMode > GameMode.Training) {
+    game.scroll.draw();
     game.heart.draw();
     document.getElementById('lives').innerHTML = " x" + lives;  
   }
