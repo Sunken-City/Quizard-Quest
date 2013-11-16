@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatars/Greg.png";
+var avatarPath = "../../Resources/Avatars/PastelGreg.png";
 
 //Global variables for game control
 var gamePlaying = true;
@@ -173,7 +173,7 @@ function submitAnswer() {
 
 //Picks a random monster image from the available pool of monsters
 function randomMonster() {
-  var choice = Math.floor((Math.random() * 12) + 1);
+  var choice = Math.floor((Math.random() * 21) + 1);
   if (choice === 1)
     return "../../Resources/Game/Sprites/Bugs/Centipede.png";
   
@@ -209,6 +209,33 @@ function randomMonster() {
  
   else if (choice === 12)
     return "../../Resources/Game/Sprites/Bugs/RedBug.png";
+  
+  else if (choice === 13)
+    return "../../Resources/Game/Sprites/Bugs/BigPurpleClawBug.png";
+  
+  else if (choice === 14)
+    return "../../Resources/Game/Sprites/Bugs/BigStag.png";
+  
+  else if (choice === 15)
+    return "../../Resources/Game/Sprites/Bugs/Crab.png";
+  
+  else if (choice === 16)
+    return "../../Resources/Game/Sprites/Bugs/FlowerBug.png";
+  
+  else if (choice === 17)
+    return "../../Resources/Game/Sprites/Bugs/Grasshopper.png";
+  
+  else if (choice === 18)
+    return "../../Resources/Game/Sprites/Bugs/LittleBug.png";
+  
+  else if (choice === 19)
+    return "../../Resources/Game/Sprites/Bugs/Scorpion.png";
+  
+  else if (choice === 20)
+    return "../../Resources/Game/Sprites/Bugs/SeaBug.png";
+  
+  else if (choice === 21)
+    return "../../Resources/Game/Sprites/Bugs/WideEyes.png";
 }
 
 //Picks a random background image from the available pool of backgrounds
