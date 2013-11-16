@@ -50,7 +50,7 @@ function returnDeck () {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (var i = 0, len = data.length; i < len; i++) {
+	for (something in data) {
 		var newCard = new Car();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
