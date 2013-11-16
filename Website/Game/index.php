@@ -5,19 +5,19 @@
   <head>
 
     <title>Quizard Quest Demo</title>
-    <link rel="stylesheet" href="css/mainStyle.css"/>
-    <link rel="stylesheet" href="Game/css/gameStyle.css"/>
+    <link rel="stylesheet" href="../css/mainStyle.css"/>
+    <link rel="stylesheet" href="css/gameStyle.css"/>
     <meta charset="UTF-8">
     <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type = "text/javascript" src="js/mainMenu.js"></script>
-    <script type = "text/javascript" src="Game/js/requests.js"></script>
-    <script type = "text/javascript" src="Game/js/CanvasInput.js"></script>
-    <script type="text/javascript" src="Game/js/game.js"></script>
+    <script type = "text/javascript" src="../js/mainMenu.js"></script>
+    <script type = "text/javascript" src="js/requests.js"></script>
+    <script type = "text/javascript" src="js/CanvasInput.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
     <?php
       session_start();
-      include '../API_Server/url.php';
+      include '../../API_Server/url.php';
       if(!isset($_SESSION['userID'])) {
           // not logged in
           $_SESSION['redirected'] = true;
@@ -25,7 +25,6 @@
           die();
       }
     ?>
-    
 
   </head>
 

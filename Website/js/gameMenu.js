@@ -34,7 +34,7 @@ $(document).ready(function() {
 		var sendData = {deckSelect:deck, modeSelect:mode};
 
 		$.post("../API_Server/questSetup.php",sendData, function() {
-			window.location.href = "index.php";
+			window.location.href = "Game/index.php";
 		});
 
 	});
