@@ -108,7 +108,7 @@ var iRepo = new function() {
   
   // Set images src
   this.background.src = path + randomBackground();
-  this.monster.src = randomMonster();
+  this.monster.src = randomMonster(currCard.category);
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
 }
@@ -124,7 +124,7 @@ function nextCard() {
   if (deck.cards.length != 0) {
     currCard = deck.draw();
     setQuestion(currCard.question);
-    game.monster.change();
+    game.monster.change(currCard.category);
     iRepo.background.src = path + randomBackground();
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
@@ -191,9 +191,31 @@ function submitAnswer() {
 }
 
 //Picks a random monster image from the available pool of monsters
-function randomMonster() {
-  var choice = Math.floor((Math.random() * 40) + 1);
-    return "../../Resources/Game/Sprites/Math/" + choice + ".png";
+function randomMonster(category) {
+  switch(category){
+    case 1: //Math
+      var choice = Math.floor((Math.random() * 50) + 1);
+      return "../../Resources/Game/Sprites/Math/" + choice + ".png";
+    case 2:
+      var choice = Math.floor((Math.random() * 40) + 1);
+      return "../../Resources/Game/Sprites/Science/" + choice + ".png";
+    case 3:
+      var choice = Math.floor((Math.random() * 40) + 1);
+      return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
+    case 4:
+      var choice = Math.floor((Math.random() * 45) + 1);
+      return "../../Resources/Game/Sprites/English/" + choice + ".png";
+    case 5:
+      var choice = Math.floor((Math.random() * 45) + 1);
+      return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
+    case 6:
+      var choice = Math.floor((Math.random() * 50) + 1);
+      return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
+    default:
+      console.log("No category or invalid category passed! ONO");
+      var choice = Math.floor((Math.random() * 50) + 1);
+      return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
+  }
 }
 
 //Picks a random background image from the available pool of backgrounds
@@ -339,8 +361,8 @@ function Monster() {
     this.context.clearRect(this.x, this.y, this.width, this.height);
   };
   
-  this.change = function() {
-      loadMonster(randomMonster(), function() {
+  this.change = function(category) {
+      loadMonster(randomMonster(category), function() {
       game.monster.width = iRepo.monster.width;
       game.monster.height = iRepo.monster.height;
       game.monster.x = 382.5 - (iRepo.monster.width/2);
