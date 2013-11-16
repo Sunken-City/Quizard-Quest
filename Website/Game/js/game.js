@@ -661,13 +661,13 @@ function animate() {
 function initCardsAndDeck(){
   
   var card1 = new Card();
-  card1.init("Sqrt(Onions)", "Shallots", 1);
+  card1.init("Sqrt(Onions)", "Shallots", 3);
   var card2 = new Card();
-  card2.init("Who dabes?", "I'm dabes", 2);
+  card2.init("Who dabes?", "I'm dabes", 6);
   var card3 = new Card();
-  card3.init("2 + 2 = ?", "4", 3);
+  card3.init("2 + 2 = ?", "4", 1);
   var card4 = new Card();
-  card4.init("FSFSFS", "NRNRNR", 1);
+  card4.init("FSFSFS", "NRNRNR", 4);
   numCards = 4;
   avatarInc = 715 / numCards;
   deck.add(card1);
