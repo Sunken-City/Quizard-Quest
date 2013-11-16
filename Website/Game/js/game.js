@@ -87,8 +87,6 @@ var iRepo = new function() {
     if (numLoaded === numImages)
     {
       console.log("Images Loaded");
-      $('.loading').remove();
-      $('.loadingImage').remove();
       window.init();
     }
   }
@@ -624,6 +622,8 @@ function Game() {
   };
   
   this.start = function() {
+    $('.loading').remove();
+    $('.loadingImage').remove();
     animate();
   };
 }
