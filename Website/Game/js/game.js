@@ -470,6 +470,7 @@ function Etc(Image) {
   {
       this.timer --;
       console.log(this.timer);
+      console.log("NRNRNRNR");
       
       if (this.timer > 0)
       {
