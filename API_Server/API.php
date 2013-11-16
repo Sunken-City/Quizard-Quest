@@ -259,8 +259,10 @@
         }
         
         $userIDList = mysqli_query($db, "SELECT userID FROM players WHERE username = '$username';");
-        
-        return mysqli_fetch_assoc($userIDList);
+        if (mysqli_num_rows($userIDList) == 0)
+           return false
+        else
+           return mysqli_fetch_assoc($userIDList);
         
     }
     
