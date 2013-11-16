@@ -8,6 +8,6 @@
       $_SESSION['userID'] = $value;
       echo "<p> Security Question: ";
       echo get_security_question()."</p>";
-      echo "<input id=\"sqAnswer\" type=\"text\" name=\"sqAnswer\"</input>"
+      echo "<input id=\"sqAnswer\" type=\"text\" name=\"sqAnswer\"</input>";
    }
 ?>
