@@ -27,7 +27,6 @@ function returnDeck () {
 
 	function Card() {
 		var category;
-		var difficulty;
 		var question;
 		var answer;
 	}
@@ -50,13 +49,11 @@ function returnDeck () {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (something in data) {
+	for (var i = 0, len = data.length; i < len; i++) {
 		var newCard = new Card();
-		newCard.question = data['question'];
-		alert('question' + newCard.question);
-		newCard.answer = data['answer'];
-		newCard.difficulty = data['difficulty'];
-		newCard.category = data['category'];
+		newCard.question = data[i]['question'];
+		newCard.answer = data[i]['answer'];
+		newCard.category = data[i]['category'];
 
 		deck.cards.push(newCard);
 	}
