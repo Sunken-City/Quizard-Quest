@@ -594,7 +594,7 @@ function Game() {
 	      this.heart = new Etc(iRepo.heart);
 	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
 	      this.scroll = new Etc(iRepo.scroll);
-	      this.scroll.init(500, 45, iRepo.scroll.width, iRepo.scroll.height);
+	      this.scroll.init(510, 30, iRepo.scroll.width, iRepo.scroll.height);
       }
       
       this.monster = new Monster();
