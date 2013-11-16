@@ -733,11 +733,12 @@ window.requestAnimFrame = (function(){
 
 var game = new Game();
 var deck = new Deck();
+var deckity;
 
 function init() {
   
   console.log("game.js init");
-  var deckity = returnDeck();
+  deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
