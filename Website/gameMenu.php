@@ -51,6 +51,7 @@
 				<div id="chooseMode">
 					<h2>Select Your Challenge:</h2>
 					<select id="modeSelect" name="modeSelect">
+						<option value="">Select Challenge</option>
 						<option value="0">Training</option>
 						<option value="1">Quest</option>
 						<option value="2">Save the World</option>
