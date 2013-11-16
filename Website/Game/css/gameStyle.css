@@ -50,3 +50,20 @@ canvas {
   font-size: 50px;
   cursor: default;
 }
+
+.loading {
+  position: absolute;
+  top: 118px;
+  left: 340px;
+  color: #FF9900;
+  font-family: 'VT323', sans-serif;
+  font-size: 50px;
+  cursor: default;
+}
+
+.loadingImage {
+  position: absolute;
+  top: 170px;
+  left: 360px;
+  content:url('../../Resources/Game/Sprites/load.gif');
+}
