@@ -182,7 +182,7 @@ function loseLife() {
   {
    gamePlaying = false; 
    lose = true;
-  game.heart.timer = 29;
+  game.heart.timer = 199;
   game.heart.lose();
   }
 }
@@ -460,7 +460,7 @@ function Etc(Image) {
   {
       this.timer --;
       
-      if (this.timer > 0)
+      if (this.timer > 0 && !lose)
       {
 	if (this.timer % 5 == 0)
 	{
@@ -491,7 +491,7 @@ function Etc(Image) {
       {
 	if (this.timer % 5 == 0)
 	{	  
-	  this.context.fillStyle = "rgba(255,0,0,.5)";
+	  this.context.fillStyle = "rgba(255,0,0,.1)";
 	  this.context.fillRect(0, 0, 765, 335);
 	}
 
@@ -745,7 +745,7 @@ var deckity;
 function init() {
   
   console.log("game.js init");
-  deckity = returnDeck();
+  //deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
