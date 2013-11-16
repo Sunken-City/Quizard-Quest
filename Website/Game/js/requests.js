@@ -71,8 +71,8 @@ $(document).ready(function() {
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
-		data = $.parseJSON(returnData);
+		data = returnData;
 
-	});
-	
+	},"json");
+
 });
