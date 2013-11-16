@@ -49,8 +49,8 @@ $(document).ready(function() {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (int i = 0, len = data.length; i < len; i++) {
-		var newCard = new Car();
+	for (var i = 0, len = data.length; i < len; i++) {
+		var newCard = new Card();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
 		newCard.answer = data['answer'];
