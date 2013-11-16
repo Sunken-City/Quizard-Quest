@@ -84,7 +84,10 @@ var iRepo = new function() {
   function imageLoaded() {
     numLoaded++;
     if (numLoaded === numImages)
+    {
+      console.log("Images Loaded");
       window.init();
+    }
   }
   
   this.background.onload = function() {
@@ -736,6 +739,7 @@ var deck = new Deck();
 
 function init() {
   
+  console.log("game.js init");
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
