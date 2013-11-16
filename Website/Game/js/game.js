@@ -462,6 +462,12 @@ function Etc(Image) {
   this.draw = function() {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
+  
+  this.hurt = function() 
+  {
+    this.context.fillStyle = "rgba(255,0,0,.5)";
+    this.context.fillRect(0, 0, 765, 333);
+  };
 }
 
 
