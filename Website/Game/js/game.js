@@ -152,6 +152,7 @@ function Card() {
 
 function loseLife() {
   lives = lives - 1;
+  game.heart.hurt();
   if (lives == 0)
    gamePlaying = false; 
 }
@@ -199,7 +200,7 @@ function randomMonster() {
     return "../../Resources/Game/Sprites/Bugs/BigWingBug.png";
   
   else if (choice === 9)
-    return "../../Resources/Game/Sprites/Bugs/Dragonfly.png";
+    return "../../Resources/Game/Sprites/Bugs/WideEyes.png";
   
   else if (choice === 10)
     return "../../Resources/Game/Sprites/Bugs/Frog.png";
@@ -233,9 +234,6 @@ function randomMonster() {
   
   else if (choice === 20)
     return "../../Resources/Game/Sprites/Bugs/SeaBug.png";
-  
-  else if (choice === 21)
-    return "../../Resources/Game/Sprites/Bugs/WideEyes.png";
 }
 
 //Picks a random background image from the available pool of backgrounds
@@ -460,27 +458,14 @@ function Etc(Image) {
   
   this.image = Image;
   
-  this.hurtTimer = 0;
-  
   this.draw = function() {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
   
   this.hurt = function() 
   {
-    while (this.hurtTimer < 60)
-    {
-      if (this.hurtTimer % 2 == 0)
-      {
-	this.context.fillStyle = "rgba(255,0,0,.5)";
-	this.context.fillRect(0, 0, 765, 335);
-      }
-      else
-      {
-	this.context.clearRect(0, 0, 765, 335);
-      }
-      this.hurtTimer ++;
-    }
+      this.context.fillStyle = "rgba(255,0,0,.5)";
+      this.context.fillRect(0, 0, 765, 335);
   };
 }
 
