@@ -31,6 +31,8 @@ this.GameMode = {
 var gameMode = GameMode.Training;
 
 
+var funQueue = [];
+
 /**
  * Misc functions
  */
@@ -152,6 +154,7 @@ function Card() {
 
 function loseLife() {
   lives = lives - 1;
+  game.heart.timer = 199;
   game.heart.hurt();
   if (lives == 0)
    gamePlaying = false; 
@@ -458,14 +461,35 @@ function Etc(Image) {
   
   this.image = Image;
   
+  this.timer = 199;
+  
+  this.toggle = true;
+  
   this.draw = function() {
     this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
   };
   
   this.hurt = function() 
   {
-      this.context.fillStyle = "rgba(255,0,0,.5)";
-      this.context.fillRect(0, 0, 765, 335);
+      this.timer --;
+      if (this.timer > 0)
+      {
+	if (this.timer % 10 == 0)
+	{
+	  this.toggle = !this.toggle;
+	}
+	if (this.toggle)
+	{
+	  this.context.fillStyle = "rgba(255,0,0,.5)";
+	  this.context.fillRect(0, 0, 765, 335);
+	}
+	else
+	{
+	  this.context.clearRect(0, 0, 765, 335);
+	}
+	funQueue.push(this.hurt());
+      }
+      
   };
 }
 
@@ -633,6 +657,11 @@ function animate() {
 
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
+    
+    if (funQueue.length != 0)
+    {
+      (funQueue.shift())();
+    }
   }
   
   else {
