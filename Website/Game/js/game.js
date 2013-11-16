@@ -10,6 +10,7 @@ var avatarPath = "../../Resources/Avatars/PastelGreg.png";
 
 //Global variables for game control
 var gamePlaying = true;
+var lose = false;
 var mute = true;
 
 var avatarMoveTo = 0;
@@ -178,7 +179,10 @@ function loseLife() {
   game.heart.toggle = true;
   game.heart.hurt();
   if (lives == 0)
+  {
    gamePlaying = false; 
+   lose = true;
+  }
 }
 
 function submitAnswer() {
@@ -653,8 +657,12 @@ function animate() {
     }
   }
   
-  else {
-    document.getElementById('question').innerHTML = "FINISHED!";  
+  else if(lose){
+    document.getElementById('question').innerHTML = "YOU HAVE LOST";  
+  }
+  
+  else{
+    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER!";  
   }
    
   if (gameMode > GameMode.Training) {
