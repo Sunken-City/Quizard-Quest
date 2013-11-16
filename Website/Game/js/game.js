@@ -182,6 +182,8 @@ function loseLife() {
   {
    gamePlaying = false; 
    lose = true;
+  game.heart.timer = 29;
+  game.heart.lose();
   }
 }
 
@@ -480,6 +482,24 @@ function Etc(Image) {
       }
       
   };
+  
+  this.lose = function() 
+  {
+      this.timer --;
+      
+      if (this.timer > 0)
+      {
+	if (this.timer % 5 == 0)
+	{	  
+	  this.context.fillStyle = "rgba(255,0,0,.5)";
+	  this.context.fillRect(0, 0, 765, 335);
+	}
+
+	var func = wrapFunction(this.lose, this, []);
+	funQueue.push(func);
+      }
+      
+  };
 }
 
 
@@ -659,6 +679,10 @@ function animate() {
   
   else if(lose){
     document.getElementById('question').innerHTML = "YOU HAVE LOST";  
+    if (funQueue.length != 0)
+    {
+      (funQueue.shift())();
+    }
   }
   
   else{
