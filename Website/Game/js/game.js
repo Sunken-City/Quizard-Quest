@@ -182,7 +182,7 @@ function loseLife() {
   {
    gamePlaying = false; 
    lose = true;
-  game.heart.timer = 99;
+  game.heart.timer = 199;
   game.heart.lose();
   }
 }
