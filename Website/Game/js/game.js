@@ -183,7 +183,7 @@ function loseLife() {
 
 function submitAnswer() {
   if (gamePlaying) {
-    if (currCard.answer == game.input._value) {
+    if (currCard.answer.toLower() === game.input._value.toLower()) {
       nextCard();
     }
     else {
