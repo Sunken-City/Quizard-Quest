@@ -50,7 +50,7 @@ $(document).ready(function() {
 	\*/
 
 	for (int i = 0, len = data.length; i < len; i++) {
-		var newCard = new Car();
+		var newCard = new Card();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
 		newCard.answer = data['answer'];
