@@ -192,66 +192,8 @@ function submitAnswer() {
 
 //Picks a random monster image from the available pool of monsters
 function randomMonster() {
-  var choice = Math.floor((Math.random() * 20) + 1);
-  if (choice === 1)
-    return "../../Resources/Game/Sprites/Bugs/Centipede.png";
-  
-  else if (choice === 2)
-    return "../../Resources/Game/Sprites/Bugs/Slug.png";
-  
-  else if (choice === 3)
-    return "../../Resources/Game/Sprites/Bugs/Stag.png";
-  
-  else if (choice === 4)
-    return "../../Resources/Game/Sprites/Bugs/Ant.png";
-  
-  else if (choice === 5)
-    return "../../Resources/Game/Sprites/Bugs/Butterfly.png";
-  
-  else if (choice === 6)
-    return "../../Resources/Game/Sprites/Bugs/Ekans.png";
-  
-  else if (choice === 7)
-    return "../../Resources/Game/Sprites/Bugs/Beadrill.png";
-
-  else if (choice === 8)
-    return "../../Resources/Game/Sprites/Bugs/BigWingBug.png";
-  
-  else if (choice === 9)
-    return "../../Resources/Game/Sprites/Bugs/WideEyes.png";
-  
-  else if (choice === 10)
-    return "../../Resources/Game/Sprites/Bugs/Frog.png";
-  
-  else if (choice === 11)
-    return "../../Resources/Game/Sprites/Bugs/FuzzyBug.png";
- 
-  else if (choice === 12)
-    return "../../Resources/Game/Sprites/Bugs/RedBug.png";
-  
-  else if (choice === 13)
-    return "../../Resources/Game/Sprites/Bugs/BigPurpleClawBug.png";
-  
-  else if (choice === 14)
-    return "../../Resources/Game/Sprites/Bugs/BigStag.png";
-  
-  else if (choice === 15)
-    return "../../Resources/Game/Sprites/Bugs/Crab.png";
-  
-  else if (choice === 16)
-    return "../../Resources/Game/Sprites/Bugs/FlowerBug.png";
-  
-  else if (choice === 17)
-    return "../../Resources/Game/Sprites/Bugs/Grasshopper.png";
-  
-  else if (choice === 18)
-    return "../../Resources/Game/Sprites/Bugs/LittleBug.png";
-  
-  else if (choice === 19)
-    return "../../Resources/Game/Sprites/Bugs/Scorpion.png";
-  
-  else if (choice === 20)
-    return "../../Resources/Game/Sprites/Bugs/SeaBug.png";
+  var choice = Math.floor((Math.random() * 40) + 1);
+    return "../../Resources/Game/Sprites/Math/" + choice + ".png";
 }
 
 //Picks a random background image from the available pool of backgrounds
