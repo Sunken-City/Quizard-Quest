@@ -1,3 +1,5 @@
+var deck = new Deck();
+
 $(document).ready(function() {
 	/*\
 	|*|		:: >> Retrieve Deck Data << ::
@@ -35,7 +37,6 @@ $(document).ready(function() {
 	|*|		:: >> Request Deck Data << ::
 	\*/
 
-	var deck = new Deck();
 	var data;
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
@@ -48,8 +49,8 @@ $(document).ready(function() {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (int i = 0, len = data.length; i++) {
-		var newCard = new Car();
+	for (var i = 0, len = data.length; i < len; i++) {
+		var newCard = new Card();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
 		newCard.answer = data['answer'];
@@ -59,8 +60,8 @@ $(document).ready(function() {
 		deck.cards.push(newCard);
 	}
 
-	function returnDeck () {
-		return deck;
-	}
-
 });	
+
+function returnDeck () {
+		return deck;
+}

@@ -84,7 +84,10 @@ var iRepo = new function() {
   function imageLoaded() {
     numLoaded++;
     if (numLoaded === numImages)
+    {
+      console.log("Images Loaded");
       window.init();
+    }
   }
   
   this.background.onload = function() {
@@ -165,7 +168,7 @@ function Card() {
 
 function loseLife() {
   lives = lives - 1;
-  game.heart.timer = 49;
+  game.heart.timer = 29;
   game.heart.toggle = true;
   game.heart.hurt();
   if (lives == 0)
@@ -480,15 +483,12 @@ function Etc(Image) {
   this.hurt = function() 
   {
       this.timer --;
-      console.log(this.timer);
-      console.log("NRNRNRNR");
       
       if (this.timer > 0)
       {
 	if (this.timer % 5 == 0)
 	{
 	  this.toggle = !this.toggle;
-	  console.log(this.toggle);
 	  
 	  if (this.toggle)
 	  {
@@ -736,6 +736,8 @@ var deck = new Deck();
 
 function init() {
   
+  console.log("game.js init");
+  var deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
