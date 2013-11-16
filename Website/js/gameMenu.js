@@ -28,8 +28,8 @@ $(document).ready(function() {
 
 	$("#begin").click(function (e) {
 
-		var deck = $("#modeSelect").val();
-		var quest = $("#questSelect").val();
+		var deck = $("#deckSelect").val();
+		var quest = $("#modeSelect").val();
 
 		var sendData = {deckSelected:deck, questSelected:quest};
 
