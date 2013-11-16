@@ -1,18 +1,17 @@
-var deck = new Deck();
+/*\
+|*|		:: >> Retrieve Deck Data << ::
+|*|
+|*|		# Get DeckID through session variable
+|*|		# Get Card data
+|*|			-> card difficulty
+|*|			-> card answer
+|*|			-> card question
+|*|			-> card category
+|*|		# Put deck cards into array
+|*|
+\*/
 
-$(document).ready(function() {
-	/*\
-	|*|		:: >> Retrieve Deck Data << ::
-	|*|
-	|*|		# Get DeckID through session variable
-	|*|		# Get Card data
-	|*|			-> card difficulty
-	|*|			-> card answer
-	|*|			-> card question
-	|*|			-> card category
-	|*|		# Put deck cards into array
-	|*|
-	\*/
+function returnDeck () {
 
 	/*\
 	|*|		:: >> Deck Object << ::
@@ -37,6 +36,7 @@ $(document).ready(function() {
 	|*|		:: >> Request Deck Data << ::
 	\*/
 
+	var deck = new Deck();
 	var data;
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
@@ -50,7 +50,7 @@ $(document).ready(function() {
 	\*/
 
 	for (var i = 0, len = data.length; i < len; i++) {
-		var newCard = new Card();
+		var newCard = new Car();
 		newCard.question = data['question'];
 		alert('question' + newCard.question);
 		newCard.answer = data['answer'];
@@ -60,8 +60,5 @@ $(document).ready(function() {
 		deck.cards.push(newCard);
 	}
 
-});	
-
-function returnDeck () {
-		return deck;
+	return deck;
 }
