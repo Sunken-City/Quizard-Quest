@@ -586,7 +586,7 @@ function Game() {
       
       if (gameMode > 0) {
 	      this.heart = new Etc(iRepo.heart);
-	      this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
+	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
       }
       
       this.monster = new Monster();
