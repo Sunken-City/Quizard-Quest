@@ -20,7 +20,7 @@
 	<body>
 			<form id="pwReset" action="../API_Server/getSecurityQuestion.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
-				<button type="button" value="Get Question" id="getSecurity" />
+				<button type="button" value="Get Question" id="getSecurity"> Get Question</button>
 				<div id="securityQuestion">
 				</div>
 			</form>
