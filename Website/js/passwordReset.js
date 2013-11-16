@@ -12,7 +12,7 @@ $(document).ready(function(){
 			// code for IE7+, Firefox, Chrome, Opera, Safari
  			 var xmlhttp=new XMLHttpRequest();
 		}
-
+	
 		xmlhttp.onreadystatechange=function() {
 
 	 	 	if (xmlhttp.readyState==4 && xmlhttp.status==200) {
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	  		}
  		}
 
-		xmlhttp.open("GET","../API_Server/getSecurityQuestion.php?u="+str,true); //make calls to the php
+		xmlhttp.open("GET","../API_Server/getSecurityQuestion.php?q="+str,true); //make calls to the php
 		xmlhttp.send();
 		
 	});
