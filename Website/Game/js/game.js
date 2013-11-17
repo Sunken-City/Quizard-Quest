@@ -713,8 +713,9 @@ var deck;
 
 function init() {
   gameMode = GameMode.SaveTheWorld;
-  game.init();
   $.getScript("js/requests.js", function(){
-  deck = deck1;
-});
+    deck = deck1;
+  });
+  game.init();
+
 }
