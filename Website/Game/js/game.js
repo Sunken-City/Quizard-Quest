@@ -743,6 +743,15 @@ window.requestAnimFrame = (function(){
       };
 })();
 
+var deckie;
+
+$.getScript("request.js", function(){
+
+   alert("Script loaded and executed.");
+   // Here you can use anything you defined in the loaded script
+   deckie = deck1;
+});
+
 var game = new Game();
 var deck = new Deck();
 
