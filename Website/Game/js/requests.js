@@ -11,32 +11,15 @@
 |*|
 \*/
 
-function returnDeck() {
+var deck1 = new rDeck();
+var cardArray = [];
+var data;
 
-	/*\
-	|*|		:: >> Deck Object << ::
-	\*/
-
-	function Deck() {
-		var cards;
-	}
-
-	/*\
-	|*|		:: >> Card Object << ::
-	\*/
-
-	function Card() {
-		var category;
-		var question;
-		var answer;
-	}
-
+$(document).ready(function () {
 	/*\
 	|*|		:: >> Request Deck Data << ::
 	\*/
 
-	var cardArray = [];
-	var data;
 	var sendData = {tokenDta:'lalala'};
 
 	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
@@ -45,12 +28,35 @@ function returnDeck() {
 
 	});
 
+	returnDeck();
+});
+
+/*\
+|*|		:: >> Deck Object << ::
+\*/
+
+function rDeck() {
+	var cards;
+}
+
+/*\
+|*|		:: >> Card Object << ::
+\*/
+
+function rCard() {
+	var category;
+	var question;
+	var answer;
+}
+
+function returnDeck() {
+
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
 	for (var i = 0, len = data.length; i < len; i++) {
-		var newCard = new Card();
+		var newCard = new rCard();
 		newCard.question = data[i]['question'];
 		newCard.answer = data[i]['answer'];
 		newCard.category = data[i]['category'];
@@ -58,10 +64,7 @@ function returnDeck() {
 		cardArray.push(newCard);
 	}
 
-	var deck1 = new Deck();
 	deck1.cards = cardArray;
-
-	return deck1;
 }
 
 
