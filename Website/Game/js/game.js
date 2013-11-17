@@ -715,6 +715,8 @@ function init() {
   gameMode = GameMode.SaveTheWorld;
   $.getScript("js/requests.js", function(){
     deck = deck1;
+    numCards = deck.cards.length;
+    avatarInc = 715 / numCards;
     currCard = deck.draw();
     setQuestion(currCard.question);
   });
