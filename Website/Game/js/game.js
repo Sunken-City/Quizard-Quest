@@ -713,12 +713,15 @@ function initCardsAndDeck(){
   card3.init("2 + 2 = ?", "4", 1);
   var card4 = new Card();
   card4.init("FSFSFS", "NRNRNR", 4);
-  numCards = 4;
+  var card5 = new Card();
+  card5.init("How many licks does it take to get to the center of a Tootsie Pop?", "3", 2);
+  numCards = 5;
   avatarInc = 715 / numCards;
   deck.add(card1);
   deck.add(card2);
   deck.add(card3);
   deck.add(card4);
+  deck.add(card5);
   deck.shuffle();
   currCard = deck.draw();
   setQuestion(currCard.question);
