@@ -711,11 +711,10 @@ window.requestAnimFrame = (function(){
 var game = new Game();
 var deck;
 
-$.getScript("js/requests.js", function(){
-  deck = deck1;
-});
-
 function init() {
   gameMode = GameMode.SaveTheWorld;
   game.init();
+  $.getScript("js/requests.js", function(){
+  deck = deck1;
+});
 }
