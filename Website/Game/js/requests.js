@@ -15,21 +15,19 @@ var deck1 = new rDeck();
 var cardArray = [];
 var data;
 
-$(document).ready(function () {
-	/*\
-	|*|		:: >> Request Deck Data << ::
-	\*/
+/*\
+|*|		:: >> Request Deck Data << ::
+\*/
 
-	var sendData = {tokenDta:'lalala'};
+var sendData = {tokenDta:'lalala'};
 
-	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
-		data = $.parseJSON(returnData);
+	data = $.parseJSON(returnData);
 
-	});
-
-	initDeck();
 });
+
+initDeck();
 
 /*\
 |*|		:: >> Deck Object << ::
@@ -49,7 +47,7 @@ function rCard() {
 	var answer;
 }
 
-function initDeck() {
+function initrDeck() {
 
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
