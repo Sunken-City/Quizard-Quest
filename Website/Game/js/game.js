@@ -19,7 +19,7 @@ var avatarInc;
 
 var currCard;
 
-var lives = 5;
+var lives;
 var question;
 var answer;
 
@@ -719,6 +719,7 @@ function init() {
     numCards = deck.cards.length;
     avatarInc = 715 / numCards;
     currCard = deck.draw();
+    lives = numCards - ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
   });
 
