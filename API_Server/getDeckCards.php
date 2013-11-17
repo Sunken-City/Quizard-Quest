@@ -1,10 +1,11 @@
 <?php
-   $q=$_GET["q"];
+	$q=$_GET["q"];
 
 	include "API.php";
 	session_start();
-	
-	$test =  get_deck_cards($q);
+
+	$deckCards =  json_encode(get_deck_cards($q));
+	$test = json_decode($deckCards);
 	$row = count($test);
 	for ($count =0; $count < $row; $count++){
 		echo "<div class=\"semiCard\">
