@@ -667,30 +667,30 @@ function animate() {
 
 }
  
-//Temporary function to test out deck creation.
-function initCardsAndDeck(){
-  
-  var card1 = new Card();
-  card1.init("Sqrt(Onions)", "Shallots", 3);
-  var card2 = new Card();
-  card2.init("Who dabes?", "I'm dabes", 6);
-  var card3 = new Card();
-  card3.init("2 + 2 = ?", "4", 1);
-  var card4 = new Card();
-  card4.init("FSFSFS", "NRNRNR", 4);
-  var card5 = new Card();
-  card5.init("How many licks does it take to get to the center of a Tootsie Pop?", "3", 2);
-  numCards = 5;
-  avatarInc = 715 / numCards;
-  deck.add(card1);
-  deck.add(card2);
-  deck.add(card3);
-  deck.add(card4);
-  deck.add(card5);
-  deck.shuffle();
-  currCard = deck.draw();
-  setQuestion(currCard.question);
-}
+// Temporary function to test out deck creation.
+// function initCardsAndDeck(){
+//   
+//   var card1 = new Card();
+//   card1.init("Sqrt(Onions)", "Shallots", 3);
+//   var card2 = new Card();
+//   card2.init("Who dabes?", "I'm dabes", 6);
+//   var card3 = new Card();
+//   card3.init("2 + 2 = ?", "4", 1);
+//   var card4 = new Card();
+//   card4.init("FSFSFS", "NRNRNR", 4);
+//   var card5 = new Card();
+//   card5.init("How many licks does it take to get to the center of a Tootsie Pop?", "3", 2);
+//   numCards = 5;
+//   avatarInc = 715 / numCards;
+//   deck.add(card1);
+//   deck.add(card2);
+//   deck.add(card3);
+//   deck.add(card4);
+//   deck.add(card5);
+//   deck.shuffle();
+//   currCard = deck.draw();
+//   setQuestion(currCard.question);
+// }
  
 /**
  * requestAnim shim layer by Paul Irish
@@ -711,8 +711,11 @@ window.requestAnimFrame = (function(){
 var game = new Game();
 var deck;
 
+$.getScript("js/requests.js", function(){
+  deck = deck1;
+});
+
 function init() {
   gameMode = GameMode.SaveTheWorld;
   game.init();
-  deck = initDeck();
 }
