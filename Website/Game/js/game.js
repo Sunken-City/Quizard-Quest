@@ -88,6 +88,7 @@ var iRepo = new function() {
     if (numLoaded === numImages)
     {
       console.log("Images Loaded");
+      $('.answer').hide();
       window.init();
     }
   }
@@ -648,6 +649,7 @@ function Game() {
   this.start = function() {
     $('.loading').remove();
     $('.loadingImage').remove();
+    $('.answer').show();
     animate();
   };
 }
@@ -740,12 +742,8 @@ window.requestAnimFrame = (function(){
 
 var game = new Game();
 var deck = new Deck();
-var deckity;
 
 function init() {
-  
-  console.log("game.js init");
-  deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
   game.init();
   deck.init();
