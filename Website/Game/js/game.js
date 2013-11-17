@@ -38,13 +38,6 @@ var funQueue = [];
  * Misc functions
  */
 
-//+ Jonas Raoni Soares Silva
-//@ http://jsfromhell.com/array/shuffle [v1.0]
-function shuffle(o) {
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-};
-
 //Modified from: http://krazydad.com/tutorials/makecolors.php
 function colorFromPhase(phase) {
   phase = (phase - 20) * .01;
@@ -144,34 +137,6 @@ function nextCard() {
 
 function setQuestion(q) {
   question = ">Q: " + q;
-}
-
-function Deck() {
-  
-  this.init = function() {
-    this.cards = new Array();
-  }
-  
-  this.add = function(card) {
-    this.cards.push(card); 
-  }
-  
-  this.draw = function() {
-    return this.cards.pop();
-  }
-  
-  this.shuffle = function() {
-    this.cards = shuffle(this.cards);
-  }
-}
-
-function Card() {
-  
-  this.init = function(question, answer, category) {
-    this.question = question;
-    this.answer = answer;
-    this.category = category;
-  }
 }
 
 function loseLife() {
@@ -743,19 +708,11 @@ window.requestAnimFrame = (function(){
       };
 })();
 
-var deckie;
-
-$.getScript("js/requests.js", function(){
-   // Here you can use anything you defined in the loaded script
-   deckie = deck1;
-});
-
 var game = new Game();
-var deck = new Deck();
+var deck;
 
 function init() {
   gameMode = GameMode.SaveTheWorld;
   game.init();
-  deck.init();
-  initCardsAndDeck();
+  deck = initDeck();
 }

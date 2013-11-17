@@ -11,9 +11,16 @@
 |*|
 \*/
 
-var deck1 = new rDeck();
+var deck1 = new Deck();
 var cardArray = [];
 var data;
+
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/array/shuffle [v1.0]
+function shuffle(o) {
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
 /*\
 |*|		:: >> Request Deck Data << ::
@@ -27,34 +34,52 @@ $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 });
 
-initrDeck();
+initDeck();
 
 /*\
 |*|		:: >> Deck Object << ::
 \*/
 
-function rDeck() {
-	var cards;
+function Deck() {
+  var cards;
+  
+  this.add = function(card) {
+  this.cards.push(card); 
+  }
+  
+  this.draw = function() {
+    return this.cards.pop();
+  }
+  
+  this.shuffle = function() {
+    this.cards = shuffle(this.cards);
+  }
 }
 
 /*\
 |*|		:: >> Card Object << ::
 \*/
 
-function rCard() {
-	var category;
-	var question;
-	var answer;
+function Card() {
+  var category;
+  var question;
+  var answer;
+
+  this.init = function(question, answer, category) {
+    this.question = question;
+    this.answer = answer;
+    this.category = category;
+  }
 }
 
-function initrDeck() {
+function initDeck() {
 
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
 	for (var i = 0, len = data.length; i < len; i++) {
-		var newCard = new rCard();
+		var newCard = new Card();
 		newCard.question = data[i]['question'];
 		newCard.answer = data[i]['answer'];
 		newCard.category = data[i]['category'];
