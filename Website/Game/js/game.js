@@ -716,6 +716,8 @@ function init() {
   $.getScript("js/requests.js", function(){
     deck = deck1;
   });
+  currCard = deck.draw();
+  setQuestion(currCard.question);
   game.init();
 
 }
