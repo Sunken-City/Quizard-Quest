@@ -27,7 +27,7 @@ $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 });
 
-initDeck();
+initrDeck();
 
 /*\
 |*|		:: >> Deck Object << ::
