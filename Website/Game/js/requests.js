@@ -65,11 +65,11 @@ function Card() {
   var question;
   var answer;
 
-  this.init = function(question, answer, category) {
+  /*this.init = function(question, answer, category) {
     this.question = question;
     this.answer = answer;
     this.category = category;
-  }
+  }*/
 }
 
 function initDeck() {
