@@ -721,8 +721,7 @@ function init() {
     currCard = deck.draw();
     lives = numCards - ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
+    game.init();
   });
-
-  game.init();
 
 }
