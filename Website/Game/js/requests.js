@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 	});
 
-	returnDeck();
+	initDeck();
 });
 
 /*\
@@ -49,7 +49,7 @@ function rCard() {
 	var answer;
 }
 
-function returnDeck() {
+function initDeck() {
 
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
