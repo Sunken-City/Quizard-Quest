@@ -746,8 +746,6 @@ window.requestAnimFrame = (function(){
 var deckie;
 
 $.getScript("js/requests.js", function(){
-
-   alert("Script loaded and executed.");
    // Here you can use anything you defined in the loaded script
    deckie = deck1;
 });
