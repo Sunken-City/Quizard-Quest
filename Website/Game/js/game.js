@@ -715,9 +715,10 @@ function init() {
   gameMode = GameMode.SaveTheWorld;
   $.getScript("js/requests.js", function(){
     deck = deck1;
+    currCard = deck.draw();
+    setQuestion(currCard.question);
   });
-  currCard = deck.draw();
-  setQuestion(currCard.question);
+
   game.init();
 
 }
