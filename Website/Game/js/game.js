@@ -78,8 +78,7 @@ var iRepo = new function() {
   
   function imageLoaded() {
     numLoaded++;
-    if (numLoaded === numImages)
-    {
+    if (numLoaded === numImages) {
       console.log("Images Loaded");
       $('.answer').hide();
       window.init();
@@ -141,15 +140,16 @@ function setQuestion(q) {
 
 function loseLife() {
   lives = lives - 1;
-  game.heart.timer = 29;
-  game.heart.toggle = true;
-  game.heart.hurt();
-  if (lives == 0)
-  {
-   gamePlaying = false; 
-   lose = true;
-  game.heart.timer = 199;
-  game.heart.lose();
+  if (lives == 0) {
+    gamePlaying = false; 
+    lose = true;
+    game.heart.timer = 199;
+    game.heart.lose();
+  }
+  else {
+    game.heart.timer = 29;
+    game.heart.toggle = true;
+    game.heart.hurt();
   }
 }
 
@@ -426,7 +426,7 @@ function Etc(Image) {
   {
       this.timer --;
       
-      if (this.timer > 0 && !lose)
+      if (this.timer > 0)
       {
 	if (this.timer % 5 == 0)
 	{
@@ -580,7 +580,7 @@ function Game() {
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      if (gameMode > 0) {
+      if (gameMode > GameMode.Training) {
 	      this.heart = new Etc(iRepo.heart);
 	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
 	      this.scroll = new Etc(iRepo.scroll);
@@ -638,16 +638,14 @@ function animate() {
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
     
-    if (funQueue.length != 0)
-    {
+    if (funQueue.length != 0) {
       (funQueue.shift())();
     }
   }
   
   else if(lose){
     document.getElementById('question').innerHTML = "YOU HAVE LOST";  
-    if (funQueue.length != 0)
-    {
+    if (funQueue.length != 0) {
       (funQueue.shift())();
     }
   }
@@ -666,31 +664,6 @@ function animate() {
   game.avatar.move(avatarMoveTo);
 
 }
- 
-// Temporary function to test out deck creation.
-// function initCardsAndDeck(){
-//   
-//   var card1 = new Card();
-//   card1.init("Sqrt(Onions)", "Shallots", 3);
-//   var card2 = new Card();
-//   card2.init("Who dabes?", "I'm dabes", 6);
-//   var card3 = new Card();
-//   card3.init("2 + 2 = ?", "4", 1);
-//   var card4 = new Card();
-//   card4.init("FSFSFS", "NRNRNR", 4);
-//   var card5 = new Card();
-//   card5.init("How many licks does it take to get to the center of a Tootsie Pop?", "3", 2);
-//   numCards = 5;
-//   avatarInc = 715 / numCards;
-//   deck.add(card1);
-//   deck.add(card2);
-//   deck.add(card3);
-//   deck.add(card4);
-//   deck.add(card5);
-//   deck.shuffle();
-//   currCard = deck.draw();
-//   setQuestion(currCard.question);
-// }
  
 /**
  * requestAnim shim layer by Paul Irish
