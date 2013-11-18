@@ -10,6 +10,7 @@ var avatarPath = "../../Resources/Avatars/PastelGreg.png";
 
 //Global variables for game control
 var gamePlaying = true;
+var lose = false;
 var mute = true;
 
 var avatarMoveTo = 0;
@@ -18,7 +19,7 @@ var avatarInc;
 
 var currCard;
 
-var lives = 5;
+var lives;
 var question;
 var answer;
 
@@ -36,13 +37,6 @@ var funQueue = [];
 /**
  * Misc functions
  */
-
-//+ Jonas Raoni Soares Silva
-//@ http://jsfromhell.com/array/shuffle [v1.0]
-function shuffle(o) {
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-};
 
 //Modified from: http://krazydad.com/tutorials/makecolors.php
 function colorFromPhase(phase) {
@@ -77,15 +71,16 @@ var iRepo = new function() {
   this.monster = new Image();
   this.avatar = new Image();
   this.heart = new Image();
- 
-  var numImages = 4;
+  this.scroll = new Image();
+  
+  var numImages = 5;
   var numLoaded = 0;
   
   function imageLoaded() {
     numLoaded++;
-    if (numLoaded === numImages)
-    {
+    if (numLoaded === numImages) {
       console.log("Images Loaded");
+      $('.answer').hide();
       window.init();
     }
   }
@@ -106,11 +101,16 @@ var iRepo = new function() {
     imageLoaded();
   }
   
+  this.scroll.onload = function() {
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = randomMonster(6);
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
+  this.scroll.src = path + "/Sprites/Scroll1.png";
 }
 
 function loadMonster(src, callback) {
@@ -138,41 +138,19 @@ function setQuestion(q) {
   question = ">Q: " + q;
 }
 
-function Deck() {
-  
-  this.init = function() {
-    this.cards = new Array();
-  }
-  
-  this.add = function(card) {
-    this.cards.push(card); 
-  }
-  
-  this.draw = function() {
-    return this.cards.pop();
-  }
-  
-  this.shuffle = function() {
-    this.cards = shuffle(this.cards);
-  }
-}
-
-function Card() {
-  
-  this.init = function(question, answer, category) {
-    this.question = question;
-    this.answer = answer;
-    this.category = category;
-  }
-}
-
 function loseLife() {
   lives = lives - 1;
-  game.heart.timer = 29;
-  game.heart.toggle = true;
-  game.heart.hurt();
-  if (lives == 0)
-   gamePlaying = false; 
+  if (lives == 0) {
+    gamePlaying = false; 
+    lose = true;
+    game.heart.timer = 199;
+    game.heart.lose();
+  }
+  else {
+    game.heart.timer = 29;
+    game.heart.toggle = true;
+    game.heart.hurt();
+  }
 }
 
 function submitAnswer() {
@@ -358,7 +336,7 @@ function Monster() {
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y, this.width, this.height);
+    this.context.clearRect(this.x, this.y - 1, this.width, this.height + 1);
   };
   
   this.change = function(category) {
@@ -466,6 +444,24 @@ function Etc(Image) {
 	}
 
 	var func = wrapFunction(this.hurt, this, []);
+	funQueue.push(func);
+      }
+      
+  };
+  
+  this.lose = function() 
+  {
+      this.timer --;
+      
+      if (this.timer > 0)
+      {
+	if (this.timer % 5 == 0)
+	{	  
+	  this.context.fillStyle = "rgba(255,0,0,.1)";
+	  this.context.fillRect(0, 0, 765, 335);
+	}
+
+	var func = wrapFunction(this.lose, this, []);
 	funQueue.push(func);
       }
       
@@ -584,9 +580,11 @@ function Game() {
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
-      if (gameMode > 0) {
+      if (gameMode > GameMode.Training) {
 	      this.heart = new Etc(iRepo.heart);
-	      this.heart.init(550, 50, iRepo.heart.width, iRepo.heart.height);
+	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
+	      this.scroll = new Etc(iRepo.scroll);
+	      this.scroll.init(510, 30, iRepo.scroll.width, iRepo.scroll.height);
       }
       
       this.monster = new Monster();
@@ -614,6 +612,9 @@ function Game() {
   };
   
   this.start = function() {
+    $('.loading').remove();
+    $('.loadingImage').remove();
+    $('.answer').show();
     animate();
   };
 }
@@ -637,17 +638,24 @@ function animate() {
     document.getElementById('question').innerHTML = question;  
     document.getElementById('answer').innerHTML = game.input._value;  
     
-    if (funQueue.length != 0)
-    {
+    if (funQueue.length != 0) {
       (funQueue.shift())();
     }
   }
   
-  else {
-    document.getElementById('question').innerHTML = "FINISHED!";  
+  else if(lose){
+    document.getElementById('question').innerHTML = "YOU HAVE LOST";  
+    if (funQueue.length != 0) {
+      (funQueue.shift())();
+    }
+  }
+  
+  else{
+    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER!";  
   }
    
   if (gameMode > GameMode.Training) {
+    game.scroll.draw();
     game.heart.draw();
     document.getElementById('lives').innerHTML = " x" + lives;  
   }
@@ -655,28 +663,6 @@ function animate() {
   game.avatar.draw();
   game.avatar.move(avatarMoveTo);
 
-}
- 
-//Temporary function to test out deck creation.
-function initCardsAndDeck(){
-  
-  var card1 = new Card();
-  card1.init("Sqrt(Onions)", "Shallots", 3);
-  var card2 = new Card();
-  card2.init("Who dabes?", "I'm dabes", 6);
-  var card3 = new Card();
-  card3.init("2 + 2 = ?", "4", 1);
-  var card4 = new Card();
-  card4.init("FSFSFS", "NRNRNR", 4);
-  numCards = 4;
-  avatarInc = 715 / numCards;
-  deck.add(card1);
-  deck.add(card2);
-  deck.add(card3);
-  deck.add(card4);
-  deck.shuffle();
-  currCard = deck.draw();
-  setQuestion(currCard.question);
 }
  
 /**
@@ -696,15 +682,19 @@ window.requestAnimFrame = (function(){
 })();
 
 var game = new Game();
-var deck = new Deck();
-var deckity;
+var deck;
 
 function init() {
-  
-  console.log("game.js init");
-  deckity = returnDeck();
   gameMode = GameMode.SaveTheWorld;
-  game.init();
-  deck.init();
-  initCardsAndDeck();
+  $.getScript("js/requests.js", function(){
+    deck = deck1;
+    deck.shuffle();
+    numCards = deck.cards.length;
+    avatarInc = 715 / numCards;
+    currCard = deck.draw();
+    lives = numCards - Math.ceil(numCards * .7) + 1;
+    setQuestion(currCard.question);
+    game.init();
+  });
+
 }

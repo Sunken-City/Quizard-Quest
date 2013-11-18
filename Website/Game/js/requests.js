@@ -11,57 +11,83 @@
 |*|
 \*/
 
-function returnDeck () {
+var deck1 = new Deck();
+var cardArray = [];
+var data;
 
-	/*\
-	|*|		:: >> Deck Object << ::
-	\*/
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/array/shuffle [v1.0]
+function shuffle(o) {
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
-	function Deck() {
-		var cards = [];
-	}
+/*\
+|*|		:: >> Request Deck Data << ::
+\*/
 
-	/*\
-	|*|		:: >> Card Object << ::
-	\*/
+var sendData = {tokenDta:'lalala'};
 
-	function Card() {
-		var category;
-		var difficulty;
-		var question;
-		var answer;
-	}
+$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
-	/*\
-	|*|		:: >> Request Deck Data << ::
-	\*/
+	data = $.parseJSON(returnData);
 
-	var deck = new Deck();
-	var data;
-	var sendData = {tokenDta:'lalala'};
+});
 
-	$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+initDeck();
 
-		data = $.parseJSON(returnData);
+/*\
+|*|		:: >> Deck Object << ::
+\*/
 
-	});
+function Deck() {
+  var cards;
+  
+  this.add = function(card) {
+  this.cards.push(card); 
+  }
+  
+  this.draw = function() {
+    return this.cards.pop();
+  }
+  
+  this.shuffle = function() {
+    this.cards = shuffle(this.cards);
+  }
+}
+
+/*\
+|*|		:: >> Card Object << ::
+\*/
+
+function Card() {
+  var category;
+  var question;
+  var answer;
+
+  /*this.init = function(question, answer, category) {
+    this.question = question;
+    this.answer = answer;
+    this.category = category;
+  }*/
+}
+
+function initDeck() {
 
 	/*\
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (something in data) {
-		var newCard = new Car();
-		newCard.question = data['question'];
-		alert('question' + newCard.question);
-		newCard.answer = data['answer'];
-		newCard.difficulty = data['difficulty'];
-		newCard.category = data['category'];
+	for (var i = 0, len = data.length; i < len; i++) {
+		var newCard = new Card();
+		newCard.question = data[i]['question'];
+		newCard.answer = data[i]['answer'];
+		newCard.category = data[i]['category'];
 
-		deck.cards.push(newCard);
+		cardArray.push(newCard);
 	}
 
-	return deck;
+	deck1.cards = cardArray;
 }
 
 
