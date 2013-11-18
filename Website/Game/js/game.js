@@ -597,7 +597,7 @@ function Game() {
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
-      this.backgroundAudio = new Audio(path + "Audio/panicCube.mp3");
+      /*this.backgroundAudio = new Audio(path + "Audio/panicCube.mp3");
       this.backgroundAudio.loop = true;
       this.backgroundAudio.volume = .25;
       this.backgroundAudio.load();
@@ -605,7 +605,7 @@ function Game() {
       this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
       
       if (mute == false)
-      	this.backgroundAudio.play();
+      	this.backgroundAudio.play();*/
     }
     //Return if we don't have canvas support on this bozo's computer. IE6 PROBLEMS >:I
     else  
