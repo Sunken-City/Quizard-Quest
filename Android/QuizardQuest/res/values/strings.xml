@@ -11,4 +11,8 @@
 	<string name="login_button">Begin</string>
 	<string name="deck_string">Choose your Spellbook</string>
 	<string name="deckname">Deck Name</string>
+	<string name="start">Start</string>
+	<string name="answer_hint">Enter Your Answer</string>
+	<string name="submit">Submit</string>
+	<string name="return_to_deck">Return to Deck Select</string>
 </resources>

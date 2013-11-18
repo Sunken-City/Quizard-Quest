@@ -3,15 +3,14 @@ package com.example.quizardquest;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TableRow.LayoutParams;
 
 public class DeckSelect extends Activity {
-	
+	ArrayList<Deck> totalDecks = new ArrayList<Deck>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class DeckSelect extends Activity {
         	Card newCard = new Card("question " + i,"answer " + i ,"category " + i );
         	newCards.add(newCard);
         }
-        ArrayList<Deck> totalDecks = new ArrayList<Deck>();
+
         Deck newDeck = new Deck("Deck 1", newCards);
         Deck newDeck2 = new Deck("Deck 2", newCards);
         Deck newDeck3 = new Deck("Deck 3", newCards);
@@ -35,7 +34,7 @@ public class DeckSelect extends Activity {
         totalDecks.add(newDeck3);
         ArrayList<String> deckNames = new ArrayList<String>();
         for(int i = 0; i < totalDecks.size(); i++){
-        	deckNames.add(totalDecks.get(i).getName());
+        	deckNames.add(i +": " + totalDecks.get(i).getName());
         	
         }
 //        TableLayout deckTable = (TableLayout) findViewById(R.id.deck_table);
@@ -52,8 +51,20 @@ public class DeckSelect extends Activity {
 //        }
         
         Spinner deckSpinner = (Spinner)findViewById(R.id.decklist);
-        ArrayAdapter<String> deckAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, deckNames);
+        ArrayAdapter<String> deckAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, deckNames);
         deckSpinner.setAdapter(deckAdapter);
+	}
+	
+	public void beginQuest(View View){
+		ArrayList<Card> newCards = new ArrayList<Card>();
+		 for(int i = 0; i < 5; i++){
+        	Card newCard = new Card("question " + i,"answer " + i ,"category " + i );
+	        	newCards.add(newCard);
+	        }
+		Deck chosenDeck= new Deck("chosenDeck",newCards);
+	    Intent beginGame = new Intent(this, GameMode.class);
+	    beginGame.putExtra("Deck", chosenDeck); //Optional parameters
+	    startActivity(beginGame);
 	}
 	  
 

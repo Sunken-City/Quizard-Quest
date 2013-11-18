@@ -1,7 +1,9 @@
 package com.example.quizardquest;
 
+import java.io.Serializable;
 
-public class Card {
+
+public class Card implements Serializable {
 	
 	private String question;
 	private String answer;
@@ -23,5 +25,9 @@ public class Card {
 	public String getAnswer()
 	{
 		return answer;
+	}
+	
+	public String getCategory(){
+		return category;
 	}
 }
