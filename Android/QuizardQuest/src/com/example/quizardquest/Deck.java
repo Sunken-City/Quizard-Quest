@@ -1,8 +1,10 @@
 package com.example.quizardquest;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Deck {
+@SuppressWarnings("serial")
+public class Deck implements Serializable {
 	private ArrayList<Card> cards;
 	private String name;
 	

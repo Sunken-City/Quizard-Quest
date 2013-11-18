@@ -25,6 +25,9 @@
         <activity 
             android:name="com.example.quizardquest.DeckSelect"
             android:label="@string/app_name"/>
+        <activity 
+            android:name="com.example.quizardquest.GameMode"
+            android:label="@string/app_name"/>
     </application>
 
 </manifest>
