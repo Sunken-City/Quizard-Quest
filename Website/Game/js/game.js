@@ -23,6 +23,7 @@ var lives;
 var question;
 var answer;
 
+var numRight;
 //Game Mode variables
 this.GameMode = {
     Training : 0,
@@ -159,9 +160,9 @@ function submitAnswer() {
       nextCard();
     }
     else {
+      numRight--;
       if (gameMode > GameMode.Training)
          loseLife();
-      
       nextCard();
     }
     game.input._value = "";
@@ -644,14 +645,14 @@ function animate() {
   }
   
   else if(lose){
-    document.getElementById('question').innerHTML = "YOU HAVE LOST";  
+    document.getElementById('question').innerHTML = "YOU HAVE LOST! "  + numRight + "/" + numCards;  
     if (funQueue.length != 0) {
       (funQueue.shift())();
     }
   }
   
   else{
-    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER!";  
+    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards; 
   }
    
   if (gameMode > GameMode.Training) {
@@ -685,11 +686,12 @@ var game = new Game();
 var deck;
 
 function init() {
-  gameMode = GameMode.SaveTheWorld;
+  gameMode = GameMode.Training;
   $.getScript("js/requests.js", function(){
     deck = deck1;
     deck.shuffle();
     numCards = deck.cards.length;
+    numRight = numCards;
     avatarInc = 715 / numCards;
     currCard = deck.draw();
     lives = numCards - Math.ceil(numCards * .7) + 1;
