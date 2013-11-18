@@ -622,7 +622,7 @@ var game = new Game();
 var deck;
 
 function init() {
-  gameMode = GameMode.Training;
+  gameMode = GameMode.Quest;
   $.getScript("js/requests.js", function(){
     deck = deck1;
     deck.shuffle();

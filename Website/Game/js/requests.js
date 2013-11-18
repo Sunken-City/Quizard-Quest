@@ -64,12 +64,7 @@ function Card() {
   var category;
   var question;
   var answer;
-
-  /*this.init = function(question, answer, category) {
-    this.question = question;
-    this.answer = answer;
-    this.category = category;
-  }*/
+  var difficulty;
 }
 
 function initDeck() {
@@ -83,6 +78,7 @@ function initDeck() {
 		newCard.question = data[i]['question'];
 		newCard.answer = data[i]['answer'];
 		newCard.category = data[i]['category'];
+		newCard.difficulty = data[i]['difficulty'];
 
 		cardArray.push(newCard);
 	}
