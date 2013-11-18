@@ -16,14 +16,30 @@
             android:textSize="25sp"
             android:id="@+id/deckwelcome"
             />
-        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/decklistheader"
+            android:layout_below="@+id/deckwelcome"
+            android:layout_marginTop="80sp"
+            android:orientation="vertical">
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/decklist"
-            android:gravity="center"
-            android:layout_marginTop="80sp"
-            android:layout_below="@+id/deckwelcome"
+            android:textColor="#000000"
             />
-
+	
+	<Button
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/start_button"
+	    android:textSize="50sp"
+	    android:layout_marginTop="50sp"
+	    android:layout_gravity="center"
+	    android:text="@string/start"
+	    android:onClick="beginQuest"
+	    />
+	</LinearLayout>
 </RelativeLayout>
