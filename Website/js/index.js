@@ -190,7 +190,7 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		if (password !== passCheck) {
+		if (newpwd !== passCheck) {
 
 			alert("You passwords do no match!");
 
