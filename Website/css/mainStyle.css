@@ -15,6 +15,10 @@ header {
 	border-bottom: .1em ridge rgb(188,188,188);
 }
 
+#fbLogin {
+	display: inline;
+}
+
 .content {
 	width: 75%;
 	margin-right: auto;
@@ -131,7 +135,7 @@ h3 {
 
 #createAccountSection {
 	float: right;
-	/*margin-top: -40px;*/
+	margin-top: -2.5%;
 	text-align: right;
 }
 
