@@ -133,27 +133,19 @@ $(document).ready(function() {
 	$("#logInButton").click(function(e) {
 		var username = $("#user").val();
 		var password = $("#password").val();
-		var passCheck = $("#passwordCheck").val();
 
-		if (password !== passCheck) {
+		var formData = {pass: password, user: username};
 
-			alert("You passwords do no match!");
+		$.post("../API_Server/logIn.php",formData,function(data){
 
-		} else {
-
-			var formData = {pass: password, user: username};
-
-			$.post("../API_Server/logIn.php",formData,function(data){
-
-				if(data['success']) {
-	            	// do successful things
-	            	window.location.href = "mainMenu.php";
-	        	} else {
-	            	// do failure things
-	            	alert("Username or Password is Invalid!");
-	        	}
-			},"json");
-		}
+			if(data['success']) {
+            	// do successful things
+            	window.location.href = "mainMenu.php";
+        	} else {
+            	// do failure things
+            	alert("Username or Password is Invalid!");
+        	}
+		},"json");
 
 		e.preventDefault();
 
@@ -173,6 +165,7 @@ $(document).ready(function() {
 		var SecurityQuestion = $("#securityQuestion").val();
 		var SecurityAnswer = $("#securityAnswer").val();
 		var gender;
+		var passCheck = $("#passwordCheck").val();
 
 		if ($("#male").val() != null) {
 
@@ -197,22 +190,29 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		$.post("../API_Server/createAccount.php",formData, function(data) {
+		if (password !== passCheck) {
 
-			if (data['success'] === 'username') {
-				// do failure things
-            	alert("That username is already in use!");
+			alert("You passwords do no match!");
 
-        	} else if (data['success'] === 'email') {
-            	// do failure things
-            	alert("That email is already in use!");
+		} else {
 
-        	} else {
-        		// do successful things
-            	window.location.href = "mainMenu.php";
-        	}
+			$.post("../API_Server/createAccount.php",formData, function(data) {
 
-		},"json");
+				if (data['success'] === 'username') {
+					// do failure things
+	            	alert("That username is already in use!");
+
+	        	} else if (data['success'] === 'email') {
+	            	// do failure things
+	            	alert("That email is already in use!");
+
+	        	} else {
+	        		// do successful things
+	            	window.location.href = "mainMenu.php";
+	        	}
+
+			},"json");
+		}
 
 		e.preventDefault();
 	});

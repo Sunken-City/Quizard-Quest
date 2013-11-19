@@ -9,13 +9,34 @@
 	include "API.php";
 	session_start();
 
-	$pass = $_POST['pass'];
-	$user = $_POST['user'];
+	// #If login through facebook or google
+	// if (isset($_POST['logInFrom'])) {
 
-	$authenticated = validate_password($user,$pass);
+	// 	//if Facebook
+	// 	if ( $_POST['logInFrom'] === 'Facebook') {
 
-	$postData = array('success' => $authenticated);
-	$_SESSION['redirected'] = "logIn";
-	echo json_encode($postData);
+	// 		//check if first time user
+			
+
+	// 	} else { //if Google
+
+
+
+	// 	}		
+
+	// } else { #If login from quizard quest
+
+		$pass = $_POST['pass'];
+		$user = $_POST['user'];
+
+		$authenticated = validate_password($user,$pass);
+
+		$postData = array('success' => $authenticated);
+		$_SESSION['redirected'] = "logIn";
+		echo json_encode($postData);
+
+	// }
+
+
 
 ?>
