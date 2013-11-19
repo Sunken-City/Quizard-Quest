@@ -4,4 +4,5 @@
 	\*/
 	session_start();
 	session_destroy();
+	gapi.auth.signOut();
 ?>
