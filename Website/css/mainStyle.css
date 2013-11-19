@@ -19,6 +19,10 @@ header {
 	display: inline;
 }
 
+#facebook {
+	text-align: center;
+}
+
 .content {
 	width: 75%;
 	margin-right: auto;
