@@ -98,6 +98,7 @@ $(document).ready(function() {
 		    // and signed request each expire
 		    var uid = response.authResponse.userID;
 		    var accessToken = response.authResponse.accessToken;
+		    window.location.href = "mainMenu.php";
 		  } else if (response.status === 'not_authorized') {
 		    // the user is logged in to Facebook, 
 		    // but has not authenticated your app
