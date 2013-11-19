@@ -26,7 +26,7 @@ function shuffle(o) {
 |*|		:: >> Request Deck Data << ::
 \*/
 
-var sendData = {tokenDta:'lalala'};
+var sendData = {mode:false};
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
@@ -86,4 +86,10 @@ function initDeck() {
 	deck1.cards = cardArray;
 }
 
+sendData = {mode:true};
+var mode;
 
+$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+  data = $.parseJSON(returnData);
+  mode = returnData['mode'];
+});

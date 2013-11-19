@@ -620,6 +620,7 @@ window.requestAnimFrame = (function(){
 
 var game = new Game();
 var deck;
+var gameMode;
 
 function init() {
   gameMode = GameMode.Quest;
@@ -633,6 +634,7 @@ function init() {
     lives = numCards - Math.ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
     game.init();
+    gameMode = mode;
   });
 
 }
