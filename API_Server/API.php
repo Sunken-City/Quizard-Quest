@@ -549,7 +549,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        $query = mysqli_query($db, "SELECT question FROM securityQuestions WHERE userID = '$userID';");
+        $query = mysqli_query($db, "SELECT questionID FROM securityQuestions WHERE userID = '$userID';");
         $question = mysqli_fetch_assoc($query);
         return $question;
     }
