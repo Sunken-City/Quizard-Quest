@@ -476,62 +476,6 @@ Avatar.prototype = new Drawable();
 Monster.prototype = new Drawable();
 Etc.prototype = new Drawable();
 
-/**
- * A sound pool to use for the sound effects
- */
-/*function SoundPool(maxSize) 
-{
-  var size = maxSize; // Max sounds allowed in the pool
-  var pool = [];
-  this.pool = pool;
-  var currSound = 0;
- 
-  /*
-   * Populates the pool array with the given sound
-   *
-  this.init = function(object) {
-    if (object == "laser") {
-      for (var i = 0; i < size; i++) {
-        // Initalize the sound
-        laser = new Audio("sounds/laser.wav");
-        laser.volume = .12;
-        laser.load();
-        pool[i] = laser;
-      }
-    }
-    else if (object == "explosion") {
-      for (var i = 0; i < size; i++) {
-        var explosion = new Audio("sounds/explosion.wav");
-        explosion.volume = .1;
-        explosion.load();
-        pool[i] = explosion;
-      }
-    }
-  };
-
-  /*
-   * Plays a sound
-   *
-  this.get = function() {
-    if(pool[currSound].currentTime == 0 || pool[currSound].ended) {
-      pool[currSound].play();
-    }
-    currSound = (currSound + 1) % size;
-  };
-}
-*/
-  
-/**
- * Ensure the game sound has loaded before starting the game
- */
-function checkReadyState() {
-
-  if (game.backgroundAudio.readyState === 4) {
-    window.clearInterval(game.checkAudio);
-    game.start();
-  }
-}
-
 function Game() {
 
   this.init = function() {
@@ -597,15 +541,7 @@ function Game() {
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
-      this.backgroundAudio = new Audio(path + "Audio/panicCube.mp3");
-      this.backgroundAudio.loop = true;
-      this.backgroundAudio.volume = .25;
-      this.backgroundAudio.load();
-      
-      this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
-      
-      if (mute == false)
-      	this.backgroundAudio.play();
+      game.start();
     }
     //Return if we don't have canvas support on this bozo's computer. IE6 PROBLEMS >:I
     else  
@@ -684,9 +620,10 @@ window.requestAnimFrame = (function(){
 
 var game = new Game();
 var deck;
+var gameMode;
 
 function init() {
-  gameMode = GameMode.Training;
+  gameMode = GameMode.Quest;
   $.getScript("js/requests.js", function(){
     deck = deck1;
     deck.shuffle();
@@ -697,6 +634,7 @@ function init() {
     lives = numCards - Math.ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
     game.init();
+    gameMode = mode;
   });
 
 }

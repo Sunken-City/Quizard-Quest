@@ -17,6 +17,15 @@
 
 	</head>
 
+
+	<!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
 	<body>
 
 		<div class="content">
@@ -29,12 +38,12 @@
 				<section id="logInSection">
 
 					<div id="logInDiv">
-
 						<form id="logIn" action="#" method="POST" autocomplete="off">
 							<table>
 								<tr>
 									<td><label  for="pwd" id="uname">Username: </label></td>
 									<td><label for="user" id="pwd">Password: </label></td>
+									<td></td>
 								</tr>
 								<tr>
 									<td><input type="text" placeholder="Username" id="user" name="user" required /></td>
@@ -44,6 +53,34 @@
 								<tr>
 									<td class="blankData"></td>
 									<td id="resetPasswordTd"><a href="passwordReset.php" id="resetPassword">Reset Password</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td id="facebook">
+										<div id="fb-root"></div>
+
+										<!--
+										  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+										  present a graphical Login button that triggers the FB.login() function when clicked.
+
+										  Learn more about options for the login button plugin:
+										  /docs/reference/plugins/login/ -->
+
+										<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+									</td>
+									<td id="googleplus">
+										<span id="signinButton">
+										  <span
+										    class="g-signin"
+										    data-callback="signinCallback"
+										    data-clientid="448515029388-ug8sa7npvqkvu8bdn2e5deb10vtpn8nb.apps.googleusercontent.com"
+										    data-cookiepolicy="single_host_origin"
+										    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+										    data-scope="https://www.googleapis.com/auth/plus.login">
+										  </span>
+										</span>
+									</td>
+									<td></td>
 								</tr>
 							</table>
 						</form>
@@ -81,6 +118,10 @@
 							<tr>
 								<td><label for="newPassword" id="newpassword">Password: </label></td>
 								<td>*<input type="password" placeholder="Password" pattern=".{6,20}" name="newpwd" title="Password must be 6-20 characters" id="newPassword" required/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>*<input type="password" placeholder="Re-enter Password" pattern=".{6,20}" name="pwdCheck" title="Password must be 6-20 characters" id="passwordCheck" required/></td>
 							</tr>
 							<tr>
 								<td>

@@ -26,7 +26,7 @@ function shuffle(o) {
 |*|		:: >> Request Deck Data << ::
 \*/
 
-var sendData = {tokenDta:'lalala'};
+var sendData = {mode:false};
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
@@ -64,12 +64,7 @@ function Card() {
   var category;
   var question;
   var answer;
-
-  /*this.init = function(question, answer, category) {
-    this.question = question;
-    this.answer = answer;
-    this.category = category;
-  }*/
+  var difficulty;
 }
 
 function initDeck() {
@@ -83,6 +78,7 @@ function initDeck() {
 		newCard.question = data[i]['question'];
 		newCard.answer = data[i]['answer'];
 		newCard.category = data[i]['category'];
+		newCard.difficulty = data[i]['difficulty'];
 
 		cardArray.push(newCard);
 	}
@@ -90,4 +86,10 @@ function initDeck() {
 	deck1.cards = cardArray;
 }
 
+sendData = {mode:true};
+var mode;
 
+$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+  data = $.parseJSON(returnData);
+  mode = returnData['mode'];
+});
