@@ -634,7 +634,7 @@ function init() {
     lives = numCards - Math.ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
     game.init();
-    gameMode = initMode();
+    gameMode = mode;
   });
 
 }
