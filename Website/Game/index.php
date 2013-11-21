@@ -42,7 +42,7 @@
       <!-- The canvas for the avatar progress bar -->
       <canvas id="avatar" width="765" height="666"></canvas>
       <!-- The canvas for the answer box -->
-      <canvas id="input" width="765" height="666"></canvas>
+      <canvas id="input" width="765" height="765"></canvas>
       <div class="lives"><span id="lives"></span></div>
       <div class="question"><span id="question"></span></div>
       <div class="answer">A: <span id="answer"></span></div>
