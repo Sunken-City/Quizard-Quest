@@ -32,6 +32,8 @@ this.GameMode = {
 }
 // var gameMode = GameMode.Training;
 
+//size the parent div to wrap the content
+
 
 var funQueue = [];
 
