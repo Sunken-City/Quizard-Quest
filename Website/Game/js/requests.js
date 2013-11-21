@@ -33,17 +33,19 @@ var sendData = {mode:'false'};
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 	data = $.parseJSON(returnData);
-  initDeck();
 
   sendData = {mode:'true'};
 
   $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
     data = $.parseJSON(returnData);
     md = data['mode'];
-    initMode(md);
+    
   });
 
 });
+
+initMode(md);
+initDeck();
 
 /*\
 |*|		:: >> Deck Object << ::
