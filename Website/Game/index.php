@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    <div class="Game content">
+    <div class="Game">
 
       <!-- The canvas for the background -->
       <canvas id="background" width="765" height="666">
