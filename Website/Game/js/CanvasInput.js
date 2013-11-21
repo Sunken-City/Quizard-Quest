@@ -56,6 +56,7 @@
     self._hasFocus = false;
     self._selection = [0, 0];
     self._wasOver = false;
+    self.setAttribute('id','theInverseVampireButton');
 
     // parse box shadow
     self.boxShadow(self._boxShadow, true);
@@ -732,7 +733,6 @@
       var isMobile = (typeof window.orientation !== 'undefined');
       if (isMobile && !isChromeMobile && document && document.createElement && (input = document.createElement('input'))) {
         input.type = 'text';
-        input.setAttribute('id','theInverseVampireButton');
         input.style.opacity = 0;
         input.style.position = 'absolute';
         input.style.left = (self._x + self._extraX + (self._canvas ? self._canvas.offsetLeft : 0)) + 'px';
