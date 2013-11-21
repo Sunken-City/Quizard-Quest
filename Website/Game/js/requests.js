@@ -26,7 +26,7 @@ function shuffle(o) {
 |*|		:: >> Request Deck Data << ::
 \*/
 
-var sendData = {mode:false};
+var sendData = {mode:'false'};
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
@@ -86,7 +86,7 @@ function initDeck() {
 	deck1.cards = cardArray;
 }
 
-// sendData = {mode:true};
+// sendData = {mode:'true'};
 // var mode;
 
 // $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {

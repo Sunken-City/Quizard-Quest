@@ -6,7 +6,7 @@
 	$mode = array('mode' => $_SESSION['questSelected']);
 
 
-	if ($_POST['mode']) {
+	if (strcmp($_POST['mode'], 'true') === 0) {
 
 		echo json_encode($mode);
 
