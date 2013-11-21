@@ -89,14 +89,11 @@ function initDeck() {
 /*\
 |*|   :: >> Fetch the Game Mode << ::
 \*/
-
+  
+sendData = {mode:'true'};
 var mode;
 
-function initMode() {
-  sendData = {mode:'true'};
-
-  $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
-    data = $.parseJSON(returnData);
-    mode = data['mode'];
-  });
-}
+$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+  data = $.parseJSON(returnData);
+  mode = data['mode'];
+});
