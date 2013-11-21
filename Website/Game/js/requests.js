@@ -86,8 +86,12 @@ function initDeck() {
 	deck1.cards = cardArray;
 }
 
+/*\
+|*|   :: >> Fetch the Game Mode << ::
+\*/
+  
 sendData = {mode:'true'};
-var mode = null;
+var mode;
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
   data = $.parseJSON(returnData);
