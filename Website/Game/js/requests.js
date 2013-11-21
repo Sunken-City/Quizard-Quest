@@ -15,7 +15,7 @@ var deck1 = new Deck();
 var cardArray = [];
 var data;
 var md;
-var questMode;
+var questMode = 0;
 
 //+ Jonas Raoni Soares Silva
 //@ http://jsfromhell.com/array/shuffle [v1.0]
