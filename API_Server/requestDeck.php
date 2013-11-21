@@ -3,7 +3,7 @@
 	session_start();
 
 	$deckID = $_SESSION['deckSelected'];
-	$mode = array('mode' => $_SESSION['modeSelect']);
+	$mode = array('mode' => $_SESSION['questSelected']);
 
 
 	if ($_POST['mode']) {

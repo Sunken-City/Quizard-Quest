@@ -91,5 +91,5 @@ var mode;
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
   data = $.parseJSON(returnData);
-  mode = returnData['mode'];
+  mode = data['mode'];
 });
