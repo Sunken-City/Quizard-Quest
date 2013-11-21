@@ -623,7 +623,7 @@ var deck;
 var gameMode;
 
 function init() {
-  gameMode = GameMode.Quest;
+  // gameMode = GameMode.Quest;
   $.getScript("js/requests.js", function(){
     deck = deck1;
     deck.shuffle();
