@@ -13,6 +13,7 @@
 	} else {
 
 		$deckCards = get_deck_cards($deckID);
+		array_push($deckCars, $mode);
 		echo json_encode($deckCards);
 
 	}

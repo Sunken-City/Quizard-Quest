@@ -626,7 +626,7 @@ function init() {
   // gameMode = GameMode.Quest;
   $.getScript("js/requests.js", function(){
     deck = deck1;
-    gameMode = questMode;
+    gameMode = md;
     deck.shuffle();
     numCards = deck.cards.length;
     numRight = numCards;

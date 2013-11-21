@@ -15,7 +15,6 @@ var deck1 = new Deck();
 var cardArray = [];
 var data;
 var md;
-var questMode = 0;
 
 //+ Jonas Raoni Soares Silva
 //@ http://jsfromhell.com/array/shuffle [v1.0]
@@ -34,17 +33,8 @@ $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 	data = $.parseJSON(returnData);
 
-  sendData = {mode:'true'};
-
-  $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
-    data = $.parseJSON(returnData);
-    md = data['mode'];
-    
-  });
-
 });
 
-initMode(md);
 initDeck();
 
 /*\
@@ -84,7 +74,7 @@ function initDeck() {
 	|*|		:: >> Initialize the New Deck << ::
 	\*/
 
-	for (var i = 0, len = data.length; i < len; i++) {
+	for (var i = 0, len = data.length - 1; i < len; i++) {
 		var newCard = new Card();
 		newCard.question = data[i]['question'];
 		newCard.answer = data[i]['answer'];
@@ -94,14 +84,11 @@ function initDeck() {
 		cardArray.push(newCard);
 	}
 
+  md = data['mode'];
 	deck1.cards = cardArray;
 }
 
 /*\
 |*|   :: >> Fetch the Game Mode << ::
 \*/
-
-function initMode(mod) {
-  questMode = mod;
-}
 
