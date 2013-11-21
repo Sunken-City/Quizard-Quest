@@ -44,7 +44,7 @@ canvas {
 
 .question {
   position: absolute;
-  top: 360px;
+  top: 365px;
   left: 5px;
   color: #FF9900;
   /*font-family: 'VT323', sans-serif;
@@ -54,7 +54,7 @@ canvas {
 
 .answer {
   position: absolute;
-  top: 420px;
+  top: 425px;
   left: 5px;
   color: #FF9900;
   /*font-family: 'VT323', sans-serif;
