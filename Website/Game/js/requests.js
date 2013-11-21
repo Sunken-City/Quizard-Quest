@@ -33,17 +33,16 @@ var sendData = {mode:'false'};
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 	data = $.parseJSON(returnData);
+  initDeck();
 
-});
+  sendData = {mode:'true'};
 
-initDeck();
+  $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+    data = $.parseJSON(returnData);
+    md = data['mode'];
+    initMode(md);
+  });
 
-sendData = {mode:'true'};
-
-$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
-  data = $.parseJSON(returnData);
-  md = data['mode'];
-  initMode(md);
 });
 
 /*\
