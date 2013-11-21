@@ -56,7 +56,6 @@
     self._hasFocus = false;
     self._selection = [0, 0];
     self._wasOver = false;
-    self.setAttribute('id','theInverseVampireButton');
 
     // parse box shadow
     self.boxShadow(self._boxShadow, true);

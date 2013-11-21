@@ -138,7 +138,7 @@ function nextCard() {
 }
 
 function setQuestion(q) {
-  question = ">Q: " + q;
+  question = "Q: " + q;
 }
 
 function loseLife() {
