@@ -626,6 +626,7 @@ function init() {
   // gameMode = GameMode.Quest;
   $.getScript("js/requests.js", function(){
     deck = deck1;
+    gameMode = mode;
     deck.shuffle();
     numCards = deck.cards.length;
     numRight = numCards;
@@ -634,7 +635,6 @@ function init() {
     lives = numCards - Math.ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
     game.init();
-    gameMode = mode;
   });
 
 }
