@@ -30,7 +30,7 @@ this.GameMode = {
     Quest : 1,
     SaveTheWorld : 2
 }
-var gameMode = GameMode.Training;
+// var gameMode = GameMode.Training;
 
 
 var funQueue = [];
