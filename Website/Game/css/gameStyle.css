@@ -27,6 +27,7 @@ canvas {
   margin-right: auto;
   margin-left: auto;
   width: 765px;
+  z-index: -3
 }
 
 .lives {
