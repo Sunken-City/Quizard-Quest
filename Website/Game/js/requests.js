@@ -86,10 +86,10 @@ function initDeck() {
 	deck1.cards = cardArray;
 }
 
-sendData = {mode:true};
-var mode;
+// sendData = {mode:true};
+// var mode;
 
-$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
-  data = $.parseJSON(returnData);
-  mode = data['mode'];
-});
+// $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+//   data = $.parseJSON(returnData);
+//   mode = data['mode'];
+// });
