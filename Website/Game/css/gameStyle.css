@@ -51,6 +51,7 @@ canvas {
   font-size: 50px;*/
   cursor: default;
   word-wrap:break-word;
+  width: inherit;
 }
 
 .answer {
@@ -62,6 +63,7 @@ canvas {
   font-size: 50px;*/
   cursor: default;
   word-wrap:break-word;
+  width: inherit;
 }
 
 .loading {
