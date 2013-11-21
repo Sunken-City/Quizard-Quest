@@ -87,7 +87,7 @@ function initDeck() {
 }
 
 sendData = {mode:'true'};
-var mode;
+var mode = null;
 
 $.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
   data = $.parseJSON(returnData);
