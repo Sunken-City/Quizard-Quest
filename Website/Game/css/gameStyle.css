@@ -48,7 +48,7 @@ canvas {
   left: 5px;
   color: #FF9900;
   font-family: 'VT323', sans-serif;
-  font-size: 30px;
+  font-size: 1.25em;
   cursor: default;
   word-wrap:break-word;
   width: inherit;
