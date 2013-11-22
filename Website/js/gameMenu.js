@@ -39,11 +39,11 @@ $(document).ready(function() {
 				window.location.href = "Game/index.php";
 			});
 
-		} else if (deck === -1 && mode != -1) {
+		} else if (deck == -1 && mode != -1) {
 
 			alert("You have to select a Spellbook! If you do not have one you should return to Home and from there you can create a Spellbook!");
 
-		} else if (mode === -1 && deck != -1) {
+		} else if (mode == -1 && deck != -1) {
 
 			alert("You have to select a Challenge");
 
