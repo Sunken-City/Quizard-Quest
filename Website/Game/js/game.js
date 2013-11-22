@@ -20,6 +20,7 @@ var avatarInc;
 var currCard;
 
 var lives;
+var time = "00:00";
 var question;
 var answer;
 
@@ -602,7 +603,7 @@ function Game() {
       
       if (gameMode == GameMode.SaveTheWorld) {
 	this.clock = new Etc(iRepo.clock);
-	this.clock.init(65, 30, iRepo.clock.width, iRepo.clock.height);
+	this.clock.init(35, 30, iRepo.clock.width, iRepo.clock.height);
 	this.scroll2 = new Etc(iRepo.scroll2);
 	this.scroll2.init(5, 5, iRepo.scroll2.width, iRepo.scroll2.height);
       }
@@ -632,7 +633,6 @@ function Game() {
   this.start = function() {
     $('.loading').remove();
     $('.loadingImage').remove();
-    // $('.answer').show();
     animate();
   };
 }
@@ -654,7 +654,8 @@ function animate() {
     game.monster.draw();
 
     document.getElementById('question').innerHTML = question;  
-    document.getElementById('answer').innerHTML = game.input._value;  
+    document.getElementById('answer').innerHTML = game.input._value; 
+    document.getElementById('time').innerHTML = time;
     
     if (funQueue.length != 0) {
       (funQueue.shift())();
