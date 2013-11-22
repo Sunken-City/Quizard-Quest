@@ -20,7 +20,7 @@ var avatarInc;
 var currCard;
 
 var lives;
-var time;
+var time = "00:00";
 var seconds = 0;
 var minutes = 0;
 var question;
@@ -78,7 +78,7 @@ function updateTimer() {
   var currTime = new Date().getTime() - start;
 
       var elapsed = Math.floor(currTime / 1000);
-      seconds += elapsed - seconds;
+      seconds += elapsed - (60 * minutes) - seconds;
       if (seconds > 59) {
 	seconds -= 60;
 	minutes++;
@@ -702,6 +702,7 @@ function animate() {
   if (gameMode == GameMode.SaveTheWorld) {
     game.scroll2.draw();
     game.clock.draw();
+    updateTimer();
     document.getElementById('time').innerHTML = time;
   }
   
