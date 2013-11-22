@@ -653,35 +653,38 @@ function animate() {
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     
-    $("#answer").innerHTML = "You gained " + XPGained + " total XP!";
+    var htmlString = "You gained " + XPGained + " total XP!";
     
     if (XPCategory[0] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[0] + " math XP!";
+      htmlString += "\nYou gained " + XPCategory[0] + " math XP!";
     if (XPCategory[1] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[1] + " science XP!";
+      htmlString += "\nYou gained " + XPCategory[1] + " science XP!";
     if (XPCategory[2] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[2] + " social studies XP!";
+      htmlString += "\nYou gained " + XPCategory[2] + " social studies XP!";
     if (XPCategory[3] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[3] + " english XP!";
+      htmlString += "\nYou gained " + XPCategory[3] + " english XP!";
     if (XPCategory[4] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[4] + " language XP!";
+      htmlString += "\nYou gained " + XPCategory[4] + " language XP!";
     if (XPCategory[5] != 0)
-      $("#answer").innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
+      htmlString += "\nYou gained " + XPCategory[5] + " misc XP!";
     
     switch(gameMode) {
       case GameMode.Training:
-         results.innerHTML += "\nYou gained 100 gold!";
+         htmlString += "\nYou gained 100 gold!";
          goldEarned = 100;
       case GameMode.Quest:
-         results.innerHTML += "\nYou gained 300 gold!";
+         htmlString += "\nYou gained 300 gold!";
          goldEarned = 300;
       case GameMode.SaveTheWorld:
-         results.innerHTML += "\nYou gained 500 gold!";
+         htmlString += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
          //console.log("No gamemode found! Oh schiesse!");
     }
-    $("#answer").show();
+
+    $("#answer").HTML(htmlString);
+
+    $(".answer").show();
   }
    
   if (gameMode > GameMode.Training) {
