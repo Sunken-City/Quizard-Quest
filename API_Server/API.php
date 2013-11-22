@@ -365,7 +365,7 @@
             array_push($table, mysqli_fetch_assoc($decks));
         }
         return $table;
-        mysqli_close($db);*   
+        mysqli_close($db);   
     }
     
     /*\
