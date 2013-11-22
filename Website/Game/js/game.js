@@ -618,10 +618,13 @@ function animate() {
     if (funQueue.length != 0) {
       (funQueue.shift())();
     }
+    
   }
   
   else{
-    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards; 
+    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
+    var paragraph = 
+    document.creatElement('p'); 
   }
    
   if (gameMode > GameMode.Training) {
