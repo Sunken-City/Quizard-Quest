@@ -59,6 +59,9 @@
 				<div id="profileDecks">
 
 				</div>
+				<div id="deckCards">
+	
+				</div>
 				
 				<!-- Display user's stats -->
 				<!--
