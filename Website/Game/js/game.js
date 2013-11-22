@@ -21,8 +21,8 @@ var currCard;
 
 var lives;
 var time;
-var seconds;
-var minutes;
+var seconds = 0;
+var minutes = 0;
 var question;
 var answer;
 
