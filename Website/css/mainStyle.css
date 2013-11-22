@@ -164,10 +164,6 @@ h3 {
 	margin-right: .5em;
 }
 
-.special {
-	margin-bottom: 1.25em;
-}
-
 footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -400,6 +396,10 @@ header {
 
 #cardTable [type="text"],#cardTable [type="email"],#cardTable [type="password"] {
 	margin-bottom: .25em;
+}
+
+.special {
+	margin-bottom: 1.25em;
 }
 
 /*\	
