@@ -33,9 +33,15 @@
 				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar" class="nonIndex">
 					<button type="button" id="home" class="navButton">Home</button>
+					<button type="button" id="startGame" >Begin your Quest!</button>
+					<button type="button" id="createCard" >Create a Spell!</button>
+					<button type="button" id="createDeck" >Create a Spellbook!</button>
+					<button type="button" id="reviewDecks" >Edit your Spellbooks</button>
 					<button type="button" id="logOut" class="navButton">Log Out</button>
 				</nav>
 			</header>
+
+			
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
