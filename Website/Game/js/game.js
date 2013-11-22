@@ -589,14 +589,14 @@ function Game() {
       
       if (gameMode > GameMode.Training) {
 	      this.heart = new Etc(iRepo.heart);
-	      this.heart.init(575, 55, iRepo.heart.width, iRepo.heart.height);
+	      this.heart.init(595, 30, iRepo.heart.width, iRepo.heart.height);
 	      this.scroll = new Etc(iRepo.scroll);
-	      this.scroll.init(510, 30, iRepo.scroll.width, iRepo.scroll.height);
+	      this.scroll.init(530, 5, iRepo.scroll.width, iRepo.scroll.height);
       }
       
       if (gameMode == GameMode.SaveTheWorld) {
 	this.scroll2 = new Etc(iRepo.scroll2);
-	this.scroll2.init(0, 30, iRepo.scroll2.width, iRepo.scroll2.height);
+	this.scroll2.init(20, 5, iRepo.scroll2.width, iRepo.scroll2.height);
       }
       
       this.monster = new Monster();
