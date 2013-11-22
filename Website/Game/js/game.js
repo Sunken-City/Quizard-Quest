@@ -83,7 +83,7 @@ var iRepo = new function() {
     numLoaded++;
     if (numLoaded === numImages) {
       console.log("Images Loaded");
-      $('.answer').hide();
+      // $('.answer').hide();
       window.init();
     }
   }
@@ -553,7 +553,7 @@ function Game() {
   this.start = function() {
     $('.loading').remove();
     $('.loadingImage').remove();
-    $('.answer').show();
+    // $('.answer').show();
     animate();
   };
 }
@@ -575,7 +575,7 @@ function animate() {
     game.monster.draw();
 
     document.getElementById('question').innerHTML = question;  
-    document.getElementById('answer').innerHTML = game.input._value;  
+    // document.getElementById('answer').innerHTML = game.input._value;  
     
     if (funQueue.length != 0) {
       (funQueue.shift())();
