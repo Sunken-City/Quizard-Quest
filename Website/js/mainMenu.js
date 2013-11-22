@@ -40,7 +40,8 @@ $(document).ready(function() {
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
 			Deck.click(function(e){
-					showDeck(Deck.value);
+					var deckid = document.getElementById("deck"+i).value
+					showDeck(deckid);
 			});
 			document.getElementById('profileDecks').appendChild(Deck);
 			
