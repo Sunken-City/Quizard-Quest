@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatars/PastelGreg.png";
+var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
 var gamePlaying = true;
@@ -20,11 +20,13 @@ var avatarInc;
 var currCard;
 
 var lives;
-var time = "00:00";
+var time;
+var seconds;
+var minutes;
 var question;
 var answer;
 
-var start = new Date().getTime(), elapsed = '0.0';
+var start;
 
 var goldEarned;
 var XPGained;
@@ -75,10 +77,15 @@ function updateTimer() {
   
   var currTime = new Date().getTime() - start;
 
-      elapsed = Math.floor(time / 100) / 10;
-      if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
+      var elapsed = Math.floor(currTime / 100) / 10;
+      seconds += elapsed;
+      if (seconds > 59) {
+	seconds -= 60;
+	minutes++;
+      }
+      //if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
 
-      time = elapsed;
+      time = minutes + ":" + seconds;
 }
 /**
  * Define an object to hold all our images for the game so images
@@ -645,6 +652,7 @@ function Game() {
   this.start = function() {
     $('.loading').remove();
     $('.loadingImage').remove();
+    start = new Date().getTime();
     animate();
   };
 }
