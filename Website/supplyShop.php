@@ -14,7 +14,7 @@
 
 		<?php
 		    session_start();
-		    include '../../API_Server/url.php';
+		    include '../API_Server/url.php';
 		    if(!isset($_SESSION['userID'])) {
 		        // not logged in
 		        $_SESSION['redirected'] = true;
@@ -41,7 +41,7 @@
 				</nav>
 			</header>
 
-			
+
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
