@@ -86,6 +86,9 @@ $.post("../API_Server/getCards.php", function(data){
 			case "5":
 				categoryName="Foreign Languages";
 				break;
+		   case "6":
+		      categoryName="Misc";
+		      break;
 
 		}
 

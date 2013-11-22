@@ -6,6 +6,6 @@
    $deckID = $_POST['deckID'];
    
    $userID = get_userID($username);
-   return json_encode(getDeckCards($userID, $deckID));
+   echo json_encode(getDeckCards($userID, $deckID));
    
 ?>
