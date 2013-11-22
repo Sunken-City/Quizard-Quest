@@ -101,6 +101,6 @@ $(document).ready(function() {
 
 	$("#headerLogo").click(function(e) {
 		window.location.href = "mainMenu.php";
-	})
+	});
 
 });
