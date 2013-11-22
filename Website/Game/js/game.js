@@ -83,9 +83,15 @@ function updateTimer() {
 	seconds -= 60;
 	minutes++;
       }
-      //if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
-
-      time = minutes + ":" + seconds;
+      
+      if (minutes < 10)
+	time = "0" + minutes + ":";
+      else
+	time = minutes + ":";
+      if (seconds < 10)
+	time += "0" + seconds;
+      else
+	time += seconds;
 }
 /**
  * Define an object to hold all our images for the game so images
