@@ -344,7 +344,7 @@ function Monster() {
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y - 1, this.width, this.height + 1);
+    this.context.clearRect(this.x, this.y - 3, this.width, this.height + 3);
   };
   
   this.change = function(category) {
@@ -356,6 +356,23 @@ function Monster() {
       game.monster.clearAll();
     });
   };
+  
+  this.hurt = function() {
+    var imageData = context.getImageData(x, y, imageObj.width, imageObj.height);
+    var data = imageData.data;
+
+    for(var i = 0; i < data.length; i += 4) {
+      // red
+      data[i] = 255 - data[i];
+      // green
+      data[i + 1] = 255 - data[i + 1];
+      // blue
+      data[i + 2] = 255 - data[i + 2];
+    }
+
+    // overwrite original image
+    context.putImageData(imageData, x, y); 
+  }
   
   //Make the monster float up and down in an idling sequence
   this.idle = function() {  
