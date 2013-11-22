@@ -6,8 +6,8 @@
    $password = $_POST['password'];
    
    if(validate_password($username, $password)) {
-      $_SESSION['userID'] = get_userID($username);
-      return json_encode(get_deck_names());
+      $userID = get_userID($username);
+      return json_encode(get_deck_names($userID));
    }
    else
       return 239;
