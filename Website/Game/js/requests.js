@@ -29,7 +29,7 @@ function shuffle(o) {
 
 var sendData = {mode:'false'};
 
-$.post("../../API_Server/requestDeck.php",sendData,function(returnData) {
+$.post("../../../API_Server/requestDeck.php",sendData,function(returnData) {
 
 	data = $.parseJSON(returnData);
 
