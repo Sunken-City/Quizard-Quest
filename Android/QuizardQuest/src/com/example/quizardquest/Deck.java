@@ -7,10 +7,11 @@ import java.util.ArrayList;
 public class Deck implements Serializable {
 	private ArrayList<Card> cards;
 	private String name;
+	private int deckId;
 	
-	public Deck(String newName, ArrayList<Card> newCards){
+	public Deck(String newName, int newDeckId){
 		name = newName;
-		cards = new ArrayList<Card>(newCards);
+		deckId = newDeckId;
 	}
 	
 	public ArrayList<Card> getCards(){
@@ -20,5 +21,12 @@ public class Deck implements Serializable {
 	public String getName(){
 		return name;
 	}
+	
+	public void insertCards(ArrayList<Card> newCards){
+		cards = new ArrayList<Card>(newCards);
+	}
 
+	public int getId(){
+		return deckId;
+	}
 }
