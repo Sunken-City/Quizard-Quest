@@ -679,7 +679,7 @@ function animate() {
          htmlString += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
-         //console.log("No gamemode found! Oh schiesse!");
+         console.log("No gamemode found! Oh schiesse!");
     }
 
     $("#answer").html(htmlString);
