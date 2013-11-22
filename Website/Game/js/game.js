@@ -23,6 +23,7 @@ var lives;
 var question;
 var answer;
 
+var goldEarned;
 var XPGained;
 var XPCategory = [];
 
@@ -164,9 +165,12 @@ function loseLife() {
 function submitAnswer() {
   if (gamePlaying) {
     if (currCard.answer == game.input._value) {
+      game.monster.timer = 29;
+      game.monster.hurt();
+      numRight++;
       nextCard();
       XPGained += 10;
-      switch(category){
+      switch(currCard.category){
        case 1: //Math
          XPCategory[0] += 10;
        case 2: //Science
@@ -184,7 +188,6 @@ function submitAnswer() {
       }
     }
     else {
-      numRight--;
       if (gameMode > GameMode.Training)
          loseLife();
       nextCard();
@@ -378,20 +381,29 @@ function Monster() {
   };
   
   this.hurt = function() {
-    var imageData = this.context.getImageData(x, y, imageObj.width, imageObj.height);
-    var data = imageData.data;
+    
+    this.timer --;
+      
+    if (this.timer % 2 == 0) {
+	var imageData = this.context.getImageData(this.x, this.y, this.width, this.height);
+	var data = imageData.data;
 
-    for(var i = 0; i < data.length; i += 4) {
-      // red
-      data[i] = 255 - data[i];
-      // green
-      data[i + 1] = 255 - data[i + 1];
-      // blue
-      data[i + 2] = 255 - data[i + 2];
-    }
+	for(var i = 0; i < data.length; i += 4) {
+	  // red
+	  data[i] = 255 - data[i];
+	  // green
+	  data[i + 1] = 255 - data[i + 1];
+	  // blue
+	  data[i + 2] = 255 - data[i + 2];
+	}
 
-    // overwrite original image
-    this.context.putImageData(imageData, game.monster.x, game.monster.y); 
+	// overwrite original image
+	this.context.putImageData(imageData, this.x, this.y); 
+      }
+      if (this.timer > 0) {
+        var func = wrapFunction(this.hurt, this, []);
+	funQueue.push(func);
+      }
   }
   
   //Make the monster float up and down in an idling sequence
@@ -640,8 +652,37 @@ function animate() {
   
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
-    var paragraph = 
-    document.creatElement('p'); 
+    
+    var results = document.createElement('p');
+    results.innerHTML = "You gained " + XPGained + " total XP!";
+    
+    if (XPCategory[0] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[0] + " math XP!";
+    if (XPCategory[1] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[1] + " science XP!";
+    if (XPCategory[2] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[2] + " social studies XP!";
+    if (XPCategory[3] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[3] + " english XP!";
+    if (XPCategory[4] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[4] + " language XP!";
+    if (XPCategory[5] != 0)
+      results.innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
+    
+    /*switch(gameMode) {
+      case 1:
+         results.innerHTML += "\nYou gained 100 gold!";
+         goldEarned = 100;
+      case 2:
+         results.innerHTML += "\nYou gained 300 gold!";
+         goldEarned = 300;
+      case 3:
+         results.innerHTML += "\nYou gained 500 gold!";
+         goldEarned = 500;
+      default:
+         //console.log("No gamemode found! Oh schiesse!");
+    }*/
+    document.getElementById('Game').appendChild(results);
   }
    
   if (gameMode > GameMode.Training) {
@@ -682,11 +723,12 @@ function init() {
     gameMode = md;
     deck.shuffle();
     numCards = deck.cards.length;
-    numRight = numCards;
+    numRight = 0;
     
     for (var i=0; i<6; i++)
       XPCategory[i] = 0;
     
+    goldEarned = 0;
     avatarInc = 715 / numCards;
     currCard = deck.draw();
     lives = numCards - Math.ceil(numCards * .7) + 1;
