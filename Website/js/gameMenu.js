@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 		var sendData = {deckSelect:deck, modeSelect:mode};
 
-		if (deck != -1 || mode != -1) { //if a deck is selected and game mode selected
+		if (deck != -1 && mode != -1) { //if a deck is selected and game mode selected
 
 			$.post("../API_Server/questSetup.php",sendData, function() {
 				window.location.href = "Game/index.php";
