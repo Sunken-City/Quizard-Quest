@@ -73,7 +73,7 @@ var wrapFunction = function(fn, context, params) {
 }
 
 //Function that checks the current time, and updates the timer.
-function updateTimerUp() {
+function increaseTimer() {
   
   var currTime = new Date().getTime() - start;
 
@@ -99,8 +99,8 @@ function updateTimer() {
   
   var currTime = new Date().getTime() - start;
 
-      var elapsed = Math.floor(currTime / 1000);
-      seconds -= elapsed - (60 * minutes) - seconds;
+      var elapsed = Math.floor(currTime / 1000) % 10;
+      seconds -= elapsed;
       if (seconds < 0) {
 	seconds += 59;
 	minutes--;
