@@ -670,7 +670,7 @@ function animate() {
     
     switch(gameMode) {
       case "0":
-         htmlString += "\nYou gained 100 gold!";
+         htmlString += "You gained 100 gold!";
          goldEarned = 100;
          break;
       case "1":
