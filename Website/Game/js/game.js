@@ -378,7 +378,7 @@ function Monster() {
   };
   
   this.hurt = function() {
-    var imageData = this.context.getImageData(x, y, imageObj.width, imageObj.height);
+    var imageData = this.context.getImageData(this.x, this.y, this.width, this.height);
     var data = imageData.data;
 
     for(var i = 0; i < data.length; i += 4) {
@@ -391,7 +391,7 @@ function Monster() {
     }
 
     // overwrite original image
-    this.context.putImageData(imageData, game.monster.x, game.monster.y); 
+    this.context.putImageData(imageData, this.x, this.y); 
   }
   
   //Make the monster float up and down in an idling sequence
