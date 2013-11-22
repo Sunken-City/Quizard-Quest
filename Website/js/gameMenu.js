@@ -33,16 +33,23 @@ $(document).ready(function() {
 
 		var sendData = {deckSelect:deck, modeSelect:mode};
 
-		if (deck != -1) { //if a deck is selected
+		if (deck != -1 || mode != -1) { //if a deck is selected and game mode selected
 
 			$.post("../API_Server/questSetup.php",sendData, function() {
 				window.location.href = "Game/index.php";
 			});
 
-		} else {
+		} else if (deck === -1 && mode != -1) {
 
 			alert("You have to select a Spellbook! If you do not have one you should return to Home and from there you can create a Spellbook!");
 
+		} else if (mode === -1 && deck != -1) {
+
+			alert("You have to select a Challenge");
+
+		} else {
+
+			alert("You have to select a Spellbook and Challenge!");
 		}
 		
 

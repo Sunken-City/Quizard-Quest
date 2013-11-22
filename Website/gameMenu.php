@@ -42,7 +42,7 @@
 				<div id="chooseDeck">
 					<h2>Select Your Spellbook:</h2>
 					<select id="deckSelect">
-						<option value="">Select Spellbook</option>
+						<option value="-1">Select Spellbook</option>
 						<!-- Dynamically Loaded -->
 					</select>
 				</div>
