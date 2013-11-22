@@ -24,6 +24,8 @@ var time = "00:00";
 var question;
 var answer;
 
+var start = new Date().getTime(), elapsed = '0.0';
+
 var goldEarned;
 var XPGained;
 var XPCategory = [];
@@ -68,6 +70,16 @@ var wrapFunction = function(fn, context, params) {
     };
 }
 
+//Function that checks the current time, and updates the timer.
+function updateTimer() {
+  
+  var currTime = new Date().getTime() - start;
+
+      elapsed = Math.floor(time / 100) / 10;
+      if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
+
+      time = elapsed;
+}
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
@@ -653,9 +665,7 @@ function animate() {
     game.monster.idle();
     game.monster.draw();
 
-    document.getElementById('question').innerHTML = question;  
-    document.getElementById('answer').innerHTML = game.input._value; 
-    document.getElementById('time').innerHTML = time;
+    document.getElementById('question').innerHTML = question;
     
     if (funQueue.length != 0) {
       (funQueue.shift())();
@@ -684,7 +694,7 @@ function animate() {
   if (gameMode == GameMode.SaveTheWorld) {
     game.scroll2.draw();
     game.clock.draw();
-    //document.getElementById('lives').innerHTML = " x" + lives;  
+    document.getElementById('time').innerHTML = time;
   }
   
   game.avatar.draw();
