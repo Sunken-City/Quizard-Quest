@@ -595,8 +595,8 @@ function Game() {
       }
       
       if (gameMode == GameMode.SaveTheWorld) {
-	this.scroll = new Etc(iRepo.scroll2);
-	this.scroll.init(177, 30, iRepo.scroll2.width, iRepo.scroll2.height);
+	this.scroll2 = new Etc(iRepo.scroll2);
+	this.scroll2.init(0, 30, iRepo.scroll2.width, iRepo.scroll2.height);
       }
       
       this.monster = new Monster();
