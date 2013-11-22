@@ -23,6 +23,9 @@ var lives;
 var question;
 var answer;
 
+var XPGained;
+var XPCategory = new array();
+
 var numRight;
 //Game Mode variables
 this.GameMode = {
@@ -162,6 +165,23 @@ function submitAnswer() {
   if (gamePlaying) {
     if (currCard.answer == game.input._value) {
       nextCard();
+      XPGained += 10;
+      switch(category){
+       case 1: //Math
+         XPCategory[0] += 10;
+       case 2: //Science
+         XPCategory[1] += 10;
+       case 3: //Social Studies
+         XPCategory[2] += 10;
+       case 4: //English
+         XPCategory[3] += 10;
+       case 5: //Language
+         XPCategory[4] += 10;
+       case 6: //Misc
+         XPCategory[5] += 10;
+       default:
+         console.log("No category or invalid category passed! ONO");
+      }
     }
     else {
       numRight--;
@@ -615,10 +635,13 @@ function animate() {
     if (funQueue.length != 0) {
       (funQueue.shift())();
     }
+    
   }
   
   else{
-    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards; 
+    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
+    var paragraph = 
+    document.creatElement('p'); 
   }
    
   if (gameMode > GameMode.Training) {
@@ -660,10 +683,15 @@ function init() {
     deck.shuffle();
     numCards = deck.cards.length;
     numRight = numCards;
+    
+    for (var i=0; i<6; i++)
+      XPCategory[i] = 0;
+    
     avatarInc = 715 / numCards;
     currCard = deck.draw();
     lives = numCards - Math.ceil(numCards * .7) + 1;
     setQuestion(currCard.question);
+    XPGained = 0;
     game.init();
   });
 
