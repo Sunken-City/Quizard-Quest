@@ -488,8 +488,8 @@ function Game() {
     this.eCanvas = document.getElementById('etc');
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
-      x: 120,
-      y: 700,
+      x: 150,
+      y: 550,
       width:400,
       height: 35,
       fontFamily: 'VT323',
