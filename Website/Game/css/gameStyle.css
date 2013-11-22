@@ -47,8 +47,8 @@ canvas {
   top: 365px;
   left: 5px;
   color: #FF9900;
-  /*font-family: 'VT323', sans-serif;
-  font-size: 50px;*/
+  font-family: 'VT323', sans-serif;
+  font-size: 30px;
   cursor: default;
   word-wrap:break-word;
   width: inherit;
@@ -59,12 +59,12 @@ canvas {
   top: 425px;
   left: 5px;
   color: #FF9900;
-  /*font-family: 'VT323', sans-serif;
-  font-size: 50px;*/
+  font-family: 'VT323', sans-serif;
+  font-size: 30px;
   cursor: default;
   word-wrap:break-word;
   width: inherit;
-  margin-top: 4em;
+  margin-top: 1em;
 }
 
 .loading {
