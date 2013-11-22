@@ -233,6 +233,13 @@ input,label,select {
 	height:5em;
 	width:10em;
 	padding-left:.5em;
+	cursor: pointer;
+}
+
+#headerLogoIndex {
+	height:6em;
+	width:12em;
+	padding-left:.5em;
 }
 
 header label,input {

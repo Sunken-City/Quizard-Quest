@@ -7,7 +7,7 @@
    
    if(validate_password($username, $password)) {
       $userID = get_userID($username);
-      echo json_encode(get_deck_names($userID));
+      echo json_encode(get_deck_names($userID['userID']));
    }
    else
       echo "239";
