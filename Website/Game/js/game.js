@@ -652,43 +652,7 @@ function animate() {
   
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
-    
-    var htmlString = "You gained " + XPGained + " total XP!";
-    
-    if (XPCategory[0] != 0)
-      htmlString += "\nYou gained " + XPCategory[0] + " math XP!";
-    if (XPCategory[1] != 0)
-      htmlString += "\nYou gained " + XPCategory[1] + " science XP!";
-    if (XPCategory[2] != 0)
-      htmlString += "\nYou gained " + XPCategory[2] + " social studies XP!";
-    if (XPCategory[3] != 0)
-      htmlString += "\nYou gained " + XPCategory[3] + " english XP!";
-    if (XPCategory[4] != 0)
-      htmlString += "\nYou gained " + XPCategory[4] + " language XP!";
-    if (XPCategory[5] != 0)
-      htmlString += "\nYou gained " + XPCategory[5] + " misc XP!";
-    
-    switch(gameMode) {
-      case "0":
-         htmlString += "You gained 100 gold!";
-         goldEarned = 100;
-         break;
-      case "1":
-         htmlString += "\nYou gained 300 gold!";
-         goldEarned = 300;
-         break;
-      case "2":
-         htmlString += "\nYou gained 500 gold!";
-         goldEarned = 500;
-         break;
-      default:
-         console.log("No gamemode found! Oh schiesse!");
-         break;
-    }
 
-    $("#answer").html(htmlString);
-
-    $(".answer").show();
   }
    
   if (gameMode > GameMode.Training) {
@@ -721,6 +685,45 @@ window.requestAnimFrame = (function(){
 var game = new Game();
 var deck;
 var gameMode;
+
+function printEarning() {
+    var htmlString = "You gained " + XPGained + " total XP!";
+    
+    if (XPCategory[0] != 0)
+      htmlString += "</br>You gained " + XPCategory[0] + " math XP!";
+    if (XPCategory[1] != 0)
+      htmlString += "</br>You gained " + XPCategory[1] + " science XP!";
+    if (XPCategory[2] != 0)
+      htmlString += "</br>You gained " + XPCategory[2] + " social studies XP!";
+    if (XPCategory[3] != 0)
+      htmlString += "</br>You gained " + XPCategory[3] + " english XP!";
+    if (XPCategory[4] != 0)
+      htmlString += "</br>You gained " + XPCategory[4] + " language XP!";
+    if (XPCategory[5] != 0)
+      htmlString += "</br>You gained " + XPCategory[5] + " misc XP!";
+    
+    switch(gameMode) {
+      case "0":
+         htmlString += "</br>You gained 100 gold!";
+         goldEarned = 100;
+         break;
+      case "1":
+         htmlString += "</br>You gained 300 gold!";
+         goldEarned = 300;
+         break;
+      case "2":
+         htmlString += "</br>You gained 500 gold!";
+         goldEarned = 500;
+         break;
+      default:
+         console.log("No gamemode found! Oh scheisse!");
+         break;
+    }
+
+    $("#answer").html(htmlString);
+
+    $(".answer").show();
+}
 
 function init() {
   // gameMode = GameMode.Quest;
