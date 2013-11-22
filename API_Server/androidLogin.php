@@ -7,9 +7,9 @@
    
    if(validate_password($username, $password)) {
       $_SESSION['userID'] = get_userID($username);
-      return json_encode(get_deck_names());
+      echo json_encode(get_deck_names());
    }
    else
-      return 239;
+      echo "239";
 ?>
 

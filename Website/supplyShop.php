@@ -27,10 +27,22 @@
 
 	<body>
 
-		<footer>
-			<p>Quizard Quest is brought to you by cd msc/</p>
-			<p>2013 English (US)</p>
-		</footer>
+		<div class="content">
+			
+			<header class="nonIndex">
+				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
+				<nav class="navbar" class="nonIndex">
+					<button type="button" id="home" class="navButton">Home</button>
+					<button type="button" id="logOut" class="navButton">Log Out</button>
+				</nav>
+			</header>
+
+			<footer>
+				<p>Quizard Quest is brought to you by cd msc/</p>
+				<p>2013 English (US)</p>
+			</footer>
+
+		</div>
 
 	</body>
 
