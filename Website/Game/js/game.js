@@ -669,13 +669,13 @@ function animate() {
       $("#answer").innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
     
     switch(gameMode) {
-      case Training:
+      case GameMode.Training:
          results.innerHTML += "\nYou gained 100 gold!";
          goldEarned = 100;
-      case Quest:
+      case GameMode.Quest:
          results.innerHTML += "\nYou gained 300 gold!";
          goldEarned = 300;
-      case SaveTheWorld:
+      case GameMode.SaveTheWorld:
          results.innerHTML += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
