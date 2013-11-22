@@ -500,7 +500,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        $cards = mysqli_query($db, "SELECT * FROM stats WHERE userID = '$userID');");
+        $cards = mysqli_query($db, "SELECT * FROM stats WHERE userID = '$userID';");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
