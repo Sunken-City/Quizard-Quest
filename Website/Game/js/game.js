@@ -680,7 +680,7 @@ function animate() {
          goldEarned = 500;
       default:
          //console.log("No gamemode found! Oh schiesse!");
-    }*/
+    }
     $("#answer").show();
   }
    
