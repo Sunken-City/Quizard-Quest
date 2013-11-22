@@ -668,19 +668,19 @@ function animate() {
     if (XPCategory[5] != 0)
       results.innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
     
-    /*switch(gameMode) {
-      case 1:
+    switch(gameMode) {
+      case Training:
          results.innerHTML += "\nYou gained 100 gold!";
          goldEarned = 100;
-      case 2:
+      case Quest:
          results.innerHTML += "\nYou gained 300 gold!";
          goldEarned = 300;
-      case 3:
+      case SaveTheWorld:
          results.innerHTML += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
          //console.log("No gamemode found! Oh schiesse!");
-    }*/
+    }
     document.getElementById('Game').appendChild(results);
   }
    
