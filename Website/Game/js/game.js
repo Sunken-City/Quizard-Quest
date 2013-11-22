@@ -653,7 +653,7 @@ function animate() {
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     
-    var results = document.createElement('results');
+    var results = document.createElement('p');
     results.innerHTML = "You gained " + XPGained + " total XP!";
     
     if (XPCategory[0] != 0)
@@ -682,7 +682,7 @@ function animate() {
       default:
          //console.log("No gamemode found! Oh schiesse!");
     }*/
-    
+    document.getElementById('Game').appendChild(results);
   }
    
   if (gameMode > GameMode.Training) {
