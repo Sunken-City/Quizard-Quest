@@ -669,13 +669,13 @@ function animate() {
       htmlString += "\nYou gained " + XPCategory[5] + " misc XP!";
     
     switch(gameMode) {
-      case GameMode.Training:
+      case 0:
          htmlString += "\nYou gained 100 gold!";
          goldEarned = 100;
-      case GameMode.Quest:
+      case 1:
          htmlString += "\nYou gained 300 gold!";
          goldEarned = 300;
-      case GameMode.SaveTheWorld:
+      case 2:
          htmlString += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
