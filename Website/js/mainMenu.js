@@ -39,10 +39,11 @@ $(document).ready(function() {
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
-			document.getElementById('profileDecks').appendChild(Deck);
-			$["deck"+i].click(function(e){
+			Deck.click(function(e){
 					showDeck(Deck.value);
 			});
+			document.getElementById('profileDecks').appendChild(Deck);
+			
 		}		
 	});
 
