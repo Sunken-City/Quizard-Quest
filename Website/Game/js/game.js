@@ -371,7 +371,7 @@ function Monster() {
     }
 
     // overwrite original image
-    this.context.putImageData(imageData, x, y); 
+    this.context.putImageData(imageData, this.x, this.y); 
   }
   
   //Make the monster float up and down in an idling sequence
