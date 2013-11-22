@@ -33,9 +33,18 @@ $(document).ready(function() {
 
 		var sendData = {deckSelect:deck, modeSelect:mode};
 
-		$.post("../API_Server/questSetup.php",sendData, function() {
-			window.location.href = "Game/index.php";
-		});
+		if (deck != -1) { //if a deck is selected
+
+			$.post("../API_Server/questSetup.php",sendData, function() {
+				window.location.href = "Game/index.php";
+			});
+
+		} else {
+
+			alert("You have to select a Spellbook! If you do not have one you should return to Home and from there you can create a Spellbook!");
+
+		}
+		
 
 	});
 
