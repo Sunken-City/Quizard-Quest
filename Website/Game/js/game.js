@@ -489,7 +489,7 @@ function Game() {
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 120,
-      y: 580,
+      y: 700,
       width:400,
       height: 35,
       fontFamily: 'VT323',

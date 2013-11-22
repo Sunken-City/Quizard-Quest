@@ -65,7 +65,6 @@ canvas {
   cursor: default;
   word-wrap:break-word;
   width: inherit;
-  margin-bottom: 6em;
 }
 
 .loading {
