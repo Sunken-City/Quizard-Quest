@@ -78,7 +78,7 @@ function updateTimer() {
   var currTime = new Date().getTime() - start;
 
       var elapsed = Math.floor(currTime / 1000);
-      seconds += elapsed;
+      seconds += elapsed - seconds;
       if (seconds > 59) {
 	seconds -= 60;
 	minutes++;
