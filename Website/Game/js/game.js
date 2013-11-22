@@ -671,7 +671,7 @@ function animate() {
       default:
          //console.log("No gamemode found! Oh schiesse!");
     }*/
-    
+    document.getElementById('Game').appendChild(results);
   }
    
   if (gameMode > GameMode.Training) {
