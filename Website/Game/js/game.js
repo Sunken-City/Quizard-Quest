@@ -21,8 +21,8 @@ var currCard;
 
 var lives;
 var time = "00:00";
-var seconds = 0;
-var minutes = 0;
+var seconds = 8;
+var minutes = 8;
 var question;
 var answer;
 
@@ -73,7 +73,7 @@ var wrapFunction = function(fn, context, params) {
 }
 
 //Function that checks the current time, and updates the timer.
-function updateTimer() {
+function updateTimerUp() {
   
   var currTime = new Date().getTime() - start;
 
@@ -82,6 +82,28 @@ function updateTimer() {
       if (seconds > 59) {
 	seconds -= 60;
 	minutes++;
+      }
+      
+      if (minutes < 10)
+	time = "0" + minutes + ":";
+      else
+	time = minutes + ":";
+      if (seconds < 10)
+	time += "0" + seconds;
+      else
+	time += seconds;
+}
+
+//Function used to remove time from the timer.
+function updateTimer() {
+  
+  var currTime = new Date().getTime() - start;
+
+      var elapsed = Math.floor(currTime / 1000);
+      seconds -= elapsed - (60 * minutes) - seconds;
+      if (seconds < 0) {
+	seconds += 59;
+	minutes--;
       }
       
       if (minutes < 10)
