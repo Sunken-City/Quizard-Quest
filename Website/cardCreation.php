@@ -31,8 +31,8 @@
 				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar">
 					<button type="button" id="home" class="navButton">Home</button>
-					<button type="button" id="createDeck" >Create a Deck!</button>
-					<button type="button" id="reviewDecks" >Edit your Decks</button>
+					<button type="button" id="createDeck" >Create a Spellbook!</button>
+					<button type="button" id="reviewDecks" >Edit your Spellbooks</button>
 					<button type="button" id="logOut" class="navButton">Log Out</button>
 				</nav>
 			</header>
@@ -92,9 +92,9 @@
 						<tr>
 							<td class="blank"></td>
 							<td class="blank"></td>
-							<td><button type ="button" id="previewCard" class="submitButton">Preview New Card</button></td>
+							<td><button type ="button" id="previewCard" class="submitButton">Preview New Spell</button></td>
 							<td><button type ="button" id="closePreview" class="submitButton">Close Preview</button></td>
-							<td><input type ="submit" id="submitQuestion" value ="Submit New Card" class="submitButton" /></td>
+							<td><input type ="submit" id="submitQuestion" value ="Submit New Spell" class="submitButton" /></td>
 						</tr>	
 					</table>
 				</form>			

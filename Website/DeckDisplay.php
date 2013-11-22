@@ -36,27 +36,27 @@
 				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar">
 					<button type="button" id="home" class="navButton">Home</button>
-					<button type="button" id="createCard" >Create a Card!</button>
-					<button type="button" id="createDeck" >Create a Deck!</button>
+					<button type="button" id="createCard" >Create a Spell!</button>
+					<button type="button" id="createDeck" >Create a Spellbook!</button>
 					<button type="button" id="logOut" class="navButton">Log Out</button>
 				</nav>
 			</header>
 
-			<h1 id="deckDisplayHeading"> Select the Deck You Wish to Edit!</h1>
+			<h1 id="deckDisplayHeading"> Select the Spellbook You Wish to Edit!</h1>
 
 			<div id="innerContent">
 
 				<form id="cardRemove" action="../API_Server/editDeck.php" method="POST" >
 
 					<select name="Decks" id="Decks" onchange="showDeck(this.value)">
-						<option value="">Select Deck</option>
+						<option value="">Select Spellbook</option>
 					</select>
 					<h2>
-						Current Deck Cards
+						Current Spells in Spellbook:
 					</h2>
 					<div id="deckCards"></div>
 					<h2>
-						Cards to Add
+						Spells Available to Add:
 					</h2>
 					<div id="userCards"></div>
 					<input type="submit" value="Submit Changes" id="removeCards" class="submitButton" />
