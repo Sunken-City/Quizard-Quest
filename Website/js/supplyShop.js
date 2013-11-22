@@ -2,6 +2,12 @@
 
 $(document).ready(function () {
 
+	display();
+
+});
+
+function display() {
+
 	var gold;
 
 	var sendData = {'life':'and death'};
@@ -14,4 +20,4 @@ $(document).ready(function () {
 
 	$("#displayGold").html(goldDisplay);
 
-});
+}
