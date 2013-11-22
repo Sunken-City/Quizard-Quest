@@ -488,12 +488,12 @@ function Game() {
     this.eCanvas = document.getElementById('etc');
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
-      x: 100,
-      y: 520,
+      x: 120,
+      y: 550,
       width:400,
-      height: 70,
+      height: 42,
       fontFamily: 'VT323',
-      fontSize: 50,
+      fontSize: 30,
       fontColor: '#FF9900',
       placeHolder: 'Enter an Answer...',
       backgroundColor: '#222222',
