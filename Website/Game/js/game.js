@@ -384,8 +384,7 @@ function Monster() {
     
     this.timer --;
       
-    if (this.timer > 0)
-    {
+    if (this.timer % 2 == 0) {
 	var imageData = this.context.getImageData(this.x, this.y, this.width, this.height);
 	var data = imageData.data;
 
@@ -400,7 +399,9 @@ function Monster() {
 
 	// overwrite original image
 	this.context.putImageData(imageData, this.x, this.y); 
-    	var func = wrapFunction(this.hurt, this, []);
+      }
+      if (this.timer > 0) {
+        var func = wrapFunction(this.hurt, this, []);
 	funQueue.push(func);
       }
   }
