@@ -45,7 +45,7 @@
       <canvas id="input" width="765" height="765"></canvas>
       <div class="lives"><span id="lives"></span></div>
       <div class="question"><span id="question"></span></div>
-      <div class="answer">A: <span id="answer"></span></div>
+      <div class="answer"><span id="answer"></span></div>
       <div class="loading">Loading...<span id = "loading"></div>
       <div class="loadingImage"><span id="loadingImage"></div>
 

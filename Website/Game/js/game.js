@@ -653,21 +653,20 @@ function animate() {
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     
-    var results = document.createElement('p');
-    results.innerHTML = "You gained " + XPGained + " total XP!";
+    $("#answer").innerHTML = "You gained " + XPGained + " total XP!";
     
     if (XPCategory[0] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[0] + " math XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[0] + " math XP!";
     if (XPCategory[1] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[1] + " science XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[1] + " science XP!";
     if (XPCategory[2] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[2] + " social studies XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[2] + " social studies XP!";
     if (XPCategory[3] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[3] + " english XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[3] + " english XP!";
     if (XPCategory[4] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[4] + " language XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[4] + " language XP!";
     if (XPCategory[5] != 0)
-      results.innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
+      $("#answer").innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
     
     /*switch(gameMode) {
       case 1:
@@ -682,7 +681,7 @@ function animate() {
       default:
          //console.log("No gamemode found! Oh schiesse!");
     }*/
-    document.getElementById('Game').appendChild(results);
+    $("#answer").show();
   }
    
   if (gameMode > GameMode.Training) {
