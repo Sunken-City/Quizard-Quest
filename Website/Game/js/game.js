@@ -164,6 +164,8 @@ function loseLife() {
 function submitAnswer() {
   if (gamePlaying) {
     if (currCard.answer == game.input._value) {
+      game.monster.timer = 29;
+      game.monster.hurt();
       nextCard();
       XPGained += 10;
       switch(category){
@@ -378,20 +380,28 @@ function Monster() {
   };
   
   this.hurt = function() {
-    var imageData = this.context.getImageData(this.x, this.y, this.width, this.height);
-    var data = imageData.data;
+    
+    this.timer --;
+      
+    if (this.timer > 0)
+    {
+	var imageData = this.context.getImageData(this.x, this.y, this.width, this.height);
+	var data = imageData.data;
 
-    for(var i = 0; i < data.length; i += 4) {
-      // red
-      data[i] = 255 - data[i];
-      // green
-      data[i + 1] = 255 - data[i + 1];
-      // blue
-      data[i + 2] = 255 - data[i + 2];
-    }
+	for(var i = 0; i < data.length; i += 4) {
+	  // red
+	  data[i] = 255 - data[i];
+	  // green
+	  data[i + 1] = 255 - data[i + 1];
+	  // blue
+	  data[i + 2] = 255 - data[i + 2];
+	}
 
-    // overwrite original image
-    this.context.putImageData(imageData, this.x, this.y); 
+	// overwrite original image
+	this.context.putImageData(imageData, this.x, this.y); 
+    	var func = wrapFunction(this.hurt, this, []);
+	funQueue.push(func);
+      }
   }
   
   //Make the monster float up and down in an idling sequence
