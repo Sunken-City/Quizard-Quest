@@ -57,9 +57,10 @@
 							>	Display all cards in that deck
 				  -->
 				<div id="profileDecks">
-
+					<h3>Decks: </h3>
 				</div>
 				<div id="deckCards">
+					
 	
 				</div>
 				
