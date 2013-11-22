@@ -266,6 +266,19 @@
         
     }
     
+    function get_username() {
+      $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        
+        $userID = $_SESSION['userID'];
+        $usernameList = mysqli_query($db, "SELECT username FROM players WHERE userID = '$userID';");
+        $username = mysqli_fetch_assoc($usernameList);
+        return $usernameList['username'];
+    }
+    
     /****************************/
     /* CREATING/DELETING A CARD */
     /****************************/
@@ -471,7 +484,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        $cards = mysqli_query($db, "SELECT * FROM achievements WHERE userID = '$userID');");
+        $cards = mysqli_query($db, "SELECT * FROM achievements WHERE userID = '$userID';");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
