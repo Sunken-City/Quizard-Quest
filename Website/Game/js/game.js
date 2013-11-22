@@ -127,8 +127,10 @@ function nextCard() {
   if (deck.cards.length != 0) {
     currCard = deck.draw();
     setQuestion(currCard.question);
-    game.monster.change(currCard.category);
-    iRepo.background.src = path + randomBackground();
+    if (gameMode < GameMode.SaveTheWorld) {
+      game.monster.change(currCard.category);
+      iRepo.background.src = path + randomBackground();
+    }
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
   else {
@@ -174,6 +176,9 @@ function submitAnswer() {
 //Picks a random monster image from the available pool of monsters
 function randomMonster(category) {
   switch(category){
+    case 0: //Boss
+      var choice = Math.floor((Math.random() * 16) + 1);
+      return "../../Resources/Game/Sprites/Bosses/" + choice + ".png";
     case 1: //Math
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
@@ -539,6 +544,12 @@ function Game() {
       var monsterX = 382.5 - (iRepo.monster.width/2);
       var monsterY = 168 - (iRepo.monster.height/2);
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
+      
+      if (gameMode == GameMode.SaveTheWorld)
+	this.monster.change(0);
+      else
+	this.monster.change(currCard.category);
+      
       
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
