@@ -96,7 +96,7 @@ $(document).ready(function() {
 	});
 
 	$("#gotoStore").click(function(e) {
-		// window.location.href = "DeckDisplay.php";
+		window.location.href = "supplyShop.php";
 	});
 
 });

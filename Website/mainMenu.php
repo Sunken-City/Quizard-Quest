@@ -36,7 +36,7 @@
 				<img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
 				<nav class="navbar" class="nonIndex">
 					<button type="button" id="startGame" >Begin your Quest!</button>
-					<button type="button" id="gotoStore" >Supply Shop</button>
+					<button type="button" id="gotoStore" >Secret Shop</button>
 					<button type="button" id="createCard" >Create a Spell!</button>
 					<button type="button" id="createDeck" >Create a Spellbook!</button>
 					<button type="button" id="reviewDecks" >Edit your Spellbooks</button>
