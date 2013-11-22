@@ -642,7 +642,7 @@ function animate() {
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     
-    var results = document.creatElement('results');
+    var results = document.createElement('results');
     results.innerHTML = "You gained " + XPGained + " total XP!";
     
     if (XPCategory[0] != 0)
