@@ -79,8 +79,9 @@ var iRepo = new function() {
   this.avatar = new Image();
   this.heart = new Image();
   this.scroll = new Image();
+  this.scroll2 = new Image();
   
-  var numImages = 5;
+  var numImages = 6;
   var numLoaded = 0;
   
   function imageLoaded() {
@@ -112,12 +113,17 @@ var iRepo = new function() {
     imageLoaded();
   }
   
+  this.scroll2.onload = function() {
+    imageLoaded();
+  }
+  
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = randomMonster(6);
   this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
   this.scroll.src = path + "/Sprites/Scroll1.png";
+  this.scroll2.src = path + "/Sprites/Scroll2.png";
 }
 
 function loadMonster(src, callback) {
@@ -588,6 +594,11 @@ function Game() {
 	      this.scroll.init(510, 30, iRepo.scroll.width, iRepo.scroll.height);
       }
       
+      if (gameMode == GameMode.SaveTheWorld) {
+	this.scroll = new Etc(iRepo.scroll2);
+	this.scroll.init(177, 30, iRepo.scroll2.width, iRepo.scroll2.height);
+      }
+      
       this.monster = new Monster();
       //Center the monster in the middle of the screen.
       var monsterX = 382.5 - (iRepo.monster.width/2);
@@ -659,6 +670,12 @@ function animate() {
     game.scroll.draw();
     game.heart.draw();
     document.getElementById('lives').innerHTML = " x" + lives;  
+  }
+  
+  if (gameMode == GameMode.SaveTheWorld) {
+    game.scroll2.draw();
+    //game.heart.draw();
+    //document.getElementById('lives').innerHTML = " x" + lives;  
   }
   
   game.avatar.draw();
