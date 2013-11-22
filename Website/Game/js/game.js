@@ -672,14 +672,18 @@ function animate() {
       case "0":
          htmlString += "\nYou gained 100 gold!";
          goldEarned = 100;
+         break;
       case "1":
          htmlString += "\nYou gained 300 gold!";
          goldEarned = 300;
+         break;
       case "2":
          htmlString += "\nYou gained 500 gold!";
          goldEarned = 500;
+         break;
       default:
          console.log("No gamemode found! Oh schiesse!");
+         break;
     }
 
     $("#answer").html(htmlString);
