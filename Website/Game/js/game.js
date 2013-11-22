@@ -170,7 +170,7 @@ function submitAnswer() {
       numRight++;
       nextCard();
       XPGained += 10;
-      switch(category){
+      switch(currCard.category){
        case 1: //Math
          XPCategory[0] += 10;
        case 2: //Science
