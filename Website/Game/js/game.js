@@ -682,7 +682,7 @@ function animate() {
          //console.log("No gamemode found! Oh schiesse!");
     }
 
-    $("#answer").HTML(htmlString);
+    $("#answer").html(htmlString);
 
     $(".answer").show();
   }
