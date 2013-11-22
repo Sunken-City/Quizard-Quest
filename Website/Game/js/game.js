@@ -658,7 +658,7 @@ function animate() {
     if (XPCategory[5] != 0)
       results.innerHTML += "\nYou gained " + XPCategory[5] + " misc XP!";
     
-    switch(gameMode) {
+    /*switch(gameMode) {
       case 1:
          results.innerHTML += "\nYou gained 100 gold!";
          goldEarned = 100;
@@ -669,8 +669,8 @@ function animate() {
          results.innerHTML += "\nYou gained 500 gold!";
          goldEarned = 500;
       default:
-         console.log("No gamemode found! Oh schiesse!");
-    }
+         //console.log("No gamemode found! Oh schiesse!");
+    }*/
     
   }
    
