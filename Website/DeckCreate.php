@@ -47,7 +47,7 @@
 			<form id="deckCreate" action="../API_Server/DeckCreation.php" method="POST" >
 				<input id="nameDeck" type="text" name="Deckname" maxlength="32" title="Please Enter a Spellbook Name" placeholder="Spellbook Name" required>
 				<div id="UserCards"></div>
-				<input type="submit" value="Create Spellbook" id="createDeck" class="submitButton" />
+				<input type="submit" value="Create Spellbook" id="createDeck" class="submitButton special" />
 			</form>
 
 			<footer>

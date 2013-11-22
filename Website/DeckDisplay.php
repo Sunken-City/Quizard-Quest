@@ -59,7 +59,7 @@
 						Spells Available to Add:
 					</h2>
 					<div id="userCards"></div>
-					<input type="submit" value="Submit Changes" id="removeCards" class="submitButton" />
+					<input type="submit" value="Submit Edits" id="removeCards" class="submitButton special" />
 
 				</form>
 

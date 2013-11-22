@@ -44,7 +44,7 @@ $(document).ready(function(){
 			$.post("../API_Server/CardCreation.php",formData,function(){
 			});
 
-			alert("Question Added");
+			alert("Spell Added!");
 			window.location.href = "cardCreation.php";
 			e.preventDefault();
 		}		

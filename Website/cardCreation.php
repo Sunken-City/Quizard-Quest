@@ -94,7 +94,7 @@
 							<td class="blank"></td>
 							<td><button type ="button" id="previewCard" class="submitButton">Preview New Spell</button></td>
 							<td><button type ="button" id="closePreview" class="submitButton">Close Preview</button></td>
-							<td><input type ="submit" id="submitQuestion" value ="Submit New Spell" class="submitButton" /></td>
+							<td><input type ="submit" id="submitQuestion" value ="Submit New Spell" class="submitButton special" /></td>
 						</tr>	
 					</table>
 				</form>			
