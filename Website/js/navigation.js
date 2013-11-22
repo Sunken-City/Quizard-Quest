@@ -99,4 +99,8 @@ $(document).ready(function() {
 		window.location.href = "supplyShop.php";
 	});
 
+	$("#headerLogo").click(function(e) {
+		window.location.href = "mainMenu.php";
+	})
+
 });
