@@ -15,23 +15,24 @@ public class DeckSelect extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.selectdeck);
-        //Intent intent = getIntent();
-        //String value = intent.getStringExtra("key"); //if it's a string you stored.
+        Intent intent = getIntent();
+        ArrayList<Deck> totalDecks = (ArrayList<Deck>)intent.getSerializableExtra("playerDecks"); //if it's a string you stored.
         
-        ArrayList<Card> newCards = new ArrayList<Card>();
-        //Create Test Decks
-        for(int i = 0; i < 5; i++){
-        	Card newCard = new Card("question " + i,"answer " + i ,"category " + i );
-        	newCards.add(newCard);
-        }
-
-        Deck newDeck = new Deck("Deck 1", 1);
-        Deck newDeck2 = new Deck("Deck 2", 2);
-        Deck newDeck3 = new Deck("Deck 3", 3);
         
-        totalDecks.add(newDeck);
-        totalDecks.add(newDeck2);
-        totalDecks.add(newDeck3);
+//        ArrayList<Card> newCards = new ArrayList<Card>();
+//        //Create Test Decks
+//        for(int i = 0; i < 5; i++){
+//        	Card newCard = new Card("question " + i,"answer " + i ,"category " + i );
+//        	newCards.add(newCard);
+//        }
+//
+//        Deck newDeck = new Deck("Deck 1", 1);
+//        Deck newDeck2 = new Deck("Deck 2", 2);
+//        Deck newDeck3 = new Deck("Deck 3", 3);
+//        
+//        totalDecks.add(newDeck);
+//        totalDecks.add(newDeck2);
+//        totalDecks.add(newDeck3);
         ArrayList<String> deckNames = new ArrayList<String>();
         for(int i = 0; i < totalDecks.size(); i++){
         	deckNames.add(i +": " + totalDecks.get(i).getName());
