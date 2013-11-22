@@ -34,8 +34,8 @@ canvas {
 
 .lives {
   position: absolute;
-  top: 55px;
-  left: 630px;
+  top: 30px;
+  left: 650px;
   color: #000000;
   font-family: 'VT323', sans-serif;
   font-size: 50px;

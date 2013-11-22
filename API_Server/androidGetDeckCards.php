@@ -1,11 +1,11 @@
 <?
-   include "API.php";
+   include "androidAPI.php";
    session_start();
    
    $username = $_POST['username'];
    $deckID = $_POST['deckID'];
    
-   $_SESSION['userID'] = get_userID($username);
-   return json_encode(getDeckCards($deckID));
+   $userID = get_userID($username);
+   return json_encode(getDeckCards($userID, $deckID));
    
 ?>
