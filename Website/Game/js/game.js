@@ -24,7 +24,7 @@ var question;
 var answer;
 
 var XPGained;
-var XPCategory = new array();
+var XPCategory = [];
 
 var numRight;
 //Game Mode variables
