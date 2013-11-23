@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$("#getSecurity").click(function(e){
       
 		var str = $("#user").val();
+		console.Log(str);
 			if (str=="") {
 			  return;
 	    	} 
