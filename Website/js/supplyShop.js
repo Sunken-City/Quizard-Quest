@@ -145,7 +145,7 @@ function displayavatars() {
 
 	for (var i = 0, len = avatars.length; i < len; i++) {
 
-		Avatar ava = new Avatar();
+		var ava = new Avatar();
 
 		ava.name = avatars[i].name;
 		ava.location = avatars[i].location;
