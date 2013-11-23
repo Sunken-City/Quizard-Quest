@@ -164,7 +164,7 @@ function displayavatars() {
 		var td = document.createElement("td");
 
 		td.appendChild(Avatars[i].img);
-		document.findElementById('theRow').appendChild(td);
+		document.getElementById('theRow').appendChild(td);
 	}
 
 }
