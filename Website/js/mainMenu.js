@@ -81,7 +81,7 @@ $(document).ready(function() {
 		mathxp = data['mathEXP'];
 		mathdisplay = "Math XP : " + mathxp ;
 		sciencexp = data['sciEXP'];
-		sciencedisplay = "Science XP : " + ciencexp ;
+		sciencedisplay = "Science XP : " + sciencexp ;
 		ssxp = data['ssEXP'];
 		ssdisplay = "Social Studies XP : " + ssxp ;
 		engxp = data['engEXP'];
