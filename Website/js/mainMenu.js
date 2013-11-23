@@ -45,17 +45,16 @@ $(document).ready(function() {
 	|*|
 	\*/
 	$.post("../API_Server/DeckReview.php", function(data){
-	JSON = $.parseJSON(data);
+		JSON = $.parseJSON(data);
+		var deckid = "";
 		for( var i = 0, len = JSON.length;  i < len; i++){
 			var Deck = document.createElement("button");
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
 			document.getElementById('profileDecks').appendChild(Deck);
-			var deckid = document.getElementById("deck"+i)
+			deckid = document.getElementById("deck"+i)
 			Deck.addEventListener("click", function() { 
-					
-					alert("alert" + deckid.value);
 					showDeck(deckid.value);
 			});
 			
