@@ -59,6 +59,7 @@
 				<div id="profileDecks">
 					<h3>Decks: </h3>
 				</div>
+
 				<div id="deckCards">
 					
 	
@@ -77,6 +78,7 @@
 					=>	Display Achievements
 				  -->
 				<div id="profileStats">
+
 					<div id="displayGold"></div>
 				</div>
 
