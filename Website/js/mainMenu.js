@@ -60,13 +60,36 @@ $(document).ready(function() {
 		}		
 	});
 
-	var gold;
-	var goldDisplay;
+	
 	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
+		var gold;
+		var goldDisplay;
+		var mathxp;
+		var mathdisplay;
+		var sciencexp;
+		var sciencedisplay;
+		var ssxp;
+		var ssdisplay;
+		var engxp;
+		var engdisplay;
+		var totxp;
+		var totdisplay;
+		
 		gold = data['gold'];
-		goldDisplay = "You have " + gold + " gold";
-		document.getElementById('displayGold').innerHTML = goldDisplay;
+		goldDisplay = "Gold : " + gold ;
+		mathxp = data['mathEXP'];
+		mathdisplay = "Math XP : " + mathxp ;
+		sciencexp = data['sciEXP'];
+		sciencedisplay = "Science XP : " + ciencexp ;
+		ssxp = data['ssEXP'];
+		ssdisplay = "Social Studies XP : " + ssxp ;
+		engxp = data['engEXP'];
+		engdisplay = "English XP : " + engxp ;
+		totxp = data['totEXP'];
+		totdisplay = "Total XP : " + totxp ;
+
+		document.getElementById('displayStats').innerHTML = goldDisplay +"<br>" + mathdisplay +"<br>" + sciencedisplay +"<br>" + ssdisplay +"<br>" + engdisplay + "<br>" + totdisplay;
 	},"json");
 
 	
