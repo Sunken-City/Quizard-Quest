@@ -63,6 +63,7 @@ $(document).ready(function() {
 	
 	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
+        
 		var gold;
 		var goldDisplay;
 		var mathxp;
@@ -78,15 +79,15 @@ $(document).ready(function() {
 		
 		gold = data['gold'];
 		goldDisplay = "Gold : " + gold ;
-		mathxp = data['mathEXP'];
+		mathxp = data['mathExp'];
 		mathdisplay = "Math XP : " + mathxp ;
-		sciencexp = data['sciEXP'];
+		sciencexp = data['sciExp'];
 		sciencedisplay = "Science XP : " + sciencexp ;
-		ssxp = data['ssEXP'];
+		ssxp = data['ssExp'];
 		ssdisplay = "Social Studies XP : " + ssxp ;
-		engxp = data['engEXP'];
+		engxp = data['engExp'];
 		engdisplay = "English XP : " + engxp ;
-		totxp = data['totEXP'];
+		totxp = data['totExp'];
 		totdisplay = "Total XP : " + totxp ;
 
 		document.getElementById('displayStats').innerHTML = goldDisplay +"<br>" + mathdisplay +"<br>" + sciencedisplay +"<br>" + ssdisplay +"<br>" + engdisplay + "<br>" + totdisplay;

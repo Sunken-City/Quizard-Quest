@@ -43,7 +43,9 @@
 
 			<div id="displayGold"></div>
 
-
+			<table id="avatars">
+				<
+			</table>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
