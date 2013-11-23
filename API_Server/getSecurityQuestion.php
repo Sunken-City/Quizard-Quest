@@ -3,7 +3,7 @@
    session_start();
    $username = $_GET["q"];
    echo $username."</br>";
-   $value = get_userID($username);
+   $value = get_userID($username)['userID'];
    if ($value == false)
       echo "ERROR: Username does not exist";
    else {
