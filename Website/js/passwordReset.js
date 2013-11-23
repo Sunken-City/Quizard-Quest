@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 	$("#getSecurity").click(function(e){
-
+      
 		var str = $("#user").val();
 			if (str=="") {
 			  return;
@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 		xmlhttp.open("GET","../API_Server/getSecurityQuestion.php?q="+str,true); //make calls to the php
 		xmlhttp.send();
+		e.preventDefault();
 		
 	});
 
