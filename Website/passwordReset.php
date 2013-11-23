@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- 
-	Password Reset Page
+	Check the Security Question 
 	Author : Gustavo Castillo
  -->
 <html lang="en">
@@ -12,18 +12,15 @@
 		<title>Password Reset</title>
 		<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type = "text/javascript" src="js/navigation.js"></script>
-		<script type = "text/javascript" src="js/passwordReset.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
 
 
 	</head>
 	
 	<body>
-			<form id="pwReset" action="../API_Server/getSecurityQuestion.php" method="POST" >
+			<form id="username"  action="../API_Server/checkSecurityAnswer.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
-				<button type="button" value="Get Question" id="getSecurity"> Get Question</button>
-				<div id="securityQuestion">
-				</div>
+				<input type="button"" id="getSecurity" class="submitButton" />
 			</form>
 
 
