@@ -20,7 +20,7 @@
 	<body>
 			<form id="username"  action="../API_Server/checkSecurityAnswer.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
-				<input type="button"" id="getSecurity" class="submitButton" />
+				<button type="button" value="Get Question" id="getSecurity"> Get Question</button>
 			</form>
 
 
