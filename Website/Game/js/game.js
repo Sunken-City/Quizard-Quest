@@ -820,16 +820,16 @@ function init() {
     
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)
-         seconds += 15;
+         seconds += 5;
       
       else if(deck.cards[i].difficulty == 2)
-         seconds += 30;
+         seconds += 10;
       
       else if(deck.cards[i].difficulty == 3)
-         seconds += 45;
+         seconds += 15;
       
       else if(deck.cards[i].difficulty == 4)
-         seconds += 60;   
+         seconds += 20;   
     }
     deck.shuffle();
     numCards = deck.cards.length;
