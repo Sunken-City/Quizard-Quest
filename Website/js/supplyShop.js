@@ -179,6 +179,6 @@ function makeImageOnloadCallback(ava) {
 window.addEventListener('load', function() {
 	console.log('window loaded');
 
-	displayavatars
+	displayavatars();
 
 });
