@@ -52,14 +52,16 @@ $(document).ready(function() {
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
-			document.getElementById('profileDecks').appendChild(Deck);
+			document.getElementById('profileDecks').appendChild(Deck);			
+		}	
+		for( var i = 0, len = JSON.length;  i < len; i++){
 			deckid = document.getElementById("deck"+i)
 			document.getElementById("deck"+i).addEventListener("click", function() { 
 					showDeck(deckid.value);
 			});
 			
 			
-		}		
+		}	
 	});
 
 	
