@@ -14,12 +14,15 @@
       
       if ($qID == 1)
          echo "What is your mother's maiden name?</p>";
+		 echo "<input class=\"submitButton\" type=\"submit\" value=\"Submit Answer\" id=\"signUp\" />"
       
       else if($qID == 2)
          echo "Who is your favorite grade school teacher?</p>";
+		 echo "<input class=\"submitButton\" type=\"submit\" value=\"Submit Answer\" id=\"signUp\" />"
       
       else if($qID == 3)
          echo "What is your dream car?</p>";
+ 		 echo "<input class=\"submitButton\" type=\"submit\" value=\"Submit Answer\" id=\"signUp\" />"
       
       else
          echo "ERROR: Security question not found!</p>";

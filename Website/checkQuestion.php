@@ -18,7 +18,7 @@
 	</head>
 	
 	<body>
-			<form id="username" >
+			<form id="username"  action="checkSecurityAnswer.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
 				<input type="button"" id="getSecurity" class="submitButton" />
 			</form>

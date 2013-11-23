@@ -2,5 +2,12 @@
    include "API.php"
    session_start();
    
-   return check_security_answer($_GET['a']);
+   $result = check_security_answer($_POST['sqAnswer']);
+	
+	if( $result ){
+	echo "Answer is correct";
+	}
+	else{
+		echo "Answer is incorrect";
+	}
 ?>

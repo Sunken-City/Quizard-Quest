@@ -17,7 +17,7 @@ $(document).ready(function(){
 		xmlhttp.onreadystatechange=function() {
 
 	 	 	if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-	 	  		document.getElementById("securityQuestion").innerHTML=xmlhttp.responseText;//directly puts the code that is generated in the php as html for deckcards
+	 	  		document.getElementById("securityQuestion").innerHTML=xmlhttp.responseText;//directly puts the code that is generated in the php
 	  		}
  		}
 
