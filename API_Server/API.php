@@ -276,7 +276,7 @@
         $userID = $_SESSION['userID'];
         $usernameList = mysqli_query($db, "SELECT username FROM players WHERE userID = '$userID';");
         $username = mysqli_fetch_assoc($usernameList);
-        return $usernameList['username'];
+        return $username['username'];
     }
     
     /****************************/
