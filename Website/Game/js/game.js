@@ -754,6 +754,7 @@ function animate() {
   }
   
   else{
+    game.monster.clear();
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     printEarning();
   }
