@@ -54,7 +54,7 @@ $(document).ready(function() {
 			Deck.innerHTML = JSON[i].name;
 			document.getElementById('profileDecks').appendChild(Deck);
 			deckid = document.getElementById("deck"+i)
-			Deck.addEventListener("click", function() { 
+			document.getElementById("deck"+i).addEventListener("click", function() { 
 					showDeck(deckid.value);
 			});
 			
