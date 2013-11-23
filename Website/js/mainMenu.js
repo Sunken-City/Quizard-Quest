@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 	$.post("../API_Server/getUsername.php", function(data){
 	var uname= $.parseJSON(data);
-	var username = uname[0].username;
+	var username = uname;
 	document.getElementById("userName").innerHTML= username;
 			
 	});
