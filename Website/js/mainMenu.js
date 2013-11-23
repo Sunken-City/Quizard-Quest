@@ -51,7 +51,7 @@ $(document).ready(function() {
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
-			Deck.click(function(e){
+			Deck.addEventListener("click", function() { 
 					var deckid = document.getElementById("deck"+i).value
 					showDeck(deckid);
 			});
