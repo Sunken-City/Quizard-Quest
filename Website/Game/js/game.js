@@ -255,7 +255,7 @@ function submitAnswer() {
        case 6: //Misc
          XPCategory[5] += 10;
        default:
-         console.log("No category or invalid category passed! ONO");
+         console.log("No category or invalid category passed for answer! ONO");
       }
     }
     else {
@@ -292,7 +292,7 @@ function randomMonster(category) {
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
     default:
-      console.log("No category or invalid category passed! ONO");
+      console.log("No category or invalid category passed for Monster! ONO");
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
   }
@@ -413,7 +413,8 @@ function Drawable() {
 }
 
 /**
- * Canvas Creation
+ * Canvas Drawables
+ * These objects make up the drawable objects on the canvas. Anything that gets drawn has to implement one of these.
  */
 
 function Background() {
@@ -438,7 +439,7 @@ function Monster() {
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y - 3, this.width, this.height + 3);
+    this.context.clearRect(this.x - 3, this.y - 3, this.width + 3, this.height + 3);
   };
   
   this.change = function(category) {
