@@ -818,7 +818,7 @@ function init() {
     deck = deck1;
     gameMode = md;
     
-    for(var i=0; i<deck.cards.length; i++){
+    for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty === 1)
          seconds += 15;
       
@@ -838,7 +838,7 @@ function init() {
     for (var i=0; i<6; i++)
       XPCategory[i] = 0;
     
-    minutes = seconds/60;
+    minutes = Math.floor(seconds/60);
     seconds = seconds%60;
     goldEarned = 0;
     avatarInc = 715 / numCards;
