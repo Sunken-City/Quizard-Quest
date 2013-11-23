@@ -28,8 +28,6 @@ function displayGold() { //Nathans Functions
 	var gold;
 	var goldDisplay;
 
-	var sendData = {'life':'and death'};
-
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
 		gold = data['gold'];
 		goldDisplay = "You have " + gold + " gold";
@@ -45,7 +43,7 @@ $(document).ready(function() {
 	|*|
 	|*|
 	\*/
-	displayGold();
+
 
 	$.post("../API_Server/getUsername.php", function(data){
 	var uname= $.parseJSON(data);
@@ -73,7 +71,7 @@ $(document).ready(function() {
 			
 		}		
 	});
-
+	displayGold();
 	/*\
 	|*|		:: >> This function will display all the cards in the selected deck << ::
 	|*|

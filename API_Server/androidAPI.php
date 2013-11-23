@@ -29,7 +29,7 @@
         mysqli_close($db);   
     }
     
-    function get_deck_cards($userID, $deckID) {
+    function get_deck_cards($deckID) {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
