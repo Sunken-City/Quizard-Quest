@@ -100,7 +100,7 @@ function updateTimer() {
   
   var currTime = timeLimit - (new Date().getTime() - start);
   minutes = Math.floor(currTime / 60000);
-  seconds = Math.floor(currTime / 6000) % 100; //+ Math.floor(currTime / 1000) % 10;
+  seconds = Math.floor(((currTime / 6000) % 100)/10) + Math.floor(currTime / 1000) % 10;
   
   
   if (minutes < 10)
