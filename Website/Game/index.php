@@ -29,6 +29,7 @@
   </head>
 
   <body>
+
     <div class="Game">
 
       <!-- The canvas for the background -->
@@ -53,7 +54,17 @@
     </div>
 
     <div id="postGame">
-
+      <footer class="nonIndex">
+        <img id="headerLogo" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
+        <nav class="navbar" class="nonIndex">
+          <button type="button" id="home" class="navButton">Home</button>
+          <button type="button" id="startGame" >Begin your Quest!</button>
+          <button type="button" id="createCard" >Create a Spell!</button>
+          <button type="button" id="createDeck" >Create a Spellbook!</button>
+          <button type="button" id="reviewDecks" >Edit your Spellbooks</button>
+          <button type="button" id="logOut" class="navButton">Log Out</button>
+        </nav>
+      </footer>
     </div>
 
   </body>
