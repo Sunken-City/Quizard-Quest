@@ -54,7 +54,9 @@ $(document).ready(function() {
 			Deck.innerHTML = JSON[i].name;
 			document.getElementById('profileDecks').appendChild(Deck);			
 		}	
-		for( var i = 0, len = JSON.length;  i < len; i++){
+		
+	});
+	for( var i = 0, len = JSON.length;  i < len; i++){
 			deckid = document.getElementById("deck"+i)
 			document.getElementById("deck"+i).addEventListener("click", function() { 
 					showDeck(deckid.value);
@@ -62,8 +64,6 @@ $(document).ready(function() {
 			
 			
 		}	
-	});
-
 	
 	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
@@ -82,7 +82,7 @@ $(document).ready(function() {
 		var totdisplay;
 		
 		gold = data['gold'];
-		goldDisplay = "Gold : " + gold ;
+		goldDisplay = "Total Gold : " + gold ;
 		mathxp = data['mathExp'];
 		mathdisplay = "Math XP : " + mathxp ;
 		sciencexp = data['sciExp'];
