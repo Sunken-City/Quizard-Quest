@@ -21,9 +21,9 @@ var currCard;
 
 var lives;
 var time = "00:00";
-var seconds = 8;
-var minutes = 8;
-var timeLimit = minutes * 60000 + seconds * 1000;
+var seconds = 15;
+var minutes = 0;
+var timeLimit;
 var question;
 var answer;
 
@@ -111,7 +111,21 @@ function updateTimer() {
     time += "0" + seconds;
   else
     time += seconds;
+  
+  if (minutes == 0 && seconds == 0)
+  {
+    gamePlaying = false;
+    timeOut();
+  }
 }
+
+function timeOut() {
+  if (numRight / numCards < .7)
+  {
+    lose = true;
+  }
+}
+
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
@@ -727,8 +741,11 @@ function animate() {
   if (gameMode == GameMode.SaveTheWorld) {
     game.scroll2.draw();
     game.clock.draw();
-    updateTimer();
-    document.getElementById('time').innerHTML = time;
+    if (!lose)
+    {
+      updateTimer();
+      document.getElementById('time').innerHTML = time;
+    }
   }
   
   game.avatar.draw();
@@ -811,6 +828,7 @@ function init() {
     avatarInc = 715 / numCards;
     currCard = deck.draw();
     lives = numCards - Math.ceil(numCards * .7) + 1;
+    timeLimit = minutes * 60000 + seconds * 1000;
     setQuestion(currCard.question);
     XPGained = 0;
     game.init();
