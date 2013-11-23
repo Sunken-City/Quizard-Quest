@@ -92,7 +92,7 @@ $(document).ready(function() {
 	});
 
 	$("#startGame").click(function(e) {
-		window.location.href = "gameMenu.php";
+		window.location.href = "../gameMenu.php";
 	});
 
 	$("#gotoStore").click(function(e) {
