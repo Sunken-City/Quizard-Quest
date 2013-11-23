@@ -16,9 +16,7 @@ function display() {
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
 		gold = data['gold'];
 		goldDisplay = "You have " + gold + " gold";
-		alert(gold);
+		$("#displayGold").html(goldDisplay);
 	},"json");
-
-	$("#displayGold").html(goldDisplay);
 
 }
