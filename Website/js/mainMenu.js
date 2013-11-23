@@ -27,7 +27,7 @@ function displayGold() { //Nathans Functions
 
 	var gold;
 	var goldDisplay;
-	var sendData  = "null"
+	var sendData  = "null";
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
 		gold = data['gold'];
 		goldDisplay = "You have " + gold + " gold";
