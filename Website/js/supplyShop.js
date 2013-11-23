@@ -143,7 +143,7 @@ var Avatars = [];
 
 function displayavatars() {
 
-	for (int i = 0, len = avatars.length; i < len; i++) {
+	for (var i = 0, len = avatars.length; i < len; i++) {
 
 		Avatar ava = new Avatar();
 
