@@ -18,7 +18,7 @@
 	</head>
 	
 	<body>
-			<form id="username" action="../API_Server/checkSecurityQuestion.php" method="POST" >
+			<form id="username" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
 				<input type="submit" value="Submit" id="getSecurity" class="submitButton" />
 			</form>
