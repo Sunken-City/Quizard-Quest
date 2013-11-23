@@ -162,14 +162,19 @@ function displayavatars() {
 	for (var i = 0, len = avatars.length; i < len; i++ ) {
 
 		var td1 = document.createElement("td");
+		var p1 = document.createElement("p");
 		var td2 = document.createElement("td");
 		var td3 = document.createElement("td");
+		var p2 = document.createElement("p");
 
-		td1.appendChild(Avatars[i].name);
+		p1.innerHTML = Avatars[i].name;
+		p2.innerHTML = Avatars[i].price;
+
+		td1.appendChild(p1);
 		document.getElementById('nameRow').appendChild(td1);
 		td2.appendChild(Avatars[i].img);
 		document.getElementById('imgRow').appendChild(td2);
-		td3.appendChild(Avatars[i].price);
+		td3.appendChild(p2);
 		document.getElementById('costRow').appendChild(td3);
 	}
 
