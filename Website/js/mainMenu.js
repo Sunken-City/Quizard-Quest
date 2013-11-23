@@ -61,6 +61,7 @@ $(document).ready(function() {
   	   		   (function (_deckid) {
   	     	     deckid.addEventListener('click', function(){
   	              showDeck(deckid.value);
+					console.log(_deckid);
   	     	     });
   	   	   })(deckid);
   	 	 }
