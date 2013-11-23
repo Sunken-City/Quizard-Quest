@@ -25,8 +25,19 @@ function showDeck(str) {
 }	
 
 $(document).ready(function() {
-	
+	/*\
+	|*|		:: >> This function will display the usename << ::
+	|*|
+	|*|
+	\*/
 
+
+	$.post("../API_Server/getUsername.php", function(data){
+	var uname= $.parseJSON(data);
+	var username = uname[0].username;
+	document.getElementById("userName").innerHTML= username;
+			
+	});
 	/*\
 	|*|		:: >> This function will pull all the deck names and display them for the user << ::
 	|*|
