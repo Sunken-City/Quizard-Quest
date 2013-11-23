@@ -55,8 +55,8 @@ $(document).ready(function() {
 			var deckid = document.getElementById("deck"+i)
 			Deck.addEventListener("click", function() { 
 					
-					alert("alert" + deckid);
-					showDeck(deckid);
+					alert("alert" + deckid.value);
+					showDeck(deckid.value);
 			});
 			
 			
