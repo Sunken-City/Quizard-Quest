@@ -45,19 +45,23 @@ $(document).ready(function() {
 	|*|
 	\*/
 	$.post("../API_Server/DeckReview.php", function(data){
-	JSON = $.parseJSON(data);
+		JSON = $.parseJSON(data);
+		var deckid = "";
 		for( var i = 0, len = JSON.length;  i < len; i++){
 			var Deck = document.createElement("button");
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
-			Deck.click(function(e){
-					var deckid = document.getElementById("deck"+i).value
-					showDeck(deckid);
+			document.getElementById('profileDecks').appendChild(Deck);			
+		}	
+		for( var i = 0, len = JSON.length;  i < len; i++){
+			deckid = document.getElementById("deck"+i)
+			document.getElementById("deck"+i).addEventListener("click", function() { 
+					showDeck(deckid.value);
 			});
-			document.getElementById('profileDecks').appendChild(Deck);
 			
-		}		
+			
+		}	
 	});
 
 	

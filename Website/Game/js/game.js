@@ -192,19 +192,25 @@ var iRepo = new function() {
 }
 
 function loadMonster(src, callback) {
-  
   iRepo.monster.src = src;
   iRepo.monster.onload = callback;
 }
 
+function loadBG(src, callback) {
+  iRepo.background.src = src;
+  iRepo.background.onload = callback;
+}
+
 function nextCard() {
   
+  game.input._value = "";
   if (deck.cards.length != 0) {
     currCard = deck.draw();
     setQuestion(currCard.question);
     if (gameMode < GameMode.SaveTheWorld) {
+      loadBG(path + randomBackground(), function() {
       game.monster.change(currCard.category);
-      iRepo.background.src = path + randomBackground();
+      });
     }
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
@@ -219,6 +225,7 @@ function setQuestion(q) {
 }
 
 function loseLife() {
+  if (gameMode > GameMode.Training)
   lives = lives - 1;
   if (lives == 0) {
     gamePlaying = false; 
@@ -239,31 +246,34 @@ function submitAnswer() {
       game.monster.timer = 29;
       game.monster.hurt();
       numRight++;
-      nextCard();
       XPGained += 10;
       switch(currCard.category){
        case 1: //Math
          XPCategory[0] += 10;
+	 break;
        case 2: //Science
          XPCategory[1] += 10;
+	 break;
        case 3: //Social Studies
          XPCategory[2] += 10;
+	 break;
        case 4: //English
          XPCategory[3] += 10;
+	 break;
        case 5: //Language
          XPCategory[4] += 10;
+	 break;
        case 6: //Misc
          XPCategory[5] += 10;
+	 break;
        default:
-         console.log("No category or invalid category passed! ONO");
+         console.log("No category or invalid category passed for answer! ONO");
       }
     }
     else {
       if (gameMode > GameMode.Training)
          loseLife();
-      nextCard();
     }
-    game.input._value = "";
   }
 }
 
@@ -273,26 +283,33 @@ function randomMonster(category) {
     case 0: //Boss
       var choice = Math.floor((Math.random() * 16) + 1);
       return "../../Resources/Game/Sprites/Bosses/" + choice + ".png";
+      break;
     case 1: //Math
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
-    case 2:
+      break;
+    case 2: //Science
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/Science/" + choice + ".png";
-    case 3:
+      break;
+    case 3: //Social Stuides
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
-    case 4:
+      break;
+    case 4: //English
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/English/" + choice + ".png";
-    case 5:
+      break;
+    case 5: //Languages
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
-    case 6:
+      break;
+    case 6: //Misc
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
+      break;
     default:
-      console.log("No category or invalid category passed! ONO");
+      console.log("No category or invalid category passed for Monster! ONO");
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
   }
@@ -413,7 +430,8 @@ function Drawable() {
 }
 
 /**
- * Canvas Creation
+ * Canvas Drawables
+ * These objects make up the drawable objects on the canvas. Anything that gets drawn has to implement one of these.
  */
 
 function Background() {
@@ -438,7 +456,7 @@ function Monster() {
   };
   
   this.clear = function() {
-    this.context.clearRect(this.x, this.y - 3, this.width, this.height + 3);
+    this.context.clearRect(this.x - 3, this.y - 3, this.width + 3, this.height + 3);
   };
   
   this.change = function(category) {
@@ -473,6 +491,10 @@ function Monster() {
       }
       if (this.timer > 0) {
         var func = wrapFunction(this.hurt, this, []);
+	funQueue.push(func);
+      }
+      else {
+	var func = wrapFunction(nextCard(), this, []);
 	funQueue.push(func);
       }
   }
@@ -574,6 +596,10 @@ function Etc(Image) {
 	var func = wrapFunction(this.hurt, this, []);
 	funQueue.push(func);
       }
+      else {
+	var func = wrapFunction(nextCard(), this, []);
+	funQueue.push(func);
+      }
       
   };
   
@@ -596,12 +622,55 @@ function Etc(Image) {
   };
 }
 
-
 //Get the background object to copy all of Drawable's information
 Background.prototype = new Drawable();
 Avatar.prototype = new Drawable();
 Monster.prototype = new Drawable();
 Etc.prototype = new Drawable();
+
+/**
+ * A sound pool to use for the sound effects
+ */
+/*
+function SoundPool(maxSize) {
+  var size = maxSize; // Max sounds allowed in the pool
+  var pool = [];
+  this.pool = pool;
+  var currSound = 0;
+ 
+  /*
+   * Populates the pool array with the given sound
+   *
+  this.init = function(object) {
+    if (object == "laser") {
+      for (var i = 0; i < size; i++) {
+        // Initalize the sound
+        laser = new Audio("sounds/laser.wav");
+        laser.volume = .12;
+        laser.load();
+        pool[i] = laser;
+      }
+    }
+    else if (object == "explosion") {
+      for (var i = 0; i < size; i++) {
+        var explosion = new Audio("sounds/explosion.wav");
+        explosion.volume = .1;
+        explosion.load();
+        pool[i] = explosion;
+      }
+    }
+  };
+ 
+  /*
+   * Plays a sound
+   *
+  this.get = function() {
+    if(pool[currSound].currentTime == 0 || pool[currSound].ended) {
+      pool[currSound].play();
+    }
+    currSound = (currSound + 1) % size;
+  };
+}*/
 
 function Game() {
 
@@ -728,6 +797,7 @@ function animate() {
   }
   
   else{
+    game.monster.clear();
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
     printEarning();
   }
