@@ -217,6 +217,10 @@ function nextCard() {
   else {
     avatarMoveTo = avatarMoveTo + avatarInc;
     gamePlaying = false;
+    if (gameMode == GameMode.SaveTheWorld)
+    {
+      game.bDie.get();
+    }
   }
 }
 
