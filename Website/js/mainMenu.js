@@ -23,19 +23,7 @@ function showDeck(str) {
 	xmlhttp.send();
 	
 }	
-function displayGold() { //Nathans Functions
 
-	var gold;
-	var goldDisplay;
-	var sendData  = "null";
-	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
-		gold = data['gold'];
-		goldDisplay = "You have " + gold + " gold";
-	},"json");
-
-	$("#displayGold").html(goldDisplay);
-
-}
 
 $(document).ready(function() {
 	/*\
@@ -71,7 +59,16 @@ $(document).ready(function() {
 			
 		}		
 	});
-	displayGold();
+
+	var gold;
+	var goldDisplay;
+	var sendData  = "null";
+	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
+		gold = data['gold'];
+		goldDisplay = "You have " + gold + " gold";
+	},"json");
+
+	$("#displayGold").html(goldDisplay);
 	/*\
 	|*|		:: >> This function will display all the cards in the selected deck << ::
 	|*|
