@@ -43,7 +43,11 @@
 
 			<div id="displayGold"></div>
 
-
+			<table id="avatars">
+				<tr id="nameRow"></tr>
+				<tr id="imgRow"></tr>
+				<tr id="costRow"></tr>
+			</table>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>
