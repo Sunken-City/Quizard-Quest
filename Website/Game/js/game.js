@@ -203,6 +203,7 @@ function loadBG(src, callback) {
 
 function nextCard() {
   
+  game.input._value = "";
   if (deck.cards.length != 0) {
     currCard = deck.draw();
     setQuestion(currCard.question);
@@ -224,6 +225,7 @@ function setQuestion(q) {
 }
 
 function loseLife() {
+  if (gameMode > GameMode.Training)
   lives = lives - 1;
   if (lives == 0) {
     gamePlaying = false; 
@@ -272,8 +274,6 @@ function submitAnswer() {
       if (gameMode > GameMode.Training)
          loseLife();
     }
-    nextCard();
-    game.input._value = "";
   }
 }
 
@@ -493,6 +493,10 @@ function Monster() {
         var func = wrapFunction(this.hurt, this, []);
 	funQueue.push(func);
       }
+      else {
+	var func = wrapFunction(nextCard(), this, []);
+	funQueue.push(func);
+      }
   }
   
   //Make the monster float up and down in an idling sequence
@@ -590,6 +594,10 @@ function Etc(Image) {
 	}
 
 	var func = wrapFunction(this.hurt, this, []);
+	funQueue.push(func);
+      }
+      else {
+	var func = wrapFunction(nextCard(), this, []);
 	funQueue.push(func);
       }
       
