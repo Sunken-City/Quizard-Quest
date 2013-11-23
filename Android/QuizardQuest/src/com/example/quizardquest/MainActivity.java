@@ -75,15 +75,13 @@ public class MainActivity extends Activity {
     	
     LoginToGame decksLogin= new LoginToGame();
     decksLogin.execute("http://54.200.66.93/Quizard-Quest/API_Server/androidLogin.php");
-    //Intent myIntent = new Intent(MainActivity.this, DeckSelect.class);
-    //myIntent.putExtra("playerDecks", playerDecks); //Optional parameters
-    //MainActivity.this.startActivity(myIntent);
+    //Log.d("NDM", playerDecks.get(0).getName());
     //TextView tv = (TextView) findViewById(R.id.welcome_text);
     //tv.setText(decks.get(0).getName());
     
     }
     
-    class LoginToGame extends AsyncTask<String, Void, JSONObject>{
+    class LoginToGame extends AsyncTask<String, Void, JSONArray>{
     	
     	
     	@Override
@@ -96,37 +94,41 @@ public class MainActivity extends Activity {
     		pDialog.show();
     	}
     	
-    	protected JSONObject doInBackground(String... urls) {
+    	protected JSONArray doInBackground(String... urls) {
     		EditText un = (EditText)findViewById(R.id.enter_username);
     		EditText pw = (EditText)findViewById(R.id.enter_password);
     		String username = un.getText().toString();
     		String password = pw.getText().toString();
-    	    TextView tv = (TextView) findViewById(R.id.welcome_text);
-    	    tv.setText("fuck you");
+    		Log.d("NDM",username);
+    		Log.d("NDM",password);
+    		Log.d("NDM", urls[0]);
     		return getDecks(urls[0],username,password);
     	}
-    	protected void onPostExecute(JSONObject result) {
+    	protected void onPostExecute(JSONArray result) {
 
     		parseJson(result);
     		pDialog.dismiss();
-    		
+    	    Intent myIntent = new Intent(MainActivity.this, DeckSelect.class);
+    	    myIntent.putExtra("playerDecks",playerDecks); //Optional parameters
+    	    MainActivity.this.startActivity(myIntent);
     	}
     }
     
-    public void parseJson(JSONObject result){
+    public void parseJson(JSONArray result){
     	try {
-    	JSONArray array = result.getJSONArray("deck");
-    	for(int i = 0; i < array.length();i++){
-				Deck newDeck = new Deck(array.getJSONObject(i).getString("name"),array.getJSONObject(i).getInt("deckID"));
+
+    	for(int i = 0; i < result.length();i++){
+				Deck newDeck = new Deck(result.getJSONObject(i).getString("name"),result.getJSONObject(i).getInt("deckID"));
 				playerDecks.add(newDeck);
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
     	}
+    	Log.d("NDM", playerDecks.get(0).getName());
     }
-    public JSONObject getDecks(String url,String username, String password) {
-    	JSONObject decksJson = new JSONObject();
+    public JSONArray getDecks(String url,String username, String password) {
+    	JSONArray decksJson = new JSONArray();
     	HttpClient client = new DefaultHttpClient();
     	List<NameValuePair> request = new ArrayList<NameValuePair>();
     	request.add(new BasicNameValuePair("username",username));
@@ -139,12 +141,9 @@ public class MainActivity extends Activity {
     		if (null != entity) {
     			String result = EntityUtils.toString(entity);
     			Log.d("NDM",result);
-        		//TextView tv = (TextView) findViewById(R.id.welcome_text);
-        		//tv.setText(result);
 
     			decksJson = getJson(result);
     		}
-    		
     	}catch(ClientProtocolException e) {
     		e.printStackTrace();
     	}catch (IOException e) {
@@ -157,11 +156,11 @@ public class MainActivity extends Activity {
     }
 
 
-	public JSONObject getJson(String result) throws JSONException{
+	public JSONArray getJson(String result) throws JSONException{
 		// TODO Auto-generated method stub
-		JSONObject jsonObj;
-		jsonObj = new JSONObject(result);
-		return jsonObj;
+		JSONArray jsonArr;
+		jsonArr = new JSONArray(result);
+		return jsonArr;
 	}
 	
 //	public void parseJson (JSONObject object) {

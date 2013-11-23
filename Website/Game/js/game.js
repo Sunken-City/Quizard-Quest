@@ -98,22 +98,21 @@ function increaseTimer() {
 function updateTimer() {
   
   var currTime = new Date().getTime() - start;
-
-      var elapsed = Math.floor(currTime / 1000) % 10;
-      seconds -= elapsed;
-      if (seconds < 0) {
-	seconds += 59;
-	minutes--;
-      }
-      
-      if (minutes < 10)
-	time = "0" + minutes + ":";
-      else
-	time = minutes + ":";
-      if (seconds < 10)
-	time += "0" + seconds;
-      else
-	time += seconds;
+  var elapsed = Math.floor(currTime / 1000);
+  seconds -= elapsed;
+  if (seconds < 0) {
+    seconds += 59;
+    minutes--;
+  }
+  
+  if (minutes < 10)
+    time = "0" + minutes + ":";
+  else
+    time = minutes + ":";
+  if (seconds < 10)
+    time += "0" + seconds;
+  else
+    time += seconds;
 }
 /**
  * Define an object to hold all our images for the game so images

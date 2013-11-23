@@ -5,19 +5,23 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class DeckSelect extends Activity {
 	ArrayList<Deck> totalDecks = new ArrayList<Deck>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.selectdeck);
         Intent intent = getIntent();
-        ArrayList<Deck> totalDecks = (ArrayList<Deck>)intent.getSerializableExtra("playerDecks"); //if it's a string you stored.
-        
+        @SuppressWarnings("unchecked")
+		ArrayList<Deck> newDecks = (ArrayList<Deck>)intent.getSerializableExtra("playerDecks");
+        totalDecks=newDecks;//if it's a string you stored.
+//        Log.d("NDM",totalDecks.get(0).getName());
         
 //        ArrayList<Card> newCards = new ArrayList<Card>();
 //        //Create Test Decks
