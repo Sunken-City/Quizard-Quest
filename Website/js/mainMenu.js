@@ -54,20 +54,21 @@ $(document).ready(function() {
 			Deck.innerHTML = JSON[i].name;
 			document.getElementById('profileDecks').appendChild(Deck);			
 		}	
+		var deckid;
+			for( var i = 0, len = JSON.length;  i < len; i++){
+	 		   deckid = document.getElementById("deck"+i);
+	   		 if (typeof window.addEventListener === 'function'){
+  	   		   (function (_deckid) {
+  	     	     deckid.addEventListener('click', function(){
+  	              showDeck(deckid.value);
+  	     	     });
+  	   	   })(deckid);
+  	 	 }
+		}	
 		
 	});
 
-	var deckid;
-	for( var i = 0, len = JSON.length;  i < len; i++){
-	    deckid = document.getElementById("deck"+i);
-	    if (typeof window.addEventListener === 'function'){
-  	      (function (_deckid) {
-  	          deckid.addEventListener('click', function(){
-  	              showDeck(deckid.value);
-  	          });
-  	      })(deckid);
-  	  }
-	}		
+		
 	
 	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
