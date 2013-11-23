@@ -819,16 +819,16 @@ function init() {
     gameMode = md;
     
     for(var i = 0; i < deck.cards.length; i++){
-      if(deck.cards[i].difficulty === 1)
+      if(deck.cards[i].difficulty == 1)
          seconds += 15;
       
-      else if(deck.cards[i].difficulty === 2)
+      else if(deck.cards[i].difficulty == 2)
          seconds += 30;
       
-      else if(deck.cards[i].difficulty === 3)
+      else if(deck.cards[i].difficulty == 3)
          seconds += 45;
       
-      else if(deck.cards[i].difficulty === 4)
+      else if(deck.cards[i].difficulty == 4)
          seconds += 60;   
     }
     deck.shuffle();
