@@ -161,10 +161,16 @@ function displayavatars() {
 
 	for (var i = 0, len = avatars.length; i < len; i++ ) {
 
-		var td = document.createElement("td");
+		var td1 = document.createElement("td");
+		var td2 = document.createElement("td");
+		var td3 = document.createElement("td");
 
-		td.appendChild(Avatars[i].img);
-		document.getElementById('theRow').appendChild(td);
+		td1.appendChild(Avatars[i].name);
+		document.getElementById('nameRow').appendChild(td1);
+		td2.appendChild(Avatars[i].img);
+		document.getElementById('imgRow').appendChild(td2);
+		td3.appendChild(Avatars[i].price);
+		document.getElementById('costRow').appendChild(td3);
 	}
 
 }

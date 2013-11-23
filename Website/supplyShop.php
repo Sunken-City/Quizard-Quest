@@ -44,7 +44,9 @@
 			<div id="displayGold"></div>
 
 			<table id="avatars">
-				<tr id="theRow"></tr>
+				<tr id="nameRow"></tr>
+				<tr id="imgRow"></tr>
+				<tr id="costRow"></tr>
 			</table>
 
 			<footer>
