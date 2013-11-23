@@ -1,5 +1,6 @@
 <?
    include "API.php"
+
    session_start();
    
    $result = check_security_answer($_POST['sqAnswer']);
