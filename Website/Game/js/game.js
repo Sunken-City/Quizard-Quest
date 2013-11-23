@@ -23,6 +23,7 @@ var lives;
 var time = "00:00";
 var seconds = 8;
 var minutes = 8;
+var timeLimit = minutes * 60000 + seconds * 1000;
 var question;
 var answer;
 
@@ -75,7 +76,7 @@ var wrapFunction = function(fn, context, params) {
 //Function that checks the current time, and updates the timer.
 function increaseTimer() {
   
-  var currTime = new Date().getTime() - start;
+  var currTime = (new Date().getTime() - start);
 
       var elapsed = Math.floor(currTime / 1000);
       seconds += elapsed - (60 * minutes) - seconds;
@@ -97,7 +98,7 @@ function increaseTimer() {
 //Function used to remove time from the timer.
 function updateTimer() {
   
-  var currTime = new Date().getTime() - start;
+  var currTime = timeLimit - (new Date().getTime() - start);
   var elapsed = Math.floor(currTime / 1000);
   seconds -= elapsed;
   if (seconds < 0) {
@@ -717,7 +718,7 @@ function animate() {
   
   else{
     document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
-
+    printEarning();
   }
    
   if (gameMode > GameMode.Training) {
