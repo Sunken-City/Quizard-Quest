@@ -62,13 +62,13 @@ $(document).ready(function() {
 
 	var gold;
 	var goldDisplay;
-	var sendData  = "null";
+	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
 		gold = data['gold'];
 		goldDisplay = "You have " + gold + " gold";
 	},"json");
 
-	$("#displayGold").html(goldDisplay);
+	document.getElementById('displayGold').innerHTML = goldDisplay;
 	/*\
 	|*|		:: >> This function will display all the cards in the selected deck << ::
 	|*|
