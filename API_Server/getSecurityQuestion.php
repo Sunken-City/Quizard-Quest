@@ -8,7 +8,7 @@
       echo "ERROR: Username does not exist";
    else {
       $_SESSION['userID'] = $value;
-      $qID = get_security_qeustion(); 
+      $qID = get_security_question(); 
       echo "<p> Security Question: ";
       
       if ($qID == 1)
