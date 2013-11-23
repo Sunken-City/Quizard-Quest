@@ -4,12 +4,12 @@
    $username = $_GET["q"];
    echo $username."</br>";
    $value = get_userID($username)['userID'];
-   echo $value;
    if ($value == false)
       echo "ERROR: Username does not exist";
    else {
       $_SESSION['userID'] = $value;
-      $qID = get_security_question(); 
+      $qID = get_security_question();
+	  echo $qID; 
       echo "<p> Security Question: ";
       
       if ($qID == 1)
