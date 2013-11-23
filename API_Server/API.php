@@ -266,7 +266,7 @@
         
     }
     
-    function get_username() {
+   /* function get_username() {
       $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_errno());
@@ -277,7 +277,7 @@
         $usernameList = mysqli_query($db, "SELECT username FROM players WHERE userID = '$userID';");
         $username = mysqli_fetch_assoc($usernameList);
         return $username['username'];
-    }
+    }*/
     
     /****************************/
     /* CREATING/DELETING A CARD */
