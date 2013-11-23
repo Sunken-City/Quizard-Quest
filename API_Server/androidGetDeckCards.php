@@ -2,7 +2,7 @@
    include "androidAPI.php";
    session_start();
    $SdeckID = $_POST['deckID'];
-   $deckID = int intval(mixed $SdeckID, $base = 10);
-   echo json_encode(getDeckCards($deckID));
+   $deckID = intval($SdeckID);
+   echo json_encode(get_deck_cards($deckID));
    
 ?>
