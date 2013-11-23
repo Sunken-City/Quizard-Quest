@@ -52,7 +52,9 @@ $(document).ready(function() {
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
 			Deck.addEventListener("click", function() { 
+					
 					var deckid = document.getElementById("deck"+i).value
+					alert("alert" + deckid);
 					showDeck(deckid);
 			});
 			document.getElementById('profileDecks').appendChild(Deck);
