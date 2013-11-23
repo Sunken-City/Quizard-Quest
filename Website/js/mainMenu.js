@@ -16,6 +16,7 @@ function showDeck(str) {
 
 	  	if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 	   		document.getElementById("deckCards").innerHTML=xmlhttp.responseText;//directly puts the code that is generated in the php as html for deckcards
+			console.log(xmlhttp.responseText);
 	  	}
  	}
 
