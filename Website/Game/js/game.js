@@ -21,8 +21,8 @@ var currCard;
 
 var lives;
 var time = "00:00";
-var seconds = 8;
-var minutes = 8;
+var seconds = 15;
+var minutes = 0;
 var timeLimit = minutes * 60000 + seconds * 1000;
 var question;
 var answer;
@@ -111,6 +111,11 @@ function updateTimer() {
     time += "0" + seconds;
   else
     time += seconds;
+  
+  if (minutes == 0 && seconds == 0)
+  {
+    gamePlaying = false;
+  }
 }
 /**
  * Define an object to hold all our images for the game so images
