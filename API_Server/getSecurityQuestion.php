@@ -9,7 +9,7 @@
    else {
       $_SESSION['userID'] = $value;
       $qID = get_security_question();
-	  echo $qID; 
+	  echo $qID['questionID']; 
       echo "<p> Security Question: ";
       
       if ($qID == 1)
