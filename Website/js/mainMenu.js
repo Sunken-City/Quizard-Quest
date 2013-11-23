@@ -51,13 +51,14 @@ $(document).ready(function() {
 			Deck.id = "deck"+i;
 			Deck.value = JSON[i].deckID;
 			Deck.innerHTML = JSON[i].name;
+			document.getElementById('profileDecks').appendChild(Deck);
 			Deck.addEventListener("click", function() { 
 					
 					var deckid = document.getElementById("deck"+i).value
 					alert("alert" + deckid);
 					showDeck(deckid);
 			});
-			document.getElementById('profileDecks').appendChild(Deck);
+			
 			
 		}		
 	});
