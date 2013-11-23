@@ -814,6 +814,20 @@ function init() {
   $.getScript("js/requests.js", function(){
     deck = deck1;
     gameMode = md;
+    
+    for(var i=0; i<deck.cards.length; i++){
+      if(deck.cards[i].difficulty === 1)
+         seconds += 15;
+      
+      else if(deck.cards[i].difficulty === 2)
+         seconds += 30;
+      
+      else if(deck.cards[i].difficulty == 3)
+         seconds += 45;
+      
+      else
+         seconds += 60;   
+    }
     deck.shuffle();
     numCards = deck.cards.length;
     numRight = 0;
@@ -821,6 +835,8 @@ function init() {
     for (var i=0; i<6; i++)
       XPCategory[i] = 0;
     
+    minutes = seconds/60;
+    seconds = seconds%60;
     goldEarned = 0;
     avatarInc = 715 / numCards;
     currCard = deck.draw();
