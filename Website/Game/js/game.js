@@ -652,7 +652,7 @@ function SoundPool(maxSize) {
       for (var i = 0; i < size; i++) {
         // Initalize the sound
         pHurt = new Audio(path + "Audio/Oracle_Link_Hurt.wav");
-        pHurt.volume = .1;
+        pHurt.volume = 1;
         pHurt.load();
         pool[i] = pHurt;
       }
@@ -660,7 +660,7 @@ function SoundPool(maxSize) {
     else if (object == "pDie") {
       for (var i = 0; i < size; i++) {
         var pDie = new Audio(path + "Audio/Oracle_Link_Dying.wav");
-        pDie.volume = .1;
+        pDie.volume = 1;
         pDie.load();
         pool[i] = pDie;
       }
@@ -668,7 +668,7 @@ function SoundPool(maxSize) {
     else if (object == "mHurt") {
       for (var i = 0; i < size; i++) {
         var mHurt = new Audio(path + "Audio/Oracle_Enemy_Hit.wav");
-        mHurt.volume = .1;
+        mHurt.volume = 1;
         mHurt.load();
         pool[i] = mHurt;
       }
@@ -676,7 +676,7 @@ function SoundPool(maxSize) {
     else if (object == "mDie") {
       for (var i = 0; i < size; i++) {
         var mDie = new Audio(path + "Audio/Oracle_Enemy_Die.wav");
-        mDie.volume = .1;
+        mDie.volume = 1;
         mDie.load();
         pool[i] = mDie;
       }
@@ -684,7 +684,7 @@ function SoundPool(maxSize) {
     else if (object == "bHurt") {
       for (var i = 0; i < size; i++) {
         var bHurt = new Audio(path + "Audio/Oracle_Boss_Hit.wav");
-        bHurt.volume = .1;
+        bHurt.volume = 1;
         bHurt.load();
         pool[i] = bHurt;
       }
@@ -692,7 +692,7 @@ function SoundPool(maxSize) {
     else if (object == "bDie") {
       for (var i = 0; i < size; i++) {
         var bDie = new Audio(path + "Audio/Oracle_Boss_Die.wav");
-        bDie.volume = .1;
+        bDie.volume = 1;
         bDie.load();
         pool[i] = bDie;
       }
@@ -788,20 +788,20 @@ function Game() {
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
-      this.pHit = new SoundPool(3);
-      this.pHit.init("pHit");
+      this.pHurt = new SoundPool(3);
+      this.pHurt.init("pHurt");
  
       this.pDie = new SoundPool(2);
       this.pDie.init("pDie");
       
-      this.mHit = new SoundPool(3);
-      this.mHit.init("mHit");
+      this.mHurt = new SoundPool(3);
+      this.mHurt.init("mHurt");
  
       this.mDie = new SoundPool(2);
       this.mDie.init("mDie");
       
-      this.bHit = new SoundPool(3);
-      this.bHit.init("bHit");
+      this.bHurt = new SoundPool(3);
+      this.bHurt.init("bHurt");
  
       this.bDie = new SoundPool(2);
       this.bDie.init("bDie");
