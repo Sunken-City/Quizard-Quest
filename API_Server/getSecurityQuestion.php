@@ -4,6 +4,7 @@
    $username = $_GET["q"];
    echo $username."</br>";
    $value = get_userID($username)['userID'];
+   echo $value;
    if ($value == false)
       echo "ERROR: Username does not exist";
    else {
