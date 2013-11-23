@@ -192,9 +192,13 @@ var iRepo = new function() {
 }
 
 function loadMonster(src, callback) {
-  
   iRepo.monster.src = src;
   iRepo.monster.onload = callback;
+}
+
+function loadBG(src, callback) {
+  iRepo.background.src = src;
+  iRepo.background.onload = callback;
 }
 
 function nextCard() {
@@ -203,8 +207,9 @@ function nextCard() {
     currCard = deck.draw();
     setQuestion(currCard.question);
     if (gameMode < GameMode.SaveTheWorld) {
+      loadBG(path + randomBackground(), function() {
       game.monster.change(currCard.category);
-      iRepo.background.src = path + randomBackground();
+      });
     }
     avatarMoveTo = avatarMoveTo + avatarInc;
   }
