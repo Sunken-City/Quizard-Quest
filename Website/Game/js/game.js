@@ -231,11 +231,13 @@ function loseLife() {
     gamePlaying = false; 
     lose = true;
     game.heart.timer = 199;
+    game.pDie.get();
     game.heart.lose();
   }
   else {
     game.heart.timer = 29;
     game.heart.toggle = true;
+    game.pHurt.get();
     game.heart.hurt();
   }
 }
@@ -244,6 +246,10 @@ function submitAnswer() {
   if (gamePlaying) {
     if (currCard.answer == game.input._value) {
       game.monster.timer = 29;
+      if (gameMode < GameMode.SaveTheWorld)
+	game.mDie.get();
+      else
+	game.bHurt.get();
       game.monster.hurt();
       numRight++;
       XPGained += 10;
@@ -631,7 +637,7 @@ Etc.prototype = new Drawable();
 /**
  * A sound pool to use for the sound effects
  */
-/*
+
 function SoundPool(maxSize) {
   var size = maxSize; // Max sounds allowed in the pool
   var pool = [];
@@ -640,37 +646,69 @@ function SoundPool(maxSize) {
  
   /*
    * Populates the pool array with the given sound
-   *
+   */
   this.init = function(object) {
-    if (object == "laser") {
+    if (object == "pHurt") {
       for (var i = 0; i < size; i++) {
         // Initalize the sound
-        laser = new Audio("sounds/laser.wav");
-        laser.volume = .12;
-        laser.load();
-        pool[i] = laser;
+        pHurt = new Audio(path + "Audio/Oracle_Link_Hurt.wav");
+        pHurt.volume = .1;
+        pHurt.load();
+        pool[i] = pHurt;
       }
     }
-    else if (object == "explosion") {
+    else if (object == "pDie") {
       for (var i = 0; i < size; i++) {
-        var explosion = new Audio("sounds/explosion.wav");
-        explosion.volume = .1;
-        explosion.load();
-        pool[i] = explosion;
+        var pDie = new Audio(path + "Audio/Oracle_Link_Dying.wav");
+        pDie.volume = .1;
+        pDie.load();
+        pool[i] = pDie;
+      }
+    }
+    else if (object == "mHurt") {
+      for (var i = 0; i < size; i++) {
+        var mHurt = new Audio(path + "Audio/Oracle_Enemy_Hit.wav");
+        mHurt.volume = .1;
+        mHurt.load();
+        pool[i] = mHurt;
+      }
+    }
+    else if (object == "mDie") {
+      for (var i = 0; i < size; i++) {
+        var mDie = new Audio(path + "Audio/Oracle_Enemy_Die.wav");
+        mDie.volume = .1;
+        mDie.load();
+        pool[i] = mDie;
+      }
+    }
+    else if (object == "bHurt") {
+      for (var i = 0; i < size; i++) {
+        var bHurt = new Audio(path + "Audio/Oracle_Boss_Hit.wav");
+        bHurt.volume = .1;
+        bHurt.load();
+        pool[i] = bHurt;
+      }
+    }
+    else if (object == "bDie") {
+      for (var i = 0; i < size; i++) {
+        var bDie = new Audio(path + "Audio/Oracle_Boss_Die.wav");
+        bDie.volume = .1;
+        bDie.load();
+        pool[i] = bDie;
       }
     }
   };
  
   /*
    * Plays a sound
-   *
+   */
   this.get = function() {
     if(pool[currSound].currentTime == 0 || pool[currSound].ended) {
       pool[currSound].play();
     }
     currSound = (currSound + 1) % size;
   };
-}*/
+}
 
 function Game() {
 
@@ -749,6 +787,24 @@ function Game() {
       
       this.avatar = new Avatar();
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
+      
+      this.pHit = new SoundPool(3);
+      this.pHit.init("pHit");
+ 
+      this.pDie = new SoundPool(2);
+      this.pDie.init("pDie");
+      
+      this.mHit = new SoundPool(3);
+      this.mHit.init("mHit");
+ 
+      this.mDie = new SoundPool(2);
+      this.mDie.init("mDie");
+      
+      this.bHit = new SoundPool(3);
+      this.bHit.init("bHit");
+ 
+      this.bDie = new SoundPool(2);
+      this.bDie.init("bDie");
       
       game.start();
     }
