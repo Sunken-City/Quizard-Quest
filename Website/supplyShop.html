@@ -42,13 +42,11 @@
 				</nav>
 			</header>
 
-			<div id="displayGold"></div>
+			<div id="displayGold">You have 1000 gold</div>
 
-			<table id="avatars">
-				<tr id="nameRow"></tr>
-				<tr id="imgRow"></tr>
-				<tr id="costRow"></tr>
-			</table>
+			<div id="avatars">
+				<div id="row" class="row"></div>
+			</div>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>

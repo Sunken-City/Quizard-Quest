@@ -161,22 +161,34 @@ function displayavatars() {
 
 	for (var i = 0, len = avatars.length; i < len; i++ ) {
 
-		var td1 = document.createElement("td");
+		var td1 = document.createElement("div");
+		td1.setAttribute("class","name");
 		var p1 = document.createElement("p");
-		var td2 = document.createElement("td");
-		var td3 = document.createElement("td");
+		var td2 = document.createElement("div");
+		td2.setAttribute("class","img");
+		var td3 = document.createElement("div");
+		td3.setAttribute("class","price");
 		var p2 = document.createElement("p");
+		var realtd = document.createElement("button");
+		realtd.setAttribute("class", "spanner");
+		realtd.setAttribute("type","button");
 
 		p1.innerHTML = Avatars[i].name;
 		p2.innerHTML = Avatars[i].price;
 
 		td1.appendChild(p1);
-		document.getElementById('nameRow').appendChild(td1);
+		realtd.appendChild(td1);
 		td2.appendChild(Avatars[i].img);
-		document.getElementById('imgRow').appendChild(td2);
+		realtd.appendChild(td2);
 		td3.appendChild(p2);
-		document.getElementById('costRow').appendChild(td3);
+		realtd.appendChild(td3);
+		document.getElementById("row").appendChild(realtd);
 	}
+
+	// var heightChild = $(".spanner").height()*1.5;
+	// $("#avatars").css({
+	// 	"height":heightChild + "px",
+	// });
 
 }
 
