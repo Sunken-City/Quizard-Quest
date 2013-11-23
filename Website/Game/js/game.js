@@ -115,8 +115,17 @@ function updateTimer() {
   if (minutes == 0 && seconds == 0)
   {
     gamePlaying = false;
+    timeOut();
   }
 }
+
+function timeOut() {
+  if (numRight / numCards < .7)
+  {
+    lose = true;
+  }
+}
+
 /**
  * Define an object to hold all our images for the game so images
  * are only ever created once. This type of object is known as a
