@@ -99,12 +99,9 @@ function increaseTimer() {
 function updateTimer() {
   
   var currTime = timeLimit - (new Date().getTime() - start);
-  var elapsed = Math.floor(currTime / 1000);
-  seconds -= elapsed;
-  if (seconds < 0) {
-    seconds += 59;
-    minutes--;
-  }
+  minutes = Math.floor(currTime / 60000);
+  seconds = Math.floor(currTime / 1000) % 100;
+  
   
   if (minutes < 10)
     time = "0" + minutes + ":";
