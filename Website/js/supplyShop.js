@@ -156,6 +156,19 @@ function displayavatars() {
 		ava.img.onload = makeImageOnloadCallback(ava);
 	}
 
+	loadAvatars();
+}
+
+function loadAvatars() {
+
+	for (var i = 0, len = avatars.length; i < len; i++ ) {
+
+		var td = document.createElement("td");
+
+		td.appendChild(Avatars[i].img);
+		$("#theRow").appendChild(td);
+	}
+
 }
 
 function makeImageOnloadCallback(ava) {
@@ -164,3 +177,10 @@ function makeImageOnloadCallback(ava) {
 		Avatars.push(ava);
 	}
 }
+
+window.addEventListener('load', function() {
+	console.log('window loaded');
+
+
+
+});
