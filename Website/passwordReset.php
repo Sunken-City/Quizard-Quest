@@ -18,10 +18,13 @@
 	</head>
 	
 	<body>
-			<form id="username"  action="../API_Server/checkSecurityAnswer.php" method="POST" >
+			<form id="pwReset"  action="../API_Server/checkSecurityAnswer.php" method="POST" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
 				<button type="button" value="Get Question" id="getSecurity"> Get Question</button>
+				<div id="securityQuestion">
+				</div>
 			</form>
+
 
 
 			<footer>
