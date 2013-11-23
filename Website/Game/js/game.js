@@ -244,16 +244,22 @@ function submitAnswer() {
       switch(currCard.category){
        case 1: //Math
          XPCategory[0] += 10;
+	 break;
        case 2: //Science
          XPCategory[1] += 10;
+	 break;
        case 3: //Social Studies
          XPCategory[2] += 10;
+	 break;
        case 4: //English
          XPCategory[3] += 10;
+	 break;
        case 5: //Language
          XPCategory[4] += 10;
+	 break;
        case 6: //Misc
          XPCategory[5] += 10;
+	 break;
        default:
          console.log("No category or invalid category passed for answer! ONO");
       }
@@ -273,24 +279,31 @@ function randomMonster(category) {
     case 0: //Boss
       var choice = Math.floor((Math.random() * 16) + 1);
       return "../../Resources/Game/Sprites/Bosses/" + choice + ".png";
+      break;
     case 1: //Math
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
+      break;
     case 2:
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/Science/" + choice + ".png";
+      break;
     case 3:
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
+      break;
     case 4:
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/English/" + choice + ".png";
+      break;
     case 5:
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
+      break;
     case 6:
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
+      break;
     default:
       console.log("No category or invalid category passed for Monster! ONO");
       var choice = Math.floor((Math.random() * 50) + 1);
