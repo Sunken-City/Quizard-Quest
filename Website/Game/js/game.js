@@ -239,7 +239,6 @@ function submitAnswer() {
       game.monster.timer = 29;
       game.monster.hurt();
       numRight++;
-      nextCard();
       XPGained += 10;
       switch(currCard.category){
        case 1: //Math
@@ -267,8 +266,8 @@ function submitAnswer() {
     else {
       if (gameMode > GameMode.Training)
          loseLife();
-      nextCard();
     }
+    nextCard();
     game.input._value = "";
   }
 }
@@ -284,23 +283,23 @@ function randomMonster(category) {
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
       break;
-    case 2:
+    case 2: //Science
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/Science/" + choice + ".png";
       break;
-    case 3:
+    case 3: //Social Stuides
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
       break;
-    case 4:
+    case 4: //English
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/English/" + choice + ".png";
       break;
-    case 5:
+    case 5: //Languages
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
       break;
-    case 6:
+    case 6: //Misc
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
       break;
