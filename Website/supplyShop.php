@@ -44,7 +44,7 @@
 			<div id="displayGold"></div>
 
 			<table id="avatars">
-				<
+				
 			</table>
 
 			<footer>
