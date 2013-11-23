@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
 	displaygold();
-	displayavatars();
+	loadavatars();
 
 });
 
@@ -141,7 +141,7 @@ function Avatar() {
 
 var Avatars = [];
 
-function displayavatars() {
+function loadavatars() {
 
 	for (var i = 0, len = avatars.length; i < len; i++) {
 
@@ -155,11 +155,9 @@ function displayavatars() {
 		ava.img.src = ava.location;
 		ava.img.onload = makeImageOnloadCallback(ava);
 	}
-
-	loadAvatars();
 }
 
-function loadAvatars() {
+function displayavatars() {
 
 	for (var i = 0, len = avatars.length; i < len; i++ ) {
 
@@ -181,6 +179,6 @@ function makeImageOnloadCallback(ava) {
 window.addEventListener('load', function() {
 	console.log('window loaded');
 
-
+	displayavatars
 
 });
