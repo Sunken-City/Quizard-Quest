@@ -5,6 +5,4 @@
 
 	get_stats();
 
-	return true;
-
 ?>
