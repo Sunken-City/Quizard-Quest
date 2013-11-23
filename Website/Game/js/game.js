@@ -23,7 +23,7 @@ var lives;
 var time = "00:00";
 var seconds = 15;
 var minutes = 0;
-var timeLimit = minutes * 60000 + seconds * 1000;
+var timeLimit;
 var question;
 var answer;
 
@@ -825,6 +825,7 @@ function init() {
     avatarInc = 715 / numCards;
     currCard = deck.draw();
     lives = numCards - Math.ceil(numCards * .7) + 1;
+    timeLimit = minutes * 60000 + seconds * 1000;
     setQuestion(currCard.question);
     XPGained = 0;
     game.init();
