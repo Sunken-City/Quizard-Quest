@@ -66,9 +66,10 @@ $(document).ready(function() {
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
 		gold = data['gold'];
 		goldDisplay = "You have " + gold + " gold";
+		document.getElementById('displayGold').innerHTML = goldDisplay;
 	},"json");
 
-	document.getElementById('displayGold').innerHTML = goldDisplay;
+	
 	/*\
 	|*|		:: >> This function will display all the cards in the selected deck << ::
 	|*|
