@@ -56,14 +56,18 @@ $(document).ready(function() {
 		}	
 		
 	});
+
+	var deckid;
 	for( var i = 0, len = JSON.length;  i < len; i++){
-			deckid = document.getElementById("deck"+i)
-			document.getElementById("deck"+i).addEventListener("click", function() { 
-					showDeck(deckid.value);
-			});
-			
-			
-		}	
+	    deckid = document.getElementById("deck"+i);
+	    if (typeof window.addEventListener === 'function'){
+  	      (function (_deckid) {
+  	          deckid.addEventListener('click', function(){
+  	              showDeck(deckid.value);
+  	          });
+  	      })(deckid);
+  	  }
+	}		
 	
 	var sendData = {'life':'and death'};
 	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
