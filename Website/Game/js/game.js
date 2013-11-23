@@ -741,7 +741,7 @@ function animate() {
   if (gameMode == GameMode.SaveTheWorld) {
     game.scroll2.draw();
     game.clock.draw();
-    if (!lose)
+    if (gamePlaying)
     {
       updateTimer();
       document.getElementById('time').innerHTML = time;
