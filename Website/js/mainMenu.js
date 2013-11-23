@@ -23,6 +23,21 @@ function showDeck(str) {
 	xmlhttp.send();
 	
 }	
+function displayGold() { //Nathans Functions
+
+	var gold;
+	var goldDisplay;
+
+	var sendData = {'life':'and death'};
+
+	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
+		gold = data['gold'];
+		goldDisplay = "You have " + gold + " gold";
+	},"json");
+
+	$("#displayGold").html(goldDisplay);
+
+}
 
 $(document).ready(function() {
 	/*\
@@ -30,7 +45,7 @@ $(document).ready(function() {
 	|*|
 	|*|
 	\*/
-
+	displayGold();
 
 	$.post("../API_Server/getUsername.php", function(data){
 	var uname= $.parseJSON(data);

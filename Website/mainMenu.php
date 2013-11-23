@@ -77,7 +77,7 @@
 					=>	Display Achievements
 				  -->
 				<div id="profileStats">
-
+					<div id="displayGold"></div>
 				</div>
 
 			</section>
