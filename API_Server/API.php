@@ -694,7 +694,7 @@
 	    session_start(); 
 	} 
         $_SESSION ['userID'] = $userID;
-        $_SESSION ['timeout'] = time();
+        $_SESSION ['username'] = $username;
 
         mysqli_close($db);
 
