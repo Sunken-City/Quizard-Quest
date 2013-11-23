@@ -20,7 +20,7 @@
 	<body>
 			<form id="username" >
 				<input type="text" placeholder="Username" id="user" name="user" required />
-				<input type="submit" value="Submit" id="getSecurity" class="submitButton" />
+				<input type="button"" id="getSecurity" class="submitButton" />
 			</form>
 
 
