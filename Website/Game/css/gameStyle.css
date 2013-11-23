@@ -93,3 +93,8 @@ canvas {
   left: 360px;
   content:url('../../../Resources/Game/Sprites/load.gif');
 }
+
+footer.nonIndex {
+  float:right;
+  margin-top:765px;
+}
