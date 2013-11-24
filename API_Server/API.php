@@ -527,6 +527,26 @@
         }
         mysqli_close($db);
     }
+
+    function reset_password($password) {
+
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+
+        $salt = create_salt();
+        $password = create_hash_with_salt($password, $salt);
+
+        $query = "UPDATE players SET password = '$password' WHERE userID = '$userID';";
+        if (!mysqli_query($db,$query)) {
+            echo "There was an error.";
+            die('Error: ' . mysqli_error($db));
+        }
+        mysqli_close($db);
+    }
     
     function set_stats() {
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
