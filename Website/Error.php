@@ -53,7 +53,13 @@
 				    			<h2 class=\"errorMessage\">You are not logged in. Only registered users can view this page.</h2>
 					 		  </div>";
 
-				    } else if($_GET['err'] == 404) {
+				    } else if($_GET['err'] == 202) {
+
+				    	echo "<div class=\"error\" id=\"unLogin\">
+				    			<h2 class=\"errorMessage\">Your Answer was incorrect.</h2>
+					 		  </div>";
+
+				    }else if($_GET['err'] == 404) {
 
 				    	echo "<div class=\"error\" id=\"nonExistent\">
 				    			<h2 class=\"errorMessage\">The page you requested doesn't exist.</h2>
