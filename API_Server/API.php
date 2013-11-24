@@ -577,7 +577,7 @@
         $value = mysqli_query($db, "SELECT answer FROM securityQuestions WHERE userID = '$userID';");
         $answer = mysqli_fetch_assoc($value);
         
-        if($answer['answer'] == $guess) {
+        if(strcmp($guess,$answer['answer']) == 0) {
             return true;
         }
         else {
