@@ -240,6 +240,7 @@
 	       session_start(); 
 	    } 
         $_SESSION ['userID'] = $userID;
+        $_SESSION['username'] = $username;
         $_SESSION ['timeout'] = time();
 
         mysqli_close($db);
