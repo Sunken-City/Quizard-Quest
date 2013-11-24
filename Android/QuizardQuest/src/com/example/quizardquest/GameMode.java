@@ -137,8 +137,7 @@ public class GameMode extends Activity{
 	
 	public void returnToDeck(View view)
 	{
-	    Intent returnToDeckScreen = new Intent(this, DeckSelect.class);
-	    //beginGame.putExtra("Deck", chosenDeck); //Optional parameters
-	    startActivity(returnToDeckScreen);
+		finishActivity(1);
+		finish();
 	}
 }
