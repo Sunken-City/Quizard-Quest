@@ -21,9 +21,9 @@
 	<body>
 			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" >
 				<p>Type New Password</p>
-				<input type="text" placeholder="Password" id="newPW" name="password" required />
+				<input type="password" placeholder="Password" id="newPW" name="password" required />
 				<p>Confirm New Password</p>
-				<input type="text" placeholder="Password" id="checkPW"required />
+				<input type="password" placeholder="Password" id="checkPW"required />
 				<input class="submitButton" type="submit" value="Submit" id="changePW" />
 			</form>
 
