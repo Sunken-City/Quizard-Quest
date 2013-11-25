@@ -858,7 +858,7 @@ function animate() {
   
   else{
     game.monster.clear();
-    document.getElementById('question').innerHTML = "VICTORY! YOU ARE THE HERO!" + numRight + "/" + numCards;
+    document.getElementById('question').innerHTML = "VICTORY! YOU ARE THE HERO! " + numRight + "/" + numCards;
     printEarning();
   }
    
