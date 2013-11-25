@@ -761,9 +761,10 @@ function Game() {
       
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
+      this.heart = new Etc(iRepo.heart);
       
       if (gameMode > GameMode.Training) {
-	      this.heart = new Etc(iRepo.heart);
+	      
 	      this.heart.init(595, 30, iRepo.heart.width, iRepo.heart.height);
 	      this.scroll = new Etc(iRepo.scroll);
 	      this.scroll.init(530, 5, iRepo.scroll.width, iRepo.scroll.height);
