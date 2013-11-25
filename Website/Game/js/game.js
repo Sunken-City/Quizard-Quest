@@ -281,7 +281,6 @@ function submitAnswer() {
       }
     }
     else {
-      if (gameMode > GameMode.Training)
          loseLife();
     }
   }
