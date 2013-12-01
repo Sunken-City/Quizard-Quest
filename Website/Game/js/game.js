@@ -281,7 +281,6 @@ function submitAnswer() {
       }
     }
     else {
-      if (gameMode > GameMode.Training)
          loseLife();
     }
   }
@@ -763,9 +762,10 @@ function Game() {
       this.background = new Background();
       this.background.init(0, 0, iRepo.background.width, iRepo.background.height);
       
+      this.heart = new Etc(iRepo.heart);
+      this.heart.init(595, 30, iRepo.heart.width, iRepo.heart.height);
+      
       if (gameMode > GameMode.Training) {
-	      this.heart = new Etc(iRepo.heart);
-	      this.heart.init(595, 30, iRepo.heart.width, iRepo.heart.height);
 	      this.scroll = new Etc(iRepo.scroll);
 	      this.scroll.init(530, 5, iRepo.scroll.width, iRepo.scroll.height);
       }
@@ -849,7 +849,7 @@ function animate() {
   }
   
   else if(lose){
-    document.getElementById('question').innerHTML = "YOU HAVE LOST! "  + numRight + "/" + numCards;  
+    document.getElementById('question').innerHTML = "THOU HAST LOST! "  + numRight + "/" + numCards;  
     if (funQueue.length != 0) {
       (funQueue.shift())();
     }
@@ -858,7 +858,7 @@ function animate() {
   
   else{
     game.monster.clear();
-    document.getElementById('question').innerHTML = "WINNER WINNER CHICKEN DINNER! " + numRight + "/" + numCards;
+    document.getElementById('question').innerHTML = "VICTORY! YOU ARE THE HERO! " + numRight + "/" + numCards;
     printEarning();
   }
    
