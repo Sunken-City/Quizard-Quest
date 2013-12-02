@@ -54,7 +54,7 @@
 						<option value="">Select Spellbook</option>
 					</select>
 					<h2>
-						Current Spells in Spellbook:
+						Current Spells in Spellbook (check to remove):
 					</h2>
 					<div id="deckCards"></div>
 					<h2>
