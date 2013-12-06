@@ -7,9 +7,10 @@ $(document).ready(function () {
 
 });
 
+var gold;
+
 function displaygold() {
 
-	var gold;
 	var goldDisplay;
 
 	var sendData = {'life':'and death'};
@@ -25,6 +26,11 @@ function displaygold() {
 }
 
 var avatars = [
+	{
+		"name": "Blue Quizard",
+		"location": "../Resources/Avatars/Greg.png",
+		"price": "0"
+	},
 	{
 		"name": "Blue Quizardess",
 		"location": "../Resources/Avatars/Gregina.png",
@@ -205,3 +211,4 @@ window.addEventListener('load', function() {
 	displayavatars();
 
 });
+
