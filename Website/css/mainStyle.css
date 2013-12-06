@@ -179,6 +179,10 @@ h3 {
 	margin: .25em;
 }
 
+#profileDecks {
+	text-align: center;
+}
+
 footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
