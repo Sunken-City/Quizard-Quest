@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 	function logIn(uid, accessToken) {
 
-	  	var formData = {logInFrom:"Facebook", id:uid};
+	  	var formData = {'logInFrom':"Facebook", 'id':uid};
 
 		$.post("../API_Server/logIn.php",formData,function(data){	
 
