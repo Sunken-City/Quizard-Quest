@@ -143,15 +143,26 @@ h3 {
 	text-align: right;
 }
 
+#createAccountSection.newUser {
+	float:none;
+	margin-top: -2.5%;
+	text-align: right;
+}
+
 #createAccountSection td:nth-child(2) {
 	text-align: left;
 }
 
-#createAccountSection h2{
+#createAccountSection h2 {
 	text-align: center;
 }
 
-#createAccountSection label{
+#createAccountSection h2,#createAccountSection table {
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+#createAccountSection label {
 	padding-right: 20px;
 }
 

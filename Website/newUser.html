@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!-- 
+	Create Account for new Facebook User
+	Author: Nathan Moore
+-->
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Quizard Quest</title>
+	<link rel="stylesheet" href="css/mainStyle.css"/>
+	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type = "text/javascript" src="js/newUser.js"></script>
+	<script type = "text/javascript" src="js/navigation.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+	<div class="content">
+
+			<header id="headerIndex">
+
+				<img id="headerLogoIndex" src="../Resources/Logo/VertLogo_v2.png" alt="Quizard Quest Logo"/>
+
+				<div id="fb-root"></div>
+
+				<!--
+				  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+				  present a graphical Login button that triggers the FB.login() function when clicked.
+
+				  Learn more about options for the login button plugin:
+				  /docs/reference/plugins/login/ -->
+
+				<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+
+			</header>
+
+						<!-- Section for Account Creation Form -->
+			<section id="createAccountSection" class="newUser">
+
+				<div id="createAccountDiv">
+
+					<form id="createAccount" action="#" method="post" autocomplete="on">
+						<h2 id="createAcountHeader">Become a Quizard!</h2>
+						<table>
+							<tr>
+								<td><label  for="firstName" id="fname">First Name: </label></td>
+								<td>*<input type="text" placeholder="First Name" id="firstName" name="fname" title="Cannot be left empty" required/></td>
+							</tr>
+							<tr>
+								<td><label for="lastName" id="lname">Last Name: </label></td>
+								<td>*<input type="text" placeholder="Last Name" id="lastName" name="lname" title="Cannot be left empty" required/></td>
+							</tr>
+							<tr>
+								<td><label for="username" id="newUser">Username: </label></td>
+								<td>*<input type="text" placeholder="Username" pattern=".{6,20}" name="username" title="Username must be at least 6 characters" id="username" required/></td>
+							</tr>							
+							<tr>
+								<td><label for="GENDER" id="Gender">Gender: </label></td>
+								<td id="GENDER"> 
+									<input type="radio" name="gender" value="m" id="male" class="gender"/>
+									<label for="male">Male</label>
+									<input type="radio" name="gender" value="f" id="female" class="gender"/>
+									<label for="female">Female</label>
+								</td>
+							</tr>
+							<tr>
+								<td><label id="Grade">Grade: </label></td>
+								<td id="GRADE">
+									<select name="Grade" id="grade">
+										<option value="">Select Grade</option>
+										<option value="Kinder">Kinder</option>
+										<option value="First">1st</option>
+										<option value="Second">2nd</option>
+										<option value="Third">3rd</option>
+										<option value="Fourth">4th</option>
+										<option value="Fifth">5th</option>
+										<option value="Sixth">6th</option>
+										<option value="Seventh">7th</option>
+										<option value="Eighth">8th</option>
+										<option value="Ninth">9th</option>
+										<option value="Tenth">10th</option>
+										<option value="Eleventh">11th</option>
+										<option value="Twelfth">12th</option>
+										<option value="Freshman">Freshman</option>
+										<option value="Sophomore">Sophomore</option>
+										<option value="Junior">Junior</option>
+										<option value="Senior">Senior</option>
+										<option value="Graduate">Graduate</option>
+										<option value="Post-Graduate">Post-Graduate</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="blank"></td>
+								<td id="SIGNUP"><input class="submitButton" type="submit" value="Sign Up" id="signUp" /></td>
+							</tr>
+						</table>
+					</form>
+
+				</div>
+
+			</section>
+
+			<footer>
+				<p>Quizard Quest is brought to you by cd msc/</p>
+				<p>2013 English (US)</p>
+			</footer>
+
+		</div>
+
+</body>
+
+</html>
