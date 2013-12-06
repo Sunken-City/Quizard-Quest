@@ -4,6 +4,16 @@
 
 $(document).ready(function() {
 
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1473724932853450', // App ID
+			channelUrl : '//54.200.66.93/Quizard-Quest/Website/channel.php', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+	};
+
 	// Load the SDK asynchronously
     (function(d){
 	   var js, id = 'facebook-jssdk',
@@ -48,7 +58,7 @@ $(document).ready(function() {
 	});
 
 	/*\
-	|*|		:: >> Authenticate User After Login << ::
+	|*|		:: >> Log Out << ::
 	|*|
 	|*|		# add a click listener to the log out button
 	|*|		# make an ajax request that sends the form data to 
@@ -56,7 +66,6 @@ $(document).ready(function() {
 	|*|		# redirects to the log in page (index.html)
 	|*|
 	\*/
-
 
 	$("#logOut").click(function(e) {
 
