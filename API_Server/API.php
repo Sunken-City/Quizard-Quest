@@ -723,7 +723,7 @@
 
     }
 
-        /*\
+    /*\
     |*| 
     |*|                         :: >> For Facebook login << ::
     |*|
@@ -764,6 +764,35 @@
             return true;
 
         }
+
+    }
+
+    /*\
+    |*|
+    |*|     :: >> This is to change the user's id in the db after a new facebook user's account has been created << ::
+    |*|
+    \*/
+
+
+    function changeID($facebookID) {
+
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+      
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+
+        $userID = $_SESSION['userID'];
+
+        $query = "UPDATE players SET userID = '$facebookID' WHERE userID = '$userID';";
+        if (!mysqli_query($db,$query)) {
+            return false;
+        }
+
+        $_SESSION['userID'] = $facebookID;
+
+        mysqli_close($db);
 
     }
 

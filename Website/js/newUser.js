@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 
+	var uid;
 	var newwidth = $("#createAccountSection.newUser table").width();
 
 	$("#createAccountSection.newUser h2").css({
@@ -71,7 +72,7 @@ $(document).ready(function() {
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			    var uid = response.authResponse.userID;
+			    uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
 			    //logIn(uid,accessToken);
 			  } else if (response.status === 'not_authorized') {
@@ -191,7 +192,15 @@ $(document).ready(function() {
 
         	} else {
         		// do successful things
-            	window.location.href = "mainMenu.php";
+            	//window.location.href = "mainMenu.php";
+            	//change the new account's userID to match the facebookID
+            	var newID = {id:uid};
+
+            	$.post("../API_Server/createAccountFacebook.php",newID, function() {
+
+            		window.location.href = "mainMenu.php";
+
+            	});
         	}
 
 		},"json");
