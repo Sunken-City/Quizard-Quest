@@ -224,8 +224,20 @@ window.addEventListener('load', function() {
 			alert ("You need " + diff + " more gold.");
 		} else {
 
-			
-			alert("You have just purchased a new Avatar!");
+			var newGold =  goldN - priceN;
+			var avName = $(".clicked .name p").innerHTML;
+			var newPath;
+
+			for (var i = 0, len = Avatars.length; i < len; i++) {
+
+				if (Avatars[i].name === avname) {
+					newPath = Avatars[i].location;
+					break;
+				}
+
+			}
+			alert(newPath);
+			//alert("You have just purchased a new Avatar!");
 
 		}
 
