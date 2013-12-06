@@ -182,14 +182,8 @@ $(document).ready(function() {
 		var gender = null;
 		var passCheck = $("#passwordCheck").val();
 
-		if ($("#male").val() != null) {
-
-			gender = $("#male").val();
-
-		} else if ($("#male").val() == null && $("#female").val() != null) {
-
-			gender = $("#female").val();
-		}
+		if ($('input[name="gender"]:checked'))
+			gender = $('input[name="gender"]:checked').val();
 
 		var Grade = $("#grade").val();
 
