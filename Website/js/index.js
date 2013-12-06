@@ -179,14 +179,14 @@ $(document).ready(function() {
 		var newpwd = $("#newPassword").val();
 		var SecurityQuestion = $("#securityQuestion").val();
 		var SecurityAnswer = $("#securityAnswer").val();
-		var gender;
+		var gender = null;
 		var passCheck = $("#passwordCheck").val();
 
 		if ($("#male").val() != null) {
 
 			gender = $("#male").val();
 
-		} else {
+		} else if ($("#male").val() == null && $("#female").val() != null) {
 
 			gender = $("#female").val();
 		}
@@ -227,6 +227,7 @@ $(document).ready(function() {
 	        	}
 
 			},"json");
+			e.preventDefault();
 		}
 
 		e.preventDefault();
