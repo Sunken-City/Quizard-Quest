@@ -35,11 +35,28 @@ $(document).ready(function() {
 		FB.Event.subscribe('auth.authResponseChange', function(response) {
 			// Here we specify what we do with the response anytime this event occurs. 
 			if (response.status === 'connected') {
-			  // The response object is returned with a status field that lets the app know the current
-			  // login status of the person. In this case, we're handling the situation where they 
-			  // have logged in to the app.
-			  //window.location.href = "index.html";
-			  
+			    // The response object is returned with a status field that lets the app know the current
+			    // login status of the person. In this case, we're handling the situation where they 
+			    // have logged in to the app.
+			    //window.location.href = "index.html";
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						// the user is logged in and has authenticated your
+						// app, and response.authResponse supplies
+						// the user's ID, a valid access token, a signed
+						// request, and the time the access token 
+						// and signed request each expire
+						var uid = response.authResponse.userID;
+						var accessToken = response.authResponse.accessToken;
+						logIn(uid,accessToken);
+					} else if (response.status === 'not_authorized') {
+						// the user is logged in to Facebook, 
+						// but has not authenticated your app
+						FB.login();
+					} else {
+						// the user isn't logged in to Facebook.
+					}
+				});
 			} else if (response.status === 'not_authorized') {
 			  // In this case, the person is logged into Facebook, but not into the app, so we call
 			  // FB.login() to prompt them to do so. 
