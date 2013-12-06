@@ -21,7 +21,7 @@
 
 		<div class="content">
 
-			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" class"reset">
+			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" class="reset">
 				<p>Type New Password</p>
 				<input type="password" placeholder="Password" id="newPW" name="password" required />
 				<p>Confirm New Password</p>

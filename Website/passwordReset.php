@@ -20,7 +20,7 @@
 	<body>
 		<div class="content">
 
-			<form id="pwReset" action="../API_Server/checkSecurityAnswer.php" method="POST" autocomplete="off" class"reset">
+			<form id="pwReset" action="../API_Server/checkSecurityAnswer.php" method="POST" autocomplete="off" class="reset">
 				<input type="text" placeholder="Username" id="user" name="user" required />
 				<button type="button" value="Get Question" id="getSecurity"> Get Question</button>
 				<div id="securityQuestion">
