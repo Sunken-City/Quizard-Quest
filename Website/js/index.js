@@ -217,13 +217,13 @@ $(document).ready(function() {
 
 	        	} else {
 	        		// do successful things
+	        		e.preventDefault();
 	            	window.location.href = "mainMenu.php";
 	        	}
 
 			},"json");
 		// }
-
-		e.preventDefault();
+		
 	});
 
 });
