@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 
 
-	$("#avatar").attr("src","path");
+	$("#avatar").attr("src",path);
 
 	/*\
 	|*|		:: >> This function will display the usename << ::
