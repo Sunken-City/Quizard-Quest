@@ -202,6 +202,7 @@ $(document).ready(function() {
 		if (newpwd !== passCheck) {
 
 			alert("You passwords do no match!");
+			e.preventDefault();
 
 		} else {
 
