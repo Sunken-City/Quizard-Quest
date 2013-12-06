@@ -19,7 +19,7 @@
 
 			//check if first time user
 			$authenticated = facebookLoginCheck($fID);
-			$postData = array('success' => false);
+			$postData = array('success' => $authenticated);
 			echo json_encode($postData);
 		}	
 

@@ -746,8 +746,15 @@
         #   Check if the userID is in use: get username
         $query = "SELECT username FROM players WHERE userID = '$facebookID';";
         $response = mysqli_query($db,$query);
-        if ($response) {
-            //account already exists
+        if (mysqli_num_rows($response) == 0) {#   If no user in DB, redirect them to create account form
+
+            mysqli_close($db);
+
+            return false;
+
+        } else { 
+
+            #   account already exists
             $responseArray = mysqli_fetch_assoc($response);
             $_SESSION ['userID'] = $facebookID;
             $_SESSION ['username'] = $responseArray ['username'];
@@ -755,12 +762,6 @@
             mysqli_close($db);
 
             return true;
-
-        } else { #   Else, redirect them to create account form
-
-            mysqli_close($db);
-
-            return false;
 
         }
 
