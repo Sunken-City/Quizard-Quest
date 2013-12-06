@@ -60,9 +60,20 @@ $(document).ready(function() {
 
 	$("#logOut").click(function(e) {
 
-		FB.logout(function(response) {
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1473724932853450', // App ID
+				channelUrl : '//54.200.66.93/Quizard-Quest/Website/channel.php', // Channel File
+				status     : true, // check login status
+				cookie     : true, // enable cookies to allow the server to access the session
+				xfbml      : true  // parse XFBML
+			});
+
+			FB.logout(function(response) {
 	        // Person is now logged out
-    	});
+	    	});
+
+		};
 
 		$.ajax({
 			url: "../API_Server/logOut.php",
