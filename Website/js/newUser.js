@@ -155,7 +155,6 @@ $(document).ready(function() {
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
-		var Email = username;
 		var newpwd = "irrelavent";
 		var SecurityQuestion = "none";
 		var SecurityAnswer = "none";
@@ -169,7 +168,7 @@ $(document).ready(function() {
 		formData = {
 			'fname':fname,
 			'lname':lname,
-			'Email':Email,
+			'Email':uid,
 			'username':username,
 			'newpwd':newpwd,
 			'gender':gender,
@@ -192,15 +191,15 @@ $(document).ready(function() {
 
         	} else {
         		// do successful things
-            	//window.location.href = "mainMenu.php";
+            	window.location.href = "mainMenu.php";
             	//change the new account's userID to match the facebookID
-            	var newID = {id:uid};
+            	// var newID = {id:uid};
 
-            	$.post("../API_Server/createAccountFacebook.php",newID, function() {
+            	// $.post("../API_Server/createAccountFacebook.php",newID, function() {
 
-            		window.location.href = "mainMenu.php";
+            	// 	window.location.href = "mainMenu.php";
 
-            	});
+            	// });
         	}
 
 		},"json");

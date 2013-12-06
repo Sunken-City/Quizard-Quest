@@ -734,7 +734,7 @@
     |*|
     \*/
 
-    function facebookLoginCheck($facebookID) {
+    function facebookLoginCheck($fID) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
       
@@ -743,8 +743,10 @@
             exit();
         }
 
+        $facebookID = strval($fID);
+
         #   Check if the userID is in use: get username
-        $query = "SELECT username FROM players WHERE userID = '$facebookID';";
+        $query = "SELECT userID,username FROM players WHERE email = '$facebookID';";
         $response = mysqli_query($db,$query);
         if (mysqli_num_rows($response) == 0) {#   If no user in DB, redirect them to create account form
 
@@ -756,7 +758,7 @@
 
             #   account already exists
             $responseArray = mysqli_fetch_assoc($response);
-            $_SESSION ['userID'] = $facebookID;
+            $_SESSION ['userID'] = $responseArray ['userID'];
             $_SESSION ['username'] = $responseArray ['username'];
 
             mysqli_close($db);
