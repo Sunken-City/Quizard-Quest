@@ -170,63 +170,66 @@ $(document).ready(function() {
 	// 	window.location.href= "passwordReset.php";
 	// })
 
-	$("#signUp").click(function (e) {
+	// $("#signUp").click(function (e) {
 
-		var fname = $("#firstName").val();
-		var lname = $("#lastName").val();
-		var Email = $("#email").val();
-		var username = $("#username").val();
-		var newpwd = $("#newPassword").val();
-		var SecurityQuestion = $("#securityQuestion").val();
-		var SecurityAnswer = $("#securityAnswer").val();
-		var gender = null;
-		var passCheck = $("#passwordCheck").val();
+	// 	var fname = $("#firstName").val();
+	// 	var lname = $("#lastName").val();
+	// 	var Email = $("#email").val();
+	// 	var username = $("#username").val();
+	// 	var newpwd = $("#newPassword").val();
+	// 	var SecurityQuestion = $("#securityQuestion").val();
+	// 	var SecurityAnswer = $("#securityAnswer").val();
+	// 	var gender = null;
+	// 	var passCheck = $("#passwordCheck").val();
 
-		if ($('input[name="gender"]:checked'))
-			gender = $('input[name="gender"]:checked').val();
+	// 	if ($('input[name="gender"]:checked'))
+	// 		gender = $('input[name="gender"]:checked').val();
 
-		var Grade = $("#grade").val();
+	// 	var Grade = $("#grade").val();
 
-		formData = {
-			'fname':fname,
-			'lname':lname,
-			'Email':Email,
-			'username':username,
-			'newpwd':newpwd,
-			'gender':gender,
-			'Grade':Grade,
-			'SecurityAnswer':SecurityAnswer,
-			'SecurityQuestion':SecurityQuestion
-		};
+	// 	formData = {
+	// 		'fname':fname,
+	// 		'lname':lname,
+	// 		'Email':Email,
+	// 		'username':username,
+	// 		'newpwd':newpwd,
+	// 		'gender':gender,
+	// 		'Grade':Grade,
+	// 		'SecurityAnswer':SecurityAnswer,
+	// 		'SecurityQuestion':SecurityQuestion
+	// 	};
 
-		if (newpwd !== passCheck) {
+	// 	if (newpwd !== passCheck) {
 
-			alert("You passwords do no match!");
-			e.preventDefault();
+	// 		alert("You passwords do no match!");
+	// 		e.preventDefault();
 
-		} else {
+	// 	} else {
 
-			$.post("../API_Server/createAccount.php",formData, function(data) {
+	// 		$.post("../API_Server/createAccount.php",formData, function(data) {
 
-				if (data['success'] === 'username') {
-					// do failure things
-	            	alert("That username is already in use!");
+	// 			e.preventDefault();
 
-	        	} else if (data['success'] === 'email') {
-	            	// do failure things
-	            	alert("That email is already in use!");
+	// 			if (data['success'] === 'username') {
+	// 				// do failure things
+	//             	alert("That username is already in use!");
 
-	        	} else {
-	        		// do successful things
-	            	window.location.href = "mainMenu.php";
-	        	}
+	//         	} else if (data['success'] === 'email') {
+	//             	// do failure things
+	//             	alert("That email is already in use!");
 
-			},"json");
-			e.preventDefault();
-		}
+	//         	} else {
+	//         		// do successful things
+	//             	window.location.href = "mainMenu.php";
+	//         	}
 
-		e.preventDefault();
-	});
+	// 		},"json");
+			
+	// 		e.preventDefault();
+	// 	}
+
+	// 	e.preventDefault();
+	// });
 
 });
 
