@@ -19,7 +19,7 @@
 	</head>
 	
 	<body>
-			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" >
+			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" >
 				<p>Type New Password</p>
 				<input type="password" placeholder="Password" id="newPW" name="password" required />
 				<p>Confirm New Password</p>
