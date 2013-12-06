@@ -170,7 +170,7 @@ $(document).ready(function() {
 	// 	window.location.href= "passwordReset.php";
 	// })
 
-	$("#signUp").submit(function (e) {
+	$("#createAccount").submit(function (e) {
 
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
