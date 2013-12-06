@@ -230,7 +230,7 @@ window.addEventListener('load', function() {
 
 			for (var i = 0, len = Avatars.length; i < len; i++) {
 
-				if (Avatars[i].name === avname) {
+				if (Avatars[i].name === avName) {
 					newPath = Avatars[i].location;
 					break;
 				}
