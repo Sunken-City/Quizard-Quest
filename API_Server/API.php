@@ -723,6 +723,49 @@
 
     }
 
+        /*\
+    |*| 
+    |*|                         :: >> For Facebook login << ::
+    |*|
+    |*|         #   See if this is the first time the user has logged in to Quizard
+    |*|         #   That is, they are a new user
+    |*|         #   If they are, redirect them to make a new account
+    |*|         #   Else, log them in
+    |*|
+    \*/
+
+    function facebookLoginCheck($facebookID) {
+
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+      
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+
+        #   Check if the userID is in use: get username
+        $query = "SELECT username FROM players WHERE userID = '$facebookID';";
+        $response = mysqli_query($db,$query);
+        if ($response) {
+            //account already exists
+            $responseArray = mysqli_fetch_assoc($response);
+            $_SESSION ['userID'] = $facebookID;
+            $_SESSION ['username'] = $responseArray ['username'];
+
+            mysqli_close($db);
+
+            return true;
+
+        } else { #   Else, redirect them to create account form
+
+            mysqli_close($db);
+
+            return false;
+
+        }
+
+    }
+
     // Compares two strings $a and $b in length-constant time.
     function slow_equals($a, $b)  {
 
@@ -779,4 +822,5 @@
         else
             return bin2hex(substr($output, 0, $key_length));
     }
+
 ?>

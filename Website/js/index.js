@@ -66,7 +66,7 @@ $(document).ready(function() {
 			    // and signed request each expire
 			    var uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
-			    //logIn(uid,accessToken);
+			    logIn(uid,accessToken);
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
@@ -77,54 +77,63 @@ $(document).ready(function() {
 		});
 	};
 
-	  // Load the SDK asynchronously
-	  (function(d){
-		   var js, id = 'facebook-jssdk',
-		   ref = d.getElementsByTagName('script')[0];
-		   if (d.getElementById(id)) {return;}
-		   js = d.createElement('script');
-		   js.id = id;
-		   js.async = true;
-		   js.src = "http://connect.facebook.net/en_US/all.js";
-		   ref.parentNode.insertBefore(js, ref);
-	  }(document));
+	// Load the SDK asynchronously
+    (function(d){
+	   var js, id = 'facebook-jssdk',
+	   ref = d.getElementsByTagName('script')[0];
+	   if (d.getElementById(id)) {return;}
+	   js = d.createElement('script');
+	   js.id = id;
+	   js.async = true;
+	   js.src = "http://connect.facebook.net/en_US/all.js";
+	   ref.parentNode.insertBefore(js, ref);
+	}(document));
 
-	  // Load the SDK asynchronously
-	  (function(){
-		     // If we've already installed the SDK, we're done
-		     if (document.getElementById('facebook-jssdk')) {return;}
+	// Load the SDK asynchronously
+	(function(){
+	    // If we've already installed the SDK, we're done
+	    if (document.getElementById('facebook-jssdk')) {return;}
 
-		     // Get the first script element, which we'll use to find the parent node
-		     var firstScriptElement = document.getElementsByTagName('script')[0];
+	    // Get the first script element, which we'll use to find the parent node
+	    var firstScriptElement = document.getElementsByTagName('script')[0];
 
-		     // Create a new script element and set its id
-		     var facebookJS = document.createElement('script'); 
-		     facebookJS.id = 'facebook-jssdk';
+	    // Create a new script element and set its id
+	    var facebookJS = document.createElement('script'); 
+	    facebookJS.id = 'facebook-jssdk';
 
-		     // Set the new script's source to the source of the Facebook JS SDK
-		     facebookJS.src = '//connect.facebook.net/en_US/all.js';
+	    // Set the new script's source to the source of the Facebook JS SDK
+	    facebookJS.src = '//connect.facebook.net/en_US/all.js';
 
-		     // Insert the Facebook JS SDK into the DOM
-		     firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
-	   }());
+	    // Insert the Facebook JS SDK into the DOM
+	    firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+	}());
 
 	  // Here we run a very simple test of the Graph API after login is successful. 
 	  // This testAPI() function is only called in those cases. 
-	  function testAPI() {
-		    console.log('Welcome!  Fetching your information.... ');
-		    FB.api('/me', function(response) {
-		      console.log('Good to see you, ' + response.name + '.');
-		    });
-	  }
+	function testAPI() {
+		console.log('Welcome!  Fetching your information.... ');
+		FB.api('/me', function(response) {
+		  console.log('Good to see you, ' + response.name + '.');
+		});
+	}
 
-	 //  function logIn(uid, accessToken) {
+	function logIn(uid, accessToken) {
 
-	 //  	var formData = {logInFrom:"Facebook", id:uid};
+	  	var formData = {logInFrom:"Facebook", id:uid};
 
-		// $.post("../API_Server/logIn.php",formData,function(){			
-		// });
+		$.post("../API_Server/logIn.php",formData,function(){	
 
-	 //  }
+			if(data['success']) {
+            	// do successful things
+            	window.location.href = "mainMenu.php";
+        	} else {
+            	// do failure things
+            	alert("New User!");
+        	}
+
+		}, "json");
+
+	}
 
 	var newHeight = $("#logInSection").height()*1.6;
 	$("#headerIndex").css({
