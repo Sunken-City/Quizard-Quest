@@ -4,6 +4,37 @@
 
 $(document).ready(function() {
 
+	// Load the SDK asynchronously
+    (function(d){
+	   var js, id = 'facebook-jssdk',
+	   ref = d.getElementsByTagName('script')[0];
+	   if (d.getElementById(id)) {return;}
+	   js = d.createElement('script');
+	   js.id = id;
+	   js.async = true;
+	   js.src = "http://connect.facebook.net/en_US/all.js";
+	   ref.parentNode.insertBefore(js, ref);
+	}(document));
+
+	// Load the SDK asynchronously
+	(function(){
+	    // If we've already installed the SDK, we're done
+	    if (document.getElementById('facebook-jssdk')) {return;}
+
+	    // Get the first script element, which we'll use to find the parent node
+	    var firstScriptElement = document.getElementsByTagName('script')[0];
+
+	    // Create a new script element and set its id
+	    var facebookJS = document.createElement('script'); 
+	    facebookJS.id = 'facebook-jssdk';
+
+	    // Set the new script's source to the source of the Facebook JS SDK
+	    facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+	    // Insert the Facebook JS SDK into the DOM
+	    firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+	}());
+
 	var newHeight = $(".navbar").height() * 2;
 	var lessHeight = newHeight/4;
 
@@ -29,20 +60,9 @@ $(document).ready(function() {
 
 	$("#logOut").click(function(e) {
 
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '1473724932853450', // App ID
-				channelUrl : '//54.200.66.93/Quizard-Quest/Website/channel.php', // Channel File
-				status     : true, // check login status
-				cookie     : true, // enable cookies to allow the server to access the session
-				xfbml      : true  // parse XFBML
-			});
-
-			FB.logout(function(response) {
+		FB.logout(function(response) {
 	        // Person is now logged out
-	    	});
-
-		};
+    	});
 
 		$.ajax({
 			url: "../API_Server/logOut.php",
