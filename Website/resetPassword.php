@@ -19,6 +19,9 @@
 	</head>
 	
 	<body>
+
+		<div class="content">
+
 			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" >
 				<p>Type New Password</p>
 				<input type="password" placeholder="Password" id="newPW" name="password" required />
@@ -35,6 +38,7 @@
 			</footer>
 
 		</div>
+		
 	</body>
 
 </html>

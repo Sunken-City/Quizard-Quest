@@ -18,6 +18,8 @@
 	</head>
 	
 	<body>
+		<div class="content">
+			
 			<form id="username"  action="../API_Server/checkSecurityAnswer.php" method="POST" autocomplete="off">
 				<input type="text" placeholder="Username" id="user" name="user" required />
 				<input type="button" id="getSecurity" class="submitButton" />
