@@ -199,11 +199,11 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		// if (newpwd !== passCheck) {
+		if (newpwd !== passCheck) {
 
-		// 	alert("You passwords do no match!");
+			alert("You passwords do no match!");
 
-		// } else {
+		} else {
 
 			$.post("../API_Server/createAccount.php",formData, function(data) {
 
@@ -217,12 +217,13 @@ $(document).ready(function() {
 
 	        	} else {
 	        		// do successful things
-	        		e.preventDefault();
 	            	window.location.href = "mainMenu.php";
 	        	}
 
 			},"json");
-		// }
+
+			e.preventDefault();
+		}
 		
 	});
 
