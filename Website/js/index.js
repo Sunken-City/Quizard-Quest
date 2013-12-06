@@ -121,7 +121,7 @@ $(document).ready(function() {
 	function logIn(uid, accessToken) {
 
 	  	var formData = {logInFrom:"Facebook", id:uid};
-	  	alert(uid);
+	  	//alert(uid);
 
 		$.post("../API_Server/logIn.php",formData,function(data){	
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
             	window.location.href = "mainMenu.php";
         	} else {
             	// create new account
-            	//window.location.href = "newUser.html";
+            	window.location.href = "newUser.html";
         	}
 
 		}, "json");
