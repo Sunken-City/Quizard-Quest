@@ -225,7 +225,7 @@ window.addEventListener('load', function() {
 		} else {
 
 			var newGold =  goldN - priceN;
-			var avName = $(".clicked .name p").innerHTML;
+			var avName = $(".clicked .name p")[0].innerHTML;
 			var newPath;
 
 			for (var i = 0, len = Avatars.length; i < len; i++) {
