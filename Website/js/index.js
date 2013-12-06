@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 			if(data['success']) {
             	// do successful things
-            	window.location.href = "mainMenu.php";
+            	alert(uid);
         	} else {
             	// do failure things
             	alert("New User!");
