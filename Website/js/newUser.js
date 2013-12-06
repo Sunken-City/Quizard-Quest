@@ -177,30 +177,26 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		if (newpwd !== passCheck) {
+		
 
-			alert("You passwords do no match!");
+		$.post("../API_Server/createAccount.php",formData, function(data) {
 
-		} else {
+			if (data['success'] === 'username') {
+				// do failure things
+            	alert("That username is already in use!");
 
-			$.post("../API_Server/createAccount.php",formData, function(data) {
+        	} else if (data['success'] === 'email') {
+            	// do failure things
+            	alert("That email is already in use!");
 
-				if (data['success'] === 'username') {
-					// do failure things
-	            	alert("That username is already in use!");
+        	} else {
+        		// do successful things
+            	window.location.href = "mainMenu.php";
+        	}
 
-	        	} else if (data['success'] === 'email') {
-	            	// do failure things
-	            	alert("That email is already in use!");
+		},"json");
 
-	        	} else {
-	        		// do successful things
-	            	window.location.href = "mainMenu.php";
-	        	}
-
-			},"json");
-
-		}
+		
 
 		e.preventDefault();
 		
