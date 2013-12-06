@@ -205,26 +205,26 @@ $(document).ready(function() {
 
 		} else {
 
-			$.post("../API_Server/createAccount.php",formData, function(data) {
+			// $.post("../API_Server/createAccount.php",formData, function(data) {
 
-				if (data['success'] === 'username') {
-					// do failure things
-	            	alert("That username is already in use!");
+			// 	if (data['success'] === 'username') {
+			// 		// do failure things
+	  //           	alert("That username is already in use!");
 
-	        	} else if (data['success'] === 'email') {
-	            	// do failure things
-	            	alert("That email is already in use!");
+	  //       	} else if (data['success'] === 'email') {
+	  //           	// do failure things
+	  //           	alert("That email is already in use!");
 
-	        	} else {
-	        		// do successful things
-	            	window.location.href = "mainMenu.php";
-	        	}
+	  //       	} else {
+	  //       		// do successful things
+	  //           	window.location.href = "mainMenu.php";
+	  //       	}
 
-			},"json");
+			// },"json");
 
 		}
 
-		e.stopPropagation();
+		e.preventDefault();
 		
 	});
 
