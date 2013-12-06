@@ -19,20 +19,20 @@
 
 			//check if first time user
 			$authenticated = facebookLoginCheck($fID);
-			$postData = array('success' => $authenticated);
+			$postData = array('success' => false);
 			echo json_encode($postData);
 		}	
 
 	} else { #If login from quizard quest
 
-		// $pass = $_POST['pass'];
-		// $user = $_POST['user'];
+		$pass = $_POST['pass'];
+		$user = $_POST['user'];
 
-		// $authenticated = validate_password($user,$pass);
+		$authenticated = validate_password($user,$pass);
 
-		 $postData = array('success' => false);
-		// $_SESSION['redirected'] = "logIn";
-		 echo json_encode($postData);
+		$postData = array('success' => $authenticated);
+		$_SESSION['redirected'] = "logIn";
+		echo json_encode($postData);
 
 	}
 
