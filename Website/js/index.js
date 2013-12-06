@@ -222,7 +222,7 @@ $(document).ready(function() {
 
 			},"json");
 
-			e.preventDefault();
+			e.stopPropagation();
 		}
 		
 	});
