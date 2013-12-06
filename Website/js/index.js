@@ -121,7 +121,7 @@ $(document).ready(function() {
 
 	  	var formData = {logInFrom:"Facebook", id:uid};
 
-		$.post("../API_Server/logIn.php",formData,function(){	
+		$.post("../API_Server/logIn.php",formData,function(data){	
 
 			if(data['success']) {
             	// do successful things
