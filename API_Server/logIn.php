@@ -25,14 +25,14 @@
 
 	} else { #If login from quizard quest
 
-		$pass = $_POST['pass'];
-		$user = $_POST['user'];
+		// $pass = $_POST['pass'];
+		// $user = $_POST['user'];
 
-		$authenticated = validate_password($user,$pass);
+		// $authenticated = validate_password($user,$pass);
 
-		$postData = array('success' => $authenticated);
-		$_SESSION['redirected'] = "logIn";
-		echo json_encode($postData);
+		// $postData = array('success' => $authenticated);
+		// $_SESSION['redirected'] = "logIn";
+		// echo json_encode($postData);
 
 	}
 
