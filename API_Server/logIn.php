@@ -30,9 +30,9 @@
 
 		// $authenticated = validate_password($user,$pass);
 
-		// $postData = array('success' => $authenticated);
+		 $postData = array('success' => false);
 		// $_SESSION['redirected'] = "logIn";
-		// echo json_encode($postData);
+		 echo json_encode($postData);
 
 	}
 
