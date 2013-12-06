@@ -29,6 +29,10 @@ $(document).ready(function() {
 
 	$("#logOut").click(function(e) {
 
+		FB.logout(function(response) {
+        // Person is now logged out
+    	});
+
 		$.ajax({
 			url: "../API_Server/logOut.php",
 			success: function () {
