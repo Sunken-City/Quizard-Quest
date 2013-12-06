@@ -19,6 +19,20 @@ $(document).ready(function() {
 	});
 
 	/*\
+	|*|		:: >> Get gold << ::
+	\*/
+
+	var gold;
+	var goldDisplay;
+
+	var sendData = {'life':'and death'};
+
+	$.post("../API_Server/supplyShopSetup.php",sendData,function(data) {
+		gold = data['gold'];
+		goldDisplay = gold + " gold";
+	},"json");
+
+	/*\
 	|*|		:: >>Click listener for begin quest button<< ::
 	|*|
 	|*|		#	set session variable
@@ -35,9 +49,22 @@ $(document).ready(function() {
 
 		if (deck != -1 && mode != -1) { //if a deck is selected and game mode selected
 
-			$.post("../API_Server/questSetup.php",sendData, function() {
-				window.location.href = "Game/index.php";
-			});
+			if (mode == 1 && gold < 300) {
+
+				alert("You need 300 gold! You only have " + goldDisplay + ". You must train to earn more gold!");
+
+			} else if (mode == 2 && gold < 500) {
+
+				alert("You need 500 gold! You only have " + goldDisplay + ". You must train or go on a quest to earn more gold!");
+
+			} else if (mode == 0) {
+
+				$.post("../API_Server/questSetup.php",sendData, function() {
+					window.location.href = "Game/index.php";
+				});
+
+			}
+			
 
 		} else if (deck == -1 && mode != -1) {
 
