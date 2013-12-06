@@ -9,27 +9,6 @@ $(document).ready(function() {
 	    // Update the app to reflect a signed in user
 	    // Hide the sign-in button now that the user is authorized, for example:
 	    document.getElementById('signinButton').setAttribute('style', 'display: none');
-
-	 //    FB.getLoginStatus(function(response) {
-		// 	if (response.status === 'connected') {
-		// 		// the user is logged in and has authenticated your
-		// 		// app, and response.authResponse supplies
-		// 		// the user's ID, a valid access token, a signed
-		// 		// request, and the time the access token 
-		// 		// and signed request each expire
-		// 		var uid = response.authResponse.userID;
-		// 		var accessToken = response.authResponse.accessToken;
-		// 		logIn(uid,accessToken);
-		// 	} else if (response.status === 'not_authorized') {
-		// 		// the user is logged in to Facebook, 
-		// 		// but has not authenticated your app
-		// 		FB.login();
-		// 	} else {
-		// 		// the user isn't logged in to Facebook.
-		// 	}
-		// });
-
-	    
 	  } else if (authResult['error']) {
 	    // Update the app to reflect a signed out user
 	    // Possible error values:
@@ -59,8 +38,7 @@ $(document).ready(function() {
 			  // The response object is returned with a status field that lets the app know the current
 			  // login status of the person. In this case, we're handling the situation where they 
 			  // have logged in to the app.
-			  //window.location.href = "index.html";
-			  
+			  window.location.href = "index.html";
 			} else if (response.status === 'not_authorized') {
 			  // In this case, the person is logged into Facebook, but not into the app, so we call
 			  // FB.login() to prompt them to do so. 
@@ -143,7 +121,6 @@ $(document).ready(function() {
 	function logIn(uid, accessToken) {
 
 	  	var formData = {logInFrom:"Facebook", id:uid};
-	  	//alert(uid);
 
 		$.post("../API_Server/logIn.php",formData,function(data){	
 
