@@ -3,5 +3,8 @@
    session_start();
    
    $result = get_options();
-   $avatar = $result['avatar'];
+   $avatar = array("avatar" => $result['avatar']);
+
+   echo json_encode($avatar);
+
 ?>

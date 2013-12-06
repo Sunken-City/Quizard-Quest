@@ -210,5 +210,26 @@ window.addEventListener('load', function() {
 
 	displayavatars();
 
+	$(".spanner").click(function (e) {
+
+		$(".clicked").toggleClass("clicked");
+		$(this).toggleClass("clicked");
+
+		var priceS = $(".clicked .price p")[0].innerHTML;
+		var priceN = parseInt(priceS);
+		var goldN = parseInt(gold);
+
+		if (priceN > goldN) {
+			var diff = priceN - goldN;
+			alert ("You need " + diff + " more gold.");
+		} else {
+
+			
+			alert("You have just purchased a new Avatar!");
+
+		}
+
+	});
+
 });
 

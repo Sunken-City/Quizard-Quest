@@ -27,6 +27,24 @@ function showDeck(str) {
 
 
 $(document).ready(function() {
+
+
+	/*\
+	|*|		:: >> Fetch the avatar file path from DB << ::
+	\*/
+
+	var path;
+
+	$.post("../API_Server/getAvatar.php",function(data) {
+
+		path = data['avatar'];
+
+	});
+
+
+
+	$("#avatar").attr("src","path");
+
 	/*\
 	|*|		:: >> This function will display the usename << ::
 	|*|
