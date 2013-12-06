@@ -222,8 +222,9 @@ $(document).ready(function() {
 
 			},"json");
 
-			e.stopPropagation();
 		}
+
+		e.stopPropagation();
 		
 	});
 
