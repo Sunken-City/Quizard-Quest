@@ -1,4 +1,5 @@
-<?
+<?php
+
    include "API.php";
    session_start();
    
