@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = document.getElementById('avPath').innerHTML;
+var avatarPath = "../../Resources/Avatars/Greg.png";
 
 //Global variables for game control
 var gamePlaying = true;
@@ -721,6 +721,7 @@ function Game() {
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
+    avatarPath = document.getElementById('avPath').innerHTML;
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 170,
@@ -948,7 +949,7 @@ function init() {
     deck = deck1;
     gameMode = md;
     
-    avatarPath = avPath;
+    avatarPath = path;
 
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)

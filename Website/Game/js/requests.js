@@ -3,8 +3,6 @@
 \*/
 
 var path;
-var avPath = document.getElementById('avPath').innerHTML;
-alert(avPath);
 var stuff = {nothing:"nothing"};
 
 $.post("../../API_Server/getAvatar.php",stuff,function(data) {
@@ -12,14 +10,6 @@ $.post("../../API_Server/getAvatar.php",stuff,function(data) {
   path = data['avatar'];
 
 },"json");
-
-getPath();
-
-function getPath() {
-
-  avPath = path;
-
-}
 
 /*\
 |*|		:: >> Retrieve Deck Data << ::
