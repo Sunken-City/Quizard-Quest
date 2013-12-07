@@ -105,3 +105,5 @@ $.ajax({
   dataType: "json",
   async:false
 });
+
+alert(path);
