@@ -792,7 +792,6 @@ function Game() {
       
       
       this.avatar = new Avatar();
-      this.avatar.src 
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
       this.pHurt = new SoundPool(3);
