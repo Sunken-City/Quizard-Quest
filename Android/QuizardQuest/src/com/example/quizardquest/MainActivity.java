@@ -16,10 +16,12 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -106,11 +108,31 @@ public class MainActivity extends Activity {
     	}
     	protected void onPostExecute(JSONArray result) {
 
+    		Log.d("NDM",result.toString());
+    		if(result.length() == 0){
+    			pDialog.dismiss();
+    			// 1. Instantiate an AlertDialog.Builder with its constructor
+				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+    			// 2. Chain together various setter methods to set the dialog characteristics
+    			builder.setMessage("Incorrect Login. Try Again. Forgot Password? Visit Our Online Site!");
+
+    			builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+    		           public void onClick(DialogInterface dialog, int id) {
+    		               // User clicked OK button
+    		           }
+    		       });
+    			// 3. Get the AlertDialog from create()
+    			AlertDialog dialog = builder.create();
+    			dialog.show();
+    			Log.d("NDM","okay");
+    		}
+    		else{
     		parseJson(result);
-    		pDialog.dismiss();
     	    Intent myIntent = new Intent(MainActivity.this, DeckSelect.class);
     	    myIntent.putExtra("playerDecks",playerDecks); //Optional parameters
     	    MainActivity.this.startActivity(myIntent);
+    	    pDialog.dismiss();
+    		}
     	}
     }
     
@@ -141,7 +163,9 @@ public class MainActivity extends Activity {
     		if (null != entity) {
     			String result = EntityUtils.toString(entity);
     			Log.d("NDM",result);
-
+    			if(result.equals("239")){
+    				return null;
+    				}
     			decksJson = getJson(result);
     		}
     	}catch(ClientProtocolException e) {

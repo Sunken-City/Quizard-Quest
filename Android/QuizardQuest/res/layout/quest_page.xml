@@ -30,7 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/quest_deckname"
             android:id="@+id/question"
-            android:textSize="20sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:textSize="16sp"
             android:gravity="center"
              />
         <EditText android:id="@+id/answer"
