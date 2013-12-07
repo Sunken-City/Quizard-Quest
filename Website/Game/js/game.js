@@ -727,7 +727,12 @@ function Game() {
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
-    avatarPath = document.getElementById('avPath').innerHTML;
+    avatarPath = "";
+    while (avatarPath == "")
+    {
+      avatarPath = document.getElementById('avPath').innerHTML;
+      console.log(avatarPath);
+    }
     iRepo.avatar.src = "../" + avatarPath;
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
