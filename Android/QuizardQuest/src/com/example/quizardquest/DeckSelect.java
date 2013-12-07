@@ -104,7 +104,7 @@ class getDeckCards extends AsyncTask<String, Void, JSONArray>{
     	protected void onPreExecute() {
     		super.onPreExecute();
     		pDialog = new ProgressDialog(DeckSelect.this);
-    		pDialog.setMessage("Retrieving the Cards of Fate...");
+    		pDialog.setMessage("Opening Spellbook...");
     		pDialog.setIndeterminate(false);
     		pDialog.setCancelable(false);
     		pDialog.show();
