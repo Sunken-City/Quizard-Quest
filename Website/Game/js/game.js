@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath;
+var avatarPath = document.getElementById('avPath').innerHTML;
 
 //Global variables for game control
 var gamePlaying = true;

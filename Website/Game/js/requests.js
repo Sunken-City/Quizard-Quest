@@ -4,6 +4,7 @@
 
 var path;
 var avPath = document.getElementById('avPath').innerHTML;
+alert(avPath);
 var stuff = {nothing:"nothing"};
 
 $.post("../../API_Server/getAvatar.php",stuff,function(data) {
