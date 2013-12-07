@@ -3,7 +3,7 @@
 \*/
 
 var path;
-var avPath;
+var avPath = document.getElementById('avPath').innerHTML;
 var stuff = {nothing:"nothing"};
 
 $.post("../../API_Server/getAvatar.php",stuff,function(data) {
