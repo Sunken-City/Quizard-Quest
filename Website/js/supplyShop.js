@@ -243,6 +243,7 @@ window.addEventListener('load', function() {
 
 			$.post("../API_Server/updateDBfromShop.php",sendData,function() {
 				alert("You have just purchased a new Avatar!");
+				window.location.href = "mainMenu.php";
 			});			
 
 		}
