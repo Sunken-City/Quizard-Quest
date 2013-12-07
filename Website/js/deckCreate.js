@@ -157,23 +157,24 @@ $.post("../API_Server/getCards.php", function(data){
 
 $(document).ready(function(){
 
-	//add a click  listener to each card so that when they are clicked they are selected
-	$("div.deckCreateDiv.deckCreate").click(function(e) {
-		
-		//get the checkbox and toggle the check
-		var check = $(this).children("input")[0];
+	// //add a click  listener to each card so that when they are clicked they are selected
+	// $("div.deckCreateDiv.deckCreate").click(function(e) {
 
-		if ($(check).prop("checked")) {
+	// 	//get the checkbox and toggle the check
 
-			$(check).prop("checked",false);
+	// 	var check = $(e).children("input")[0];
 
-		} else {
+	// 	if ($(check).prop("checked")) {
 
-			$(check).prop("checked",true);
+	// 		$(check).prop("checked",false);
 
-		}
+	// 	} else {
 
-	});
+	// 		$(check).prop("checked",true);
+
+	// 	}
+
+	// });
 
 	var deckNames;
 
