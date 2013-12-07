@@ -87,17 +87,3 @@ function initDeck() {
   md = data[data.length - 1]['mode'];
 	deck1.cards = cardArray;
 }
-
-/*\
-|*|   :: >> Fetch the avatar file path from DB << ::
-\*/
-
-var path;
-var stuff = {nothing:"nothing"};
-
-$.post("../../API_Server/getAvatar.php",stuff,function(data) {
-
-  path = data['avatar'];
-
-},"json");
-
