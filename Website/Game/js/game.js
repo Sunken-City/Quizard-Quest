@@ -201,6 +201,11 @@ function loadBG(src, callback) {
   iRepo.background.onload = callback;
 }
 
+function loadAvatar(src, callback) {
+  iRepo.avatar.src = src;
+  iRepo.avatar.onload = callback;
+}
+
 function nextCard() {
   
   game.input._value = "";
@@ -731,9 +736,7 @@ function Game() {
     while (avatarPath == "")
     {
       avatarPath = document.getElementById('avPath').innerHTML;
-      console.log(avatarPath);
     }
-    iRepo.avatar.src = "../" + avatarPath;
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 170,
@@ -802,8 +805,10 @@ function Game() {
 	this.monster.change(currCard.category);
       
       
-      this.avatar = new Avatar();
-      this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar = new Avatar(); 
+      loadAvatar("../" + avatarPath, function() {
+	this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
+      });
       
       this.pHurt = new SoundPool(3);
       this.pHurt.init("pHurt");
