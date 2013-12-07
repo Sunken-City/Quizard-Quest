@@ -12,6 +12,8 @@ $.post("../../API_Server/getAvatar.php",stuff,function(data) {
 
 },"json");
 
+getPath();
+
 function getPath() {
 
   avPath = path;
