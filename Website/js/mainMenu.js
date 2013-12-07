@@ -41,7 +41,7 @@ $(document).ready(function() {
 		path = data['avatar'];
 		alert(path);
 
-	});
+	},"json");
 
 	$("#avatar").attr("src",path);
 
