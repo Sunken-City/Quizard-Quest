@@ -2,17 +2,17 @@ var password ="";
 var pwCheck = "";
 var pwText
 function pwMatch(){
-	pwText =documemt.getElementById("checkText").innerHTML;
 
-	password = document.getElementById("newPW").innerHTML;
-	pwCheck = document.getElementById("checkPW").innerHTML;
+	pwText = document.getElementById("checkText");
+	password = document.getElementById("newPW");
+	pwCheck = document.getElementById("checkPW");
 	var subButton = document.getElementById("changePW");
-	if(password != pwCheck){
-		pwText = "Passwords do not match. Please re-enter";
-		subButton.disabled = false;
+	if(password.value != pwCheck.value){
+		pwText.innerHTML = "Passwords do not match. Please re-enter";
+		subButton.disabled = true;
 	}
 	else{
-		pwText = "Passwords match";
-		subButton.disabled = true;
+		pwText.innerHTML = "Passwords match";
+		subButton.disabled = false;
 	}
 }

@@ -58,7 +58,36 @@
 							<tr>
 								<td><label for="username" id="newUser">Username: </label></td>
 								<td>*<input type="text" placeholder="Username" pattern=".{6,}" name="username" title="Username must be at least 6 characters" id="username" required/></td>
-							</tr>							
+							</tr>	
+							<tr>
+								<td><label for="newPassword" id="newpassword">Password: </label></td>
+								<td>*<input type="password" placeholder="Password" pattern=".{8,}" name="newpwd" title="Password must be at least 8 characters" id="newPassword" required/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>*<input type="password" placeholder="Re-enter Password" pattern=".{8,}" name="pwdCheck" title="Password must be at least 8 characters" id="passwordCheck" required/></td>
+							</tr>
+							<tr>
+								<td>
+									<label id="SecurityQuestion">Security Question: </label>
+								</td>
+								<td>
+									*<select name="SecurityQuestion" id="securityQuestion" required>
+										<option value="">Select a Question</option>
+										<option value="1">What is your mother's maiden name?</option>
+										<option value="2">Who is your favorite grade school teacher?</option>
+										<option value="3">What is your dream car?</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label id="SecurityAnswer">Security Answer: </label>
+								</td>
+								<td>
+									*<input type="text" id="securityAnswer" placeholder="Answer" name="SecurityAnswer" required />
+								</td>
+							</tr>						
 							<tr>
 								<td><label for="GENDER" id="Gender">Gender: </label></td>
 								<td id="GENDER"> 

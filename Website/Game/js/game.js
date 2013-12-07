@@ -257,23 +257,29 @@ function submitAnswer() {
       game.monster.hurt();
       numRight++;
       XPGained += 10;
+      if (gameMode == GameMode.Training)
+	goldEarned += 10;
+      else if (gameMode == GameMode.Quest)
+	goldEarned += 30;
+      else if (gameMode == GameMode.SaveTheWorld)
+	goldEarned += 50;
       switch(currCard.category){
-       case 1: //Math
+       case "1": //Math
          XPCategory[0] += 10;
 	 break;
-       case 2: //Science
+       case "2": //Science
          XPCategory[1] += 10;
 	 break;
-       case 3: //Social Studies
+       case "3": //Social Studies
          XPCategory[2] += 10;
 	 break;
-       case 4: //English
+       case "4": //English
          XPCategory[3] += 10;
 	 break;
-       case 5: //Language
+       case "5": //Language
          XPCategory[4] += 10;
 	 break;
-       case 6: //Misc
+       case "6": //Misc
          XPCategory[5] += 10;
 	 break;
        default:
@@ -289,31 +295,31 @@ function submitAnswer() {
 //Picks a random monster image from the available pool of monsters
 function randomMonster(category) {
   switch(category){
-    case 0: //Boss
+    case "0": //Boss
       var choice = Math.floor((Math.random() * 16) + 1);
       return "../../Resources/Game/Sprites/Bosses/" + choice + ".png";
       break;
-    case 1: //Math
+    case "1": //Math
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
       break;
-    case 2: //Science
+    case "2": //Science
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/Science/" + choice + ".png";
       break;
-    case 3: //Social Stuides
+    case "3": //Social Stuides
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
       break;
-    case 4: //English
+    case "4": //English
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/English/" + choice + ".png";
       break;
-    case 5: //Languages
+    case "5": //Languages
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
       break;
-    case 6: //Misc
+    case "6": //Misc
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
       break;
@@ -792,7 +798,7 @@ function Game() {
       
       
       this.avatar = new Avatar();
-      this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
       
       this.pHurt = new SoundPool(3);
       this.pHurt.init("pHurt");
@@ -906,38 +912,23 @@ var deck;
 var gameMode;
 
 function printEarning() {
-    var htmlString = "You gained " + XPGained + " total XP!";
+    var htmlString = "";
     
     if (XPCategory[0] != 0)
-      htmlString += "</br>You gained " + XPCategory[0] + " math XP!";
+      htmlString += "</br>You earned " + XPCategory[0] + " math XP!";
     if (XPCategory[1] != 0)
-      htmlString += "</br>You gained " + XPCategory[1] + " science XP!";
+      htmlString += "</br>You earned " + XPCategory[1] + " science XP!";
     if (XPCategory[2] != 0)
-      htmlString += "</br>You gained " + XPCategory[2] + " social studies XP!";
+      htmlString += "</br>You earned " + XPCategory[2] + " social studies XP!";
     if (XPCategory[3] != 0)
-      htmlString += "</br>You gained " + XPCategory[3] + " english XP!";
+      htmlString += "</br>You earned " + XPCategory[3] + " english XP!";
     if (XPCategory[4] != 0)
-      htmlString += "</br>You gained " + XPCategory[4] + " language XP!";
+      htmlString += "</br>You earned " + XPCategory[4] + " language XP!";
     if (XPCategory[5] != 0)
-      htmlString += "</br>You gained " + XPCategory[5] + " misc XP!";
+      htmlString += "</br>You earned " + XPCategory[5] + " misc XP!";
+    htmlString += "</br>This game you earned a total of " + XPGained + " XP!";
+    htmlString += "</br>You found " + goldEarned + " gold!";
     
-    switch(gameMode) {
-      case "0":
-         htmlString += "</br>You gained 100 gold!";
-         goldEarned = 100;
-         break;
-      case "1":
-         htmlString += "</br>You gained 300 gold!";
-         goldEarned = 300;
-         break;
-      case "2":
-         htmlString += "</br>You gained 500 gold!";
-         goldEarned = 500;
-         break;
-      default:
-         console.log("No gamemode found! Oh scheisse!");
-         break;
-    }
 
     $("#answer").html(htmlString);
 
