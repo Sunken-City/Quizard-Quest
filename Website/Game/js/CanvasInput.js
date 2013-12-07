@@ -1111,10 +1111,10 @@
 	    self._ctx.clearRect(self._x, self._y, ctx.canvas.width, ctx.canvas.height);
 	    self._ctx.drawImage(self._renderCanvas, self._x, self._y);
 	  }
-	}
-        return self;
+	  return self;
 
-      });
+	});
+      }
     },
 
     /**
