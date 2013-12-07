@@ -257,6 +257,7 @@ function submitAnswer() {
       game.monster.hurt();
       numRight++;
       XPGained += 10;
+      goldEarned += 10 * gameMode;
       switch(currCard.category){
        case "1": //Math
          XPCategory[0] += 10;
@@ -906,38 +907,23 @@ var deck;
 var gameMode;
 
 function printEarning() {
-    var htmlString = "You gained " + XPGained + " total XP!";
+    var htmlString = "";
     
     if (XPCategory[0] != 0)
-      htmlString += "</br>You gained " + XPCategory[0] + " math XP!";
+      htmlString += "</br>You earned " + XPCategory[0] + " math XP!";
     if (XPCategory[1] != 0)
-      htmlString += "</br>You gained " + XPCategory[1] + " science XP!";
+      htmlString += "</br>You earned " + XPCategory[1] + " science XP!";
     if (XPCategory[2] != 0)
-      htmlString += "</br>You gained " + XPCategory[2] + " social studies XP!";
+      htmlString += "</br>You earned " + XPCategory[2] + " social studies XP!";
     if (XPCategory[3] != 0)
-      htmlString += "</br>You gained " + XPCategory[3] + " english XP!";
+      htmlString += "</br>You earned " + XPCategory[3] + " english XP!";
     if (XPCategory[4] != 0)
-      htmlString += "</br>You gained " + XPCategory[4] + " language XP!";
+      htmlString += "</br>You earned " + XPCategory[4] + " language XP!";
     if (XPCategory[5] != 0)
-      htmlString += "</br>You gained " + XPCategory[5] + " misc XP!";
+      htmlString += "</br>You earned " + XPCategory[5] + " misc XP!";
+    htmlString += "</br>This game you earned a total of " + XPGained + " XP!";
+    htmlString += "</br>You found " + goldEarned + " gold!";
     
-    switch(gameMode) {
-      case "0":
-         htmlString += "</br>You gained 100 gold!";
-         goldEarned = 100;
-         break;
-      case "1":
-         htmlString += "</br>You gained 300 gold!";
-         goldEarned = 300;
-         break;
-      case "2":
-         htmlString += "</br>You gained 500 gold!";
-         goldEarned = 500;
-         break;
-      default:
-         console.log("No gamemode found! Oh scheisse!");
-         break;
-    }
 
     $("#answer").html(htmlString);
 
