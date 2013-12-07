@@ -115,7 +115,8 @@ footer.nonIndex {
   -webkit-border-bottom-right-radius: 16px;
   -moz-border-bottom-right-radius: 16px;
   -webkit-border-bottom-left-radius: 16px;
-  margin: .5em;
+  margin-top: 2em;
+  margin-left: 3em;
   border-width: 5px;
 }
 
