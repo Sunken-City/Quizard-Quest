@@ -177,9 +177,11 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		
+		alert("alert");
 
 		$.post("../API_Server/createAccount.php",formData, function(data) {
+
+			alert("alert");
 
 			if (data['success'] === 'username') {
 				// do failure things
@@ -202,9 +204,7 @@ $(document).ready(function() {
             	// });
         	}
 
-		},"json");
-
-		
+		},"json");		
 
 		e.preventDefault();
 		
