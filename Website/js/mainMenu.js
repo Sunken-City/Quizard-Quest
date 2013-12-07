@@ -34,10 +34,12 @@ $(document).ready(function() {
 	\*/
 
 	var path;
+	var stuff = {nothing:"nothing"};
 
-	$.post("../API_Server/getAvatar.php",function(data) {
+	$.post("../API_Server/getAvatar.php",stuff,function(data) {
 
 		path = data['avatar'];
+		alert(path);
 
 	});
 
