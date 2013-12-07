@@ -289,31 +289,31 @@ function submitAnswer() {
 //Picks a random monster image from the available pool of monsters
 function randomMonster(category) {
   switch(category){
-    case 0: //Boss
+    case "0": //Boss
       var choice = Math.floor((Math.random() * 16) + 1);
       return "../../Resources/Game/Sprites/Bosses/" + choice + ".png";
       break;
-    case 1: //Math
+    case "1": //Math
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Math/" + choice + ".png";
       break;
-    case 2: //Science
+    case "2": //Science
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/Science/" + choice + ".png";
       break;
-    case 3: //Social Stuides
+    case "3": //Social Stuides
       var choice = Math.floor((Math.random() * 40) + 1);
       return "../../Resources/Game/Sprites/SocialStudies/" + choice + ".png";
       break;
-    case 4: //English
+    case "4": //English
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/English/" + choice + ".png";
       break;
-    case 5: //Languages
+    case "5": //Languages
       var choice = Math.floor((Math.random() * 45) + 1);
       return "../../Resources/Game/Sprites/Languages/" + choice + ".png";
       break;
-    case 6: //Misc
+    case "6": //Misc
       var choice = Math.floor((Math.random() * 50) + 1);
       return "../../Resources/Game/Sprites/Misc/" + choice + ".png";
       break;
@@ -792,7 +792,7 @@ function Game() {
       
       
       this.avatar = new Avatar();
-      this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
       
       this.pHurt = new SoundPool(3);
       this.pHurt.init("pHurt");
