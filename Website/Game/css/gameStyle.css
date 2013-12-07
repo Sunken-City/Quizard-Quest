@@ -103,7 +103,7 @@ footer.nonIndex {
   margin-top:710px;
 }
 
-#postGame {
+#endGame {
   font-size: 4em;
   font-family: 'VT323', cursive;
   height:1.25em;
@@ -119,6 +119,6 @@ footer.nonIndex {
   border-width: 5px;
 }
 
-#postGame:hover {
+#endGame:hover {
   cursor: pointer;
 }
