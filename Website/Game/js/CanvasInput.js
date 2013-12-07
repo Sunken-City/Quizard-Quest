@@ -996,7 +996,7 @@
         sw = self.shadowW,
         sh = self.shadowH;
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    }
+    },
     
     /**
      * Clears and redraws the CanvasInput on an off-DOM canvas,
