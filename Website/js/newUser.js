@@ -155,6 +155,7 @@ $(document).ready(function() {
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
+		var Email = uid;
 		var newpwd = "irrelavent";
 		var SecurityQuestion = "none";
 		var SecurityAnswer = "none";
