@@ -68,7 +68,7 @@ CREATE TABLE deckCards (
 
 #A table that holds the options for each player, which can be editable.
 CREATE TABLE options (
-   avatar varchar(100) default 'Resources/Avatars/Greg.png',
+   avatar varchar(100) default '../Resources/Avatars/Greg.png',
    cardBorder varchar(100),
    bgColor varchar(10),
    userID int NOT NULL,

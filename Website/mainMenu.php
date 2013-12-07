@@ -45,56 +45,59 @@
 
 			</header>
 
-			<section id = "userProfile">
+			<div id="subContent">
 
-				<img id="avatar"src="" alt ="Avatar"></img>
-				<h2 id="userName"></h2>
-				<!-- Display user's decks -->
-				<!--
-					=>	List the User's Decks
-						->	Each tag is selectable
-						->	When selected:
-							>	Display all cards in that deck
-				  -->
-				<div id="profileDecks">
-					<h3>Decks: </h3>
-				</div>
-				<h3>Cards in Selected Deck: </h3>
-				<div id="deckCards">
-						<p> -- No Deck Selected -- </p>
+				<section id = "userProfile">
+
+					<h2 id="userName"></h2>
+					<img id="avatar"src="" alt ="Avatar"></img>
+					<!-- Display user's decks -->
+					<!--
+						=>	List the User's Decks
+							->	Each tag is selectable
+							->	When selected:
+								>	Display all cards in that deck
+					  -->
+					<div id="profileDecks">
+						<h3>Decks: </h3>
+					</div>
+					<h3>Cards in Selected Deck: </h3>
+					<div id="deckCards">
+							<p> -- No Deck Selected -- </p>
+						
+					</div>
 					
-				</div>
+					<!-- Display user's stats -->
+					<!--
+						=>	Display by Category
+							->	Math
+							->	Science
+							->	English
+							->	Language
+							->	History
+						=>	Display Total
+						=>	Display Gold Earned
+						=>	Display Achievements
+					  -->
+					<div id="profileStats">
+						<h3> User Stats </h3>
+
+						<div id="displayStats"></div>
+					</div>
+
+				</section>
 				
-				<!-- Display user's stats -->
-				<!--
-					=>	Display by Category
-						->	Math
-						->	Science
-						->	English
-						->	Language
-						->	History
-					=>	Display Total
-					=>	Display Gold Earned
-					=>	Display Achievements
-				  -->
-				<div id="profileStats">
-					<h3> User Stats </h3>
+				<section id = "newsFeed">
+				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QuizardQ" data-widget-id="400154213004492800">Tweets by @QuizardQ</a>
+					    <script>
+						    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+						    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
+					    	js.src=p+"://platform.twitter.com/widgets.js";
+					    	fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+					    </script>
+				</section>
 
-					<div id="displayStats"></div>
-				</div>
-
-			</section>
-			
-			<section id = "newsFeed">
-			    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QuizardQ" data-widget-id="400154213004492800">Tweets by @QuizardQ</a>
-				    <script>
-					    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-					    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
-				    	js.src=p+"://platform.twitter.com/widgets.js";
-				    	fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-				    </script>
-			</section>
-
+			</div>
 
 			<footer>
 				<p>Quizard Quest is brought to you by cd msc/</p>

@@ -28,6 +28,11 @@ function showDeck(str) {
 
 $(document).ready(function() {
 
+	// var newWidth = $("#twitter-widget-0").width() + 10;
+
+	// $("#newsFeed").css({
+	// 	'width':newWidth + 'px',
+	// });
 
 	/*\
 	|*|		:: >> Fetch the avatar file path from DB << ::
@@ -119,12 +124,5 @@ $(document).ready(function() {
 
 		document.getElementById('displayStats').innerHTML = goldDisplay +"<br>" + mathdisplay +"<br>" + sciencedisplay +"<br>" + ssdisplay +"<br>" + engdisplay + "<br>" + totdisplay;
 	},"json");
-
-	
-	/*\
-	|*|		:: >> This function will display all the cards in the selected deck << ::
-	|*|
-	|*|
-	\*/
 
 });

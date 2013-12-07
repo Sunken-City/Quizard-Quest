@@ -1,0 +1,22 @@
+#userProfile {
+	border: 3px groove rgb(50,153,187);
+	margin: 25px;
+	text-align: center;
+	width: 45%;
+	display: inline-block;
+}
+
+#avatar {
+	display: inline;
+}
+
+#userName {
+	display: inline;
+	font-size: 3em;
+}
+
+#newsFeed {
+	width: 45%;
+	display: inline-block;
+}
+
