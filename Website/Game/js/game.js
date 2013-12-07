@@ -923,7 +923,7 @@ function printEarning() {
       htmlString += "</br>You earned " + XPCategory[5] + " misc XP!";
     htmlString += "</br>This game you earned a total of " + XPGained + " XP!";
     htmlString += "</br>You found " + goldEarned + " gold!";
-    }
+    
 
     $("#answer").html(htmlString);
 
