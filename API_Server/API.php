@@ -506,6 +506,26 @@
         echo json_encode($result);
         mysqli_close($db);
     }
+
+    function set_avatar($avatar) {
+
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+
+        $query = "UPDATE options SET avatar = '$avatar' WHERE userID = '$userID';";
+        if (!mysqli_query($db, $query)) {
+            echo "There was an error updating your options. 
+            \nPlease return to the previous page.
+            \nHere's the error if you wanted to tell a developer:\n";
+            die('Error: ' . mysqli_error($db));
+        }
+        mysqli_close($db);
+
+    }
     
     function set_options($avatar, $cardBoarder, $bgColor){
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");

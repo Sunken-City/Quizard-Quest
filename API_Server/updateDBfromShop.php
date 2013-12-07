@@ -6,9 +6,7 @@
 	$gold = intval($_POST['gold']);
 	$path = $_POST['path'];
 
-	$options = get_options();
-
-	set_options($path, $options['cardBoarder'], $options['bgColor']);
+	set_avatar($path);
 
 	$_SESSION['gold'] = $gold;
 	set_stats();
