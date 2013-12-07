@@ -119,6 +119,7 @@ footer.nonIndex {
   margin-left: 3em;
   margin-right: 3em;
   border-width: 5px;
+  z-index: 99;
 }
 
 #endGame:hover {
