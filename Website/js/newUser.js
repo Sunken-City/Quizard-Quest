@@ -189,8 +189,6 @@ $(document).ready(function() {
 			  }
 		});
 
-		alert(Email);
-
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
