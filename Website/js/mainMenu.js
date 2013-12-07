@@ -40,10 +40,9 @@ $(document).ready(function() {
 
 		path = data['avatar'];
 		alert(path);
+		$("#avatar").attr("src",path);
 
 	},"json");
-
-	$("#avatar").attr("src",path);
 
 	/*\
 	|*|		:: >> This function will display the usename << ::
