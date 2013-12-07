@@ -157,6 +157,21 @@ $.post("../API_Server/getCards.php", function(data){
 
 $(document).ready(function(){
 
+	//add a click  listener to each card so that when they are clicked they are selected
+	$("div.deckCreateDiv.deckCreate").click(function(e) {
+		//get the checkbox and toggle the check
+		if ($(this).children("input")[0].prop('checked')) {
+
+			$(this).children("input")[0].prop('checked',false);
+
+		} else {
+
+			$(this).children("input")[0].prop('checked',true);
+
+		}
+
+	});
+
 	var deckNames;
 
 	$.post("../API_Server/DeckReview.php", function(data){
