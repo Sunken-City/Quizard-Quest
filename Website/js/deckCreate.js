@@ -159,15 +159,17 @@ $(document).ready(function(){
 
 	//add a click  listener to each card so that when they are clicked they are selected
 	$("div.deckCreateDiv.deckCreate").click(function(e) {
+		
 		//get the checkbox and toggle the check
 		var check = $(this).children("input")[0];
-		if ($(e).prop("checked")) {
 
-			$(e).prop("checked",false);
+		if ($(check).prop("checked")) {
+
+			$(check).prop("checked",false);
 
 		} else {
 
-			$(e).prop("checked",true);
+			$(check).prop("checked",true);
 
 		}
 
