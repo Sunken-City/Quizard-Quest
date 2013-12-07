@@ -1,14 +1,18 @@
 var password ="";
 var pwCheck = "";
-var pwText =documemt.getElementById("checkText").innerHTML;
+var pwText
+function pwMatch(){
+	pwText =documemt.getElementById("checkText").innerHTML;
 
-while(true){
 	password = document.getElementById("newPW").innerHTML;
 	pwCheck = document.getElementById("checkPW").innerHTML;
+	var subButton = document.getElementById("changePW");
 	if(password != pwCheck){
-		pwText = "Password does not match. Please re-enter";
+		pwText = "Passwords do not match. Please re-enter";
+		subButton.disabled = "true";
 	}
 	else{
-		pwText = "Password does not match. Please re-enter";
+		pwText = "Passwords match";
+		subButton.disabled = "true";
 	}
 }

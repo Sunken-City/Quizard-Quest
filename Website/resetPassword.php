@@ -23,10 +23,10 @@
 
 			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" class="reset">
 				<p>Type New Password</p>
-				<input type="password" placeholder="Password" id="newPW" name="password" required />
+				<input type="password" placeholder="Password" id="newPW" name="password" onchange="pwMatch()"required />
 				<p>Confirm New Password</p>
-				<input type="password" placeholder="Password" id="checkPW"required />
-				<input class="submitButton" type="submit" value="Submit" id="changePW" />
+				<input type="password" placeholder="Password" id="checkPW" onchange="pwMatch()" required />
+				<input class="submitButton" type="submit" value="Submit" id="changePW" disabled="true" />
 			</form>
 			<p id="checkText"></p>
 
