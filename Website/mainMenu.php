@@ -50,7 +50,7 @@
 
 				<section id = "userProfile">
 
-					<h2 id="userName"></h2>
+					<h1 id="userName"></h1>
 					<img id="avatar"src="" alt ="Avatar"></img>
 					<!-- Display user's decks -->
 					<!--
@@ -60,12 +60,11 @@
 								>	Display all cards in that deck
 					  -->
 					<div id="profileDecks">
-						<h3>Decks: </h3>
+						<h2>Decks:</h2>
 					</div>
-					<h3>Cards in Selected Deck: </h3>
+					<h2>Cards in Selected Deck:</h2>
 					<div id="deckCards">
-							<p> -- No Deck Selected -- </p>
-						
+							<p> -- No Deck Selected -- </p>						
 					</div>
 					
 					<!-- Display user's stats -->
@@ -81,8 +80,7 @@
 						=>	Display Achievements
 					  -->
 					<div id="profileStats">
-						<h3> User Stats </h3>
-
+						<h2>User Stats:</h2>
 						<div id="displayStats"></div>
 					</div>
 
