@@ -24,7 +24,7 @@
 }
 
 #avatar {
-	display: inline;
+	position: relative;
 }
 
 
@@ -41,11 +41,6 @@
 	-webkit-border-bottom-left-radius: 12px;
 	margin-right: 0px;
 	margin-left: 0px;
-}
-
-#userName {
-	display: inline;
-	font-size: 3em;
 }
 
 #newsFeed {
