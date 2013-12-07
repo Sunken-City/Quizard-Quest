@@ -63,6 +63,18 @@ $(document).ready(function() {
 					window.location.href = "Game/index.php";
 				});
 
+			} else if (mode == 1 && gold > 299) {
+
+				$.post("../API_Server/questSetup.php",sendData, function() {
+					window.location.href = "Game/index.php";
+				});
+
+			} else if (mode == 2 && gold > 499) {
+
+				$.post("../API_Server/questSetup.php",sendData, function() {
+					window.location.href = "Game/index.php";
+				});
+
 			}
 			
 
