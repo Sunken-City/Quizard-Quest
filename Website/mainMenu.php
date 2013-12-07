@@ -48,7 +48,7 @@
 
 			<div id="subContent">
 
-				<div id="unDiv">
+				<div id="unDiv" class="heading">
 					<h1 id="userName"></h1>
 					<img id="avatar"src="" alt ="Avatar"></img>
 				</div>
@@ -63,7 +63,7 @@
 								>	Display all cards in that deck
 					  -->
 					<div id="profileDecks" class="mainMenu">
-						<h2>Decks:</h2>
+						<h2 class="heading">Decks:</h2>
 					</div>
 
 					<div id="deckCards">
@@ -83,7 +83,7 @@
 						=>	Display Achievements
 					  -->
 					<div id="profileStats" class="mainMenu">
-						<h2>User Stats:</h2>
+						<h2 class="heading">User Stats:</h2>
 						<div id="displayStats"></div>
 					</div>
 

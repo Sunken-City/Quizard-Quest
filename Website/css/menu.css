@@ -29,6 +29,9 @@
 
 #userName {
 	display: inline;
+}
+
+.heading {
 	background: rgb(33,33,33);
 	-moz-border-top-left-radius: 12px;
 	-webkit-border-top-right-radius: 12px;
@@ -43,18 +46,7 @@
 }
 
 #subContent h2 {
-	background: rgb(33,33,33);
 	display:block;
-	-moz-border-top-left-radius: 12px;
-	-webkit-border-top-right-radius: 12px;
-	-moz-border-top-right-radius: 12px;
-	-webkit-border-top-left-radius: 12px;
-	-moz-border-bottom-left-radius: 12px;
-	-webkit-border-bottom-right-radius: 12px;
-	-moz-border-bottom-right-radius: 12px;
-	-webkit-border-bottom-left-radius: 12px;
-	margin-right: 0px;
-	margin-left: 0px;
 }
 
 #newsFeed {
