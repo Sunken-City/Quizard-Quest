@@ -949,20 +949,7 @@ function init() {
   $.getScript("js/requests.js", function(){
     deck = deck1;
     gameMode = md;
-
-    /*\
-    |*|   :: >> Fetch the avatar file path from DB << ::
-    \*/
-
-    var path;
-    var stuff = {nothing:"nothing"};
-
-    $.post("../../API_Server/getAvatar.php",stuff,function(data) {
-
-      path = data['avatar'];
-      avatarpath = path;
-
-    },"json");
+    avatarpath = path;
     
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)
