@@ -939,6 +939,8 @@ function printEarning() {
     htmlString += "</br>This game you earned a total of " + XPGained + " XP!";
     htmlString += "</br>You found " + goldEarned + " gold!";
     
+    //Subtract the cost of playing the game
+    goldEarned -= 150 * gameMode;
 
     $("#answer").html(htmlString);
 
