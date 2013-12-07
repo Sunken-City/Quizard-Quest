@@ -39,6 +39,12 @@ $(document).ready(function() {
 	// $("#subContent").css({
 	// 	'width':newWidth + 'px',
 	// });
+	
+	var w = $("#userName").height() + 32;
+
+	$("#avatar").css({ 
+		'top':'-' + w + 'px',
+		});
 
 	/*\
 	|*|		:: >> Fetch the avatar file path from DB << ::

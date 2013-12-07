@@ -13,21 +13,46 @@
 	vertical-align: top;
 	width: 50%;
 	background: rgb(44,44,44);
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
+	-moz-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-moz-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
 }
 
 #avatar {
 	display: inline;
 }
 
-
-#subContent h1, #subContent h2 {
-	background: rgb(33,33,33);
-	display:block;
-}
-
 #userName {
 	display: inline;
-	font-size: 3em;
+}
+
+#usrnmDiv {
+	margin-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.heading {
+	background: rgb(33,33,33);
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
+	-moz-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-moz-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#subContent h2 {
+	display:block;
 }
 
 #newsFeed {
@@ -40,4 +65,18 @@
 #subContent .semiCard {
 	width: 43%;
 	margin: 0px 5px 20px 5px;
+}
+
+#userProfile div.mainMenu {
+	-moz-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-moz-border-top-right-radius: 12px;
+	-webkit-border-top-left-radius: 12px;
+	-moz-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-moz-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	background: rgb(40,40,40);
+	margin-bottom: 25px;
+	padding-bottom: 5px;
 }

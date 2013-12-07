@@ -26,7 +26,7 @@
 				<input type="password" placeholder="Password" id="newPW" name="password" onchange="pwMatch()"required />
 				<p>Confirm New Password</p>
 				<input type="password" placeholder="Password" id="checkPW" onchange="pwMatch()" required />
-				<input class="submitButton" type="submit" value="Submit" id="changePW" disabled="true" />
+				<input class="submitButton" type="submit" value="Submit" id="changePW" disabled/>
 			</form>
 			<p id="checkText"></p>
 
