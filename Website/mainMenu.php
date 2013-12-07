@@ -60,11 +60,11 @@
 							->	When selected:
 								>	Display all cards in that deck
 					  -->
-					<div id="profileDecks">
+					<div id="profileDecks" class="mainMenu">
 						<h2>Decks:</h2>
 					</div>
 
-					<div id="deckCards">
+					<div id="deckCards" class="mainMenu">
 						<h2>Cards in Selected Deck:</h2>
 						<p> -- No Deck Selected -- </p>						
 					</div>
@@ -81,7 +81,7 @@
 						=>	Display Gold Earned
 						=>	Display Achievements
 					  -->
-					<div id="profileStats">
+					<div id="profileStats" class="mainMenu">
 						<h2>User Stats:</h2>
 						<div id="displayStats"></div>
 					</div>

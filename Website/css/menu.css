@@ -28,7 +28,7 @@
 }
 
 #userName {
-	
+
 }
 
 #subContent h2 {
@@ -58,7 +58,7 @@
 	margin: 0px 5px 20px 5px;
 }
 
-#userProfile div {
+#userProfile div.mainMenu {
 	-moz-border-top-left-radius: 12px;
 	-webkit-border-top-right-radius: 12px;
 	-moz-border-top-right-radius: 12px;
