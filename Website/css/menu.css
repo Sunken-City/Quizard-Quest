@@ -7,15 +7,22 @@
 }
 
 #userProfile {
-	border: 3px groove rgb(50,153,187);
+	border: 4px groove rgb(50,153,187);
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
 	width: 50%;
+	background: rgb(44,44,44);
 }
 
 #avatar {
 	display: inline;
+}
+
+
+#subContent h1, #subContent h2 {
+	background: rgb(33,33,33);
+	display:block;
 }
 
 #userName {
