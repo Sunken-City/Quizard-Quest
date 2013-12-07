@@ -257,7 +257,12 @@ function submitAnswer() {
       game.monster.hurt();
       numRight++;
       XPGained += 10;
-      goldEarned += 10 * gameMode;
+      if (gameMode == GameMode.Training)
+	goldEarned += 10;
+      else if (gameMode == GameMode.Quest)
+	goldEarned += 30;
+      else if (gameMode == GameMode.SaveTheWorld)
+	goldEarned += 50;
       switch(currCard.category){
        case "1": //Math
          XPCategory[0] += 10;
