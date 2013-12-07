@@ -87,3 +87,5 @@ function initDeck() {
   md = data[data.length - 1]['mode'];
 	deck1.cards = cardArray;
 }
+
+var path = $("#avPath").innerHTML;

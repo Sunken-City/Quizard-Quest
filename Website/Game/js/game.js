@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = "../../Resources/Avatars/Greg.png";
+var avatarPath;
 
 //Global variables for game control
 var gamePlaying = true;
@@ -948,6 +948,8 @@ function init() {
     deck = deck1;
     gameMode = md;
     
+    avatarPath = path;
+
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)
          seconds += 5;
