@@ -37,7 +37,7 @@
     ?>
 
     <div class="Game">
-      <button type="button" id="endGame">Save and Quit<span id="endGame"></button>
+      <button type="button" id="endGame">Save and Quit</button>
       <!-- The canvas for the background -->
       <canvas id="background" width="765" height="666">
          Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
