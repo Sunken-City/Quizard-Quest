@@ -60,6 +60,9 @@
     </div>
 
     <div id="postGame">
+
+      <button type="button" id="endGame">End Game</button>
+
       <footer class="nonIndex">
         <nav class="navbar" class="nonIndex">
           <button type="button" id="home" class="navButton">Home</button>

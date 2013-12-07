@@ -135,6 +135,16 @@ var avatars = [
 		"name": "Royal Quizard",
 		"location": "../Resources/Avatars/RoyalGreg.png",
 		"price": "10000"
+	},
+	{
+		"name": "Royal Quizardess",
+		"location": "../Resources/Avatars/RoyalGregina.png",
+		"price": "10000"
+	},
+	{
+		"name": "Elven Quizardess",
+		"location": "../Resources/Avatars/RoyalJordina.png",
+		"price": "13000"
 	}
 ];
 

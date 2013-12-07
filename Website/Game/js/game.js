@@ -201,6 +201,11 @@ function loadBG(src, callback) {
   iRepo.background.onload = callback;
 }
 
+function loadAvatar(src, callback) {
+  iRepo.avatar.src = src;
+  iRepo.avatar.onload = callback;
+}
+
 function nextCard() {
   
   game.input._value = "";
@@ -727,8 +732,11 @@ function Game() {
     this.mCanvas = document.getElementById('monster');
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
-    avatarPath = document.getElementById('avPath').innerHTML;
-    iRepo.avatar.src = "../" + avatarPath;
+    avatarPath = "";
+    while (avatarPath == "")
+    {
+      avatarPath = document.getElementById('avPath').innerHTML;
+    }
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 170,
@@ -792,13 +800,15 @@ function Game() {
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       if (gameMode == GameMode.SaveTheWorld)
-	this.monster.change(0);
+	this.monster.change("0");
       else
 	this.monster.change(currCard.category);
       
       
-      this.avatar = new Avatar();
-      this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
+      this.avatar = new Avatar(); 
+      loadAvatar("../" + avatarPath, function() {
+	game.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
+      });
       
       this.pHurt = new SoundPool(3);
       this.pHurt.init("pHurt");
