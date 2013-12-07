@@ -239,7 +239,7 @@ window.addEventListener('load', function() {
 			//alert(newPath);
 
 			//send new data to update the DB
-			var sendData {path:newpath,gold:newGold};
+			var sendData = {path:newpath,gold:newGold};
 
 			$.post("../API_Server/updateDBfromShop.php",sendData,function() {
 				alert("You have just purchased a new Avatar!");
