@@ -507,6 +507,25 @@
         mysqli_close($db);
     }
 
+    function get_avatar() {
+
+        $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+
+        $userID = $_SESSION['userID'];
+
+        $cards = mysqli_query($db, "SELECT avatar FROM options WHERE userID = '$userID';");
+        $result = mysqli_fetch_assoc($cards);
+
+        mysqli_close($db);
+
+        return $result['avatar'];
+
+    }
+
     function set_avatar($avatar) {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");

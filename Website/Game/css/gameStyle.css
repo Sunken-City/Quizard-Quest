@@ -5,6 +5,10 @@ canvas {
   background: transparent;
 }
 
+.invisible {
+  display:none;
+}
+
 #background {
   z-index: -2;
   /*position: relative;*/
