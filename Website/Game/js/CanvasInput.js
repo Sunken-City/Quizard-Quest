@@ -985,7 +985,19 @@
     renderCanvas: function() {
       return this._renderCanvas;
     },
-
+    
+    remove: function() {
+      var self = this,
+        ctx = self._renderCtx,
+        w = self.outerW,
+        h = self.outerH,
+        br = self._borderRadius,
+        bw = self._borderWidth,
+        sw = self.shadowW,
+        sh = self.shadowH;
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    }
+    
     /**
      * Clears and redraws the CanvasInput on an off-DOM canvas,
      * and if a main canvas is provided, draws it all onto that.
