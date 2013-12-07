@@ -23,7 +23,7 @@
 
 			<form id="pwReset" action="../API_Server/changePassword.php" method="POST" autocomplete="off" class="reset">
 				<p>Type New Password</p>
-				<input type="password" placeholder="Password" id="newPW" name="password" onchange="pwMatch()"required />
+				<input type="password" placeholder="Password" id="newPW" name="password" pattern=".{8,}"title="Password must be at least 8 characters" onchange="pwMatch()"required />
 				<p>Confirm New Password</p>
 				<input type="password" placeholder="Password" id="checkPW" onchange="pwMatch()" required />
 				<input class="submitButton" type="submit" value="Submit" id="changePW" disabled/>
