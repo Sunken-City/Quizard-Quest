@@ -807,7 +807,7 @@ function Game() {
       
       this.avatar = new Avatar(); 
       loadAvatar("../" + avatarPath, function() {
-	this.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
+	game.avatar.init(0, 333, iRepo.avatar.width, iRepo.avatar.height);
       });
       
       this.pHurt = new SoundPool(3);
