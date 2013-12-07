@@ -39,7 +39,6 @@ $(document).ready(function() {
 	$.post("../API_Server/getAvatar.php",stuff,function(data) {
 
 		path = data['avatar'];
-		alert(path);
 		$("#avatar").attr("src",path);
 
 	},"json");
