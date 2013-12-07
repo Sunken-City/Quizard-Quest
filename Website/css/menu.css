@@ -2,7 +2,7 @@
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width:95%;
+	width:98%;
 	margin-bottom: 25px;
 }
 
@@ -11,7 +11,7 @@
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
-	width: 45%;
+	width: 50%;
 }
 
 #avatar {
@@ -26,10 +26,11 @@
 #newsFeed {
 	display: inline-block;
 	vertical-align: top;
-	width: 45%;
+	width: 40%;
+	margin-right: -1%;
 }
 
 #subContent .semiCard {
-	width: 40%;
+	width: 43%;
 	margin: 0px 5px 20px 5px;
 }

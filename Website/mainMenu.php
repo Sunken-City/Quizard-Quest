@@ -60,12 +60,11 @@
 								>	Display all cards in that deck
 					  -->
 					<div id="profileDecks">
-						<h2>Decks: </h2>
+						<h2>Decks:</h2>
 					</div>
-					<h2>Cards in Selected Deck: </h2>
+					<h2>Cards in Selected Deck:</h2>
 					<div id="deckCards">
-							<p> -- No Deck Selected -- </p>
-						
+							<p> -- No Deck Selected -- </p>						
 					</div>
 					
 					<!-- Display user's stats -->
@@ -81,8 +80,7 @@
 						=>	Display Achievements
 					  -->
 					<div id="profileStats">
-						<h2> User Stats </h2>
-
+						<h2>User Stats:</h2>
 						<div id="displayStats"></div>
 					</div>
 
