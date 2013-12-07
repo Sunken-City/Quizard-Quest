@@ -97,11 +97,11 @@ var stuff = {nothing:"nothing"};
 
 $.ajax({
   type:"POST",
-  url: "../../API_Server/getAvatar.php",
+  url: "../../../API_Server/getAvatar.php",
   data: stuff,
   success: function(data) {
-    path = data['avatar'];
-  },
+      path = data['avatar'];
+   },
   dataType: "json",
   async:false
 });
