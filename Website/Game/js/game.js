@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = $('.invisible')[0].innerHTML;
+var avatarPath = $('.invisible')[0].html();
 
 //Global variables for game control
 var gamePlaying = true;
