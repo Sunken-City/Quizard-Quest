@@ -61,18 +61,8 @@
 
     <div id="postGame">
 
-      <button type="button" id="endGame">End Game</button>
+      <button type="button" id="endGame">Save and Quit</button>
 
-      <footer class="nonIndex">
-        <nav class="navbar" class="nonIndex">
-          <button type="button" id="home" class="navButton">Home</button>
-          <button type="button" id="gotoStore" >Secret Shop</button>
-          <button type="button" id="createCard" >Create a Spell!</button>
-          <button type="button" id="createDeck" >Create a Spellbook!</button>
-          <button type="button" id="reviewDecks" >Edit your Spellbooks</button>
-          <button type="button" id="logOut" class="navButton">Log Out</button>
-        </nav>
-      </footer>
     </div>
 
   </body>
