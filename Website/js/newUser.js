@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 		$.post("../API_Server/createAccount.php",formData, function(data) {
 
-			alert("alert2");
+			alert(data['success']);
 
 			if (data['success'] === 'username') {
 				// do failure things
