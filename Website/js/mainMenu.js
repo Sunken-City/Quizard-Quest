@@ -33,7 +33,7 @@ $(document).ready(function() {
 	|*|		:: >> Fetch the avatar file path from DB << ::
 	\*/
 
-	var path = "death";
+	var path;
 
 	$.post("../API_Server/getAvatar.php",function(data) {
 
