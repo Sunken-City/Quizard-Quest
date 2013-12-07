@@ -191,12 +191,12 @@ $(document).ready(function() {
 
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
-		var username = $("#username").val();
-		
-		var newpwd = "irrelavent";
-		var SecurityQuestion = "none";
-		var SecurityAnswer = "none";
+		var username = $("#username").val();		
+		var newpwd = $("#newPassword").val();
+		var SecurityQuestion = $("#securityQuestion").val();
+		var SecurityAnswer = $("#securityAnswer").val();
 		var gender = null;
+		var passCheck = $("#passwordCheck").val();
 
 		if ($('input[name="gender"]:checked'))
 			gender = $('input[name="gender"]:checked').val();
@@ -215,7 +215,13 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		$.post("../API_Server/createAccount.php",formData, function(data) {
+		if (newpwd !== passCheck) {
+
+			alert("You passwords do no match!");
+
+		} else {
+
+			$.post("../API_Server/createAccount.php",formData, function(data) {
 
 				if (data['success'] === 'username') {
 					// do failure things
@@ -230,7 +236,9 @@ $(document).ready(function() {
 	            	window.location.href = "mainMenu.php";
 	        	}
 
-			},"json");		
+			},"json");	
+			
+		}	
 
 		e.preventDefault();
 		
