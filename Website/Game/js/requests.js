@@ -1,17 +1,4 @@
 /*\
-|*|   :: >> Fetch the avatar file path from DB << ::
-\*/
-
-var path;
-var stuff = {nothing:"nothing"};
-
-$.post("../../API_Server/getAvatar.php",stuff,function(data) {
-
-  path = data['avatar'];
-
-},"json");
-
-/*\
 |*|		:: >> Retrieve Deck Data << ::
 |*|
 |*|		# Get DeckID through session variable

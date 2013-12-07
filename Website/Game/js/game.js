@@ -949,8 +949,6 @@ function init() {
   $.getScript("js/requests.js", function(){
     deck = deck1;
     gameMode = md;
-    
-    avatarPath = path;
 
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)
