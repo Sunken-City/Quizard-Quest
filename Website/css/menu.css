@@ -31,6 +31,12 @@
 	display: inline;
 }
 
+#usrnmDiv {
+	margin-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
 .heading {
 	background: rgb(33,33,33);
 	-moz-border-top-left-radius: 12px;

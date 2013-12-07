@@ -48,7 +48,7 @@
 
 			<div id="subContent">
 
-				<div id="unDiv" class="heading">
+				<div id="usrnmDiv" class="heading">
 					<h1 id="userName"></h1>
 					<img id="avatar"src="" alt ="Avatar"></img>
 				</div>
