@@ -62,10 +62,10 @@
 					  -->
 					<div id="profileDecks" class="mainMenu">
 						<h2>Decks:</h2>
-						<div id="deckCards">
-							<h2>Cards in Selected Deck:</h2>
-							<p> -- No Deck Selected -- </p>						
-						</div>
+					</div>
+
+					<div id="deckCards">
+						<p> -- No Deck Selected -- </p>						
 					</div>
 					
 					<!-- Display user's stats -->
