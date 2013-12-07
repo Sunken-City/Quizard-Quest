@@ -469,7 +469,7 @@
             exit();
         }
         $userID = $_SESSION['userID'];
-        $cards = mysqli_query($db, "SELECT * FROM options WHERE userID = '$userID');");
+        $cards = mysqli_query($db, "SELECT * FROM options WHERE userID = '$userID';");
         $result = mysqli_fetch_assoc($cards);
         echo json_encode($result);
         mysqli_close($db);
