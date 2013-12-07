@@ -4,7 +4,6 @@
 
 $(document).ready(function() {
 
-	var uid;
 	var newwidth = $("#createAccountSection.newUser table").width();
 
 	$("#createAccountSection.newUser h2").css({
@@ -53,7 +52,7 @@ $(document).ready(function() {
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			    uid = response.authResponse.userID;
+			    var uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
 			    //logIn(uid,accessToken);
 			  } else if (response.status === 'not_authorized') {
@@ -90,7 +89,7 @@ $(document).ready(function() {
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			    uid = response.authResponse.userID;
+			    var uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
 			    //logIn(uid,accessToken);
 			  } else if (response.status === 'not_authorized') {
@@ -170,10 +169,32 @@ $(document).ready(function() {
 
 	$("#createAccount").submit(function (e) {
 
+		var Email;
+
+		FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected') {
+			    // the user is logged in and has authenticated your
+			    // app, and response.authResponse supplies
+			    // the user's ID, a valid access token, a signed
+			    // request, and the time the access token 
+			    // and signed request each expire
+			    var uid = response.authResponse.userID;
+			    Email = uid;
+			    var accessToken = response.authResponse.accessToken;
+			    //logIn(uid,accessToken);
+			  } else if (response.status === 'not_authorized') {
+			    // the user is logged in to Facebook, 
+			    // but has not authenticated your app
+			    FB.login();
+			  } else {
+			    // the user isn't logged in to Facebook.
+			  }
+		});
+
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
-		var Email = uid;
+		
 		var newpwd = "irrelavent";
 		var SecurityQuestion = "none";
 		var SecurityAnswer = "none";
