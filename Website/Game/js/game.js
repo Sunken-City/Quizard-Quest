@@ -149,7 +149,7 @@ var iRepo = new function() {
     if (numLoaded === numImages) {
       console.log("Images Loaded");
       $('.answer').hide();
-      $(".endGame").hide();
+      $('#endGame').hide();
       window.init();
     }
   }
@@ -943,7 +943,7 @@ function printEarning() {
     $("#answer").html(htmlString);
 
     $(".answer").show();
-    $(".endGame").show();
+    $("#endGame").show();
 }
 
 function init() {
