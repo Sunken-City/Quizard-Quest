@@ -140,7 +140,7 @@ var avatars = [
 		"name": "Royal Quizardess",
 		"location": "../Resources/Avatars/RoyalGregina.png",
 		"price": "10000"
-	}
+	},
 	{
 		"name": "Elven Quizardess",
 		"location": "../Resources/Avatars/RoyalJordina.png",
