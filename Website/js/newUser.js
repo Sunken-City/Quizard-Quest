@@ -95,7 +95,6 @@ $(document).ready(function() {
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
-			    FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
 			  }
@@ -190,6 +189,8 @@ $(document).ready(function() {
 			  }
 		});
 
+		alert(Email);
+
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
@@ -207,7 +208,7 @@ $(document).ready(function() {
 		formData = {
 			'fname':fname,
 			'lname':lname,
-			'Email':uid,
+			'Email':Email,
 			'username':username,
 			'newpwd':newpwd,
 			'gender':gender,
