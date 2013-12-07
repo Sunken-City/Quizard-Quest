@@ -47,7 +47,7 @@
 
 			<section id = "userProfile">
 
-				<img id="avatar"src="../Resources/Avatars/Greg.png" alt ="Avatar"></img>
+				<img id="avatar"src="" alt ="Avatar"></img>
 				<h2 id="userName"></h2>
 				<!-- Display user's decks -->
 				<!--
