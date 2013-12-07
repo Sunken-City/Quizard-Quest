@@ -185,7 +185,6 @@ $(document).ready(function() {
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
-			    FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
 			  }
