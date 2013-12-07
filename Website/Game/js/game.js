@@ -6,7 +6,7 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath;
+var avatarPath = $('.invisible')[0].innerHTML;
 
 //Global variables for game control
 var gamePlaying = true;
@@ -944,7 +944,6 @@ function printEarning() {
 
 function init() {
   // gameMode = GameMode.Quest;
-  avatarPath = $('.invisible')[0].html();
 
   $.getScript("js/requests.js", function(){
     deck = deck1;

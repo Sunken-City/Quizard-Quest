@@ -33,7 +33,7 @@
 
     <?php
       $avPath = $_SESSION['avatarPath'];
-      echo "<p class='invisible'>'$avPath'</p>";
+      echo "<p class='invisible'>$avPath</p>";
     ?>
 
     <div class="Game">
