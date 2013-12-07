@@ -792,7 +792,7 @@ function Game() {
       this.monster.init(monsterX, monsterY, iRepo.monster.width, iRepo.monster.height);
       
       if (gameMode == GameMode.SaveTheWorld)
-	this.monster.change(0);
+	this.monster.change("0");
       else
 	this.monster.change(currCard.category);
       
