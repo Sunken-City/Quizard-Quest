@@ -48,8 +48,10 @@
 
 			<div id="subContent">
 
-				<h1 id="userName"></h1>
-				<img id="avatar"src="" alt ="Avatar"></img>
+				<div id="unDiv">
+					<h1 id="userName"></h1>
+					<img id="avatar"src="" alt ="Avatar"></img>
+				</div>
 
 				<section id = "userProfile">
 
