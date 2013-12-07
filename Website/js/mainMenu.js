@@ -28,17 +28,17 @@ function showDeck(str) {
 
 $(document).ready(function() {
 
-	var newWidth = $("#twitter-widget-0").width();
+	// var newWidth = $("#twitter-widget-0").width();
 
-	$("#newsFeed").css({
-		'width':newWidth + 'px',
-	});
+	// $("#newsFeed").css({
+	// 	'width':newWidth + 'px',
+	// });
 
-	newWidth = newWidth + $("#userProfile").width() + 50;
+	// newWidth = newWidth + $("#userProfile").width() + 50;
 
-	$("#subContent").css({
-		'width':newWidth + 'px',
-	});
+	// $("#subContent").css({
+	// 	'width':newWidth + 'px',
+	// });
 
 	/*\
 	|*|		:: >> Fetch the avatar file path from DB << ::

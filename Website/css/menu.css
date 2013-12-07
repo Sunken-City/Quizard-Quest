@@ -2,6 +2,7 @@
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	width:95%;
 }
 
 #userProfile {
@@ -9,6 +10,7 @@
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
+	width: 45%;
 }
 
 #avatar {
@@ -23,5 +25,6 @@
 #newsFeed {
 	display: inline-block;
 	vertical-align: top;
+	width: 45%;
 }
 
