@@ -56,9 +56,9 @@
 					<h2>Select Your Challenge:</h2>
 					<select id="modeSelect" name="modeSelect">
 						<option value="-1">Select Challenge</option>
-						<option value="0">Training</option>
-						<option value="1">Quest</option>
-						<option value="2">Save the World</option>
+						<option value="0">Training (Free!)</option>
+						<option value="1">Quest (300 gold)</option>
+						<option value="2">Save the World (500 gold)</option>
 					</select>
 				</div>
 
