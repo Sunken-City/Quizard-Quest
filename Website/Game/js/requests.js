@@ -95,7 +95,7 @@ function initDeck() {
 var path;
 var stuff = {nothing:"nothing"};
 
-$.post("../API_Server/getAvatar.php",stuff,function(data) {
+$.post("../../API_Server/getAvatar.php",stuff,function(data) {
 
   path = data['avatar'];
 
