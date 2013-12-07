@@ -948,7 +948,7 @@ function init() {
     deck = deck1;
     gameMode = md;
     
-    avatarPath = path;
+    avatarPath = avPath;
 
     for(var i = 0; i < deck.cards.length; i++){
       if(deck.cards[i].difficulty == 1)
