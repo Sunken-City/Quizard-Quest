@@ -906,7 +906,6 @@ var deck;
 var gameMode;
 
 function printEarning() {
-    game.input.
     var htmlString = "You gained " + XPGained + " total XP!";
     
     if (XPCategory[0] != 0)
