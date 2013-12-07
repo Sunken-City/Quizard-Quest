@@ -9,10 +9,10 @@ function pwMatch(){
 	var subButton = document.getElementById("changePW");
 	if(password != pwCheck){
 		pwText = "Passwords do not match. Please re-enter";
-		subButton.disabled = "true";
+		subButton.disabled = false;
 	}
 	else{
 		pwText = "Passwords match";
-		subButton.disabled = "true";
+		subButton.disabled = true;
 	}
 }
