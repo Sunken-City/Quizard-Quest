@@ -2,8 +2,8 @@ var password ="";
 var pwCheck = "";
 var pwText
 function pwMatch(){
-	pwText =documemt.getElementById("checkText").innerHTML;
 
+	pwText = document.getElementById("checkText").innerHTML;
 	password = document.getElementById("newPW").innerHTML;
 	pwCheck = document.getElementById("checkPW").innerHTML;
 	var subButton = document.getElementById("changePW");
