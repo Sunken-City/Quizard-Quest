@@ -65,7 +65,6 @@
 					</div>
 
 					<div id="deckCards">
-						<h2>Cards in Selected Deck:</h2>
 						<p> -- No Deck Selected -- </p>						
 					</div>
 					
