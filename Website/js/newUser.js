@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 		$.post("../API_Server/createAccount.php",formData, function(data) {
 
-			alert("alert");
+			alert("alert2");
 
 			if (data['success'] === 'username') {
 				// do failure things
@@ -193,6 +193,7 @@ $(document).ready(function() {
 
         	} else {
         		// do successful things
+        		alert("again");
             	window.location.href = "mainMenu.php";
             	//change the new account's userID to match the facebookID
             	// var newID = {id:uid};
