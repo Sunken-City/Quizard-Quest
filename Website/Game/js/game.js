@@ -722,7 +722,7 @@ function Game() {
     this.aCanvas = document.getElementById('avatar');
     this.eCanvas = document.getElementById('etc');
     avatarPath = document.getElementById('avPath').innerHTML;
-    iRepo.avatar.src = avatarPath;
+    iRepo.avatar.src = "../" + avatarPath;
     this.input = new CanvasInput({
       canvas: document.getElementById('input'),
       x: 170,
