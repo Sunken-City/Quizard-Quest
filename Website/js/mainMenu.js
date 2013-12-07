@@ -28,7 +28,13 @@ function showDeck(str) {
 
 $(document).ready(function() {
 
-	var newWidth = $("#twitter-widget-0").width() + $("#userProfile").width() + 50;	
+	var newWidth = $("#twitter-widget-0").width();
+
+	$("#newsFeed").css({
+		'width':newWidth + 'px',
+	});
+
+	newWidth = newWidth + $("#userProfile").width() + 50;
 
 	$("#subContent").css({
 		'width':newWidth + 'px',
