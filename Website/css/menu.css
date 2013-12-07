@@ -27,8 +27,11 @@
 	position: relative;
 }
 
+#userName {
+	
+}
 
-#subContent h1, #subContent h2 {
+#subContent h2 {
 	background: rgb(33,33,33);
 	display:block;
 	-moz-border-top-left-radius: 12px;

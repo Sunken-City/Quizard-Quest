@@ -48,10 +48,11 @@
 
 			<div id="subContent">
 
+				<h1 id="userName"></h1>
+				<img id="avatar"src="" alt ="Avatar"></img>
+
 				<section id = "userProfile">
 
-					<h1 id="userName"></h1>
-					<img id="avatar"src="" alt ="Avatar"></img>
 					<!-- Display user's decks -->
 					<!--
 						=>	List the User's Decks
@@ -88,6 +89,7 @@
 				</section>
 				
 				<section id = "newsFeed">
+
 				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/QuizardQ" data-widget-id="400154213004492800">Tweets by @QuizardQ</a>
 					    <script>
 						    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
@@ -95,6 +97,7 @@
 					    	js.src=p+"://platform.twitter.com/widgets.js";
 					    	fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 					    </script>
+
 				</section>
 
 			</div>
