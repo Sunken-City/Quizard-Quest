@@ -4,7 +4,6 @@
 
 $(document).ready(function() {
 
-	var uid;
 	var newwidth = $("#createAccountSection.newUser table").width();
 
 	$("#createAccountSection.newUser h2").css({
@@ -46,6 +45,24 @@ $(document).ready(function() {
 			  // login status of the person. In this case, we're handling the situation where they 
 			  // have logged in to the app.
 			  //window.location.href = "index.html";
+			  FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected') {
+			    // the user is logged in and has authenticated your
+			    // app, and response.authResponse supplies
+			    // the user's ID, a valid access token, a signed
+			    // request, and the time the access token 
+			    // and signed request each expire
+			    var uid = response.authResponse.userID;
+			    var accessToken = response.authResponse.accessToken;
+			    //logIn(uid,accessToken);
+			  } else if (response.status === 'not_authorized') {
+			    // the user is logged in to Facebook, 
+			    // but has not authenticated your app
+			    FB.login();
+			  } else {
+			    // the user isn't logged in to Facebook.
+			  }
+		});
 			} else if (response.status === 'not_authorized') {
 			  // In this case, the person is logged into Facebook, but not into the app, so we call
 			  // FB.login() to prompt them to do so. 
@@ -72,7 +89,7 @@ $(document).ready(function() {
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			    uid = response.authResponse.userID;
+			    var uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
 			    //logIn(uid,accessToken);
 			  } else if (response.status === 'not_authorized') {
@@ -152,10 +169,31 @@ $(document).ready(function() {
 
 	$("#createAccount").submit(function (e) {
 
+		var Email;
+
+		FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected') {
+			    // the user is logged in and has authenticated your
+			    // app, and response.authResponse supplies
+			    // the user's ID, a valid access token, a signed
+			    // request, and the time the access token 
+			    // and signed request each expire
+			    var uid = response.authResponse.userID;
+			    Email = uid;
+			    var accessToken = response.authResponse.accessToken;
+			    //logIn(uid,accessToken);
+			  } else if (response.status === 'not_authorized') {
+			    // the user is logged in to Facebook, 
+			    // but has not authenticated your app
+			  } else {
+			    // the user isn't logged in to Facebook.
+			  }
+		});
+
 		var fname = $("#firstName").val();
 		var lname = $("#lastName").val();
 		var username = $("#username").val();
-		var Email = uid;
+		
 		var newpwd = "irrelavent";
 		var SecurityQuestion = "none";
 		var SecurityAnswer = "none";
@@ -178,35 +216,22 @@ $(document).ready(function() {
 			'SecurityQuestion':SecurityQuestion
 		};
 
-		alert("alert");
-
 		$.post("../API_Server/createAccount.php",formData, function(data) {
 
-			alert(data['success']);
+				if (data['success'] === 'username') {
+					// do failure things
+	            	alert("That username is already in use!");
 
-			if (data['success'] === 'username') {
-				// do failure things
-            	alert("That username is already in use!");
+	        	} else if (data['success'] === 'email') {
+	            	// do failure things
+	            	alert("That email is already in use!");
 
-        	} else if (data['success'] === 'email') {
-            	// do failure things
-            	alert("That email is already in use!");
+	        	} else {
+	        		// do successful things
+	            	window.location.href = "mainMenu.php";
+	        	}
 
-        	} else {
-        		// do successful things
-        		alert("again");
-            	window.location.href = "mainMenu.php";
-            	//change the new account's userID to match the facebookID
-            	// var newID = {id:uid};
-
-            	// $.post("../API_Server/createAccountFacebook.php",newID, function() {
-
-            	// 	window.location.href = "mainMenu.php";
-
-            	// });
-        	}
-
-		},"json");		
+			},"json");		
 
 		e.preventDefault();
 		

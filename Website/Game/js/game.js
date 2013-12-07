@@ -258,22 +258,22 @@ function submitAnswer() {
       numRight++;
       XPGained += 10;
       switch(currCard.category){
-       case 1: //Math
+       case "1": //Math
          XPCategory[0] += 10;
 	 break;
-       case 2: //Science
+       case "2": //Science
          XPCategory[1] += 10;
 	 break;
-       case 3: //Social Studies
+       case "3": //Social Studies
          XPCategory[2] += 10;
 	 break;
-       case 4: //English
+       case "4": //English
          XPCategory[3] += 10;
 	 break;
-       case 5: //Language
+       case "5": //Language
          XPCategory[4] += 10;
 	 break;
-       case 6: //Misc
+       case "6": //Misc
          XPCategory[5] += 10;
 	 break;
        default:
