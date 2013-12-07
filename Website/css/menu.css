@@ -1,9 +1,13 @@
+#subContent {
+	text-align: center;
+}
+
 #userProfile {
 	border: 3px groove rgb(50,153,187);
-	margin: 25px;
 	text-align: center;
 	width: 45%;
 	display: inline-block;
+	vertical-align: top;
 }
 
 #avatar {
@@ -18,5 +22,8 @@
 #newsFeed {
 	width: 45%;
 	display: inline-block;
+	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto;
 }
 

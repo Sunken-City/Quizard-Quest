@@ -28,11 +28,11 @@ function showDeck(str) {
 
 $(document).ready(function() {
 
-	// var newWidth = $("#twitter-widget-0").width() + 10;
+	var newWidth = $("#twitter-widget-0").width() + $("#userProfile").width() + 50;	
 
-	// $("#newsFeed").css({
-	// 	'width':newWidth + 'px',
-	// });
+	$("#subContent").css({
+		'width':newWidth + 'px',
+	});
 
 	/*\
 	|*|		:: >> Fetch the avatar file path from DB << ::
