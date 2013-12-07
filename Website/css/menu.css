@@ -39,6 +39,8 @@
 	-webkit-border-bottom-right-radius: 12px;
 	-moz-border-bottom-right-radius: 12px;
 	-webkit-border-bottom-left-radius: 12px;
+	margin-right: 0px;
+	margin-left: 0px;
 }
 
 #userName {
