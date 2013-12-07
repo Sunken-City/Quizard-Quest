@@ -6,7 +6,6 @@
 
 //The path to the resources folder for the game
 var path = "../../Resources/Game/";
-var avatarPath = $('.invisible')[0].innerHTML;
 
 //Global variables for game control
 var gamePlaying = true;
@@ -184,7 +183,6 @@ var iRepo = new function() {
   // Set images src
   this.background.src = path + randomBackground();
   this.monster.src = randomMonster(6);
-  this.avatar.src = avatarPath;
   this.heart.src = path + "/Sprites/Heart.png";
   this.clock.src = path + "/Sprites/Clock.png";
   this.scroll.src = path + "/Sprites/Scroll1.png";
@@ -790,6 +788,7 @@ function Game() {
       
       
       this.avatar = new Avatar();
+      this.avatar.src = document.getElementById("avPath").innerHTML;
       this.avatar.init(0, 333 - iRepo.avatar.height/2, iRepo.avatar.width, iRepo.avatar.height);
       
       this.pHurt = new SoundPool(3);
