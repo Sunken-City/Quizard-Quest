@@ -53,9 +53,9 @@
 
 				<!-- Select a Mode -->
 				<div id="chooseMode">
-					<p> Training mode: No risk just play and practice answering questions, but do not expect to find much gold</p>
-					<p> Quest mode: After feeling a little more comfortable with your decks, you can go to Quest mode. Cost 300 gold, miss more than 1/3rd of the questions and you lose. You get more gold for doing this one</p>
-					<p> Save the World: Think you mastered a deck. Try Save the World, You are have limited time to answer questions, but the reward is gold and lots of it. </p>
+					<p> Training mode: No risk just play and practice answering questions, but do not expect to find much gold</p><br>
+					<p> Quest mode: After feeling a little more comfortable with your decks, you can go to Quest mode. Cost 300 gold, miss more than 1/3rd of the questions and you lose. You get more gold for doing this one</p><br>
+					<p> Save the World: Think you mastered a deck. Try Save the World, You are have limited time to answer questions, but the reward is gold and lots of it. </p><br>
 					<p> press enter to submit your answeres</p>
 					<h2>Select Your Challenge:</h2>
 					<select id="modeSelect" name="modeSelect">
