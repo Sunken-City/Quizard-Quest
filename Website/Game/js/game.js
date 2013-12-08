@@ -991,7 +991,7 @@ function init() {
       var english;
       var lang;
       var misc;
-      var sendData['gold'] = egold;
+      var sendData = {gold:egold,};
       sendData['totXP'] = XPGained;
 
       if (XPCategory[0] != 0) {
