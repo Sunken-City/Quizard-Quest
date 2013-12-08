@@ -53,17 +53,16 @@
 
 				<!-- Select a Mode -->
 				<div id="chooseMode">
-					<p> Training mode: No risk just play and practice answering questions, but do not expect to find much gold</p></br>
-					<p> Quest mode: After feeling a little more comfortable with your decks, you can go to Quest mode. Cost 300 gold, miss more than 1/3rd of the questions and you lose. You get more gold for doing this one</p></br>
-					<p> Save the World: Think you mastered a deck. Try Save the World, You are have limited time to answer questions, but the reward is gold and lots of it. </p></br>
-					<p> press enter to submit your answeres</p>
-					<h2>Select Your Challenge:</h2>
 					<select id="modeSelect" name="modeSelect">
 						<option value="-1">Select Challenge</option>
 						<option value="0">Training (Free!)</option>
-						<option value="1">Quest (300 gold)</option>
-						<option value="2">Save the World (500 gold)</option>
+						<option value="1">Quest (150 gold)</option>
+						<option value="2">Save the World (300 gold)</option>
 					</select>
+					<h3> Training mode:</h3> <p> No risk, just practice answering your questions. Don't expect to find much gold, though.</p></br>
+					<h3> Quest mode:</h3> <p>  Like training, but if you miss 30% of the questions, you lose! However, you get more gold for this increased challenge.</p></br>
+					<h3> Save the World:</h3> <p>  Think you know your stuff? This mode is a Boss Battle; you have a limited time to answer questions, but the rewards are great!</p></br>
+					<h2>Select Your Challenge:</h2>
 				</div>
 
 				<!-- Start Game -->
