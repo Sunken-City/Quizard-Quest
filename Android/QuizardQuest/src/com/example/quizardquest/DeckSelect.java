@@ -17,8 +17,6 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.example.quizardquest.MainActivity.LoginToGame;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -27,6 +25,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class DeckSelect extends Activity {
@@ -58,6 +57,17 @@ public class DeckSelect extends Activity {
 //        totalDecks.add(newDeck);
 //        totalDecks.add(newDeck2);
 //        totalDecks.add(newDeck3);
+        Button button1 = (Button) findViewById(R.id.start_button);
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//Add logic for button
+			beginQuest(v);
+				
+			}
+		};
+		button1.setOnClickListener(buttonClickListener);
         ArrayList<String> deckNames = new ArrayList<String>();
         for(int i = 0; i < totalDecks.size(); i++){
         	deckNames.add(i +": " + totalDecks.get(i).getName());

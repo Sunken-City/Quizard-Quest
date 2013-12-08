@@ -36,7 +36,30 @@ public class GameMode extends Activity{
         newQuestion(questPage);
         deckName.setText(chosenDeck.getName());
 
+        Button button1 = (Button) findViewById(R.id.submit_answer);
         
+		View.OnClickListener buttonClickListener = new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//Add logic for button
+				submitAnswer(v);
+				
+			}
+		};
+		button1.setOnClickListener(buttonClickListener);
+		
+		Button button2 = (Button) findViewById(R.id.return_to_deck);
+		View.OnClickListener returnClickListener = new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//Add logic for button
+				returnToDeck(v);
+				
+			}
+		};
+		button2.setOnClickListener(returnClickListener);
         
 //        final Button submitAnswer = (Button) findViewById(R.id.submit_answer);
 //        submitAnswer.setEnabled(false);

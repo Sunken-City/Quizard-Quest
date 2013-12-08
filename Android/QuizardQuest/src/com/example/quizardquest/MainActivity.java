@@ -20,7 +20,6 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -33,7 +32,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
 	ArrayList<Deck> playerDecks = new ArrayList<Deck>();
 	private ProgressDialog pDialog;
@@ -63,6 +62,18 @@ public class MainActivity extends Activity {
         et2.setTypeface(myst);
         Button button1 = (Button) findViewById(R.id.login_button);
         button1.setTypeface(neverwinter);
+        
+		View.OnClickListener buttonClickListener = new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//Add logic for button
+				login(v);
+				
+			}
+		};
+		
+		button1.setOnClickListener(buttonClickListener);
     }
 
 
