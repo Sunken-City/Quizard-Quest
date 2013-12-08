@@ -981,9 +981,67 @@ function init() {
     timeLimit = minutes * 60000 + seconds * 1000;
     setQuestion(currCard.question);
     XPGained = 0;
-    //$("#endGame")click(function(){
-   //document.location.href='the_link_to_go_to.html';
-//});
+
+    $("#endGame").click(function(e){
+      
+      var egold = getGold();
+      var math;
+      var science;
+      var social;
+      var english;
+      var lang;
+      var misc;
+      var sendData['gold'] = egold;
+      sendData['totXP'] = XPGained;
+
+      if (XPCategory[0] != 0) {
+        math = XPCategory[0];
+        sendData['math'] = math;
+      } else {
+        sendData['math'] = 0;
+      }
+        
+      if (XPCategory[1] != 0) {
+        science = XPCategory[1];
+        sendData['science'] = science;
+      } else {
+        sendData['science'] = 0;
+      }
+        
+      if (XPCategory[2] != 0) {
+        social = XPCategory[2];
+        sendData['social'] = social;
+      } else {
+        sendData['social'] = 0;
+      }
+        
+      if (XPCategory[3] != 0) {
+        english = XPCategory[3];
+        sendData['english'] = english;
+      } else {
+        sendData['english'] = 0;
+      }
+        
+      if (XPCategory[4] != 0) {
+        lang = XPCategory[4];
+        sendData['lang'] = lang;
+      } else {
+        sendData['lang'] = 0;
+      }
+        
+      if (XPCategory[5] != 0) {
+        misc = XPCategory[5];
+        sendData['misc'] = misc;
+      } else {
+        sendData['misc'] = 0;
+      }
+
+      $.post("../../API_Server/saveEarnings.php",sendData,function() {
+        window.location.href = "../mainMenu.php";
+      });
+        
+
+    });
     game.init();
   });
 

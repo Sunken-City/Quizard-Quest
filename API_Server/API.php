@@ -507,6 +507,19 @@
         mysqli_close($db);
     }
 
+    function get_stats_2() {
+         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_errno());
+            exit();
+        }
+        $userID = $_SESSION['userID'];
+        $cards = mysqli_query($db, "SELECT * FROM stats WHERE userID = '$userID';");
+        $result = mysqli_fetch_assoc($cards);
+        mysqli_close($db);
+        return $result;
+    }
+
     function get_avatar() {
 
         $db = mysqli_connect("localhost", "quizard", "quest", "quizardQuest");
