@@ -872,6 +872,7 @@ function animate() {
     if (funQueue.length != 0) {
       (funQueue.shift())();
     }
+    $("#endGame").show();
     
   }
   
