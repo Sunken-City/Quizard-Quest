@@ -37,7 +37,7 @@
     ?>
 
     <div class="Game">
-
+      <button type="button" id="endGame">Save and Quit</button>
       <!-- The canvas for the background -->
       <canvas id="background" width="765" height="666">
          Your browser does not support canvas. Please try again with a different browser. (Please stop being a part of the IE6 problem!)
@@ -57,22 +57,6 @@
       <div class="loading">Loading...<span id = "loading"></div>
       <div class="loadingImage"><span id="loadingImage"></div>
 
-    </div>
-
-    <div id="postGame">
-
-      <button type="button" id="endGame">End Game</button>
-
-      <footer class="nonIndex">
-        <nav class="navbar" class="nonIndex">
-          <button type="button" id="home" class="navButton">Home</button>
-          <button type="button" id="gotoStore" >Secret Shop</button>
-          <button type="button" id="createCard" >Create a Spell!</button>
-          <button type="button" id="createDeck" >Create a Spellbook!</button>
-          <button type="button" id="reviewDecks" >Edit your Spellbooks</button>
-          <button type="button" id="logOut" class="navButton">Log Out</button>
-        </nav>
-      </footer>
     </div>
 
   </body>

@@ -149,6 +149,7 @@ var iRepo = new function() {
     if (numLoaded === numImages) {
       console.log("Images Loaded");
       $('.answer').hide();
+      $('#endGame').hide();
       window.init();
     }
   }
@@ -938,11 +939,11 @@ function printEarning() {
       htmlString += "</br>You earned " + XPCategory[5] + " misc XP!";
     htmlString += "</br>This game you earned a total of " + XPGained + " XP!";
     htmlString += "</br>You found " + goldEarned + " gold!";
-    
 
     $("#answer").html(htmlString);
 
     $(".answer").show();
+    $("#endGame").show();
 }
 
 function init() {
@@ -983,4 +984,9 @@ function init() {
     game.init();
   });
 
+  function getGold() {    
+    //Subtract the cost of playing the game
+    goldEarned -= 150 * gameMode;
+    return goldEarned;
+  }
 }
