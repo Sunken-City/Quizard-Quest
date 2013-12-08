@@ -145,6 +145,26 @@ var avatars = [
 		"name": "Elven Quizardess",
 		"location": "../Resources/Avatars/RoyalJordina.png",
 		"price": "13000"
+	},
+	{
+		"name": "Flag Quizard",
+		"location": "../Resources/Avatars/HispanicGreg.png",
+		"price": "5000"
+	},
+	{
+		"name": "Quizard Prince",
+		"location": "../Resources/Avatars/FrogGreg.png",
+		"price": "15000"
+	},
+	{
+		"name": "Ghostly Quizard",
+		"location": "../Resources/Avatars/GhostlyGreg.png",
+		"price": "15000"
+	},
+	{
+		"name": "Invisible Quizard",
+		"location": "../Resources/Avatars/InvisiGreg.png",
+		"price": "20000"
 	}
 ];
 
