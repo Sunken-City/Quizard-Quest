@@ -22,7 +22,7 @@ $(document).ready(function() {
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId      : '1473724932853450', // App ID
-			channelUrl : '//54.200.66.93/Quizard-Quest/Website/channel.php', // Channel File
+			channelUrl : '//54.200.82.84/Quizard-Quest/Website/channel.php', // Channel File
 			status     : true, // check login status
 			cookie     : true, // enable cookies to allow the server to access the session
 			xfbml      : true  // parse XFBML
