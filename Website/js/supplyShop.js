@@ -97,7 +97,7 @@ var avatars = [
 		"price": "1000"
 	},
 	{
-		"name": "Grey Grey-Haired Quizard",
+		"name": "Old Grey Quizard",
 		"location": "../Resources/Avatars/GreygTheGrey.png",
 		"price": "1000"
 	},
