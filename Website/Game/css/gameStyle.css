@@ -104,6 +104,7 @@ footer.nonIndex {
 }
 
 #endGame {
+  position: absolute;
   font-size: 4em;
   font-family: 'VT323', cursive;
   height:1.25em;

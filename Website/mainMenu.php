@@ -63,11 +63,11 @@
 								>	Display all cards in that deck
 					  -->
 					<div id="profileDecks" class="mainMenu">
-						<h2 class="heading">Decks:</h2>
+						<h2 class="heading">Spellbooks:</h2>
 					</div>
 
 					<div id="deckCards">
-						<p> -- No Deck Selected -- </p>						
+						<p> -- No Spellbook Selected -- </p>						
 					</div>
 					
 					<!-- Display user's stats -->
@@ -83,7 +83,7 @@
 						=>	Display Achievements
 					  -->
 					<div id="profileStats" class="mainMenu">
-						<h2 class="heading">User Stats:</h2>
+						<h2 class="heading">Progress:</h2>
 						<div id="displayStats"></div>
 					</div>
 

@@ -53,13 +53,16 @@
 
 				<!-- Select a Mode -->
 				<div id="chooseMode">
-					<h2>Select Your Challenge:</h2>
 					<select id="modeSelect" name="modeSelect">
 						<option value="-1">Select Challenge</option>
 						<option value="0">Training (Free!)</option>
-						<option value="1">Quest (300 gold)</option>
-						<option value="2">Save the World (500 gold)</option>
+						<option value="1">Quest (150 gold)</option>
+						<option value="2">Save the World (300 gold)</option>
 					</select>
+					<h3> Training mode:</h3> <p> No risk, just practice answering your questions. Don't expect to find much gold, though.</p></br>
+					<h3> Quest mode:</h3> <p>  Like training, but if you miss 30% of the questions, you lose! However, you get more gold for this increased challenge.</p></br>
+					<h3> Save the World:</h3> <p>  Think you know your stuff? This mode is a Boss Battle; you have a limited time to answer questions, but the rewards are great!</p></br>
+					<h2>Select Your Challenge:</h2>
 				</div>
 
 				<!-- Start Game -->
