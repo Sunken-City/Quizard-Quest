@@ -981,6 +981,9 @@ function init() {
     timeLimit = minutes * 60000 + seconds * 1000;
     setQuestion(currCard.question);
     XPGained = 0;
+    $("#endGame")click(function(){
+   document.location.href='the_link_to_go_to.html';
+});
     game.init();
   });
 
