@@ -87,7 +87,7 @@ public class MainActivity extends Activity{
     public void login(View view){
     	
     LoginToGame decksLogin= new LoginToGame();
-    decksLogin.execute("http://54.200.66.93/Quizard-Quest/API_Server/androidLogin.php");
+    decksLogin.execute("http://54.200.82.84/Quizard-Quest/API_Server/androidLogin.php");
     //Log.d("NDM", playerDecks.get(0).getName());
     //TextView tv = (TextView) findViewById(R.id.welcome_text);
     //tv.setText(decks.get(0).getName());

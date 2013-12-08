@@ -93,7 +93,7 @@ public class DeckSelect extends Activity {
 	
 	public void beginQuest(View View){
 		getDeckCards getCards= new getDeckCards();
-	    getCards.execute("http://54.200.66.93/Quizard-Quest/API_Server/androidGetDeckCards.php");
+	    getCards.execute("http://54.200.82.84/Quizard-Quest/API_Server/androidGetDeckCards.php");
 		
 		//TextView deckName = (TextView)findViewById(R.id.deckwelcome);
 		//deckName.setText(chosenDeck.getName());
