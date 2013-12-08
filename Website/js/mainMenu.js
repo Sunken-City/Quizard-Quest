@@ -132,11 +132,11 @@ $(document).ready(function() {
 		engxp = data['engExp'];
 		engdisplay = "English XP : " + engxp ;
 		langxp = data['langExp'];
-		langgdisplay = "Language XP : " + langxp ;
+		langdisplay = "Language XP : " + langxp ;
 		totxp = data['totExp'];
 		totdisplay = "Total XP : " + totxp ;
 
-		document.getElementById('displayStats').innerHTML = goldDisplay +"<br>" + mathdisplay +"<br>" + sciencedisplay +"<br>" + ssdisplay +"<br>" + engdisplay + "<br>" + totdisplay;
+		document.getElementById('displayStats').innerHTML = goldDisplay +"<br>" + mathdisplay +"<br>" + sciencedisplay +"<br>" + ssdisplay +"<br>" + langdisplay +"<br>"+ engdisplay + "<br>" + totdisplay;
 	},"json");
 
 });
