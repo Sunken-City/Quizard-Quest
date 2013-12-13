@@ -85,7 +85,21 @@ public class GameMode extends Activity{
         TextView question = (TextView)findViewById(R.id.question);
         
         answer.setText("");
-        category.setText(cardDeck.get(counter).getCategory());
+        String categoryNumber = cardDeck.get(counter).getCategory();
+        if(categoryNumber.equals("1"))
+        	categoryNumber = "Math";
+        else if (categoryNumber.equals("2"))
+        	categoryNumber = "Science";
+        else if (categoryNumber.equals("3"))
+        	categoryNumber = "History";
+        else if (categoryNumber.equals("4"))
+        	categoryNumber = "English";
+        else if (categoryNumber.equals("5"))
+        	categoryNumber = "Language";
+        else
+        	categoryNumber = "Misc.";
+        
+        category.setText(categoryNumber);
         question.setText(cardDeck.get(counter).getQuestion());
         counter++;
 		}
